@@ -589,7 +589,7 @@ function loadLearnerHome() {
     state.learner = r;
     var p = r.profile || {}, passport = r.passport || {}, skills = passport.skills || {};
     var meta = passport.metacognition || {}, portability = r.portability || {}, plan = r.plan || {};
-    $("learnerIntro").textContent = (p.name ? p.name + "，" : "") + "Tender 只维护当前决定所需的局部认知—情绪假设；你选择目标、采取行动、承担结果，再用真实反馈更新它。";
+    $("learnerIntro").innerHTML = (p.name ? p.name + "，" : "") + "Tender 只维护当前决定所需的局部认知—情绪假设；你选择目标、采取行动、承担结果，再用真实反馈更新它。<br><span class=\"intro-en\">Tender keeps only the local cognitive–emotional hypotheses needed for the current decision. You choose the goal, act, own the outcome, and update the model with real feedback.</span>";
     $("learnerTenderId").textContent = r.tender_id || ("TENDER-" + sid);
     $("learnerStage").textContent = r.current_stage || p.class || "学段未标注";
     $("learnerOwnership").textContent = r.data_ownership || "数据归学习者";
