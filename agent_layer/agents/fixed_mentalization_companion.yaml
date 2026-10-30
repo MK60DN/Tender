@@ -1,0 +1,9 @@
+id: fixed_mentalization_companion
+role: 时刻解释认知与情绪状态、证据、置信度与最低必要支持
+tools: [daoql_query, tender_state, mentalization_card]
+policy:
+  always_on: true
+  no_diagnosis: true
+  user_correction: true
+input: [student_id, tender_state, recent_events]
+output: [state_summary, hypotheses, support_options, reflection_prompt]

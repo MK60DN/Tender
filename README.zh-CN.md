@@ -4,6 +4,13 @@
 
 [双语首页](README.md) · [English](README.en.md)
 
+## 从这里开始
+
+- [教学网站](https://mk60dn.github.io/Tender/) · [本地课程](http://127.0.0.1:8080/guide/) · [站点源码](site/)
+- [白皮书本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v1.6.pdf) · [仓库 PDF](docs/whitepaper/Tender-Whitepaper-v1.6.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v1.6.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v1.6.tex)
+- [产品手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v6.20.pdf) · [用户手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v6.8.pdf) · [零基础教学手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v5.3.pdf)
+
+
 [![CI](https://github.com/MK60DN/Tender/actions/workflows/ci.yml/badge.svg)](https://github.com/MK60DN/Tender/actions/workflows/ci.yml)
 
 > 温柔地了解您的心智。Tender 在明确授权下，从行为、语言和真实结果中形成关于注意、认知负荷、动机与行动阻力的可更正假设。
@@ -25,6 +32,10 @@
 ## 边界
 
 Tender 不是心理或医学诊断工具，也不是“读心”系统。语言证据不能单独决定知识掌握度、人格或临床状态。合成实验与公开基准结果不等于真实教育效果。
+
+## 教学网站
+
+双语课程位于 `site/`。FastAPI 在 `/guide/` 提供页面，GitHub Pages 由 `.github/workflows/pages.yml` 部署。
 
 ## 快速开始
 
@@ -52,11 +63,14 @@ python agent_layer/tests/run_all.py
 
 ## 文档
 
-- [项目白皮书 V1.5](docs/whitepaper/Tender-Whitepaper-v1.5.pdf)
-- [产品手册](docs/product/Tender-Product-Manual-v6.19.pdf)
-- [用户手册](docs/product/Tender-User-Guide-v6.7.pdf)
+- [项目白皮书 V1.6](docs/whitepaper/Tender-Whitepaper-v1.6.pdf)
+- [产品手册](docs/product/Tender-Product-Manual-v6.20.pdf)
+- [用户手册](docs/product/Tender-User-Guide-v6.8.pdf)
 - [研究边界](docs/RESEARCH_CLAIMS.md)
 
 ## 许可证
 
 PolyForm Noncommercial License 1.0.0。允许个人、教育、研究和其他非商业用途；未经另行书面许可，禁止商业化使用。本许可证不是 OSI 批准的开源许可证。
+
+
+

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentMessage",
+  "type": "object",
+  "required": [
+    "message_id",
+    "from_agent",
+    "to_agent",
+    "intent",
+    "action"
+  ],
+  "properties": {
+    "message_id": {
+      "type": "string"
+    },
+    "from_agent": {
+      "type": "string"
+    },
+    "to_agent": {
+      "type": "string"
+    },
+    "student_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "intent": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "object"
+    },
+    "action": {
+      "type": "object"
+    },
+    "policy": {
+      "type": "object"
+    },
+    "status": {
+      "type": "string"
+    }
+  }
+}

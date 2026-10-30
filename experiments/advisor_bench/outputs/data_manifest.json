@@ -1,0 +1,452 @@
+{
+  "datasets": [
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\nhanes_2017_2018\\BMX_J.xpt",
+      "bytes": 1466000,
+      "sha256": "8d675e42d8826ac98714b2c3dd4c5138a5e353fb4424f7eff5e6db4a01ce838a"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\nhanes_2017_2018\\BPX_J.xpt",
+      "bytes": 1466000,
+      "sha256": "f98f1d9a4c18173e715c749b4294f6f1525140d5ad5751316bb17cc038fb3423"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\nhanes_2017_2018\\DEMO_J.xpt",
+      "bytes": 3412720,
+      "sha256": "c0b46e0345ea19404928656277c8b0d10b0cca348a9b2fe4fc3c67e8b7ee73ec"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\nhanes_2017_2018\\DR1TOT_J.xpt",
+      "bytes": 11722480,
+      "sha256": "390ae5205acfbcb87e0ca3d9aabd1c801b60657d3f2802ac08d5b3ed93f0af6d"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\nhanes_2017_2018\\DR2TOT_J.xpt",
+      "bytes": 5931360,
+      "sha256": "b73be9b0a4787e73eb831d22b356d03657ffae7d41e5713b60aaa49b828d9c1b"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\nhanes_2017_2018\\PAQ_J.xpt",
+      "bytes": 799600,
+      "sha256": "048120aa3a5c8b5cd457ad3e13dfd62d728b12ea6644960e933ad374ec907e79"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\nhanes_2017_2018\\SLQ_J.xpt",
+      "bytes": 470560,
+      "sha256": "5486e1c51d56a959c94106d131a11b2e58bdec8ff30917ad7748917c6fa09f3a"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\dataset_description.json",
+      "bytes": 4245,
+      "sha256": "9a360b4bbce9ae7af40eee3f7965c52be42b0369ae43cf8923788587ecab35fd"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\participants.tsv",
+      "bytes": 16387,
+      "sha256": "d39a9697085f209ca7d72ad05792ec4689d99d28d62d3f2c1344bed3627ac4df"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_asrs.tsv",
+      "bytes": 7898,
+      "sha256": "8f6d75c8a80b7f5a7e25a4ed37a4447ae0ee446c225e84d23d3992c05562d485"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_barratt.tsv",
+      "bytes": 51206,
+      "sha256": "23b6442d326d75e2bf5be786dd9827c656dc68097d357f6bdcecff91dca8770e"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_bart.tsv",
+      "bytes": 51578,
+      "sha256": "d0bcca12b931633ff1fdc7e9cf3b2a4a940f78ea1af5fa8cf818414d3874ddfa"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_bprs.tsv",
+      "bytes": 38454,
+      "sha256": "f459592ac081359b604aa02be93fc9ac128ec1f550d8381930fcc86b4fbac9aa"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_cpt.tsv",
+      "bytes": 38492,
+      "sha256": "3da304d5eceeb0a2b4dce8d3f5ed0a6f3296c18824996e6e80e5bdff1405208b"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_demographics.tsv",
+      "bytes": 27794,
+      "sha256": "129c8ccc4f5fe38489ff7d1c2f0ce5bae9539e2795aa10c52fae4ec4c2b68485"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_dkefs.tsv",
+      "bytes": 18239,
+      "sha256": "07e2dfb5078ab2e36dac0c471742157170f6cff18f478cb1c99232d871603c63"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_hamilton.tsv",
+      "bytes": 30113,
+      "sha256": "e240e4ea121c829d680366379d130d2fae47aab3ca681b8ffe2993a229f38f73"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_health.tsv",
+      "bytes": 24920,
+      "sha256": "888d15f231599d5458e402597b126a9f7640d944f754e187a6afe891d8900bf8"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_hopkins.tsv",
+      "bytes": 47914,
+      "sha256": "a3b660f0dcc261a6961b6a331ca39ba41b934013057eb54f6fc5c01e7491b82a"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_language.tsv",
+      "bytes": 5498,
+      "sha256": "24752d81c5073b74330d77d49422a2fe02ee523b49a5d0fd7f23d3795b92699d"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_mpq.tsv",
+      "bytes": 16759,
+      "sha256": "6446d434ad8b8f4e53c51dcc2c8403f832ec29c204fdc032c996e6949b96d512"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_scid.tsv",
+      "bytes": 85826,
+      "sha256": "f364da9f0d3636f60b0a3e304e1bb84261fee353e5b1f4cc3b4e1fb9d19329d2"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_sr.tsv",
+      "bytes": 55320,
+      "sha256": "adbef5176f76ddb45942c7bc94de62c4efd4f64b7761a72796bd756d6ddbf706"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_stopsignal.tsv",
+      "bytes": 92245,
+      "sha256": "beb91c08b564c2952344f7433ec0bab90dcca176222f1f89ab11b62e9fddae49"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_stroop.tsv",
+      "bytes": 61218,
+      "sha256": "b2cb38ab910674a1e52835ad3d8f8681bf55bf3f54d9a7184a9fcdb0d48a605b"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_taskswitch.tsv",
+      "bytes": 20961,
+      "sha256": "594018ee915a70271aa01c62a8fe6cbfcd1f3f38d931ad63fcf8e65d734d5fb5"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_tci.tsv",
+      "bytes": 91154,
+      "sha256": "1497cd6d5becf40506b28a13241c2d67cf1ebbf450f0e17e921dd2c7b6f4b183"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_wais.tsv",
+      "bytes": 89311,
+      "sha256": "866b0e9cc3f10355c68f3862581dc9af52df5249b2ee5323c09f6e47b368c61e"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_wms.tsv",
+      "bytes": 24423,
+      "sha256": "b5828b1aab3bc5c98d04ea158483d98a0d57bfe2d09c03c386b8ea9ac7f8e002"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\phenotype_ymrs.tsv",
+      "bytes": 12514,
+      "sha256": "3702f361a2f691db4aa8710a6b7edeee4320f2758d933d527a8a4b6f821d500b"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\openneuro_ds000030\\README",
+      "bytes": 4081,
+      "sha256": "dbbdceb8969791c77eae584d6dbdd0336887a86d398c5cb7f89af48866529408"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\nutrition5k\\dish_metadata_cafe1.csv",
+      "bytes": 2206282,
+      "sha256": "881df31f27c2343d0ce219964527e0796f6ddadd60701ce6840fa801e8c2a960"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\nutrition5k\\dish_metadata_cafe2.csv",
+      "bytes": 101817,
+      "sha256": "ef9f800d7b9c2e7e9a9e7cda5cbb4cfe51c760a8c1af4c05786ccf051bf5d77d"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\nutrition5k\\README.md",
+      "bytes": 7400,
+      "sha256": "4c77ceab6dfcaf7b23019fae6c323f237f93ecd4213ebe44b36b8f8583c84ae0"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\nutrition5k\\rgb_test_ids.txt",
+      "bytes": 11344,
+      "sha256": "560ff0eedb1a2027c21f5da3a4c38a53fa201c87d108e76b11cceaa1d956ac8e"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\nutrition5k\\rgb_train_ids.txt",
+      "bytes": 64944,
+      "sha256": "efd34a682b5483b01e6bd0a7c1267efec28440a8194985f9d3817d8ebc8169bd"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Abilities to Work Activities.txt",
+      "bytes": 31240,
+      "sha256": "4dba1398587d0163b36a4c9259d59d90e35ae2d508da0e30f4f31ed0a4d98be7"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Abilities to Work Context.txt",
+      "bytes": 11743,
+      "sha256": "e65752c30091b8a8b8590ce439ec8e97c006f9f3d29b74c39fc6d2d3468e341f"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Abilities.txt",
+      "bytes": 8557526,
+      "sha256": "822f866b0f441376edc8a282bf0f77c8c3f687c456dcd607b12de86fccba8e71"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Alternate Titles.txt",
+      "bytes": 2462267,
+      "sha256": "528592356fba6dba707e6c66a36faf7cc3b2a815f478eaa23e0425fcb62c7283"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Basic Interests to RIASEC.txt",
+      "bytes": 2443,
+      "sha256": "bde27834cd713d2f4b2478ba9579d87a9643c98097081f987d2dd79fc8f75a80"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Content Model Reference.txt",
+      "bytes": 92004,
+      "sha256": "909f6ce0b4376227945dcc98101da909a0b516c9354afdc1a0a5143c5bffe810"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\DWA Reference.txt",
+      "bytes": 187201,
+      "sha256": "62b95bb1cfe9d89e3b18ea5522108835e535fab3d10168acbaef16e1e783bd82"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Education, Training, and Experience Categories.txt",
+      "bytes": 3928,
+      "sha256": "9276926ce21572ba39b8ec04aba1c884770aa514e2e0e50b9e375461aed35b52"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Education, Training, and Experience.txt",
+      "bytes": 3633478,
+      "sha256": "595807bd081653b31c37a518a0360b68fe28075811bdfd60f082a60b8a4f4ee1"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Emerging Tasks.txt",
+      "bytes": 44088,
+      "sha256": "c6c38f8fb12d8ac5083850297cc4d6cbebcf4bc1e91201129046ccd8d4b2f13c"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Interests Illustrative Activities.txt",
+      "bytes": 13501,
+      "sha256": "fc7ce369552a445cfcf3f1eb6020e1d8316bfdbb441877498263e25c23d5c6b5"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Interests Illustrative Occupations.txt",
+      "bytes": 7885,
+      "sha256": "0d06beef6cd6e47eb8e15e820f9aec65dd00b0273fa37d1dc0dd41dddf945023"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Interests.txt",
+      "bytes": 574185,
+      "sha256": "fcf714f700c1f974f7761b9e22b9d1e068e0d83329dea747c1099d691a97aaee"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\IWA Reference.txt",
+      "bytes": 22956,
+      "sha256": "21aea17a4ac775fc2a4e3cae359a681f001f1696692af80c993dffcb764503cf"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Job Zone Reference.txt",
+      "bytes": 4367,
+      "sha256": "0d705299759ff75785a3c503dc39da21db26ec652afac145c65736149d3744ea"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Job Zones.txt",
+      "bytes": 28126,
+      "sha256": "7b13748f1d880dbbc6bd2a5f91bd457492f82c3f3bf9bd64909e73f600cd5fba"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Knowledge.txt",
+      "bytes": 5605166,
+      "sha256": "d9601dd763d5b3b203dd8827a3c2bd6c1b3d6155c1674168f0ef30b0e005cf07"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Level Scale Anchors.txt",
+      "bytes": 42634,
+      "sha256": "ea67ca593c76a1a32f2e0adeb81eae63526076be8ceff4e2178c055247e1d1e9"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Occupation Data.txt",
+      "bytes": 265794,
+      "sha256": "63e6029d3d30ff5c7cf39b5304a733b77a409e01c65ae7095fe92f6d18d74a66"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Occupation Level Metadata.txt",
+      "bytes": 2621846,
+      "sha256": "346869865cc98f25a72c4cbf02b69d537d277081e7708addd967e1c127f5b870"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Read Me.txt",
+      "bytes": 516,
+      "sha256": "45cd3154c7f5e1e9ca3a0be6eb565c80acddc9bd7b63feeb76dfdd2e845a6c5f"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Related Occupations.txt",
+      "bytes": 716310,
+      "sha256": "af539f6f01a36e9514a0dd13cbe125df8cca1114c690505342837f338621906c"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\RIASEC Keywords.txt",
+      "bytes": 2706,
+      "sha256": "5a52434b5ff428e96e7b698ecde04fbfe6d655cabff17d9905046e9f65e09a4e"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Sample of Reported Titles.txt",
+      "bytes": 297040,
+      "sha256": "feef19fa87b666be26356b92f67d6f8d056d274dbdf3ed4a085b0708c7256f81"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Scales Reference.txt",
+      "bytes": 919,
+      "sha256": "3c5c6d3770dbb996b06efd86ee979f52603a32fe41d9c69eace213b5e858091c"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Skills to Work Activities.txt",
+      "bytes": 18256,
+      "sha256": "a68cb4e7f6ddff0d8da7fed9e93a41e84ff6145bab852aec9dabbe4f5172d257"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Skills to Work Context.txt",
+      "bytes": 7475,
+      "sha256": "26b69163828cb80951678df1a4fcdb7c7c75f0c447f5eae5067dbcd71c9ff09e"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Skills.txt",
+      "bytes": 5644874,
+      "sha256": "d6832c9c195742524a9e48598d962140aaa499c2f78046d4be3af0b69f2686be"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Survey Booklet Locations.txt",
+      "bytes": 11219,
+      "sha256": "a34d57dfeb061251b8f9321605807e4019715002959a662d33a51903e761b221"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Task Categories.txt",
+      "bytes": 190,
+      "sha256": "809617e3686a71d00357b957ce6238e3b542a008d6f61b1a724b27e7be091aca"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Task Ratings.txt",
+      "bytes": 11915292,
+      "sha256": "01e9812b38cbdeaa7e18f6a4b8f016e94b2ecc59e833f3cbab75fbbf07e42f7b"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Task Statements.txt",
+      "bytes": 2761966,
+      "sha256": "093fae042127cddb2913f78e54c62a7ef6b7a82578d6ea1b60f928f6893470a7"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Tasks to DWAs.txt",
+      "bytes": 1229654,
+      "sha256": "2c63a5dfdc7888cef0a2719cb6e2d272e0106f7c863af4b22e3cf6173b7331ff"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Technology Skills.txt",
+      "bytes": 2601670,
+      "sha256": "a6e7ea1fb368659a3a8ffe2895d8343cbe80b61efbb2db39cb3cb0f9bd56d3b4"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Tools Used.txt",
+      "bytes": 2590839,
+      "sha256": "ae2e9b4367e543546b3b6ec0f01d45147fd57b606a2b179fea134651ed6536f6"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\UNSPSC Reference.txt",
+      "bytes": 810549,
+      "sha256": "563bdf3d2392b181066a2e5034f91f6d9e8fb3377a7dce7cee1288e8b687cb11"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Work Activities.txt",
+      "bytes": 8749064,
+      "sha256": "c360f09974150f9e6553795c7f739178320967b56b6488a063f14068d4d8522e"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Work Context Categories.txt",
+      "bytes": 23269,
+      "sha256": "c10536131f81056d81acf44db1c6f3efb19c09a44420a805f36020db7d1489db"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Work Context.txt",
+      "bytes": 36782933,
+      "sha256": "d52948bc8457192a56fbf40f96168dcbfcbb3a7bdd1c22b097ab02e833dea190"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Work Styles.txt",
+      "bytes": 2279557,
+      "sha256": "c6ce3c72bf0e4849b807b31cb263b832b25cca78b529c003f68271e6ba9d10ac"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1\\db_30_1_text\\Work Values.txt",
+      "bytes": 494846,
+      "sha256": "3aac674a8c4a984ad513a45ece814d52825f24e0a7fbe00b7aee7cb4588a05ae"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\onet\\db_30_1_text.zip",
+      "bytes": 13435626,
+      "sha256": "bfdf922f17a5c22d7f6c9498ee2cc49a6752976072085f9b9b1af0f2232a6568"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\safety\\cyberbullying_ssef.csv",
+      "bytes": 28525,
+      "sha256": "9971c608c434ba40e622ae2588d970f7add4812fac9609106b4346476ae489f3"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\safety\\sms_spam\\readme",
+      "bytes": 5868,
+      "sha256": "8753cd2d3cab68f80c8257851b8c2037778c267f55accb6fd1b5a2e32d36a84e"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\safety\\sms_spam\\SMSSpamCollection",
+      "bytes": 477907,
+      "sha256": "7d039a24a6083ed9ef0f806ebad56bbb976e3aeb8de05669173bfdc4996c239d"
+    },
+    {
+      "path": "D:\\Tender\\external_data\\open_downloads\\safety\\sms_spam_collection.zip",
+      "bytes": 203415,
+      "sha256": "1587ea43e58e82b14ff1f5425c88e17f8496bfcdb67a583dbff9eefaf9963ce3"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NHANES 2017-2018",
+      "url": "https://wwwn.cdc.gov/nchs/nhanes/Default.aspx",
+      "license": "US CDC/NCHS public-use data; review terms",
+      "use": "health and nutrition baselines"
+    },
+    {
+      "name": "UCLA CNP / OpenNeuro ds000030",
+      "url": "https://openneuro.org/datasets/ds000030",
+      "license": "CC0",
+      "use": "neurocognitive and questionnaire-derived support profiles"
+    },
+    {
+      "name": "Nutrition5k",
+      "url": "https://github.com/google-research-datasets/Nutrition5k",
+      "license": "CC BY 4.0",
+      "use": "dish-level nutrition metadata"
+    },
+    {
+      "name": "O*NET 30.1 Database",
+      "url": "https://www.onetcenter.org/database.html",
+      "license": "Review O*NET terms and attribution requirements",
+      "use": "career content-based recommendation"
+    },
+    {
+      "name": "UCI SMS Spam Collection",
+      "url": "https://archive.ics.uci.edu/dataset/228/sms+spam+collection",
+      "license": "Review UCI citation and license terms",
+      "use": "scam/phishing text signal"
+    },
+    {
+      "name": "SSEF cyberbullying Instagram/TikTok",
+      "url": "https://huggingface.co/datasets/SSEF-HG-AC/cyberbullying-instagram-tiktok",
+      "license": "CC metadata label; verify exact version before commercial use",
+      "use": "abusive-content text signal"
+    }
+  ]
+}

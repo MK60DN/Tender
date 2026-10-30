@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tender.local/schemas/agent_thread.json",
+  "title": "Tender Multi-Agent Thread",
+  "type": "object",
+  "required": ["thread_id", "title", "objective", "student_id", "class_id", "created_by_role", "audience_role", "status"],
+  "properties": {
+    "thread_id": {"type": "string"},
+    "title": {"type": "string"},
+    "objective": {"type": "string"},
+    "student_id": {"type": "string"},
+    "class_id": {"type": "string"},
+    "task_type": {"type": "string", "default": "grammar_cloze"},
+    "created_by_role": {"type": "string"},
+    "audience_role": {"type": "string", "default": "parent"},
+    "audience_config": {"type": "object"},
+    "status": {"enum": ["draft", "waiting_approval", "completed", "needs_revision", "stopped"]},
+    "context": {"type": "object"},
+    "runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["run_id", "agent_id", "agent_name", "status", "summary"],
+        "properties": {
+          "run_id": {"type": "string"},
+          "agent_id": {"type": "string"},
+          "agent_name": {"type": "string"},
+          "status": {"type": "string"},
+          "summary": {"type": "string"},
+          "plan": {"type": "array", "items": {"type": "string"}},
+          "output": {"type": "object"},
+          "approval_required": {"type": "boolean"},
+          "event_id": {"type": "string"}
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["artifact_id", "artifact_type", "title", "status"],
+        "properties": {
+          "artifact_id": {"type": "string"},
+          "artifact_type": {"enum": ["lesson_plan", "assessment_brief", "student_cards", "external_communication", "family_report", "safety_check"]},
+          "title": {"type": "string"},
+          "content": {"type": "object"},
+          "status": {"type": "string"},
+          "event_id": {"type": "string"}
+        }
+      }
+    },
+    "approvals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "approval_id": {"type": "string"},
+          "artifact_id": {"type": "string"},
+          "approver_role": {"type": "string"},
+          "status": {"enum": ["pending", "approved", "rejected", "changes_requested"]},
+          "reason": {"type": "string"},
+          "event_id": {"type": "string"}
+        }
+      }
+    },
+    "handoffs": {"type": "array", "items": {"type": "object"}},
+    "pending_approvals": {"type": "integer", "minimum": 0}
+  }
+}

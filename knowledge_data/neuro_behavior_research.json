@@ -1,0 +1,71 @@
+{
+  "version": "1.0",
+  "research": [
+    {
+      "id": "cognitive_load_sweller",
+      "title": "Cognitive load during problem solving: Effects on learning",
+      "year": 1988,
+      "doi": "https://doi.org/10.1207/s15516709cog1202_4",
+      "constructs": ["cognitive_load", "working_memory", "instructional_design"],
+      "evidence_level": "theory_and_experimental",
+      "finding": "学习任务会竞争有限的工作记忆资源，教学设计应减少无关负荷。",
+      "tender_use": "把任务拆解、示例、减少干扰和最小下一步作为产品规则。",
+      "boundary": "不能从点击或心率直接测定某个人的认知负荷。"
+    },
+    {
+      "id": "working_memory_cowan",
+      "title": "The magical number 4 in short-term memory",
+      "year": 2001,
+      "doi": "https://doi.org/10.1017/S0140525X01003922",
+      "constructs": ["working_memory", "attention", "capacity"],
+      "evidence_level": "review",
+      "finding": "工作记忆容量高度有限，注意控制与存储相互约束。",
+      "tender_use": "控制单轮信息量，把复杂任务拆成可执行步骤。",
+      "boundary": "容量估计不是个体诊断，也不支持万能记忆训练承诺。"
+    },
+    {
+      "id": "executive_functions_diamond",
+      "title": "Executive Functions",
+      "year": 2013,
+      "doi": "https://doi.org/10.1146/annurev-psych-113011-143750",
+      "constructs": ["executive_function", "inhibition", "working_memory", "cognitive_flexibility"],
+      "evidence_level": "review",
+      "finding": "执行功能包含抑制、工作记忆和认知灵活性，与学习、健康和发育密切相关。",
+      "tender_use": "用任务启动、切换、计划和复盘解释行动阻力，避免只归因于努力。",
+      "boundary": "执行功能不是单一分数，不能由行为日志直接诊断。"
+    },
+    {
+      "id": "retrieval_practice",
+      "title": "Test-enhanced learning: Taking memory tests improves long-term retention",
+      "year": 2006,
+      "doi": "https://doi.org/10.1111/j.1467-9280.2006.01693.x",
+      "constructs": ["retrieval_practice", "memory", "testing_effect"],
+      "evidence_level": "experimental",
+      "finding": "主动提取比单纯重复阅读更能促进长期保持。",
+      "tender_use": "把复述、自测和间隔复习作为行动模板。",
+      "boundary": "检索练习不能替代理解、反馈和迁移任务。"
+    },
+    {
+      "id": "spacing_effect",
+      "title": "Distributed practice in verbal recall tasks",
+      "year": 2006,
+      "doi": "https://doi.org/10.1037/0033-2909.132.3.354",
+      "constructs": ["spacing", "memory", "retention"],
+      "evidence_level": "meta_analysis",
+      "finding": "分散练习通常比集中练习更有利于长期保持。",
+      "tender_use": "根据遗忘风险和真实结果安排复习间隔。",
+      "boundary": "最佳间隔随材料、目标和时间尺度变化，不能使用固定万能公式。"
+    },
+    {
+      "id": "feedback_prediction_error",
+      "title": "Signed reward prediction errors drive declarative learning",
+      "year": 2018,
+      "doi": "https://doi.org/10.1371/journal.pone.0189212",
+      "constructs": ["feedback", "prediction_error", "learning"],
+      "evidence_level": "experimental",
+      "finding": "结果偏离预期时，反馈可以驱动陈述性学习调整。",
+      "tender_use": "记录预测、行动和结果差异，用反馈更新下一次建议。",
+      "boundary": "教育反馈不只是奖赏，不能把多巴胺或预测误差当作单一解释。"
+    }
+  ]
+}

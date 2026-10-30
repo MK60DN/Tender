@@ -1,0 +1,81 @@
+{
+  "student": {
+    "operational_features": [
+      "opportunity",
+      "prior_user_correct",
+      "prior_skill_correct"
+    ],
+    "pre_answer_prediction": 0.5289,
+    "research_benchmark_features": [
+      "attempt_count",
+      "hint_count",
+      "hint_total",
+      "ms_first_response",
+      "opportunity",
+      "prior_user_correct",
+      "prior_skill_correct"
+    ],
+    "posthoc_benchmark_prediction": 0.2718
+  },
+  "teacher": {
+    "text": "What strategy did you use, and can you explain why your answer works?",
+    "top_labels": [
+      {
+        "label": "has_a_question",
+        "probability": 0.9892
+      },
+      {
+        "label": "checks_for_understanding_or_agreement",
+        "probability": 0.8725
+      },
+      {
+        "label": "has_a_directive_or_instruction",
+        "probability": 0.7609
+      }
+    ]
+  },
+  "sales": {
+    "operational_input": {
+      "Lead Origin": "Landing Page Submission",
+      "Lead Source": "Google",
+      "What is your current occupation": "Working Professional"
+    },
+    "pre_contact_prediction": 0.9325,
+    "research_benchmark_input": {
+      "Lead Origin": "Landing Page Submission",
+      "Lead Source": "Google",
+      "Last Activity": "SMS Sent",
+      "Tags": "Interested in other courses",
+      "What is your current occupation": "Working Professional"
+    },
+    "posthoc_benchmark_prediction": 0.2757
+  },
+  "parent": {
+    "input": {
+      "Medu": 3,
+      "Fedu": 3,
+      "Pstatus": "T",
+      "famsup": "yes",
+      "paid": "no",
+      "schoolsup": "no",
+      "studytime": 2,
+      "famrel": 4,
+      "internet": "yes",
+      "address": "U",
+      "subject": "math"
+    },
+    "high_absence_risk_proxy": 0.628
+  },
+  "institution": {
+    "input": {
+      "week": 0.0,
+      "weekly_clicks": 72.0,
+      "activity_count": 21.0,
+      "cumulative_clicks": 72.0,
+      "click_diff": 0.0,
+      "code_module": 0.0,
+      "code_presentation": 0.0
+    },
+    "weekly_attrition_risk_proxy": 0.3264
+  }
+}

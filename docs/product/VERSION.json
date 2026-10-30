@@ -1,0 +1,722 @@
+{
+  "product": "Tender",
+  "manual_version": "6.20",
+  "date": "2026-10-31",
+  "product_type": "B端完整系统 / B端嵌入式模块 / C端生活界面共享核心的多 Agent 心智化系统",
+  "default_surfaces": [
+    "learner",
+    "family",
+    "preassessment"
+  ],
+  "professional_advisors": 8,
+  "architecture": [
+    "DAOQL",
+    "Tender",
+    "RoleMind",
+    "MoA",
+    "AgentSpec",
+    "Fixed Agents",
+    "Expert Agent Marketplace",
+    "Learning Passport",
+    "Governance Phase Controller",
+    "Neuro-learning Evidence Layer",
+    "Research Claim Boundary",
+    "Preassessment Profile",
+    "Big Five",
+    "MBTI Communication Preference",
+    "Jungian Function Screen",
+    "Objective DAOQL layer",
+    "Subjective life-tree experience layer",
+    "metameta_cartographer"
+  ],
+  "status": "V6.20 defines one shared Tender Core with three delivery surfaces: full B2B system, embedded B2B module and C-end life interface; 93 tests pass",
+  "source": "Tender-产品手册-V6.20.md",
+  "pdf": "Tender-产品手册-V6.20.pdf",
+  "user_guide": {
+    "source": "Tender-用户手册-V6.8.md",
+    "pdf": "Tender-用户手册-V6.8.pdf",
+    "pages": 23,
+    "pdf_bytes": 385287,
+    "sha256": "cd51163fe6feac8bf845b3b6937c2bab07fe2f69077edbd4d9a908eedbf572a4",
+    "validation": "V6.8 rebuilt with B2B/C-end entry explanation and teaching-site navigation; zero replacement characters"
+  },
+  "pdf_render": {
+    "pages": 58,
+    "validation": "V6.20 rebuilt with B2B full-system, B2B embedded and C-end delivery model; zero replacement characters"
+  },
+  "implemented": true,
+  "positioning": "Tender：温柔地了解您的心智。B端可提供完整教育系统或嵌入合作方系统，C端以自有界面融入用户生活。",
+  "fixed_agents": 5,
+  "agent_marketplace": "implemented_mvp",
+  "mentalization_timeline": "implemented",
+  "agent_inventory": {
+    "runtime_yaml_agents": 16,
+    "fixed_consumer_agents": 5,
+    "workbench_agents": 6,
+    "moa_advisors": 9,
+    "market_expert_agents": "dynamic"
+  },
+  "agent_catalog_source": "D:/Tender/agent_layer/AGENT_INVENTORY.md",
+  "agent_catalog_endpoint": "GET /agents/catalog",
+  "agent_runtime": {
+    "framework": "tender-agent-runtime",
+    "default_backend": "agent-runtime",
+    "workflow_execution": "gated",
+    "status_endpoint": "GET /agent-runtime/status"
+  },
+  "sha256": "9b214077f4dc576b27bccaa8798dcdf4634edf38b8634d8d1b7004d1c934c6f6",
+  "tests": 93,
+  "identity": {
+    "development": "signed HMAC bearer session",
+    "session_revocation": "implemented",
+    "object_authorization": "implemented",
+    "guardian_consent": "request/verify/revoke implemented",
+    "audit": "serialized hash chain with verify endpoint",
+    "safety_queue": "open/reviewing/escalated/closed implemented",
+    "production": "OIDC/RBAC pending"
+  },
+  "benchmark": {
+    "dataset": "ASSISTments 2009",
+    "status": "tender_not_superior",
+    "bkt": {
+      "auc": 0.6794,
+      "log_loss": 0.591,
+      "calibration": "better"
+    },
+    "tender_global": {
+      "auc": 0.6853,
+      "log_loss": 0.6164,
+      "note": "close_to_bkt_weaker_calibration"
+    },
+    "tender_default": {
+      "auc": 0.6895,
+      "log_loss": 1.1155,
+      "recommended_default": false
+    },
+    "logistic": {
+      "auc": 0.7058,
+      "log_loss": 0.5752,
+      "headline_control": true
+    },
+    "pending": [
+      "confidence_interval",
+      "repeated_splits",
+      "significance_test",
+      "calibration_ece_brier",
+      "auprc",
+      "dkt_sakt_comparison",
+      "cross_period_intervention_effect"
+    ]
+  },
+  "decision_loop": "implemented",
+  "manual_title": "Tender 产品手册 V6.20",
+  "builder": "build_v67_reports.py",
+  "pdf_bytes": 662307,
+  "narrative_order": [
+    "opportunity",
+    "user_segmentation",
+    "JTBD",
+    "product_hypotheses",
+    "goals_and_non_goals",
+    "solution_tradeoffs",
+    "MVP_scope",
+    "user_journey",
+    "information_architecture",
+    "user_stories_and_acceptance",
+    "functional_multi_agent",
+    "data_contracts",
+    "interaction_spec",
+    "architecture",
+    "metrics_and_experiments",
+    "rollout",
+    "risks",
+    "acceptance_checklist",
+    "decision_log"
+  ],
+  "build_reproducibility": "ReportLab invariant mode enabled; repeated generation produces identical SHA256",
+  "research_supplement": {
+    "source": "Tender-认知机制学术补编-V1.2.md",
+    "pdf": "Tender-认知机制学术补编-V1.2.pdf",
+    "pages": 24,
+    "pdf_bytes": 434562,
+    "sha256": "e270838115938ecfb4278205086f41cef5f627e42b2307ea8409d08e2a4ffe38",
+    "validation": "V1.2 PDF generated successfully; multi-agent load and redundancy model included",
+    "status": "academic supplement, not a validated unified theory"
+  },
+  "cognitive_constructs": {
+    "model_version": "cognitive-constructs-1.0",
+    "catalog_endpoint": "GET /cognition/constructs",
+    "assessment_endpoint": "POST /cognition/assessments/{student_id}",
+    "timeline_endpoint": "GET /cognition/assessments/{student_id}",
+    "thresholds": {
+      "bloom": 0.65,
+      "result": 0.35,
+      "forest": 0.6
+    },
+    "status": "research operationalization; default weights require calibration"
+  },
+  "experiment_report": {
+    "source": "../experiments/cognitive_constructs_bench/REPORT.md",
+    "pdf": "Tender-认知构念实验报告-V1.0.pdf",
+    "pages": 12,
+    "pdf_bytes": 219355,
+    "sha256": "caea0e544cc6bd928c1eda64e12d21f860ecbf25465899900015b0ab0066c500",
+    "datasets": [
+      "EdNet 5000",
+      "ASSISTments 2009",
+      "synthetic construct-validity simulation"
+    ],
+    "status": "observational association and methodological validation only; no human causal claim"
+  },
+  "api_version": "6.14.0",
+  "latex_manual": {
+    "source": "../教学手册/Tender零基础全流程教学手册-完整版.tex",
+    "pdf": "../教学手册/Tender零基础全流程教学手册-完整版.pdf",
+    "version": "5.1",
+    "appendix": "中心主旨、生命树叙事、V6.6 环境型 Agent 与真桌面弹幕",
+    "pages": 180,
+    "pdf_bytes": 920745,
+    "sha256": "13a7745850b38f14479b06f4d3bb016aae8581351db50d8643addd4172acb9bd",
+    "engine": "Tectonic 0.17.0 / XeTeX + xdvipdfmx",
+    "status": "compiled successfully with Tectonic; DAOQL objective layer and life-tree subjective experience layer documented; Chinese extraction verified",
+    "date": "2026-10-30"
+  },
+  "ambient_mode": {
+    "status": "implemented_desktop_overlay",
+    "entry": "独立 Windows 桌面悬浮层",
+    "planner": "app/ambient.py",
+    "functional_agents_source": "app/functional_agents.py",
+    "cooldown_seconds": 180,
+    "daily_limit": 8,
+    "feedback": [
+      "useful",
+      "wrong",
+      "silence",
+      "dismiss"
+    ],
+    "monitoring": "local normalized application category, short task hint, idle time, window switches and activity intensity; raw titles are not uploaded; no screenshots, clipboard, camera or microphone",
+    "desktop_overlay": {
+      "file": "../agent_layer/desktop_overlay/tender_overlay.py",
+      "topmost": true,
+      "click_through": true,
+      "no_focus": true,
+      "background": "light grey semi-transparent",
+      "text_color": "black",
+      "max_concurrent": 2,
+      "queue": "other agents wait and appear in sequence"
+    },
+    "functional_agents": [
+      "learning_strategist",
+      "subject_expert",
+      "neuro_cognition",
+      "psychologist",
+      "nutritionist",
+      "career_advisor",
+      "safety_officer",
+      "metacognition_coach"
+    ],
+    "endpoints": [
+      "POST /ambient/plan/{student_id}",
+      "POST /ambient/feedback/{student_id}",
+      "POST /ambient/reply/{student_id}",
+      "GET /ambient/personas",
+      "GET /ambient/persona/{student_id}",
+      "POST /ambient/persona/{student_id}",
+      "GET /ambient/ensemble/{student_id}",
+      "POST /ambient/ensemble/{student_id}",
+      "GET /ambient/status/{student_id}"
+    ],
+    "scenarios": [
+      "gaokao_registration",
+      "score_improvement"
+    ],
+    "triage_agent": "app/triage_agent.py",
+    "routing_policy": "user message and behavior signals → triage problem type, confidence, risk and agent_ids → only routed specialists produce messages",
+    "llm_dialogue": "app/llm_dialogue.py",
+    "conversation_style": "Triage Agent routes specialists, then routed specialists generate 3-6 natural turns with recent history; template fallback only on model failure",
+    "ui": "desktop danmaku + bottom input bar + temporary conversation drawer"
+  },
+  "ambient_product_baseline": "Tender-环境型Agent设计基线-V1.1.md",
+  "mechanism_design": {
+    "module": "../agent_layer/app/mechanism_design.py",
+    "white_paper": "../产品管理文档/Tender-博弈论与机制设计-V1.2.pdf",
+    "source": "../产品管理文档/Tender-博弈论与机制设计-V1.2.md",
+    "version": "1.2",
+    "pages": 26,
+    "pdf_bytes": 443529,
+    "sha256": "00d3dc5cc4881f12cbc217ebc92ca544c5e7ea0db2a4a406b65b4ea463b45127",
+    "status": "BFT evidence diagnostics are phase-gated; current deployment remains off-chain; production consensus, key custody and public governance remain conditional",
+    "tests": 88
+  },
+  "governance_phases": {
+    "module": "../agent_layer/app/governance_phases.py",
+    "endpoint": "GET /governance/policy",
+    "current_phase": "expert_council",
+    "chain_mode": "off_chain",
+    "bft_consensus_enabled": false,
+    "external_anchor_enabled": false,
+    "phase_order": [
+      "expert_council",
+      "federated_bft",
+      "public_autonomy"
+    ],
+    "transition_policy": "no phase skipping; federated BFT requires Tanka and alliance readiness; public autonomy requires stable federation and rights protections",
+    "tests": 46
+  },
+  "neuro_learning_evidence": {
+    "module": "../agent_layer/app/neuro_learning_evidence.py",
+    "catalogs": [
+      "../knowledge_data/neuro_behavior_datasets.json",
+      "../knowledge_data/neuro_brain_datasets.json",
+      "../knowledge_data/neuro_behavior_research.json",
+      "../knowledge_data/neuro_education_research.json",
+      "../knowledge_data/neuro_learning_claim_boundaries.json"
+    ],
+    "report": "../产品管理文档/Tender-神经学习证据与数据源-V1.0.pdf",
+    "report_source": "../产品管理文档/Tender-神经学习证据与数据源-V1.0.md",
+    "report_pages": 18,
+    "report_bytes": 328507,
+    "report_sha256": "1bcf7107fb10a7b816341861b7049f84330a964176529ddc814e5831ec3b6440",
+    "behavioral_datasets": 5,
+    "brain_datasets": 8,
+    "research_records": 12,
+    "runtime_neuro_inference_allowed": false,
+    "endpoints": [
+      "GET /research/neuro-learning/catalog",
+      "GET /research/neuro-learning/datasets",
+      "GET /research/neuro-learning/research",
+      "GET /research/neuro-learning/claim/{claim_type}"
+    ],
+    "tests": 88
+  },
+  "preassessment": {
+    "module": "../agent_layer/app/preassessment.py",
+    "ui": "/ui/preassessment.html",
+    "endpoints": [
+      "GET /preassessment/items",
+      "POST /preassessment/submit/{learner_id}",
+      "GET /preassessment/profile/{learner_id}"
+    ],
+    "item_files": [
+      "../knowledge_data/preassessment_big_five_items.json",
+      "../knowledge_data/preassessment_mbti_items.json",
+      "../knowledge_data/preassessment_jungian_items.json"
+    ],
+    "big_five_items": 20,
+    "mbti_items": 8,
+    "jungian_items": 8,
+    "estimated_minutes": "5-7",
+    "explicit_consent_required": true,
+    "raw_responses_stored": false,
+    "diagnosis": false,
+    "user_review_required": true,
+    "report": "../产品管理文档/Tender-首次预检测-V1.1.pdf",
+    "report_source": "../产品管理文档/Tender-首次预检测-V1.1.md",
+    "report_pages": 19,
+    "report_bytes": 307880,
+    "report_sha256": "14e07ec122fb99f462e655b110a2dd4b732ce374b035082f3eef241c55369a12",
+    "tests": 88,
+    "attention_profile": true,
+    "cognitive_correction_plan": true,
+    "correction_card_fields": [
+      "pattern_hypothesis",
+      "trigger",
+      "correction_practice",
+      "success_evidence",
+      "fade_rule",
+      "boundary"
+    ]
+  },
+  "tender_context": {
+    "module": "../agent_layer/app/tender_context.py",
+    "version": "tender-context-1.4",
+    "endpoint": "GET /tender/context/{student_id}",
+    "sources": [
+      "preassessment profile",
+      "attention cost profile",
+      "cognitive correction plan",
+      "Tender state model",
+      "mentalization hypotheses",
+      "recent DAOQL events",
+      "recent dialogue"
+    ],
+    "state_review_problem_type": "state_review",
+    "bounded_events": 12,
+    "max_hypotheses": 3,
+    "context_digest_recorded": true,
+    "llm_end_to_end_verified": true,
+    "tests": 88,
+    "knowledge_context": true,
+    "major_career_context": true,
+    "longitudinal_state_fields": [
+      "baseline",
+      "rhythm",
+      "metacognition_profile",
+      "group",
+      "observer_metameta"
+    ]
+  },
+  "simulation_validation": {
+    "report": "../产品管理文档/Tender-模拟用户Agent连续测试报告-V2.0.pdf",
+    "source": "../产品管理文档/Tender-模拟用户Agent连续测试报告-V2.0.md",
+    "data": "../产品管理文档/Tender-模拟用户Agent测试结果-V2.0.json",
+    "pages": 18,
+    "bytes": 323022,
+    "sha256": "e5f1dcb2d0e27ddfc16cb58d55fd1cb8ea45512ecd3eaaf5c547f5dca24a2837",
+    "synthetic": true,
+    "run_id": "sim2-fb60b4",
+    "personas": 7,
+    "turns": 21,
+    "llm_used_turns": 21,
+    "context_turns": 21,
+    "knowledge_turns": 16,
+    "preassessment_turns": 21,
+    "avg_reply_chars": 281.6,
+    "fallback_agent_count": 0,
+    "agent_prefix_turns": 3,
+    "triage_counts": {
+      "state_review": 7,
+      "anxiety_emotion": 7,
+      "fatigue_health": 1,
+      "unclear": 3,
+      "knowledge_gap": 1,
+      "planning": 2
+    },
+    "previous_v1": {
+      "report": "../产品管理文档/Tender-模拟用户Agent连续测试报告-V1.0.pdf",
+      "source": "../产品管理文档/Tender-模拟用户Agent连续测试报告-V1.0.md",
+      "pages": 11,
+      "bytes": 267452,
+      "sha256": "3dab738664420c58bcc90890bae97b898a93b3a54736c89a1628dde5680189e5",
+      "synthetic": true,
+      "run_id": "sim-337ca5",
+      "personas": 3,
+      "turns": 9,
+      "llm_used_turns": 9,
+      "context_turns": 9,
+      "triage_counts": {
+        "state_review": 4,
+        "anxiety_emotion": 4,
+        "fatigue_health": 1
+      },
+      "limitations": [
+        "synthetic personas only",
+        "does not establish real-user efficacy",
+        "one fallback template and one agent-prefix formatting issue were observed"
+      ]
+    }
+  },
+  "knowledge_context": {
+    "module": "../agent_layer/app/knowledge_context.py",
+    "databases": [
+      "../knowledge_data/db_k12.sqlite",
+      "../knowledge_data/subject_databases/db_subject_index.sqlite"
+    ],
+    "subjects": 13,
+    "knowledge_nodes": 1075,
+    "knowledge_edges": 1787,
+    "question_modes": 447,
+    "competency_links": 3775,
+    "match_methods": [
+      "topic_match",
+      "subject_fallback",
+      "major_match",
+      "riasec_fallback"
+    ],
+    "endpoint": "GET /tender/context/{student_id}?message=...",
+    "live_validation": "函数题命中 数学 → 函数 → 函数概念与性质 → 函数概念，并生成列表—描点—连线练习",
+    "tests": 88,
+    "university_majors": 875,
+    "major_classes": 93,
+    "major_courses": 319,
+    "career_occupations": 1016,
+    "riasec_dimensions": 6
+  },
+  "simulation_validation_v2": {
+    "report": "../产品管理文档/Tender-模拟用户Agent连续测试报告-V2.0.pdf",
+    "source": "../产品管理文档/Tender-模拟用户Agent连续测试报告-V2.0.md",
+    "data": "../产品管理文档/Tender-模拟用户Agent测试结果-V2.0.json",
+    "pages": 18,
+    "bytes": 323022,
+    "sha256": "e5f1dcb2d0e27ddfc16cb58d55fd1cb8ea45512ecd3eaaf5c547f5dca24a2837",
+    "synthetic": true,
+    "run_id": "sim2-fb60b4",
+    "personas": 7,
+    "turns": 21,
+    "llm_used_turns": 21,
+    "context_turns": 21,
+    "knowledge_turns": 16,
+    "preassessment_turns": 21,
+    "avg_reply_chars": 281.6,
+    "fallback_agent_count": 0,
+    "agent_prefix_turns": 3,
+    "triage_counts": {
+      "state_review": 7,
+      "anxiety_emotion": 7,
+      "fatigue_health": 1,
+      "unclear": 3,
+      "knowledge_gap": 1,
+      "planning": 2
+    },
+    "previous_v1": {
+      "report": "../产品管理文档/Tender-模拟用户Agent连续测试报告-V1.0.pdf",
+      "source": "../产品管理文档/Tender-模拟用户Agent连续测试报告-V1.0.md",
+      "pages": 11,
+      "bytes": 267452,
+      "sha256": "3dab738664420c58bcc90890bae97b898a93b3a54736c89a1628dde5680189e5",
+      "synthetic": true,
+      "run_id": "sim-337ca5",
+      "personas": 3,
+      "turns": 9,
+      "llm_used_turns": 9,
+      "context_turns": 9,
+      "triage_counts": {
+        "state_review": 4,
+        "anxiety_emotion": 4,
+        "fatigue_health": 1
+      },
+      "limitations": [
+        "synthetic personas only",
+        "does not establish real-user efficacy",
+        "one fallback template and one agent-prefix formatting issue were observed"
+      ]
+    }
+  },
+  "feature_coverage_validation": {
+    "report": "../产品管理文档/Tender-全功能验证报告-V1.0.pdf",
+    "source": "../产品管理文档/Tender-全功能验证报告-V1.0.md",
+    "data": "../产品管理文档/Tender-全功能验证结果-V1.0.json",
+    "pages": 7,
+    "bytes": 177898,
+    "sha256": "a46a0b0f41194188d5c1ff3743f6a550916f93a35287dcd7cedc677463788b6f",
+    "run_id": "feature-18f9bc",
+    "synthetic": true,
+    "cases": 2,
+    "covered": [
+      "preassessment",
+      "attention",
+      "DAOQL events",
+      "mastery",
+      "metacognition",
+      "JOL",
+      "hesitation",
+      "baseline",
+      "rhythm",
+      "group",
+      "metameta",
+      "K12 knowledge",
+      "major/course",
+      "career RIASEC",
+      "triage",
+      "LLM answer"
+    ],
+    "stable_rhythm": {
+      "R24": 0.637071597927651,
+      "B": 0.19462894799369862,
+      "metameta_r": 0.9281
+    },
+    "drift_rhythm": {
+      "R24": 0.18021420679753716,
+      "B": 0.7665282793632673,
+      "metameta_r": -0.6152
+    }
+  },
+  "longitudinal_validation": {
+    "report": "../产品管理文档/Tender-长期多阶段多角色连续测试报告-V4.0.pdf",
+    "source": "../产品管理文档/Tender-长期多阶段多角色连续测试报告-V4.0.md",
+    "data": "../产品管理文档/Tender-长期多阶段多角色连续测试结果-V4.0.json",
+    "pages": 36,
+    "bytes": 511636,
+    "sha256": "d6872f827c9025e90f14703520e0aebe405068c63dda5e99353b569b1372c94b",
+    "synthetic": true,
+    "run_id": "long4-4d8799",
+    "learners": 8,
+    "turns": 64,
+    "weeks": 12,
+    "roles": [
+      "parent",
+      "teacher",
+      "head_teacher",
+      "sales",
+      "institution",
+      "health_advisor",
+      "psychology_advisor",
+      "learning_science_advisor"
+    ],
+    "role_scenarios": 16,
+    "graph_nodes_per_learner": 122,
+    "graph_edges_per_learner": 39,
+    "llm_used_turns": 64,
+    "context_turns": 64,
+    "knowledge_turns": 40,
+    "preassessment_turns": 64,
+    "final_baseline_available": 8,
+    "final_rhythm_available": 8,
+    "final_metameta_available": 8,
+    "valid_reply_turns": 64,
+    "agent_prefix_turns": 0,
+    "fallback_agent_count": 6,
+    "triage_counts": {
+      "state_review": 41,
+      "unclear": 7,
+      "anxiety_emotion": 8,
+      "planning": 4,
+      "fatigue_health": 1,
+      "career_path": 2,
+      "attention_focus": 1
+    },
+    "feature_evolution": [
+      "baseline_available",
+      "rhythm_available",
+      "group_clustering",
+      "metameta_r",
+      "knowledge_node"
+    ],
+    "boundary": "Synthetic event graph and role probes; not a real-user efficacy study or statistical causal proof."
+  },
+  "central_thesis": {
+    "title": "让 AI 成为森林的气候，让人成为生命树的作者",
+    "core": "生命不是被某个框架评价出来的形状，而是在有限时间里，通过选择、关系、承担和创造长出来的年轮。",
+    "source": "Tender-中心主旨.md",
+    "manuals": [
+      "Tender-产品手册-V6.20.md",
+      "Tender-用户手册-V6.8.md",
+      "../教学手册/Tender零基础全流程教学手册-完整版-V5.3.tex"
+    ],
+    "role": "narrative and modeling grammar; not a clinical, diagnostic or efficacy claim"
+  },
+  "metameta_cartographer": {
+    "agent_id": "metameta_cartographer",
+    "version": "fishbowl-experience-1.0",
+    "objective_layer": "DAOQL events remain immutable facts with source, time and provenance",
+    "subjective_layer": "derived subjective_experience_node and subjective_experience_summary records",
+    "regions": [
+      "central_retrieval",
+      "hippocampus_index",
+      "long_term_memory",
+      "working_memory",
+      "visual_cortex",
+      "auditory_cortex",
+      "language_encoding",
+      "language_expression",
+      "introspection_feedback",
+      "limbic_emotion",
+      "metabolic_governance"
+    ],
+    "max_labels": 6,
+    "event_types": [
+      "subjective_experience_node",
+      "subjective_experience_summary"
+    ],
+    "relations": [
+      "experienced_as",
+      "yields_subjective_experience",
+      "contains_experience_node"
+    ],
+    "endpoints": [
+      "POST /metameta/decompose/{student_id}",
+      "GET /metameta/map/{student_id}"
+    ],
+    "context_version": "tender-context-1.4",
+    "tests": 88,
+    "boundary": "The cognitive-map regions are interpretive retrieval labels, not brain scans, clinical diagnoses or objective facts."
+  },
+  "project_whitepaper": {
+    "source": "../产品管理文档/Tender-项目白皮书-V1.6.tex",
+    "pdf": "../产品管理文档/Tender-项目白皮书-V1.6.pdf",
+    "word": "../产品管理文档/Tender-项目白皮书-V1.6.docx",
+    "version": "1.6",
+    "pages": 40,
+    "pdf_bytes": 421465,
+    "pdf_sha256": "a854f9d255b2a7ca6e9600208e1d418e40fba621e5935c2e79de472d5af3438f",
+    "word_bytes": 1170425,
+    "word_sha256": "15c2696dbdfb24969075b2cf07e6031b32d8e6b6071fa726dd6278d0cb0ada89",
+    "figures": 14,
+    "tables_in_word": 22,
+    "citations": 11,
+    "focus": "one shared core with full B2B system, embedded B2B module and C-end owned interface; dual-loop theory; language evidence; knowledge forest; life-tree growth-flowering-outcomes",
+    "validation": "40 pages; zero replacement characters; 14 figures and 22 editable tables; B2B/C-end delivery model verified"
+  },
+  "knowledge_forest": {
+    "version": "knowledge-forest-1.0",
+    "endpoint": "GET /knowledge/forest",
+    "page": "GET /ui/knowledge.html",
+    "source_module": "agent_layer/app/knowledge_forest.py",
+    "totals": {
+      "k12_subjects": 13,
+      "k12_nodes": 1075,
+      "k12_edges": 1787,
+      "question_modes": 447,
+      "discipline_categories": 13,
+      "major_classes": 93,
+      "majors": 875,
+      "graduate_disciplines": 181,
+      "courses": 319,
+      "course_edges": 293,
+      "course_seed_majors": 26,
+      "occupations": 1016,
+      "crosswalk_links": 44
+    },
+    "layers": [
+      "subjects",
+      "disciplines",
+      "courses",
+      "careers",
+      "links"
+    ],
+    "coverage_gap": "849 majors do not yet have course-level seeds",
+    "boundary": "The forest visualizes database coverage and heuristic crosswalks; it is not an ability, interest, admission or career diagnosis."
+  },
+  "language_evidence_layer": {
+    "version": "tender-language-signals-1.0",
+    "module": "agent_layer/app/language_signals.py",
+    "api": [
+      "POST /language/analyze",
+      "GET /language/schema"
+    ],
+    "page": "/ui/language.html",
+    "signal_types": [
+      "explicit_affect",
+      "uncertainty",
+      "avoidance",
+      "self_efficacy_threat",
+      "mentalizing",
+      "calibration",
+      "help_seeking",
+      "task_focus",
+      "causal_attribution",
+      "safety_risk"
+    ],
+    "evidence_spans": true,
+    "alternative_explanations": true,
+    "high_risk_routing": true,
+    "language_cannot_update_mastery": true,
+    "boundary": "Language evidence is weak evidence and cannot determine mastery, personality, diagnosis or factual truth by itself."
+  },
+  "teaching_manual": {
+    "source": "../教学手册/Tender零基础全流程教学手册-完整版-V5.3.tex",
+    "pdf": "../教学手册/Tender零基础全流程教学手册-完整版-V5.3.pdf",
+    "version": "5.3",
+    "pages": 182,
+    "pdf_bytes": 929709,
+    "sha256": "477921abb942e4c59168665b546bd0bce1d287d00d7367b392b41675ddcda448",
+    "validation": "V5.3 includes B2B/C-end delivery model, teaching site, architecture navigation and 93-test baseline; zero replacement characters"
+  },
+  "teaching_site": {
+    "version": "2.1",
+    "entry": "GET /guide/",
+    "modules": 9,
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "formulas": false,
+    "architecture": "world -> DAOQL -> limited observation -> Agent Bridge -> life-tree canopy; flowering/outcomes/knowledge forest/support Agents",
+    "documents": [
+      "Whitepaper V1.6",
+      "Product Manual V6.20",
+      "User Guide V6.8",
+      "Teaching Manual V5.3"
+    ]
+  }
+}

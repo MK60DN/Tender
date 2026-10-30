@@ -1,0 +1,9 @@
+id: fixed_safety_guardian
+role: 后台监测高风险信号并转人工支持
+tools: [policy_engine, moderation, escalation]
+policy:
+  always_on: true
+  block_on_violation: true
+  human_escalation: true
+input: [message, context]
+output: [allowed, risk_level, escalate_to_human, reason]

@@ -1,0 +1,161 @@
+{
+  "student": {
+    "dataset": "ASSISTments 2009",
+    "rows": 273364,
+    "users": 4128,
+    "skills": 81,
+    "features": [
+      "attempt_count",
+      "hint_count",
+      "hint_total",
+      "ms_first_response",
+      "opportunity",
+      "prior_user_correct",
+      "prior_skill_correct"
+    ],
+    "auc": 0.972,
+    "ap": 0.9795,
+    "logloss": 0.189,
+    "brier": 0.0544,
+    "train_users": 3302,
+    "test_users": 826
+  },
+  "teacher": {
+    "dataset": "TalkMoves annotated teacher utterances",
+    "rows": 6434,
+    "files": 10,
+    "labels": [
+      "has_a_question",
+      "has_a_directive_or_instruction",
+      "has_explanation_or_reasoning",
+      "checks_for_understanding_or_agreement",
+      "evaluates_a_student_response",
+      "manages_classroom_behavior_or_attention",
+      "has_praise_or_encouragement",
+      "has_answer_to_a_math_problem",
+      "uses_collaborative_or_inclusive_language",
+      "shows_uncertainty"
+    ],
+    "micro_f1": 0.4782,
+    "macro_f1": 0.4279,
+    "per_label": {
+      "has_a_question": {
+        "auc": 0.9348,
+        "ap": 0.7632,
+        "f1": 0.7283,
+        "positives": 159
+      },
+      "has_a_directive_or_instruction": {
+        "auc": 0.9023,
+        "ap": 0.6922,
+        "f1": 0.6295,
+        "positives": 184
+      },
+      "has_explanation_or_reasoning": {
+        "auc": 0.8759,
+        "ap": 0.3964,
+        "f1": 0.3607,
+        "positives": 73
+      },
+      "checks_for_understanding_or_agreement": {
+        "auc": 0.8544,
+        "ap": 0.2955,
+        "f1": 0.4167,
+        "positives": 80
+      },
+      "evaluates_a_student_response": {
+        "auc": 0.7467,
+        "ap": 0.2765,
+        "f1": 0.2731,
+        "positives": 69
+      },
+      "manages_classroom_behavior_or_attention": {
+        "auc": 0.8634,
+        "ap": 0.4699,
+        "f1": 0.3565,
+        "positives": 70
+      },
+      "has_praise_or_encouragement": {
+        "auc": 0.8939,
+        "ap": 0.4377,
+        "f1": 0.4242,
+        "positives": 44
+      },
+      "has_answer_to_a_math_problem": {
+        "auc": 0.8777,
+        "ap": 0.1057,
+        "f1": 0.1525,
+        "positives": 18
+      },
+      "uses_collaborative_or_inclusive_language": {
+        "auc": 0.9337,
+        "ap": 0.614,
+        "f1": 0.5622,
+        "positives": 67
+      },
+      "shows_uncertainty": {
+        "auc": 0.8818,
+        "ap": 0.4222,
+        "f1": 0.375,
+        "positives": 16
+      }
+    }
+  },
+  "sales": {
+    "dataset": "X Education Lead Scoring",
+    "train_rows": 3127,
+    "test_rows": 2561,
+    "auc": 0.9817,
+    "ap": 0.9687,
+    "f1": 0.9528,
+    "top10_capture": 0.251,
+    "base_rate": 0.392
+  },
+  "parent": {
+    "dataset": "UCI Student Performance (family-context proxy)",
+    "rows": 1044,
+    "positive_rate": 0.1466,
+    "auc": 0.7091,
+    "ap": 0.2939,
+    "note": "代理模型：家庭支持变量预测高缺勤风险，不是家长人格模型"
+  },
+  "institution": {
+    "dataset": "OULAD engineered weekly activity",
+    "rows": 599548,
+    "students": 25763,
+    "features": [
+      "week",
+      "weekly_clicks",
+      "activity_count",
+      "cumulative_clicks",
+      "click_diff",
+      "code_module",
+      "code_presentation"
+    ],
+    "auc": 0.7429,
+    "ap": 0.5023,
+    "positive_rate": 0.2539,
+    "note": "机构侧代理：课程周级参与度预测学生流失风险"
+  },
+  "dorm_proxy": {
+    "status": "no_direct_dataset",
+    "note": "需自建应查/实到/请假/跑校/晚归/异常/交接事件；SSOCS/Campus Safety只能做风险先验。"
+  },
+  "head_teacher_proxy": {
+    "status": "proxy_only",
+    "note": "用OULAD课程周风险与clickstream聚合做班级健康代理，不能等同于班主任个人心智。"
+  },
+  "role_mind_schema": {
+    "fields": [
+      "role",
+      "scope",
+      "workload",
+      "clarity",
+      "uncertainty",
+      "boundary_risk",
+      "collaboration",
+      "evidence",
+      "next_action"
+    ]
+  }
+}

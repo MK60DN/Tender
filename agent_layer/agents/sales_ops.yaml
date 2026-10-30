@@ -1,0 +1,23 @@
+{
+  "id": "sales_ops",
+  "role": "线索评分、onboarding、续费信号",
+  "tools": [
+    "aggregate_data",
+    "crm",
+    "n8n"
+  ],
+  "policy": {
+    "human_approval": true,
+    "no_pii": true,
+    "aggregate_only": true
+  },
+  "input": [
+    "org_id",
+    "period"
+  ],
+  "output": [
+    "lead_score",
+    "renewal_risk",
+    "next_action"
+  ]
+}

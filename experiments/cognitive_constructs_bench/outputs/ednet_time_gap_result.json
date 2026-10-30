@@ -1,0 +1,89 @@
+{
+  "dataset": "EdNet 5000 (respond events with repeated items)",
+  "rows_after_first_item_attempt": 1247784,
+  "students": 4172,
+  "items": 11495,
+  "metrics": {
+    "base": {
+      "auc": {
+        "mean": 0.6648122835665252,
+        "sd": 0.008020208553127581
+      },
+      "logloss": {
+        "mean": 0.6471878866280204,
+        "sd": 0.008966788869257664
+      },
+      "brier": {
+        "mean": 0.2276547649784896,
+        "sd": 0.002858941869882806
+      },
+      "ece": {
+        "mean": 0.033960464202904946,
+        "sd": 0.0069682877875602706
+      }
+    },
+    "time_gap": {
+      "auc": {
+        "mean": 0.6838714089226673,
+        "sd": 0.009971949766329188
+      },
+      "logloss": {
+        "mean": 0.6345211423648638,
+        "sd": 0.009879855620109502
+      },
+      "brier": {
+        "mean": 0.22225183745300575,
+        "sd": 0.003707351217589848
+      },
+      "ece": {
+        "mean": 0.037824565931735506,
+        "sd": 0.004550564336367494
+      }
+    }
+  },
+  "difference_time_gap_minus_base": {
+    "auc": {
+      "mean": 0.019059125356141893,
+      "sd": 0.0025581147195235933
+    },
+    "logloss": {
+      "mean": -0.012666744263156641,
+      "sd": 0.001977013638285771
+    },
+    "brier": {
+      "mean": -0.0054029275254838735,
+      "sd": 0.0009398839244265551
+    },
+    "ece": {
+      "mean": 0.003864101728830558,
+      "sd": 0.004201650970842559
+    }
+  },
+  "gap_dose_response": [
+    {
+      "gap_band": "Q1 shortest",
+      "n": 311946,
+      "observed_correct": 0.3602706878754656,
+      "mean_prediction": 0.3591441306874296
+    },
+    {
+      "gap_band": "Q2",
+      "n": 311946,
+      "observed_correct": 0.4819616215627064,
+      "mean_prediction": 0.48151466419585565
+    },
+    {
+      "gap_band": "Q3",
+      "n": 311946,
+      "observed_correct": 0.5206445987446545,
+      "mean_prediction": 0.5223595954700418
+    },
+    {
+      "gap_band": "Q4 longest",
+      "n": 311946,
+      "observed_correct": 0.6884268431074609,
+      "mean_prediction": 0.6871267669199781
+    }
+  ],
+  "interpretation_guardrail": "Observational association; item repetition, selection and learner strategy are not randomized."
+}

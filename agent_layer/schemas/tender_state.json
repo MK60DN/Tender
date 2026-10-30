@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TenderState",
+  "type": "object",
+  "required": [
+    "student_id",
+    "timestamp"
+  ],
+  "properties": {
+    "student_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "cognitive": {
+      "type": "object"
+    },
+    "emotion": {
+      "type": "object"
+    },
+    "metacognition": {
+      "type": "object"
+    },
+    "knowledge": {
+      "type": "object"
+    },
+    "baseline": {
+      "type": "object"
+    },
+    "group": {
+      "type": "object"
+    }
+  }
+}

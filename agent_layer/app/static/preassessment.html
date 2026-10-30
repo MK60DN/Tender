@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tender · 5分钟预检测</title>
+  <style>
+    :root{--ink:#151719;--muted:#6d7177;--line:#d9dadd;--panel:rgba(244,244,245,.94);--accent:#1a6b57;--soft:#eceff0;--warn:#8b4f18}
+    *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#f2f3f4,#e9ebec);color:var(--ink);font:15px/1.65 "Microsoft YaHei",system-ui,sans-serif}
+    .shell{width:min(940px,calc(100% - 32px));margin:32px auto 80px}.hero{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:0 18px 55px rgba(20,24,28,.08)}
+    h1{font-size:clamp(27px,5vw,44px);line-height:1.15;margin:8px 0 14px;letter-spacing:-.04em}.eyebrow{font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:700}.lead{color:var(--muted);max-width:720px}
+    .notice{margin:20px 0;padding:15px 17px;border-left:3px solid var(--accent);background:#edf2f0;border-radius:0 12px 12px 0}.notice strong{display:block;margin-bottom:4px}
+    .meta{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.pill{padding:6px 10px;border-radius:999px;background:var(--soft);font-size:12px}
+    button{font:inherit;border:0;cursor:pointer}.primary{background:var(--ink);color:#fff;padding:12px 19px;border-radius:12px;font-weight:700}.secondary{background:#fff;color:var(--ink);border:1px solid var(--line);padding:10px 15px;border-radius:11px}.link{background:none;color:var(--muted);padding:8px 0;text-decoration:underline}
+    .consent{display:flex;gap:10px;align-items:flex-start;margin:18px 0}.consent input{margin-top:5px;width:18px;height:18px}.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:26px;margin-top:20px}.progress{height:7px;background:#dfe2e3;border-radius:99px;overflow:hidden;margin:4px 0 22px}.progress i{display:block;height:100%;background:var(--accent);width:0;transition:width .2s}
+    .qmeta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;gap:12px}.question{font-size:23px;line-height:1.5;margin:20px 0 8px;font-weight:650}.scalehint{color:var(--muted);font-size:13px}
+    .scale{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:22px 0}.scale button{padding:15px 7px;border-radius:13px;border:1px solid var(--line);background:#fff;min-height:70px;font-weight:700}.scale button small{display:block;font-size:10px;color:var(--muted);font-weight:400;margin-top:4px}.scale button.sel{background:var(--ink);color:#fff;border-color:var(--ink)}.scale button.sel small{color:#d9dadd}
+    .bipolar{display:flex;justify-content:space-between;gap:18px;color:var(--muted);font-size:12px;margin-top:8px}.bipolar b{color:var(--ink)}
+    .results{display:grid;grid-template-columns:1fr 1fr;gap:16px}.result-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px}.result-card.full{grid-column:1/-1}.bar{height:10px;background:#dfe2e3;border-radius:99px;overflow:hidden;margin:6px 0 14px}.bar i{display:block;height:100%;background:var(--accent)}
+    .kv{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px dashed var(--line)}.kv:last-child{border:0}.tag{display:inline-block;padding:4px 8px;margin:3px 4px 3px 0;background:var(--soft);border-radius:8px;font-size:12px}
+    ul{margin:8px 0 0;padding-left:21px}.tiny{font-size:12px;color:var(--muted)}.hidden{display:none!important}.error{color:#8b1e1e;border-color:#d9b8b8;background:#fbefef}.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:26px}@media(max-width:680px){.results{grid-template-columns:1fr}.scale{gap:6px}.scale button{min-height:64px;padding:10px 3px}.question{font-size:20px}.hero,.card{padding:20px}.shell{margin-top:14px}}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <section class="hero">
+    <div class="eyebrow">TENDER FIRST-RUN PROFILE</div>
+    <h1>先了解你怎样行动，<br>再决定怎样帮助。</h1>
+    <p class="lead">大五人格帮助你看见稳定的行动倾向；MBTI 只描述沟通偏好；荣格八维作为探索性的认知模式。所有结果都是待你确认的假设。</p>
+    <div class="meta"><span class="pill">约 5–7 分钟</span><span class="pill">20 大五题</span><span class="pill">8 沟通偏好题</span><span class="pill">8 八维筛查</span></div>
+    <div class="notice"><strong>不是诊断，也不是能力排名</strong>系统不会用结果给你贴“缺陷”标签，也不会阻止你使用任何功能。结果只用于调整沟通、支持方式和初始 Agent 组合，并可随时重测。</div>
+    <label class="consent"><input id="consent" type="checkbox"><span>我理解这是自我反思工具。我同意保存标准化分数，用于生成本次支持画像。逐题原文默认不保存。</span></label>
+    <div class="actions"><button class="primary" id="startBtn">开始预检测</button><a class="secondary" href="/ui/">返回 Tender</a></div>
+    <p class="footer">当前学习者：<b id="studentLabel">S01</b> · 结果属于学习者，可查看、重测和撤回</p>
+  </section>
+  <section id="quizCard" class="card hidden">
+    <div class="qmeta"><span id="sectionLabel">大五人格</span><span id="progressText">1 / 36</span></div>
+    <div class="progress"><i id="progressBar"></i></div>
+    <div id="questionText" class="question"></div>
+    <div id="scaleHint" class="scalehint"></div>
+    <div id="bipolar" class="bipolar hidden"><span id="lowLabel"></span><span id="highLabel"></span></div>
+    <div id="scale" class="scale"></div>
+    <div class="actions" style="margin-top:18px"><button class="secondary" id="backBtn">上一题</button><button class="link" id="skipOptionalBtn">跳过可选部分</button></div>
+  </section>
+  <section id="resultArea" class="hidden">
+    <div class="card"><div class="eyebrow">YOUR FIRST-RUN PROFILE</div><h2>你的初始支持画像</h2><p class="tiny" id="resultNotice"></p></div>
+    <div class="results" id="resultGrid"></div>
+    <div class="card"><div class="actions"><button class="primary" id="retakeBtn">重新测试</button><a class="secondary" href="/ui/">返回 Tender</a></div></div>
+  </section>
+  <section id="errorCard" class="card error hidden"></section>
+</div>
+<script>
+const $ = (id) => document.getElementById(id);
+const studentId = localStorage.getItem("tender.student") || "S01";
+let catalog = null;
+let questions = [];
+let index = 0;
+let responses = {};
+let token = null;
+
+function esc(value) {
+  return String(value == null ? "" : value).replace(/[&<>"']/g, (ch) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+}
+
+function showError(message) {
+  const el = $("errorCard");
+  el.textContent = message;
+  el.classList.remove("hidden");
+}
+
+async function ensureSession() {
+  if (token) return token;
+  const response = await fetch("/auth/demo-session", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({actor_id: studentId, role: "learner", learner_id: studentId})
+  });
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.detail || "无法建立学习者会话");
+  token = data.token;
+  return token;
+}
+
+function buildQuestions() {
+  questions = [];
+  catalog.big_five.items.forEach((item) => questions.push({...item, section: "big_five", optional: false}));
+  catalog.mbti.items.forEach((item) => questions.push({...item, section: "mbti", optional: true}));
+  catalog.jungian.items.forEach((item) => questions.push({...item, section: "jungian", optional: true}));
+}
+
+function sectionName(section) {
+  if (section === "big_five") return "大五人格 · 核心";
+  if (section === "mbti") return "MBTI · 沟通偏好";
+  return "荣格八维 · 探索性筛查";
+}
+
+function currentQuestion() {
+  return questions[index];
+}
+
+function scaleLabels(question) {
+  if (question.section === "big_five") return catalog.big_five.scale.labels;
+  if (question.section === "mbti") return catalog.mbti.scale.labels;
+  return catalog.jungian.scale.labels;
+}
+
+function renderQuestion() {
+  const q = currentQuestion();
+  if (!q) return submit();
+  $("sectionLabel").textContent = sectionName(q.section);
+  $("progressText").textContent = (index + 1) + " / " + questions.length;
+  $("progressBar").style.width = ((index / questions.length) * 100) + "%";
+  $("questionText").textContent = q.text;
+  $("scaleHint").textContent = q.section === "mbti" ? "选择更接近的一端；中间表示两种都能适应。" : "根据最近三个月的真实情况选择，不需要选择理想中的自己。";
+  const bipolar = $("bipolar");
+  if (q.section === "mbti") {
+    bipolar.classList.remove("hidden");
+    $("lowLabel").innerHTML = "<b>" + esc(q.low_pole) + "</b> · " + esc(q.low_label);
+    $("highLabel").innerHTML = "<b>" + esc(q.high_pole) + "</b> · " + esc(q.high_label);
+  } else {
+    bipolar.classList.add("hidden");
+  }
+  const labels = scaleLabels(q);
+  $("scale").innerHTML = "";
+  for (let value = 1; value <= 5; value += 1) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = responses[q.id] === value ? "sel" : "";
+    button.innerHTML = String(value) + "<small>" + esc(labels[value - 1]) + "</small>";
+    button.addEventListener("click", () => choose(value));
+    $("scale").appendChild(button);
+  }
+  $("backBtn").disabled = index === 0;
+  $("skipOptionalBtn").classList.toggle("hidden", index < 20);
+  saveDraft();
+}
+
+function choose(value) {
+  const q = currentQuestion();
+  responses[q.id] = value;
+  renderQuestion();
+  setTimeout(() => {
+    if (index < questions.length - 1) {
+      index += 1;
+      renderQuestion();
+    } else {
+      submit();
+    }
+  }, 180);
+}
+
+function saveDraft() {
+  try {
+    localStorage.setItem("tender.preassessment.draft", JSON.stringify({version: catalog.version, index, responses}));
+  } catch (error) {}
+}
+
+function loadDraft() {
+  try {
+    const draft = JSON.parse(localStorage.getItem("tender.preassessment.draft") || "{}");
+    if (draft.version === catalog.version) {
+      responses = draft.responses || {};
+      index = Math.min(Number(draft.index) || 0, questions.length - 1);
+    }
+  } catch (error) {}
+}
+
+function recomputeIndex() {
+  const firstMissing = questions.findIndex((q) => !responses[q.id]);
+  index = firstMissing >= 0 ? firstMissing : 0;
+}
+
+function startQuiz() {
+  if (!$("consent").checked) {
+    showError("请先确认你理解预检测的用途和数据保存方式。");
+    return;
+  }
+  $("errorCard").classList.add("hidden");
+  $("quizCard").classList.remove("hidden");
+  recomputeIndex();
+  renderQuestion();
+  $("quizCard").scrollIntoView({behavior: "smooth", block: "start"});
+}
+
+async function submit() {
+  const missing = catalog.big_five.items.filter((item) => !responses[item.id]).map((item) => item.id);
+  if (missing.length) {
+    index = catalog.big_five.items.findIndex((item) => item.id === missing[0]);
+    renderQuestion();
+    showError("大五人格是核心部分，请先完成 20 道题。");
+    return;
+  }
+  $("quizCard").classList.add("hidden");
+  try {
+    await ensureSession();
+    const response = await fetch("/preassessment/submit/" + encodeURIComponent(studentId), {
+      method: "POST",
+      headers: {"Content-Type": "application/json", "Authorization": "Bearer " + token},
+      body: JSON.stringify({responses, consent: true})
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.detail || "提交失败");
+    localStorage.removeItem("tender.preassessment.draft");
+    renderResults(data.profile);
+  } catch (error) {
+    $("quizCard").classList.remove("hidden");
+    showError(error.message || "提交失败，请稍后再试。");
+  }
+}
+
+function renderList(items) {
+  if (!items || !items.length) return '<p class="tiny">暂无显著假设；中间区间通常表示情境依赖。</p>';
+  return '<ul>' + items.map((item) => '<li>' + esc(item) + '</li>').join('') + '</ul>';
+}
+
+function renderResults(profile) {
+  $("resultArea").classList.remove("hidden");
+  $("resultNotice").textContent = profile.notice + " 置信级别：" + profile.confidence + "。";
+  const cards = [];
+  cards.push('<div class="result-card full"><h3>大五人格</h3>' + Object.entries(profile.big_five).map(([key, value]) => {
+    return '<div class="kv"><span>' + esc(value.label) + '</span><b>' + Math.round(value.score * 100) + ' / 100</b></div><div class="bar"><i style="width:' + (value.score * 100) + '%"></i></div>';
+  }).join('') + '<p class="tiny">分数是本次自评的相对位置，不是人群百分位，也不是能力分数。</p></div>');
+
+  if (profile.mbti_preference) {
+    const m = profile.mbti_preference;
+    const axisNames = {energy:"能量", information:"信息", decision:"决策", lifestyle:"生活"};
+    cards.push('<div class="result-card"><h3>MBTI 沟通偏好</h3><div class="kv"><span>偏好代码</span><b>' + esc(m.type_hint) + '</b></div>' + Object.entries(axisNames).map(([axis, name]) => '<div class="kv"><span>' + name + '</span><b>' + esc(m[axis].preference) + '</b></div>').join('') + '<p class="tiny">' + esc(m.notice) + '</p></div>');
+  }
+
+  if (profile.jungian_functions) {
+    const j = profile.jungian_functions;
+    cards.push('<div class="result-card"><h3>荣格八维探索</h3><div class="kv"><span>更常用</span><b>' + esc(j.top_functions.join(" · ") || "中间区间") + '</b></div><div class="kv"><span>较少使用</span><b>' + esc(j.less_preferred.join(" · ") || "中间区间") + '</b></div><p class="tiny">' + esc(j.notice) + '</p></div>');
+  }
+
+  if (profile.attention_profile) {
+    const a = profile.attention_profile;
+    cards.push('<div class="result-card full"><h3>注意力成本画像</h3>' +
+      '<div class="kv"><span>容易被什么吸引</span></div>' + renderList(a.capture_hypotheses) +
+      '<div class="kv"><span>什么有助于维持</span></div>' + renderList(a.sustain_hypotheses) +
+      '<div class="kv"><span>注意可能从哪里泄漏</span></div>' + renderList(a.leakage_hypotheses) +
+      '<div class="kv"><span>恢复方式</span></div>' + renderList(a.recovery_preferences) +
+      '<div class="kv"><span>外部脚手架</span></div>' + renderList(a.scaffold_suggestions) +
+      '<p class="tiny">' + esc(a.boundary) + '</p></div>');
+  }
+
+  if (profile.cognitive_correction_plan && profile.cognitive_correction_plan.items && profile.cognitive_correction_plan.items.length) {
+    const plan = profile.cognitive_correction_plan;
+    const practice = plan.items.map((item) => '<div class="result-card" style="margin-top:12px"><h4>' + esc(item.pattern_hypothesis) + '</h4>' +
+      '<div class="kv"><span>触发条件</span><b>' + esc(item.trigger) + '</b></div>' +
+      '<div class="kv"><span>替代练习</span><b>' + esc(item.correction_practice) + '</b></div>' +
+      '<div class="kv"><span>有效证据</span><b>' + esc(item.success_evidence) + '</b></div>' +
+      '<p class="tiny">' + esc(item.fade_rule) + ' · ' + esc(item.boundary) + '</p></div>').join('');
+    cards.push('<div class="result-card full"><h3>认知矫正练习卡</h3><p class="tiny">' + esc(plan.principle) + '</p>' + practice + '<p class="tiny">' + esc(plan.safe_exit) + '</p></div>');
+  }
+
+  cards.push('<div class="result-card"><h3>可能的长处</h3>' + renderList(profile.strength_hypotheses) + '</div>');
+  cards.push('<div class="result-card"><h3>容易卡住的条件</h3>' + renderList(profile.friction_hypotheses) + '</div>');
+  cards.push('<div class="result-card full"><h3>支持偏好</h3>' + renderList(profile.support_preferences) + '</div>');
+  cards.push('<div class="result-card full"><h3>初始 Agent 组合建议</h3>' + (profile.agent_routing_hypotheses.length ? profile.agent_routing_hypotheses.map((item) => '<span class="tag">' + esc(item.agent_id) + ' · ' + esc(item.reason) + '</span>').join('') : '<p class="tiny">暂不增加额外 Agent，先观察真实使用。</p>') + '<p class="tiny">这些只是初始假设。你可以在 Agent 圆桌中删除、替换或关闭任何专家。</p></div>');
+  $("resultGrid").innerHTML = cards.join('');
+  $("resultArea").scrollIntoView({behavior: "smooth", block: "start"});
+}
+
+async function init() {
+  $("studentLabel").textContent = studentId;
+  try {
+    const response = await fetch("/preassessment/items");
+    catalog = await response.json();
+    if (!response.ok) throw new Error(catalog.detail || "无法加载题目");
+    buildQuestions();
+    loadDraft();
+    $("startBtn").addEventListener("click", startQuiz);
+    $("backBtn").addEventListener("click", () => { if (index > 0) { index -= 1; renderQuestion(); } });
+    $("skipOptionalBtn").addEventListener("click", () => {
+      catalog.mbti.items.forEach((item) => delete responses[item.id]);
+      catalog.jungian.items.forEach((item) => delete responses[item.id]);
+      submit();
+    });
+    $("retakeBtn").addEventListener("click", () => { localStorage.removeItem("tender.preassessment.draft"); window.location.reload(); });
+  } catch (error) {
+    showError(error.message || "无法加载预检测。");
+  }
+}
+
+init();
+</script>
+</body>
+</html>

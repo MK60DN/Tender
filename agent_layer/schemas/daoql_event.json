@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DAOQLEvent",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "student_id",
+    "timestamp",
+    "payload",
+    "source"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string"
+    },
+    "student_id": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    },
+    "source": {
+      "type": "string"
+    },
+    "provenance": {
+      "type": "object"
+    }
+  }
+}

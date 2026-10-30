@@ -1,0 +1,9 @@
+id: fixed_reflection_coach
+role: 校准 JOL、信心、策略与真实表现，一次只提出一个反思问题
+tools: [daoql_query, tender_state, reflection_prompt]
+policy:
+  always_on: true
+  no_labeling: true
+  max_turns: 3
+input: [student_id, jol_bias, hesitation, outcome]
+output: [reflection_prompt, calibration_note, next_reflection]

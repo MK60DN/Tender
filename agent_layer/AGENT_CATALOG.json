@@ -1,0 +1,669 @@
+{
+  "product": "Tender",
+  "catalog_version": "6.2",
+  "execution_runtime": {
+    "framework": "tender-agent-runtime",
+    "pluggable": true,
+    "available": true,
+    "model_ready": true,
+    "workforce_execution": "gated"
+  },
+  "counts": {
+    "runtime_yaml_agents": 16,
+    "fixed_consumer_agents": 5,
+    "workbench_agents": 6,
+    "moa_advisors": 9,
+    "marketplace_expert_agents": 2
+  },
+  "integrity": {
+    "duplicate_runtime_ids": [],
+    "missing_fixed_runtime_specs": [],
+    "ok": true
+  },
+  "runtime_yaml_agents": [
+    {
+      "id": "assessment",
+      "role": "题目生成、难度标定、知识追踪",
+      "tools": [
+        "daoql_query",
+        "tender_state",
+        "item_bank",
+        "pykt"
+      ],
+      "policy": {
+        "human_approval": true,
+        "item_review": true
+      },
+      "input": [
+        "student_id",
+        "concept_id",
+        "target_difficulty"
+      ],
+      "output": [
+        "item_id",
+        "difficulty",
+        "expected_mastery"
+      ],
+      "surface": "internal_or_compatibility",
+      "invocable": false,
+      "source": "agents/*.yaml"
+    },
+    {
+      "id": "content_curator",
+      "role": "课标、讲义、题库入库与 RAG 切片",
+      "tools": [
+        "ragflow",
+        "daoql_write",
+        "versioning"
+      ],
+      "policy": {
+        "human_approval": true,
+        "source_required": true
+      },
+      "input": [
+        "documents",
+        "course_id"
+      ],
+      "output": [
+        "chunks",
+        "metadata",
+        "version"
+      ],
+      "surface": "internal_or_compatibility",
+      "invocable": false,
+      "source": "agents/*.yaml"
+    },
+    {
+      "id": "data_steward",
+      "role": "数据质量、血缘、同意、保留与删除",
+      "tools": [
+        "daoql_query",
+        "lineage",
+        "retention"
+      ],
+      "policy": {
+        "always_on": true,
+        "audit_log": true
+      },
+      "input": [
+        "dataset",
+        "period"
+      ],
+      "output": [
+        "quality_report",
+        "lineage",
+        "retention_actions"
+      ],
+      "surface": "internal_or_compatibility",
+      "invocable": false,
+      "source": "agents/*.yaml"
+    },
+    {
+      "id": "fixed_cognition_emotion_regulator",
+      "role": "根据认知负荷与情绪上下文调整任务粒度、节奏和恢复方式",
+      "tools": [
+        "tender_state",
+        "emotion_context",
+        "support_plan"
+      ],
+      "policy": {
+        "always_on": true,
+        "no_diagnosis": true,
+        "minimal_intervention": true
+      },
+      "input": [
+        "student_id",
+        "emotion_context",
+        "cognitive_load"
+      ],
+      "output": [
+        "regulation_action",
+        "task_adjustment",
+        "recovery_prompt"
+      ],
+      "surface": "consumer_fixed",
+      "invocable": true,
+      "source": "agents/*.yaml"
+    },
+    {
+      "id": "fixed_family_bridge",
+      "role": "生成经授权的最小必要家庭支持摘要",
+      "tools": [
+        "tender_state",
+        "privacy_filter",
+        "approved_summary"
+      ],
+      "policy": {
+        "always_on": true,
+        "human_approval": true,
+        "no_raw_conversation": true,
+        "no_diagnosis": true
+      },
+      "input": [
+        "student_id",
+        "guardian_consent",
+        "summary_scope"
+      ],
+      "output": [
+        "family_summary",
+        "support_action",
+        "boundary_note"
+      ],
+      "surface": "consumer_fixed",
+      "invocable": true,
+      "source": "agents/*.yaml"
+    },
+    {
+      "id": "fixed_mentalization_companion",
+      "role": "时刻解释认知与情绪状态、证据、置信度与最低必要支持",
+      "tools": [
+        "daoql_query",
+        "tender_state",
+        "mentalization_card"
+      ],
+      "policy": {
+        "always_on": true,
+        "no_diagnosis": true,
+        "user_correction": true
+      },
+      "input": [
+        "student_id",
+        "tender_state",
+        "recent_events"
+      ],
+      "output": [
+        "state_summary",
+        "hypotheses",
+        "support_options",
+        "reflection_prompt"
+      ],
+      "surface": "consumer_fixed",
+      "invocable": true,
+      "source": "agents/*.yaml"
+    },
+    {
+      "id": "fixed_reflection_coach",
+      "role": "校准 JOL、信心、策略与真实表现，一次只提出一个反思问题",
+      "tools": [
+        "daoql_query",
+        "tender_state",
+        "reflection_prompt"
+      ],
+      "policy": {
+        "always_on": true,
+        "no_labeling": true,
+        "max_turns": 3
+      },
+      "input": [
+        "student_id",
+        "jol_bias",
+        "hesitation",
+        "outcome"
+      ],
+      "output": [
+        "reflection_prompt",
+        "calibration_note",
+        "next_reflection"
+      ],
+      "surface": "consumer_fixed",
+      "invocable": true,
+      "source": "agents/*.yaml"
+    },
+    {
+      "id": "fixed_safety_guardian",
+      "role": "后台监测高风险信号并转人工支持",
+      "tools": [
+        "policy_engine",
+        "moderation",
+        "escalation"
+      ],
+      "policy": {
+        "always_on": true,
+        "block_on_violation": true,
+        "human_escalation": true
+      },
+      "input": [
+        "message",
+        "context"
+      ],
+      "output": [
+        "allowed",
+        "risk_level",
+        "escalate_to_human",
+        "reason"
+      ],
+      "surface": "consumer_fixed",
+      "invocable": true,
+      "source": "agents/*.yaml"
+    },
+    {
+      "id": "group_facilitator",
+      "role": "分组轮换、桥接角色、闭环预警",
+      "tools": [
+        "daoql_query",
+        "group_topology"
+      ],
+      "policy": {
+        "human_approval": true,
+        "keep_collaboration": true
+      },
+      "input": [
+        "class_id",
+        "week"
+      ],
+      "output": [
+        "clique_warning",
+        "rotation_plan",
+        "bridge_roles"
+      ],
+      "surface": "internal_or_compatibility",
+      "invocable": false,
+      "source": "agents/*.yaml"
+    },
+    {
+      "id": "metacognition_coach",
+      "role": "JOL、信心校准、犹豫四象限干预",
+      "tools": [
+        "daoql_query",
+        "tender_state",
+        "prompt_template"
+      ],
+      "policy": {
+        "human_approval": false,
+        "no_labeling": true,
+        "max_turns": 3
+      },
+      "input": [
+        "student_id",
+        "hesitation",
+        "jol_bias",
+        "correct"
+      ],
+      "output": [
+        "intervention_quadrant",
+        "prompt",
+        "follow_up"
+      ],
+      "surface": "internal_or_compatibility",
+      "invocable": false,
+      "source": "agents/*.yaml"
+    },
+    {
+      "id": "metameta_cartographer",
+      "role": "读取 DAOQL 客观事件，派生鱼缸记忆·脑图的主观体验节点与生命树关系",
+      "tools": [
+        "daoql_write",
+        "metameta_map",
+        "tender_context"
+      ],
+      "policy": {
+        "human_approval": false,
+        "no_diagnosis": true,
+        "no_raw_text_copy": true,
+        "max_labels": 6
+      },
+      "input": [
+        "student_id",
+        "text",
+        "event_type",
+        "source_event_id"
+      ],
+      "output": [
+        "primary_region",
+        "region_labels",
+        "memory_type",
+        "life_tree_stage",
+        "decomposition_event_id"
+      ],
+      "surface": "internal_or_compatibility",
+      "invocable": false,
+      "source": "agents/*.yaml"
+    },
+    {
+      "id": "parent_communication",
+      "role": "家长周报与家庭配合建议",
+      "tools": [
+        "tender_state",
+        "privacy_filter"
+      ],
+      "policy": {
+        "human_approval": true,
+        "no_raw_scores": true,
+        "no_diagnosis": true
+      },
+      "input": [
+        "student_id",
+        "week"
+      ],
+      "output": [
+        "weekly_summary",
+        "one_home_action"
+      ],
+      "surface": "internal_or_compatibility",
+      "invocable": false,
+      "source": "agents/*.yaml"
+    },
+    {
+      "id": "safety_guardrail",
+      "role": "内容安全、年龄适配、隐私、人工升级",
+      "tools": [
+        "policy_engine",
+        "moderation"
+      ],
+      "policy": {
+        "always_on": true,
+        "block_on_violation": true
+      },
+      "input": [
+        "message",
+        "context"
+      ],
+      "output": [
+        "allowed",
+        "reason",
+        "escalate_to_human"
+      ],
+      "surface": "internal_or_compatibility",
+      "invocable": false,
+      "source": "agents/*.yaml"
+    },
+    {
+      "id": "sales_ops",
+      "role": "线索评分、onboarding、续费信号",
+      "tools": [
+        "aggregate_data",
+        "crm",
+        "n8n"
+      ],
+      "policy": {
+        "human_approval": true,
+        "no_pii": true,
+        "aggregate_only": true
+      },
+      "input": [
+        "org_id",
+        "period"
+      ],
+      "output": [
+        "lead_score",
+        "renewal_risk",
+        "next_action"
+      ],
+      "surface": "internal_or_compatibility",
+      "invocable": false,
+      "source": "agents/*.yaml"
+    },
+    {
+      "id": "student_tutor",
+      "role": "苏格拉底式学科辅导",
+      "tools": [
+        "daoql_query",
+        "tender_state",
+        "rag_search",
+        "content_generate"
+      ],
+      "policy": {
+        "human_approval": false,
+        "max_turns": 6,
+        "age_appropriate": true
+      },
+      "input": [
+        "student_id",
+        "question",
+        "tender_state"
+      ],
+      "output": [
+        "hint_level",
+        "response_text",
+        "next_action"
+      ],
+      "surface": "internal_or_compatibility",
+      "invocable": false,
+      "source": "agents/*.yaml"
+    },
+    {
+      "id": "teacher_copilot",
+      "role": "班级状态摘要、干预建议、metameta 反馈",
+      "tools": [
+        "daoql_query",
+        "tender_state",
+        "group_topology"
+      ],
+      "policy": {
+        "human_approval": true,
+        "no_student_labels": true
+      },
+      "input": [
+        "class_id",
+        "date"
+      ],
+      "output": [
+        "top_students",
+        "suggested_interventions",
+        "metameta_report"
+      ],
+      "surface": "internal_or_compatibility",
+      "invocable": false,
+      "source": "agents/*.yaml"
+    }
+  ],
+  "fixed_consumer_agents": [
+    {
+      "agent_id": "fixed_mentalization_companion",
+      "name": "心智化陪伴",
+      "category": "mentalization",
+      "description": "持续解释此刻的认知状态、情绪上下文与可能卡点，并给出最低必要支持。",
+      "data_scopes": [
+        "self_reflection",
+        "authorized_summary",
+        "aggregated_tender_state"
+      ],
+      "always_on": true,
+      "runtime_agent_id": "fixed_mentalization_companion",
+      "runtime_status": "implemented",
+      "invocable": true,
+      "invoke_endpoint": "/agents/fixed_mentalization_companion/invoke"
+    },
+    {
+      "agent_id": "fixed_cognition_emotion_regulator",
+      "name": "认知—情绪调节",
+      "category": "emotion_cognition",
+      "description": "当情绪负荷可能占用学习资源时，调整任务粒度、节奏与恢复方式。",
+      "data_scopes": [
+        "self_reflection",
+        "emotion_context",
+        "authorized_summary"
+      ],
+      "always_on": true,
+      "runtime_agent_id": "fixed_cognition_emotion_regulator",
+      "runtime_status": "implemented",
+      "invocable": true,
+      "invoke_endpoint": "/agents/fixed_cognition_emotion_regulator/invoke"
+    },
+    {
+      "agent_id": "fixed_reflection_coach",
+      "name": "反思教练",
+      "category": "metacognition",
+      "description": "用一次一个的问题帮助用户校准预测、策略与真实表现。",
+      "data_scopes": [
+        "self_reflection",
+        "metacognition_summary"
+      ],
+      "always_on": true,
+      "runtime_agent_id": "fixed_reflection_coach",
+      "runtime_status": "implemented",
+      "invocable": true,
+      "invoke_endpoint": "/agents/fixed_reflection_coach/invoke"
+    },
+    {
+      "agent_id": "fixed_family_bridge",
+      "name": "家庭桥接",
+      "category": "family_support",
+      "description": "把个人记录转成经授权的最小必要支持摘要，默认不共享原始对话。",
+      "data_scopes": [
+        "approved_family_summary"
+      ],
+      "always_on": true,
+      "runtime_agent_id": "fixed_family_bridge",
+      "runtime_status": "implemented",
+      "invocable": true,
+      "invoke_endpoint": "/agents/fixed_family_bridge/invoke"
+    },
+    {
+      "agent_id": "fixed_safety_guardian",
+      "name": "安全与保护",
+      "category": "safety",
+      "description": "后台常驻识别高风险信号，按规则转人工支持，不承担案件调查。",
+      "data_scopes": [
+        "minimal_safety_signals"
+      ],
+      "always_on": true,
+      "runtime_agent_id": "fixed_safety_guardian",
+      "runtime_status": "implemented",
+      "invocable": true,
+      "invoke_endpoint": "/agents/fixed_safety_guardian/invoke"
+    }
+  ],
+  "workbench_orchestration_agents": [
+    {
+      "id": "coordinator",
+      "name": "协调者",
+      "scope": "拆解任务、分派、汇总、等待审批",
+      "can_act": false,
+      "surface": "workbench_orchestration",
+      "source": "app/workbench.py:AGENT_CATALOG"
+    },
+    {
+      "id": "content_curator",
+      "name": "内容 Agent",
+      "scope": "题库、讲义、重点词汇和句型抽取",
+      "can_act": false,
+      "surface": "workbench_orchestration",
+      "source": "app/workbench.py:AGENT_CATALOG"
+    },
+    {
+      "id": "assessment",
+      "name": "评估 Agent",
+      "scope": "批改、错因统计和学生状态更新",
+      "can_act": false,
+      "surface": "workbench_orchestration",
+      "source": "app/workbench.py:AGENT_CATALOG"
+    },
+    {
+      "id": "student_tutor",
+      "name": "学生教练",
+      "scope": "最小提示、复盘和复习安排",
+      "can_act": false,
+      "surface": "workbench_orchestration",
+      "source": "app/workbench.py:AGENT_CATALOG"
+    },
+    {
+      "id": "external_communication",
+      "name": "对外沟通 Agent",
+      "scope": "按接收方角色生成待审批的沟通草稿",
+      "can_act": false,
+      "surface": "workbench_orchestration",
+      "source": "app/workbench.py:AGENT_CATALOG"
+    },
+    {
+      "id": "safety_guardrail",
+      "name": "安全护栏",
+      "scope": "隐私、排名、越权和高风险语言检查",
+      "can_act": false,
+      "surface": "workbench_orchestration",
+      "source": "app/workbench.py:AGENT_CATALOG"
+    }
+  ],
+  "moa_advisors": [
+    {
+      "id": "safety_advisor",
+      "name": "安全与保护",
+      "scope": "minimal_safety_signals",
+      "surface": "moa_advisor",
+      "source": "app/advisor_router.py:EXPERTS"
+    },
+    {
+      "id": "health_advisor",
+      "name": "健康",
+      "scope": "sleep_activity_health",
+      "surface": "moa_advisor",
+      "source": "app/advisor_router.py:EXPERTS"
+    },
+    {
+      "id": "nutrition_advisor",
+      "name": "营养",
+      "scope": "meal_nutrition",
+      "surface": "moa_advisor",
+      "source": "app/advisor_router.py:EXPERTS"
+    },
+    {
+      "id": "neurocognitive_advisor",
+      "name": "神经认知",
+      "scope": "cognitive_profile",
+      "surface": "moa_advisor",
+      "source": "app/advisor_router.py:EXPERTS"
+    },
+    {
+      "id": "psychology_advisor",
+      "name": "心理支持",
+      "scope": "emotion_support_signals",
+      "surface": "moa_advisor",
+      "source": "app/advisor_router.py:EXPERTS"
+    },
+    {
+      "id": "career_advisor",
+      "name": "生涯与职业",
+      "scope": "learning_passport_evidence",
+      "surface": "moa_advisor",
+      "source": "app/advisor_router.py:EXPERTS"
+    },
+    {
+      "id": "learning_science_advisor",
+      "name": "学习科学",
+      "scope": "aggregated_tender_state",
+      "surface": "moa_advisor",
+      "source": "app/advisor_router.py:EXPERTS"
+    },
+    {
+      "id": "assessment",
+      "name": "评估证据",
+      "scope": "assessment_evidence",
+      "surface": "moa_advisor",
+      "source": "app/advisor_router.py:EXPERTS"
+    },
+    {
+      "id": "external_communication",
+      "name": "对外沟通",
+      "scope": "approved_external_summary",
+      "surface": "moa_advisor",
+      "source": "app/advisor_router.py:EXPERTS"
+    }
+  ],
+  "marketplace_expert_agents": [
+    {
+      "agent_id": "agent_083ce0b64f56",
+      "name": "支持测试 Agent",
+      "category": "emotion_cognition",
+      "owner_id": "S_1792590950",
+      "price": 1.0,
+      "status": "published",
+      "surface": "expert_marketplace",
+      "invocable": true,
+      "access": "purchase_required",
+      "source": "app/agent_marketplace.py:expert_agents"
+    },
+    {
+      "agent_id": "agent_ea1956060491",
+      "name": "焦虑任务拆解专家",
+      "category": "emotion_cognition",
+      "owner_id": "SELLER_1792583546",
+      "price": 19.9,
+      "status": "published",
+      "surface": "expert_marketplace",
+      "invocable": true,
+      "access": "purchase_required",
+      "source": "app/agent_marketplace.py:expert_agents"
+    }
+  ],
+  "note": "这是由当前代码生成的 Agent 总目录。运行时 YAML、工作台编排、MoA 顾问和市场专家是四个不同层次，不能混称为同一类 Agent。"
+}

@@ -1,0 +1,23 @@
+{
+  "cyberbullying": {
+    "auc": 0.75,
+    "ap": 0.6779,
+    "f1": 0.5556,
+    "logloss": 0.5834,
+    "n": 135,
+    "positive_rate": 0.2815
+  },
+  "scam_spam": {
+    "auc": 0.9919,
+    "ap": 0.9773,
+    "f1": 0.9405,
+    "logloss": 0.1403,
+    "n": 1393,
+    "positive_rate": 0.1342
+  },
+  "boundary": "low-level text signals only; self-harm, violence, abuse and emergencies remain rule + human escalation",
+  "examples": {
+    "abusive_text": "You are so stupid, nobody wants you here.",
+    "scam_text": "Congratulations! You won a prize. Send your bank details now to claim."
+  }
+}

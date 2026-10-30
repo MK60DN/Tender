@@ -1,0 +1,715 @@
+{
+  "created_at": "2026-10-25T18:23:48",
+  "catalog": "D:\\Tender\\knowledge_data\\db_catalog.sqlite",
+  "databases": [
+    {
+      "path": "knowledge_data\\db_k12.sqlite",
+      "role": "k12_union",
+      "scope": "高中多学科合并索引",
+      "records": {
+        "sources": 13,
+        "k12_subjects": 13,
+        "knowledge_nodes": 1075,
+        "knowledge_edges": 1787,
+        "question_modes": 447,
+        "node_competencies": 3775,
+        "unit_question_modes": 485,
+        "assessment_blueprint": 485
+      },
+      "bytes": 1691648,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\db_university.sqlite",
+      "role": "university_directory",
+      "scope": "本科专业目录与专业类",
+      "records": {
+        "sources": 5,
+        "discipline_categories": 13,
+        "major_classes": 93,
+        "majors": 875,
+        "graduate_disciplines": 181,
+        "admission_subject_requirements": 0,
+        "major_subject_requirements": 3140,
+        "knowledge_nodes": 1176,
+        "knowledge_edges": 1149
+      },
+      "bytes": 811008,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\db_university_courses.sqlite",
+      "role": "university_course_union",
+      "scope": "本科专业—课程种子总表",
+      "records": {
+        "metadata": 2,
+        "sources": 2,
+        "discipline_categories": 13,
+        "major_classes": 93,
+        "majors": 875,
+        "graduate_disciplines": 181,
+        "major_subject_requirements": 3140,
+        "admission_subject_requirements": 0,
+        "major_courses": 319,
+        "course_edges": 293,
+        "major_competencies": 78,
+        "major_highschool_bridges": 90,
+        "program_coverage": 26,
+        "course_knowledge_links": 0
+      },
+      "bytes": 815104,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\db_career.sqlite",
+      "role": "career_interest",
+      "scope": "职业与RIASEC兴趣",
+      "records": {
+        "sources": 5,
+        "interest_dimensions": 6,
+        "occupations": 1016,
+        "occupation_interests": 5538,
+        "riasec_keywords": 75,
+        "major_interest_profiles": 2494
+      },
+      "bytes": 991232,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\db_learner_evidence.sqlite",
+      "role": "learner_evidence",
+      "scope": "学习者证据库（默认不含真实数据）",
+      "records": {
+        "sources": 5,
+        "interest_dimensions": 6,
+        "student_interest_evidence": 0,
+        "student_score_evidence": 0,
+        "student_goals": 0,
+        "recommendation_runs": 0
+      },
+      "bytes": 36864,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\db_asset_inventory.sqlite",
+      "role": "asset_inventory",
+      "scope": "D:\\言文 文件清单",
+      "records": {
+        "sources": 5,
+        "asset_inventory": 6409
+      },
+      "bytes": 3129344,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\db_catalog.sqlite",
+      "role": "catalog",
+      "scope": "数据库与来源目录",
+      "records": {
+        "databases": 0,
+        "sources": 0,
+        "dataset_notes": 0
+      },
+      "bytes": 49152,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\db_arts.sqlite",
+      "role": "subject_knowledge_graph",
+      "scope": "k12:arts",
+      "records": {
+        "metadata": 5,
+        "sources": 1,
+        "subjects": 1,
+        "domains": 2,
+        "knowledge_nodes": 36,
+        "knowledge_edges": 59,
+        "competencies": 4,
+        "node_competencies": 112,
+        "question_modes": 15,
+        "unit_question_modes": 15,
+        "assessment_blueprint": 15,
+        "learner_mastery_snapshot": 0
+      },
+      "bytes": 131072,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\db_biology.sqlite",
+      "role": "subject_knowledge_graph",
+      "scope": "k12:biology",
+      "records": {
+        "metadata": 5,
+        "sources": 1,
+        "subjects": 1,
+        "domains": 5,
+        "knowledge_nodes": 105,
+        "knowledge_edges": 175,
+        "competencies": 4,
+        "node_competencies": 332,
+        "question_modes": 40,
+        "unit_question_modes": 48,
+        "assessment_blueprint": 48,
+        "learner_mastery_snapshot": 0
+      },
+      "bytes": 233472,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\db_chemistry.sqlite",
+      "role": "subject_knowledge_graph",
+      "scope": "k12:chemistry",
+      "records": {
+        "metadata": 5,
+        "sources": 1,
+        "subjects": 1,
+        "domains": 5,
+        "knowledge_nodes": 110,
+        "knowledge_edges": 183,
+        "competencies": 5,
+        "node_competencies": 435,
+        "question_modes": 48,
+        "unit_question_modes": 51,
+        "assessment_blueprint": 51,
+        "learner_mastery_snapshot": 0
+      },
+      "bytes": 258048,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\db_chinese.sqlite",
+      "role": "subject_knowledge_graph",
+      "scope": "k12:chinese",
+      "records": {
+        "metadata": 5,
+        "sources": 1,
+        "subjects": 1,
+        "domains": 5,
+        "knowledge_nodes": 96,
+        "knowledge_edges": 161,
+        "competencies": 4,
+        "node_competencies": 304,
+        "question_modes": 42,
+        "unit_question_modes": 42,
+        "assessment_blueprint": 42,
+        "learner_mastery_snapshot": 0
+      },
+      "bytes": 217088,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\db_english.sqlite",
+      "role": "subject_knowledge_graph",
+      "scope": "k12:english",
+      "records": {
+        "metadata": 5,
+        "sources": 1,
+        "subjects": 1,
+        "domains": 4,
+        "knowledge_nodes": 77,
+        "knowledge_edges": 129,
+        "competencies": 4,
+        "node_competencies": 244,
+        "question_modes": 32,
+        "unit_question_modes": 32,
+        "assessment_blueprint": 32,
+        "learner_mastery_snapshot": 0
+      },
+      "bytes": 188416,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\db_general_technology.sqlite",
+      "role": "subject_knowledge_graph",
+      "scope": "k12:general_technology",
+      "records": {
+        "metadata": 5,
+        "sources": 1,
+        "subjects": 1,
+        "domains": 4,
+        "knowledge_nodes": 53,
+        "knowledge_edges": 87,
+        "competencies": 5,
+        "node_competencies": 200,
+        "question_modes": 24,
+        "unit_question_modes": 24,
+        "assessment_blueprint": 24,
+        "learner_mastery_snapshot": 0
+      },
+      "bytes": 184320,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\db_geography.sqlite",
+      "role": "subject_knowledge_graph",
+      "scope": "k12:geography",
+      "records": {
+        "metadata": 5,
+        "sources": 1,
+        "subjects": 1,
+        "domains": 4,
+        "knowledge_nodes": 84,
+        "knowledge_edges": 137,
+        "competencies": 4,
+        "node_competencies": 260,
+        "question_modes": 36,
+        "unit_question_modes": 42,
+        "assessment_blueprint": 42,
+        "learner_mastery_snapshot": 0
+      },
+      "bytes": 200704,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\db_history.sqlite",
+      "role": "subject_knowledge_graph",
+      "scope": "k12:history",
+      "records": {
+        "metadata": 5,
+        "sources": 1,
+        "subjects": 1,
+        "domains": 4,
+        "knowledge_nodes": 95,
+        "knowledge_edges": 159,
+        "competencies": 5,
+        "node_competencies": 380,
+        "question_modes": 32,
+        "unit_question_modes": 42,
+        "assessment_blueprint": 42,
+        "learner_mastery_snapshot": 0
+      },
+      "bytes": 217088,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\db_it.sqlite",
+      "role": "subject_knowledge_graph",
+      "scope": "k12:it",
+      "records": {
+        "metadata": 5,
+        "sources": 1,
+        "subjects": 1,
+        "domains": 4,
+        "knowledge_nodes": 57,
+        "knowledge_edges": 95,
+        "competencies": 4,
+        "node_competencies": 176,
+        "question_modes": 24,
+        "unit_question_modes": 24,
+        "assessment_blueprint": 24,
+        "learner_mastery_snapshot": 0
+      },
+      "bytes": 159744,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\db_math.sqlite",
+      "role": "subject_knowledge_graph",
+      "scope": "k12:math",
+      "records": {
+        "metadata": 5,
+        "sources": 1,
+        "subjects": 1,
+        "domains": 8,
+        "knowledge_nodes": 142,
+        "knowledge_edges": 237,
+        "competencies": 6,
+        "node_competencies": 666,
+        "question_modes": 63,
+        "unit_question_modes": 66,
+        "assessment_blueprint": 66,
+        "learner_mastery_snapshot": 0
+      },
+      "bytes": 303104,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\db_pe_health.sqlite",
+      "role": "subject_knowledge_graph",
+      "scope": "k12:pe_health",
+      "records": {
+        "metadata": 5,
+        "sources": 1,
+        "subjects": 1,
+        "domains": 2,
+        "knowledge_nodes": 29,
+        "knowledge_edges": 47,
+        "competencies": 3,
+        "node_competencies": 66,
+        "question_modes": 12,
+        "unit_question_modes": 12,
+        "assessment_blueprint": 12,
+        "learner_mastery_snapshot": 0
+      },
+      "bytes": 131072,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\db_physics.sqlite",
+      "role": "subject_knowledge_graph",
+      "scope": "k12:physics",
+      "records": {
+        "metadata": 5,
+        "sources": 1,
+        "subjects": 1,
+        "domains": 5,
+        "knowledge_nodes": 110,
+        "knowledge_edges": 183,
+        "competencies": 4,
+        "node_competencies": 348,
+        "question_modes": 48,
+        "unit_question_modes": 51,
+        "assessment_blueprint": 51,
+        "learner_mastery_snapshot": 0
+      },
+      "bytes": 241664,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\db_politics.sqlite",
+      "role": "subject_knowledge_graph",
+      "scope": "k12:politics",
+      "records": {
+        "metadata": 5,
+        "sources": 1,
+        "subjects": 1,
+        "domains": 5,
+        "knowledge_nodes": 81,
+        "knowledge_edges": 135,
+        "competencies": 4,
+        "node_competencies": 252,
+        "question_modes": 31,
+        "unit_question_modes": 36,
+        "assessment_blueprint": 36,
+        "learner_mastery_snapshot": 0
+      },
+      "bytes": 192512,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\db_subject_index.sqlite",
+      "role": "cross_subject_index",
+      "scope": "",
+      "records": {
+        "metadata": 2,
+        "subject_catalog": 13,
+        "node_registry": 1075,
+        "standard_documents": 13,
+        "standard_document_aliases": 0
+      },
+      "bytes": 303104,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\university\\db_ug_01_philosophy.sqlite",
+      "role": "university_discipline_database",
+      "scope": "哲学",
+      "records": {
+        "metadata": 4,
+        "sources": 2,
+        "discipline_categories": 1,
+        "major_classes": 1,
+        "majors": 4,
+        "graduate_disciplines": 2,
+        "major_subject_requirements": 12,
+        "admission_subject_requirements": 0,
+        "major_courses": 0,
+        "course_edges": 0,
+        "major_competencies": 0,
+        "major_highschool_bridges": 0,
+        "program_coverage": 0,
+        "course_knowledge_links": 0
+      },
+      "bytes": 114688,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\university\\db_ug_02_economics.sqlite",
+      "role": "university_discipline_database",
+      "scope": "经济学",
+      "records": {
+        "metadata": 4,
+        "sources": 2,
+        "discipline_categories": 1,
+        "major_classes": 4,
+        "majors": 30,
+        "graduate_disciplines": 9,
+        "major_subject_requirements": 90,
+        "admission_subject_requirements": 0,
+        "major_courses": 25,
+        "course_edges": 23,
+        "major_competencies": 6,
+        "major_highschool_bridges": 6,
+        "program_coverage": 2,
+        "course_knowledge_links": 0
+      },
+      "bytes": 126976,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\university\\db_ug_03_law.sqlite",
+      "role": "university_discipline_database",
+      "scope": "法学",
+      "records": {
+        "metadata": 4,
+        "sources": 2,
+        "discipline_categories": 1,
+        "major_classes": 6,
+        "majors": 56,
+        "graduate_disciplines": 13,
+        "major_subject_requirements": 224,
+        "admission_subject_requirements": 0,
+        "major_courses": 12,
+        "course_edges": 11,
+        "major_competencies": 3,
+        "major_highschool_bridges": 3,
+        "program_coverage": 1,
+        "course_knowledge_links": 0
+      },
+      "bytes": 151552,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\university\\db_ug_04_education.sqlite",
+      "role": "university_discipline_database",
+      "scope": "教育学",
+      "records": {
+        "metadata": 4,
+        "sources": 2,
+        "discipline_categories": 1,
+        "major_classes": 2,
+        "majors": 36,
+        "graduate_disciplines": 7,
+        "major_subject_requirements": 144,
+        "admission_subject_requirements": 0,
+        "major_courses": 22,
+        "course_edges": 20,
+        "major_competencies": 6,
+        "major_highschool_bridges": 10,
+        "program_coverage": 2,
+        "course_knowledge_links": 0
+      },
+      "bytes": 135168,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\university\\db_ug_05_literature.sqlite",
+      "role": "university_discipline_database",
+      "scope": "文学",
+      "records": {
+        "metadata": 4,
+        "sources": 2,
+        "discipline_categories": 1,
+        "major_classes": 3,
+        "majors": 124,
+        "graduate_disciplines": 6,
+        "major_subject_requirements": 372,
+        "admission_subject_requirements": 0,
+        "major_courses": 24,
+        "course_edges": 22,
+        "major_competencies": 6,
+        "major_highschool_bridges": 7,
+        "program_coverage": 2,
+        "course_knowledge_links": 0
+      },
+      "bytes": 180224,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\university\\db_ug_06_history.sqlite",
+      "role": "university_discipline_database",
+      "scope": "历史学",
+      "records": {
+        "metadata": 4,
+        "sources": 2,
+        "discipline_categories": 1,
+        "major_classes": 1,
+        "majors": 9,
+        "graduate_disciplines": 4,
+        "major_subject_requirements": 27,
+        "admission_subject_requirements": 0,
+        "major_courses": 0,
+        "course_edges": 0,
+        "major_competencies": 0,
+        "major_highschool_bridges": 0,
+        "program_coverage": 0,
+        "course_knowledge_links": 0
+      },
+      "bytes": 114688,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\university\\db_ug_07_science.sqlite",
+      "role": "university_discipline_database",
+      "scope": "理学",
+      "records": {
+        "metadata": 4,
+        "sources": 2,
+        "discipline_categories": 1,
+        "major_classes": 12,
+        "majors": 53,
+        "graduate_disciplines": 15,
+        "major_subject_requirements": 212,
+        "admission_subject_requirements": 0,
+        "major_courses": 60,
+        "course_edges": 55,
+        "major_competencies": 15,
+        "major_highschool_bridges": 16,
+        "program_coverage": 5,
+        "course_knowledge_links": 0
+      },
+      "bytes": 180224,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\university\\db_ug_08_engineering.sqlite",
+      "role": "university_discipline_database",
+      "scope": "工学",
+      "records": {
+        "metadata": 4,
+        "sources": 2,
+        "discipline_categories": 1,
+        "major_classes": 31,
+        "majors": 293,
+        "graduate_disciplines": 49,
+        "major_subject_requirements": 1172,
+        "admission_subject_requirements": 0,
+        "major_courses": 123,
+        "course_edges": 113,
+        "major_competencies": 30,
+        "major_highschool_bridges": 34,
+        "program_coverage": 10,
+        "course_knowledge_links": 0
+      },
+      "bytes": 372736,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\university\\db_ug_09_agriculture.sqlite",
+      "role": "university_discipline_database",
+      "scope": "农学",
+      "records": {
+        "metadata": 4,
+        "sources": 2,
+        "discipline_categories": 1,
+        "major_classes": 7,
+        "majors": 51,
+        "graduate_disciplines": 14,
+        "major_subject_requirements": 153,
+        "admission_subject_requirements": 0,
+        "major_courses": 0,
+        "course_edges": 0,
+        "major_competencies": 0,
+        "major_highschool_bridges": 0,
+        "program_coverage": 0,
+        "course_knowledge_links": 0
+      },
+      "bytes": 135168,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\university\\db_ug_10_medicine.sqlite",
+      "role": "university_discipline_database",
+      "scope": "医学",
+      "records": {
+        "metadata": 4,
+        "sources": 2,
+        "discipline_categories": 1,
+        "major_classes": 11,
+        "majors": 62,
+        "graduate_disciplines": 17,
+        "major_subject_requirements": 248,
+        "admission_subject_requirements": 0,
+        "major_courses": 29,
+        "course_edges": 27,
+        "major_competencies": 6,
+        "major_highschool_bridges": 7,
+        "program_coverage": 2,
+        "course_knowledge_links": 0
+      },
+      "bytes": 172032,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\university\\db_ug_12_management.sqlite",
+      "role": "university_discipline_database",
+      "scope": "管理学",
+      "records": {
+        "metadata": 4,
+        "sources": 2,
+        "discipline_categories": 1,
+        "major_classes": 9,
+        "majors": 75,
+        "graduate_disciplines": 12,
+        "major_subject_requirements": 225,
+        "admission_subject_requirements": 0,
+        "major_courses": 24,
+        "course_edges": 22,
+        "major_competencies": 6,
+        "major_highschool_bridges": 7,
+        "program_coverage": 2,
+        "course_knowledge_links": 0
+      },
+      "bytes": 159744,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\university\\db_ug_13_arts.sqlite",
+      "role": "university_discipline_database",
+      "scope": "艺术学",
+      "records": {
+        "metadata": 4,
+        "sources": 2,
+        "discipline_categories": 1,
+        "major_classes": 5,
+        "majors": 67,
+        "graduate_disciplines": 7,
+        "major_subject_requirements": 201,
+        "admission_subject_requirements": 0,
+        "major_courses": 0,
+        "course_edges": 0,
+        "major_competencies": 0,
+        "major_highschool_bridges": 0,
+        "program_coverage": 0,
+        "course_knowledge_links": 0
+      },
+      "bytes": 147456,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\university\\db_ug_14_interdisciplinary.sqlite",
+      "role": "university_discipline_database",
+      "scope": "交叉学科",
+      "records": {
+        "metadata": 4,
+        "sources": 2,
+        "discipline_categories": 1,
+        "major_classes": 1,
+        "majors": 15,
+        "graduate_disciplines": 9,
+        "major_subject_requirements": 60,
+        "admission_subject_requirements": 0,
+        "major_courses": 0,
+        "course_edges": 0,
+        "major_competencies": 0,
+        "major_highschool_bridges": 0,
+        "program_coverage": 0,
+        "course_knowledge_links": 0
+      },
+      "bytes": 122880,
+      "integrity": "ok"
+    },
+    {
+      "path": "knowledge_data\\subject_databases\\university\\db_university_index.sqlite",
+      "role": "university_subject_index",
+      "scope": "",
+      "records": {
+        "metadata": 2,
+        "category_catalog": 13,
+        "course_catalog": 319
+      },
+      "bytes": 90112,
+      "integrity": "ok"
+    }
+  ]
+}

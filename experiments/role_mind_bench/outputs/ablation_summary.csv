@@ -1,0 +1,11 @@
+﻿role,variant,auc,ap,logloss,brier
+student,full_7_features,0.972,0.9795,0.189,0.0544
+student,without_process_timing,0.7156,0.8057,0.5702,0.1931
+student,without_prior_correctness,0.9677,0.9812,0.1852,0.0574
+student,process_timing_only,0.9668,0.9797,0.1893,0.0578
+student,prior_correctness_only,0.7084,0.7971,0.576,0.1952
+sales,full_5_fields,0.9817,0.9687,0.1428,0.0337
+sales,without_tags,0.7699,0.7005,0.5772,0.1951
+sales,without_last_activity,0.9755,0.9524,0.1439,0.0328
+sales,without_tags_or_activity,0.68,0.6293,0.5943,0.2016
+sales,origin_and_source_only,0.5975,0.5174,0.6528,0.2289

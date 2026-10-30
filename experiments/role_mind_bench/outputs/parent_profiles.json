@@ -1,0 +1,32 @@
+[
+  {
+    "cluster": 0,
+    "n": 165,
+    "Medu": 2.38,
+    "Fedu": 2.01,
+    "famsup_rate": 0.648,
+    "paid_rate": 0.236,
+    "schoolsup_rate": 0.127,
+    "study_time": 3.38
+  },
+  {
+    "cluster": 1,
+    "n": 420,
+    "Medu": 3.61,
+    "Fedu": 3.38,
+    "famsup_rate": 0.71,
+    "paid_rate": 0.295,
+    "schoolsup_rate": 0.112,
+    "study_time": 1.87
+  },
+  {
+    "cluster": 2,
+    "n": 459,
+    "Medu": 1.77,
+    "Fedu": 1.61,
+    "famsup_rate": 0.512,
+    "paid_rate": 0.124,
+    "schoolsup_rate": 0.111,
+    "study_time": 1.56
+  }
+]

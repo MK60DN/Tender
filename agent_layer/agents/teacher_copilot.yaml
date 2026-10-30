@@ -1,0 +1,22 @@
+{
+  "id": "teacher_copilot",
+  "role": "班级状态摘要、干预建议、metameta 反馈",
+  "tools": [
+    "daoql_query",
+    "tender_state",
+    "group_topology"
+  ],
+  "policy": {
+    "human_approval": true,
+    "no_student_labels": true
+  },
+  "input": [
+    "class_id",
+    "date"
+  ],
+  "output": [
+    "top_students",
+    "suggested_interventions",
+    "metameta_report"
+  ]
+}

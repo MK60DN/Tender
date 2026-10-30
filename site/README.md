@@ -1,13 +1,6 @@
 # Tender Academy Teaching Site
 
-Static bilingual course for the Tender repository.
-
-- Eight modules with Chinese and English versions
-- Local progress storage
-- Knowledge checks
-- Printable lessons
-- No mathematical formulas or derivations
-- No external CDN, tracking or runtime dependency
+Static bilingual course for GitHub Pages and the local application.
 
 ## Local preview
 
@@ -17,6 +10,20 @@ python -m http.server 8090 --directory site
 
 Open <http://127.0.0.1:8090/>.
 
+The application also mounts the site at `/guide/` when running FastAPI.
+
+## Features
+
+- nine bilingual modules;
+- local learning progress;
+- language switch;
+- knowledge checks;
+- B2B full-system, B2B embedded and C-end delivery model;
+- concept and evidence-boundary cards;
+- printable course;
+- no external CDN, tracking or runtime dependency.
+
 ## GitHub Pages
 
-The deployment workflow is `.github/workflows/pages.yml`. The repository owner must enable GitHub Pages with **GitHub Actions** as the source once under repository Settings → Pages. After that, updates under `site/` deploy automatically.
+`.github/workflows/pages.yml` deploys this directory whenever `site/` changes on
+`main`. In repository settings, Pages must use GitHub Actions as its source.
