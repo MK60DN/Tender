@@ -1,0 +1,158 @@
+[
+  {
+    "code": "080901",
+    "name": "计算机科学与技术",
+    "class_code": "0809",
+    "category_code": "08"
+  },
+  {
+    "code": "080902",
+    "name": "软件工程",
+    "class_code": "0809",
+    "category_code": "08"
+  },
+  {
+    "code": "080717T",
+    "name": "人工智能",
+    "class_code": "0807",
+    "category_code": "08"
+  },
+  {
+    "code": "080910T",
+    "name": "数据科学与大数据技术",
+    "class_code": "0809",
+    "category_code": "08"
+  },
+  {
+    "code": "080701",
+    "name": "电子信息工程",
+    "class_code": "0807",
+    "category_code": "08"
+  },
+  {
+    "code": "080801",
+    "name": "自动化",
+    "class_code": "0808",
+    "category_code": "08"
+  },
+  {
+    "code": "100201K",
+    "name": "临床医学",
+    "class_code": "1002",
+    "category_code": "10"
+  },
+  {
+    "code": "100701",
+    "name": "药学",
+    "class_code": "1007",
+    "category_code": "10"
+  },
+  {
+    "code": "020101",
+    "name": "经济学",
+    "class_code": "0201",
+    "category_code": "02"
+  },
+  {
+    "code": "020301K",
+    "name": "金融学",
+    "class_code": "0203",
+    "category_code": "02"
+  },
+  {
+    "code": "030101K",
+    "name": "法学",
+    "class_code": "0301",
+    "category_code": "03"
+  },
+  {
+    "code": "050101",
+    "name": "汉语言文学",
+    "class_code": "0501",
+    "category_code": "05"
+  },
+  {
+    "code": "050301",
+    "name": "新闻学",
+    "class_code": "0503",
+    "category_code": "05"
+  },
+  {
+    "code": "070101",
+    "name": "数学与应用数学",
+    "class_code": "0701",
+    "category_code": "07"
+  },
+  {
+    "code": "070201",
+    "name": "物理学",
+    "class_code": "0702",
+    "category_code": "07"
+  },
+  {
+    "code": "070301",
+    "name": "化学",
+    "class_code": "0703",
+    "category_code": "07"
+  },
+  {
+    "code": "071001",
+    "name": "生物科学",
+    "class_code": "0710",
+    "category_code": "07"
+  },
+  {
+    "code": "071101",
+    "name": "心理学",
+    "class_code": "0711",
+    "category_code": "07"
+  },
+  {
+    "code": "082801",
+    "name": "建筑学",
+    "class_code": "0828",
+    "category_code": "08"
+  },
+  {
+    "code": "080205",
+    "name": "工业设计",
+    "class_code": "0802",
+    "category_code": "08"
+  },
+  {
+    "code": "120203K",
+    "name": "会计学",
+    "class_code": "1202",
+    "category_code": "12"
+  },
+  {
+    "code": "120201K",
+    "name": "工商管理",
+    "class_code": "1202",
+    "category_code": "12"
+  },
+  {
+    "code": "040101",
+    "name": "教育学",
+    "class_code": "0401",
+    "category_code": "04"
+  },
+  {
+    "code": "040106",
+    "name": "学前教育",
+    "class_code": "0401",
+    "category_code": "04"
+  },
+  {
+    "code": "080201",
+    "name": "机械工程",
+    "class_code": "0802",
+    "category_code": "08"
+  },
+  {
+    "code": "080601",
+    "name": "电气工程及其自动化",
+    "class_code": "0806",
+    "category_code": "08"
+  }
+]

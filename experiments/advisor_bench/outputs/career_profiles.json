@@ -1,0 +1,58 @@
+{
+  "occupations": 923,
+  "features": 155,
+  "clusters": 12,
+  "explained_variance_30": 0.9213,
+  "silhouette": 0.1764,
+  "example_recommendations": [
+    {
+      "code": "23-1012.00",
+      "title": "Judicial Law Clerks",
+      "score": 0.3744,
+      "cluster": 6
+    },
+    {
+      "code": "19-3093.00",
+      "title": "Historians",
+      "score": 0.3615,
+      "cluster": 6
+    },
+    {
+      "code": "23-1023.00",
+      "title": "Judges, Magistrate Judges, and Magistrates",
+      "score": 0.3578,
+      "cluster": 6
+    },
+    {
+      "code": "43-9081.00",
+      "title": "Proofreaders and Copy Markers",
+      "score": 0.3553,
+      "cluster": 6
+    },
+    {
+      "code": "23-1021.00",
+      "title": "Administrative Law Judges, Adjudicators, and Hearing Officers",
+      "score": 0.3526,
+      "cluster": 6
+    },
+    {
+      "code": "25-1112.00",
+      "title": "Law Teachers, Postsecondary",
+      "score": 0.3522,
+      "cluster": 6
+    },
+    {
+      "code": "15-2021.00",
+      "title": "Mathematicians",
+      "score": 0.3494,
+      "cluster": 7
+    },
+    {
+      "code": "25-1124.00",
+      "title": "Foreign Language and Literature Teachers, Postsecondary",
+      "score": 0.3483,
+      "cluster": 6
+    }
+  ],
+  "note": "O*NET content-based similarity; no employment outcome labels"
+}

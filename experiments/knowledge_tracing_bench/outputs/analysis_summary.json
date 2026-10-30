@@ -1,0 +1,137 @@
+{
+  "models": [
+    {
+      "model": "Global base rate",
+      "params": "训练集总体均值",
+      "auc": 0.5,
+      "rmse": 0.4726,
+      "logloss": 0.6388
+    },
+    {
+      "model": "Student running mean",
+      "params": "该生此前正确率",
+      "auc": 0.6797,
+      "rmse": 0.4532,
+      "logloss": 0.7436
+    },
+    {
+      "model": "Skill base rate",
+      "params": "该技能训练集均值",
+      "auc": 0.6135,
+      "rmse": 0.4634,
+      "logloss": 0.6196
+    },
+    {
+      "model": "BKT (per-skill, EM)",
+      "params": "81 技能 × 4 参数",
+      "auc": 0.6794,
+      "rmse": 0.4487,
+      "logloss": 0.591
+    },
+    {
+      "model": "Tender θ — 全局初始化",
+      "params": "θ0=1.34 η=0.02 ξ=0.00",
+      "auc": 0.6853,
+      "rmse": 0.4608,
+      "logloss": 0.6164
+    },
+    {
+      "model": "Tender θ — 分技能初始化",
+      "params": "η=0.02 ξ=0.00",
+      "auc": 0.6661,
+      "rmse": 0.4534,
+      "logloss": 0.601
+    },
+    {
+      "model": "Tender θ — 文档默认参数",
+      "params": "θ0=由0.65反解 η=0.3 ξ=0.15",
+      "auc": 0.6895,
+      "rmse": 0.474,
+      "logloss": 1.1155
+    },
+    {
+      "model": "Tender θ — 单状态(消融)",
+      "params": "θ0=1.34 η=0.02",
+      "auc": 0.6444,
+      "rmse": 0.4864,
+      "logloss": 1.3291
+    },
+    {
+      "model": "Tender θ — 分技能+Platt校准",
+      "params": "只修概率刻度",
+      "auc": 0.6661,
+      "rmse": 0.4533,
+      "logloss": 0.6005
+    },
+    {
+      "model": "Logistic (hist+skill+pos)",
+      "params": "控制组",
+      "auc": 0.7058,
+      "rmse": 0.4416,
+      "logloss": 0.5752
+    }
+  ],
+  "per_skill": {
+    "n_skills": 77,
+    "tender_better": 42,
+    "bkt_better": 35,
+    "median_delta": 0.004975922953450951
+  },
+  "eta_sensitivity": [
+    {
+      "eta": 0.01,
+      "train_loglik": -0.6286616933327629,
+      "test_loglik": 0.6263910193978498,
+      "test_auc": 0.6853319726586434
+    },
+    {
+      "eta": 0.02,
+      "train_loglik": -0.6201772182939569,
+      "test_loglik": 0.6163540984073843,
+      "test_auc": 0.6853319726586434
+    },
+    {
+      "eta": 0.05,
+      "train_loglik": -0.6448205306389013,
+      "test_loglik": 0.6381623545393595,
+      "test_auc": 0.6853626727433569
+    },
+    {
+      "eta": 0.1,
+      "train_loglik": -0.734385343804885,
+      "test_loglik": 0.7223829194094625,
+      "test_auc": 0.6854935423824173
+    },
+    {
+      "eta": 0.2,
+      "train_loglik": -0.9641726086144058,
+      "test_loglik": 0.9526620437593748,
+      "test_auc": 0.6884807280645378
+    },
+    {
+      "eta": 0.3,
+      "train_loglik": -1.1578918625380388,
+      "test_loglik": 1.1478843873522047,
+      "test_auc": 0.6917577908628516
+    },
+    {
+      "eta": 0.45,
+      "train_loglik": -1.4394195006558463,
+      "test_loglik": 1.4214353477975739,
+      "test_auc": 0.6956783850778627
+    },
+    {
+      "eta": 0.6,
+      "train_loglik": -1.5654458937557871,
+      "test_loglik": 1.5493138839956309,
+      "test_auc": 0.6947764946736116
+    },
+    {
+      "eta": 0.8,
+      "train_loglik": -1.7836369159005663,
+      "test_loglik": 1.7588080108091646,
+      "test_auc": 0.6923202905679928
+    }
+  ],
+  "sample_user": 70750
+}

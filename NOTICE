@@ -1,0 +1,22 @@
+Tender
+Copyright 2026 Tender Contributors
+
+Required Notice: Copyright 2026 Tender Contributors
+
+Original Tender code, models, documentation and derived research materials are
+provided under the PolyForm Noncommercial License 1.0.0. Commercial use requires
+a separate written commercial license from the copyright holder.
+
+This product includes knowledge and research material derived from public
+sources. Source-specific licenses and usage notes are documented in
+docs/DATA_LICENSES.md.
+
+Major sources include:
+- Ministry of Education of the People's Republic of China curriculum standards
+  and higher-education catalogues.
+- O*NET 30.1, developed by the U.S. Department of Labor, licensed CC BY 4.0.
+- Public research datasets and benchmark references listed in the research
+  documentation and source metadata.
+
+Tender does not redistribute clinical records, real learner conversations,
+tenant databases or private institutional data.

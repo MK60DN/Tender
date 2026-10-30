@@ -1,0 +1,88 @@
+{
+  "dataset": "ASSISTments 2009 (skill_builder_data_corrected.csv)",
+  "rows_used": 273364,
+  "users": 4128,
+  "skills": 81,
+  "skills_fitted_bkt": 81,
+  "test_ratio": 0.2,
+  "min_events": 200,
+  "tender_params": {
+    "A_global": {
+      "theta_init": 1.3416666666666668,
+      "eta": 0.02,
+      "xi": 0.0
+    },
+    "B_perskill": {
+      "eta": 0.02,
+      "xi": 0.0
+    }
+  },
+  "theta_th": 0.9045403797931021,
+  "phi": 1.618,
+  "metrics": [
+    {
+      "model": "Global base rate",
+      "params": "训练集总体均值",
+      "auc": 0.5,
+      "rmse": 0.4726,
+      "logloss": 0.6388
+    },
+    {
+      "model": "Student running mean",
+      "params": "该生此前正确率",
+      "auc": 0.6797,
+      "rmse": 0.4532,
+      "logloss": 0.7436
+    },
+    {
+      "model": "Skill base rate",
+      "params": "该技能训练集均值",
+      "auc": 0.6135,
+      "rmse": 0.4634,
+      "logloss": 0.6196
+    },
+    {
+      "model": "BKT (per-skill, EM)",
+      "params": "81 技能 × 4 参数",
+      "auc": 0.6794,
+      "rmse": 0.4487,
+      "logloss": 0.591
+    },
+    {
+      "model": "Tender θ — 全局初始化",
+      "params": "θ0=1.34 η=0.02 ξ=0.00",
+      "auc": 0.6853,
+      "rmse": 0.4608,
+      "logloss": 0.6164
+    },
+    {
+      "model": "Tender θ — 分技能初始化",
+      "params": "η=0.02 ξ=0.00",
+      "auc": 0.6661,
+      "rmse": 0.4534,
+      "logloss": 0.601
+    },
+    {
+      "model": "Tender θ — 文档默认参数",
+      "params": "θ0=由0.65反解 η=0.3 ξ=0.15",
+      "auc": 0.6895,
+      "rmse": 0.474,
+      "logloss": 1.1155
+    },
+    {
+      "model": "Tender θ — 单状态(消融)",
+      "params": "θ0=1.34 η=0.02",
+      "auc": 0.6444,
+      "rmse": 0.4864,
+      "logloss": 1.3291
+    },
+    {
+      "model": "Tender θ — 分技能+Platt校准",
+      "params": "只修概率刻度",
+      "auc": 0.6661,
+      "rmse": 0.4533,
+      "logloss": 0.6005
+    }
+  ],
+  "elapsed_sec": 297.2
+}

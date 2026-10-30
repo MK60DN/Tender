@@ -1,0 +1,22 @@
+{
+  "id": "content_curator",
+  "role": "课标、讲义、题库入库与 RAG 切片",
+  "tools": [
+    "ragflow",
+    "daoql_write",
+    "versioning"
+  ],
+  "policy": {
+    "human_approval": true,
+    "source_required": true
+  },
+  "input": [
+    "documents",
+    "course_id"
+  ],
+  "output": [
+    "chunks",
+    "metadata",
+    "version"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "generated_at": "2026-10-20T23:27:26.151210+08:00",
+  "career_advisor": {
+    "occupations": 923,
+    "features": 155,
+    "clusters": 12,
+    "explained_variance_30": 0.9213,
+    "silhouette": 0.1764,
+    "example_recommendations": [
+      {
+        "code": "23-1012.00",
+        "title": "Judicial Law Clerks",
+        "score": 0.3744,
+        "cluster": 6
+      },
+      {
+        "code": "19-3093.00",
+        "title": "Historians",
+        "score": 0.3615,
+        "cluster": 6
+      },
+      {
+        "code": "23-1023.00",
+        "title": "Judges, Magistrate Judges, and Magistrates",
+        "score": 0.3578,
+        "cluster": 6
+      },
+      {
+        "code": "43-9081.00",
+        "title": "Proofreaders and Copy Markers",
+        "score": 0.3553,
+        "cluster": 6
+      },
+      {
+        "code": "23-1021.00",
+        "title": "Administrative Law Judges, Adjudicators, and Hearing Officers",
+        "score": 0.3526,
+        "cluster": 6
+      },
+      {
+        "code": "25-1112.00",
+        "title": "Law Teachers, Postsecondary",
+        "score": 0.3522,
+        "cluster": 6
+      },
+      {
+        "code": "15-2021.00",
+        "title": "Mathematicians",
+        "score": 0.3494,
+        "cluster": 7
+      },
+      {
+        "code": "25-1124.00",
+        "title": "Foreign Language and Literature Teachers, Postsecondary",
+        "score": 0.3483,
+        "cluster": 6
+      }
+    ],
+    "note": "O*NET content-based similarity; no employment outcome labels"
+  },
+  "safety_advisor": {
+    "cyberbullying": {
+      "auc": 0.75,
+      "ap": 0.6779,
+      "f1": 0.5556,
+      "logloss": 0.5834,
+      "n": 135,
+      "positive_rate": 0.2815
+    },
+    "scam_spam": {
+      "auc": 0.9919,
+      "ap": 0.9773,
+      "f1": 0.9405,
+      "logloss": 0.1403,
+      "n": 1393,
+      "positive_rate": 0.1342
+    },
+    "boundary": "low-level text signals only; self-harm, violence, abuse and emergencies remain rule + human escalation",
+    "examples": {
+      "abusive_text": "You are so stupid, nobody wants you here.",
+      "scam_text": "Congratulations! You won a prize. Send your bank details now to claim."
+    }
+  },
+  "boundaries": {
+    "career": "content-based exploration, not job prediction",
+    "safety": "text signal + human escalation, not investigation or diagnosis"
+  }
+}

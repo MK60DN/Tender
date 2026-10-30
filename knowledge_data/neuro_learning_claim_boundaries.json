@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "integration_layers": [
+    {
+      "id": "offline_research_calibration",
+      "status": "implemented_catalog",
+      "purpose": "使用公开研究校准构念、阈值和实验设计",
+      "user_data": "不使用个人用户数据"
+    },
+    {
+      "id": "runtime_behavioral_priors",
+      "status": "implemented_mvp",
+      "purpose": "使用用户授权的行为、回复、结果和可选睡眠/活动摘要生成弱先验",
+      "user_data": "仅在明确授权、最小必要和可撤回范围内使用"
+    },
+    {
+      "id": "neural_runtime_inference",
+      "status": "not_implemented_and_not_claimed",
+      "purpose": "当前不从脑影像或生理信号推断个体心智状态",
+      "user_data": "不收集脑影像，不宣称读脑"
+    }
+  ],
+  "claim_boundaries": {
+    "research_prior": {
+      "allowed": true,
+      "required_language": "研究先验或构念假设"
+    },
+    "behavioral_proxy": {
+      "allowed": true,
+      "required_language": "行为指标或弱信号，需要置信度与复核"
+    },
+    "uncertainty_hypothesis": {
+      "allowed": true,
+      "required_language": "多个竞争假设，不输出确定诊断"
+    },
+    "direct_brain_reading": {
+      "allowed": false,
+      "reason": "当前没有运行时神经解码能力"
+    },
+    "diagnosis_from_clicks": {
+      "allowed": false,
+      "reason": "点击和行为日志不能诊断神经或心理疾病"
+    },
+    "learning_style_matching": {
+      "allowed": false,
+      "reason": "缺乏可靠证据支持学习风格匹配"
+    },
+    "brain_training_transfer": {
+      "allowed": false,
+      "reason": "不能承诺一般认知能力提升"
+    }
+  }
+}

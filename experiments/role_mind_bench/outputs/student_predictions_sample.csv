@@ -1,0 +1,2001 @@
+﻿user_id,skill_name,correct,prediction
+58161,Equation Solving More Than Two Steps,0,6.110223650674133e-05
+58161,Equation Solving More Than Two Steps,0,6.196445797203465e-05
+58161,Equation Solving More Than Two Steps,0,6.307006375171795e-05
+58161,Equation Solving More Than Two Steps,0,6.196445797203465e-05
+58161,Equation Solving More Than Two Steps,1,0.9825612448679969
+58161,Equation Solving More Than Two Steps,0,0.006163818810801494
+58161,Equation Solving More Than Two Steps,0,0.1321184771184104
+58161,Equation Solving More Than Two Steps,1,0.9783974292308314
+58161,Equation Solving More Than Two Steps,1,0.9939023351060138
+58161,Equation Solving More Than Two Steps,1,0.9968937132607021
+64531,Subtraction Whole Numbers,1,0.5570344425456947
+64531,Addition Whole Numbers,1,0.8700854135452587
+64531,Addition Whole Numbers,1,0.8816244531272565
+64531,Addition Whole Numbers,1,0.8930002466242579
+64531,Addition Whole Numbers,1,0.9514602816418758
+64531,Absolute Value,1,0.9976402218023045
+64531,Addition Whole Numbers,1,0.9484879824871146
+64531,Absolute Value,1,0.9978995132781939
+64531,Absolute Value,1,0.9978995132781939
+64531,Subtraction Whole Numbers,1,0.9219791901316942
+64634,Addition Whole Numbers,0,0.018216107971622663
+64634,Addition Whole Numbers,1,0.9878980391078164
+64634,Addition Whole Numbers,1,0.9947054461355632
+64634,Addition Whole Numbers,1,0.9946386868774726
+64634,Addition and Subtraction Integers,1,0.9807197897278297
+64634,Addition and Subtraction Integers,0,0.015081224678189202
+64634,Addition and Subtraction Integers,1,0.9944932077723386
+64634,Addition and Subtraction Integers,1,0.9971944195133717
+64634,Addition and Subtraction Integers,0,0.006355068280689613
+64634,Addition and Subtraction Integers,1,0.9913905870828689
+64634,Addition and Subtraction Integers,1,0.9972946647009631
+64634,Addition and Subtraction Integers,1,0.967904278056036
+64634,Addition and Subtraction Integers,0,0.01581741508197659
+64634,Addition and Subtraction Integers,0,0.02190886293570275
+64634,Addition and Subtraction Integers,0,0.006201291996445481
+64634,Addition and Subtraction Integers,0,0.006573428006258257
+64634,Addition and Subtraction Integers,1,0.9299844234672826
+64634,Addition and Subtraction Integers,0,6.472251274251401e-05
+64634,Addition and Subtraction Integers,0,6.472251274251401e-05
+64634,Addition and Subtraction Integers,0,0.005421142738854218
+64634,Addition and Subtraction Integers,1,0.9960747947835199
+64634,Addition and Subtraction Integers,0,0.01550074538803787
+64634,Addition and Subtraction Integers,0,0.020916558187522572
+64634,Addition and Subtraction Integers,1,0.9957489285895951
+64634,Addition and Subtraction Integers,1,0.9925071347700485
+64634,Addition and Subtraction Integers,1,0.9945924115444968
+64634,Addition and Subtraction Integers,0,0.02136091156332357
+64634,Addition and Subtraction Integers,0,0.0027190523836429555
+64634,Addition and Subtraction Integers,1,0.9455842173947872
+64634,Addition and Subtraction Integers,0,0.012356274895786518
+64634,Addition and Subtraction Integers,1,0.9927359365327549
+64634,Addition and Subtraction Integers,1,0.9968697248996541
+64634,Addition and Subtraction Integers,1,0.9962295308497243
+64634,Multiplication and Division Integers,1,0.4897456012817808
+64634,Multiplication and Division Integers,0,0.8118779242122098
+64634,Multiplication and Division Integers,1,0.7788244947864645
+64634,Multiplication and Division Integers,1,0.8604472578587166
+64634,Multiplication and Division Integers,1,0.8967092986770642
+64634,Multiplication and Division Integers,1,0.7020605869693362
+64634,Multiplication and Division Integers,0,0.006579071437798608
+64634,Multiplication and Division Integers,1,0.9972207582031098
+64634,Multiplication and Division Integers,1,0.9940647626154704
+64634,Multiplication and Division Integers,1,0.9972661131707967
+64634,Multiplication and Division Integers,1,0.9177674144991439
+64634,Pattern Finding ,0,6.587732609216781e-05
+64634,Multiplication and Division Integers,0,0.8581335803050887
+64634,Multiplication and Division Integers,1,0.8733111971234144
+64634,Multiplication and Division Integers,1,0.8926852310917454
+64634,Multiplication and Division Integers,1,0.8860802223290906
+64634,Multiplication and Division Integers,1,0.9961180172370958
+64634,Multiplication and Division Integers,1,0.8454579413783689
+64634,Multiplication and Division Integers,1,0.9939633394642929
+64634,Square Root,1,0.985288913935111
+64634,Square Root,0,0.01571664223248228
+64634,Square Root,0,0.01370295684083579
+64634,Square Root,0,0.01500820238914425
+64634,Square Root,0,0.015519282254018612
+64634,Square Root,1,0.9957079460059988
+64634,Square Root,1,0.99505058307112
+64634,Square Root,1,0.99746111869774
+64634,Square Root,1,0.9967395570482892
+64634,Square Root,1,0.9967395570482892
+64634,Addition and Subtraction Positive Decimals,1,0.4668935096343792
+64634,Addition and Subtraction Positive Decimals,1,0.7135649293075517
+64634,Addition and Subtraction Positive Decimals,1,0.7677460251085773
+64634,Addition and Subtraction Positive Decimals,1,0.80424698146027
+64634,Addition and Subtraction Positive Decimals,1,0.8361833092734666
+64634,Multiplication and Division Positive Decimals,0,0.01431729069626047
+64634,Multiplication and Division Positive Decimals,0,0.005409918515302951
+64634,Conversion of Fraction Decimals Percents,0,6.472251274251401e-05
+64634,Conversion of Fraction Decimals Percents,0,6.472251274251401e-05
+64634,Conversion of Fraction Decimals Percents,1,0.9657210250214749
+64634,Conversion of Fraction Decimals Percents,1,0.9767039368858322
+64634,Conversion of Fraction Decimals Percents,1,0.9650907371584362
+64634,Multiplication Fractions,0,6.127652714014218e-05
+64634,Multiplication and Division Integers,1,0.9961600361116771
+64634,Multiplication and Division Integers,0,6.769007412774309e-05
+64634,Multiplication Fractions,0,6.587732609216781e-05
+64634,Multiplication Fractions,0,6.587732609216781e-05
+64634,Multiplication Fractions,0,0.00010378077268463222
+64634,Ordering Integers,1,0.6528477431100158
+64634,Ordering Integers,0,0.0059062873807834695
+64634,Ordering Integers,1,0.8893108806893252
+64634,Ordering Integers,1,0.926014370928757
+64634,Ordering Integers,1,0.9613362056472848
+64634,Ordering Integers,1,0.9951558239442267
+64634,Ordering Integers,1,0.997260433119232
+64634,Ordering Positive Decimals,0,0.6142753355084125
+64634,Ordering Positive Decimals,0,0.01819073299733817
+64634,Ordering Positive Decimals,1,0.6601091735494236
+64634,Ordering Positive Decimals,1,0.9971563081615128
+64634,Ordering Positive Decimals,1,0.9973113103648363
+64634,Ordering Positive Decimals,1,0.9960955670237822
+64634,Ordering Positive Decimals,0,0.003268332890115053
+64634,Ordering Positive Decimals,0,0.0019435124277318173
+64634,Ordering Positive Decimals,0,0.0021866353787091974
+64634,Ordering Positive Decimals,1,0.9951315358691283
+64634,Ordering Positive Decimals,0,0.0018028307601095535
+64634,Ordering Positive Decimals,1,0.9972949661396922
+64634,Ordering Positive Decimals,1,0.997488206937474
+64634,Ordering Positive Decimals,0,0.005981284404290902
+64634,Ordering Positive Decimals,1,0.997488206937474
+64634,Ordering Fractions,0,0.6857459864277935
+64634,Ordering Fractions,1,0.603447951571504
+64634,Ordering Fractions,1,0.7628134327223972
+64634,Ordering Fractions,1,0.926014370928757
+64634,Conversion of Fraction Decimals Percents,0,6.196445797203465e-05
+64634,Conversion of Fraction Decimals Percents,1,0.996765610763652
+64634,Multiplication Fractions,0,6.307006375171795e-05
+64634,Multiplication Fractions,0,0.0003066669476553941
+70190,Equation Solving Two or Fewer Steps,1,0.9958423285242028
+70190,Solving for a variable,0,0.014658633741235471
+70190,Solving for a variable,1,0.9878258060500168
+70190,Solving for a variable,0,0.9958261151321446
+70190,Equation Solving Two or Fewer Steps,1,0.9955024907185508
+70190,Equation Solving Two or Fewer Steps,0,0.012988997694780112
+70190,Equation Solving Two or Fewer Steps,0,6.307006375171795e-05
+70190,Equation Solving Two or Fewer Steps,1,0.9930529890249076
+70190,Equation Solving Two or Fewer Steps,1,0.9927450083680728
+70190,Equation Solving Two or Fewer Steps,1,0.9945319422960822
+70190,Area Trapezoid,0,0.6880225153935509
+70190,Area Trapezoid,0,0.00010134897998455933
+70190,Addition and Subtraction Fractions,0,0.00010378077268463222
+70190,Addition and Subtraction Integers,0,0.00010378077268463222
+70190,Addition and Subtraction Integers,1,0.9943077823544114
+70190,Addition and Subtraction Integers,1,0.9963018100433402
+70190,Addition and Subtraction Integers,1,0.996604310205354
+70190,Addition and Subtraction Integers,0,0.00015840899473350286
+70190,Addition and Subtraction Integers,1,0.9929555046939808
+70190,Addition and Subtraction Integers,1,0.9966132480576837
+70190,Addition and Subtraction Integers,1,0.99721256324718
+70676,Rounding,1,0.7865732681811072
+70676,Addition and Subtraction Positive Decimals,1,0.8700854135452587
+70676,Addition and Subtraction Fractions,1,0.9973917404508358
+70676,Addition and Subtraction Positive Decimals,1,0.886273423727177
+70676,Multiplication and Division Integers,1,0.8945790642708245
+70676,Congruence,1,0.9973790643896064
+70676,Subtraction Whole Numbers,1,0.8904527894053941
+70676,Addition Whole Numbers,1,0.8945790642708245
+70676,Addition and Subtraction Positive Decimals,1,0.8930002466242579
+70676,Scientific Notation,1,0.9969136441511173
+70676,Scientific Notation,1,0.997951608606617
+70676,Scientific Notation,1,0.9974962615420468
+70676,Scientific Notation,1,0.9981207387206431
+70676,Scientific Notation,1,0.9978286530680699
+70676,Addition Whole Numbers,1,0.9267420034765632
+70676,Addition Whole Numbers,1,0.9378674993367322
+70676,Addition and Subtraction Integers,1,0.9973790643896064
+70676,Addition and Subtraction Positive Decimals,0,0.9012646604481404
+70676,Perimeter of a Polygon,1,0.9974607117283634
+70676,Circumference ,1,0.9875607641856202
+70676,Addition and Subtraction Fractions,1,0.9980698498325695
+70676,Addition and Subtraction Fractions,0,6.587732609216781e-05
+70676,Addition and Subtraction Fractions,1,0.9972366254583573
+70676,Addition and Subtraction Fractions,1,0.9854158774021515
+70676,Addition and Subtraction Fractions,1,0.9839226637289342
+70676,Division Fractions,1,0.9970303056217155
+70676,Addition Whole Numbers,1,0.9977271370846877
+70676,Addition Whole Numbers,1,0.9977488083111207
+70676,Addition Whole Numbers,0,0.015799338470362186
+70676,D.4.8-understanding-concept-of-probabilities,0,7.92664358866884e-05
+70676,D.4.8-understanding-concept-of-probabilities,1,0.9935652384252808
+70676,D.4.8-understanding-concept-of-probabilities,0,0.016304968642619485
+70676,D.4.8-understanding-concept-of-probabilities,1,0.9973955667375881
+70676,D.4.8-understanding-concept-of-probabilities,1,0.9980052569526991
+70676,Conversion of Fraction Decimals Percents,1,0.9963735050903118
+70676,Conversion of Fraction Decimals Percents,1,0.9974815235779211
+70676,Conversion of Fraction Decimals Percents,1,0.9979095936223633
+70676,"Order of Operations +,-,/,* () positive reals",1,0.6673173720994326
+70676,Scientific Notation,1,0.9973898014458531
+70676,Scientific Notation,1,0.9982607211768754
+70676,Scientific Notation,0,0.01005899610411373
+70676,Scientific Notation,1,0.9982095303759044
+70676,Scientific Notation,1,0.9975362144389649
+70676,Scientific Notation,1,0.998319994023225
+70676,Scientific Notation,1,0.9973898014458531
+70676,Scientific Notation,1,0.9974111932185641
+70688,Addition and Subtraction Positive Decimals,1,0.5887430300977934
+70688,Addition and Subtraction Fractions,1,0.9875607641856202
+70688,Multiplication and Division Integers,1,0.8311426012272142
+70688,Addition and Subtraction Fractions,1,0.9704106635832292
+70688,Multiplication Fractions,1,0.994099737746437
+70688,Addition and Subtraction Positive Decimals,1,0.8120092130438583
+70688,Addition Whole Numbers,1,0.9933064461429781
+70688,Addition and Subtraction Integers,1,0.9974607117283634
+70688,Multiplication and Division Integers,1,0.9968837645362868
+70688,Addition and Subtraction Integers,1,0.9975275452447745
+70688,Addition and Subtraction Integers,1,0.9982927291911518
+70688,Rounding,1,0.9009601446773946
+70688,Multiplication and Division Integers,0,0.8930002466242579
+70688,Multiplication and Division Integers,0,0.017829740426776368
+70688,Multiplication and Division Integers,1,0.9982152591045699
+70688,Multiplication and Division Integers,1,0.998264831769624
+70688,Multiplication and Division Integers,1,0.9981062678192236
+70688,Multiplication and Division Integers,1,0.9982168132312469
+70688,Congruence,1,0.9914763042842979
+70688,Absolute Value,1,0.9973790643896064
+70688,Subtraction Whole Numbers,1,0.9004904634693598
+70688,Addition and Subtraction Positive Decimals,0,0.9318607753584665
+70688,Addition and Subtraction Positive Decimals,1,0.6967765770104521
+70688,Addition and Subtraction Positive Decimals,1,0.8657377188973068
+70688,Addition and Subtraction Positive Decimals,1,0.9141096396082862
+70688,Addition and Subtraction Fractions,1,0.9972287926303642
+70688,Addition and Subtraction Fractions,1,0.9886129820142536
+70688,Addition Whole Numbers,1,0.9981155837229515
+70688,Addition Whole Numbers,0,0.015266866232496392
+70688,Addition Whole Numbers,1,0.9976773985511068
+70688,Addition Whole Numbers,1,0.9978904725868617
+70688,Addition Whole Numbers,1,0.9978363844194743
+70688,Addition Whole Numbers,1,0.9979027637492521
+70688,Addition Whole Numbers,1,0.9981916830604444
+70688,Ordering Positive Decimals,1,0.9980786925757404
+70688,Conversion of Fraction Decimals Percents,1,0.9976853084174125
+70688,Conversion of Fraction Decimals Percents,1,0.9979027072537814
+70688,Conversion of Fraction Decimals Percents,1,0.9979122913631929
+70688,Conversion of Fraction Decimals Percents,1,0.995924042581442
+70688,Conversion of Fraction Decimals Percents,0,0.0055895160676253264
+70688,Conversion of Fraction Decimals Percents,1,0.9975165546025794
+70688,Unit Conversion Within a System,0,0.016637933104403667
+70688,Unit Conversion Within a System,0,0.002701241767215923
+70688,Percent Of,0,0.00357789427419648
+70688,Percent Of,1,0.995316255700592
+70688,Percent Of,1,0.9980828154549767
+70688,Percent Of,1,0.9980368635257383
+70688,Multiplication and Division Positive Decimals,1,0.994481895845024
+70688,Division Fractions,1,0.9940799068483305
+70688,Multiplication and Division Integers,1,0.99817030135221
+70688,Multiplication and Division Integers,1,0.8348042327448122
+70688,Exponents,1,0.9968763408230622
+70688,Divisibility Rules,0,0.018106903781733664
+70688,Divisibility Rules,0,0.007877114038205188
+70688,Divisibility Rules,1,0.9764494219789626
+70688,Divisibility Rules,1,0.9933236400895055
+70688,Divisibility Rules,0,0.017092772376351064
+70688,Divisibility Rules,1,0.9759510074587919
+70688,Divisibility Rules,0,0.016387393413767156
+70688,Divisibility Rules,1,0.9762354068759951
+70688,Divisibility Rules,1,0.9534541961300045
+70688,Divisibility Rules,1,0.9831624029358805
+70688,Addition and Subtraction Integers,1,0.9963238946309056
+70688,Multiplication and Division Integers,1,0.9975606478445626
+70688,Multiplication and Division Integers,1,0.8321641040356651
+70688,Addition and Subtraction Integers,1,0.998004290767687
+70688,Least Common Multiple,0,0.014297311503793353
+70688,Least Common Multiple,1,0.9958215529647986
+70688,Least Common Multiple,1,0.9981683023915751
+70688,Least Common Multiple,1,0.9980929624674904
+70688,Least Common Multiple,0,0.012761236778330952
+70688,Least Common Multiple,0,0.015105595239190275
+70688,Least Common Multiple,1,0.9980014271329988
+70688,Least Common Multiple,1,0.9975960552165264
+70688,Least Common Multiple,1,0.9982792507885768
+70688,Multiplication Fractions,1,0.9951199878829589
+70688,Multiplication Fractions,1,0.9836485185260243
+70688,Multiplication and Division Integers,1,0.9476192716016062
+70688,Ordering Positive Decimals,0,0.8162731907864057
+70688,Ordering Positive Decimals,1,0.7488285085279517
+70688,Ordering Positive Decimals,1,0.852015612205263
+70688,Ordering Positive Decimals,1,0.7098114617270725
+70688,Ordering Positive Decimals,1,0.8977516143142695
+70688,Ordering Positive Decimals,1,0.9969423398640427
+70688,Ordering Fractions,1,0.9112763201156912
+70688,Ordering Fractions,1,0.9411833092853257
+70688,Ordering Fractions,1,0.9300746070699029
+70688,Ordering Fractions,1,0.9300746070699029
+70688,Ordering Fractions,1,0.88378254856748
+70688,Ordering Fractions,1,0.9975634881685409
+70688,Ordering Fractions,1,0.9982592659210128
+70688,Ordering Fractions,1,0.9977916030275564
+70688,Table,1,0.6544491421737321
+70688,Unit Rate,1,0.7722740845462828
+70688,Number Line,1,0.9942030616805573
+70688,Number Line,0,0.006117612055088754
+70688,Number Line,1,0.9977754899168019
+70688,Number Line,0,0.015112979515800908
+70688,Number Line,1,0.9975203357616484
+70688,Number Line,1,0.9976584815634965
+70688,Number Line,0,0.006759127314776238
+70688,Number Line,1,0.9974420761120755
+70688,Number Line,0,0.0034581673894973487
+70688,Number Line,0,0.0056867125023838975
+70688,Number Line,0,0.003048452035319686
+70688,Write Linear Equation from Graph,0,0.6322226452504972
+70688,Write Linear Equation from Graph,0,7.086936045923905e-05
+70688,Write Linear Equation from Graph,0,0.00010196158897535748
+70688,Write Linear Equation from Graph,0,0.012558230472772002
+70688,Write Linear Equation from Graph,0,0.5279560207803055
+70688,Write Linear Equation from Graph,0,6.81074896579853e-05
+70688,Write Linear Equation from Graph,1,0.9954790526589846
+70688,Write Linear Equation from Graph,0,7.086936045923905e-05
+70688,Write Linear Equation from Graph,0,0.5854197877179638
+70688,Write Linear Equation from Graph,0,6.81074896579853e-05
+70688,Write Linear Equation from Graph,0,6.196445797203465e-05
+70688,Write Linear Equation from Graph,0,6.81074896579853e-05
+70688,Subtraction Whole Numbers,1,0.7445081444771798
+70688,Addition Whole Numbers,1,0.7975696924092032
+70688,Addition and Subtraction Integers,0,0.016060782136627635
+70688,Addition and Subtraction Integers,1,0.9978112140798252
+70688,Addition and Subtraction Integers,1,0.9977738867936434
+70688,Addition and Subtraction Integers,1,0.9981037717132456
+70688,Addition and Subtraction Positive Decimals,1,0.8203400402807575
+70688,Addition and Subtraction Fractions,1,0.9969168496608612
+70688,Addition and Subtraction Fractions,1,0.9969345793146939
+70688,Addition and Subtraction Fractions,1,0.9973712679243153
+70688,Addition and Subtraction Fractions,1,0.9969345793146939
+70688,Addition and Subtraction Fractions,1,0.9813380915286019
+70688,Addition Whole Numbers,0,0.015344507920668623
+70688,Addition Whole Numbers,1,0.9975701589791544
+70688,Addition Whole Numbers,1,0.9975188933924952
+70688,Addition Whole Numbers,1,0.9976446867773688
+70688,Addition Whole Numbers,1,0.9975188933924952
+70688,Addition Whole Numbers,1,0.9975188933924952
+70688,Ordering Positive Decimals,1,0.997498389333477
+70688,Conversion of Fraction Decimals Percents,1,0.9978748389747059
+70688,Conversion of Fraction Decimals Percents,1,0.9978120517487302
+70688,Conversion of Fraction Decimals Percents,1,0.9977732081348134
+70688,Conversion of Fraction Decimals Percents,1,0.9953782151811171
+70688,Conversion of Fraction Decimals Percents,1,0.9923470398407639
+70688,Conversion of Fraction Decimals Percents,1,0.9973712679243153
+70688,Unit Conversion Within a System,1,0.9798282651915006
+70688,Percent Of,0,0.005799761962373413
+70688,Percent Of,1,0.9974930448571374
+70688,Percent Of,1,0.9975956853566798
+70688,Percent Of,1,0.997490364757607
+70688,Multiplication and Division Positive Decimals,1,0.99713981477632
+70688,Division Fractions,1,0.99713981477632
+70688,Multiplication and Division Integers,1,0.9980633919560484
+70688,Multiplication and Division Integers,0,8.401692870793064e-05
+70688,Multiplication and Division Integers,1,0.9979495537249391
+70688,Multiplication and Division Integers,1,0.9980179942888893
+70688,Multiplication and Division Integers,1,0.9979548513667437
+70688,Exponents,1,0.9976314912905778
+70688,Finding Percents,0,0.5737673653487814
+70688,Finding Percents,1,0.6119336055189751
+70688,Finding Percents,0,0.63251764596518
+70688,Finding Percents,1,0.6388186620413994
+70688,Finding Percents,1,0.7198770897251496
+70688,Finding Percents,1,0.759103799874749
+70688,Divisibility Rules,1,0.9495214948057021
+70688,Divisibility Rules,1,0.992355026000695
+70688,Divisibility Rules,1,0.992355026000695
+70688,Divisibility Rules,1,0.992355026000695
+70688,Divisibility Rules,1,0.992355026000695
+70688,Multiplication and Division Integers,1,0.9974939627401438
+70688,Multiplication and Division Integers,1,0.9107312682001607
+70688,Addition and Subtraction Integers,1,0.9975552392700142
+70688,Least Common Multiple,0,0.017599796154752528
+70688,Least Common Multiple,1,0.9978780043092366
+70688,Least Common Multiple,1,0.9974672815309354
+70688,Least Common Multiple,1,0.9980910410142005
+70688,Least Common Multiple,0,0.017759205162296964
+70688,Least Common Multiple,1,0.9980910410142005
+70688,Least Common Multiple,1,0.9980247208854133
+70688,Least Common Multiple,1,0.9981674916927065
+70688,Multiplication Fractions,1,0.9936197756648844
+70693,Addition and Subtraction Positive Decimals,1,0.6289444795803035
+70693,Addition and Subtraction Fractions,1,0.9957686592973878
+70693,Multiplication and Division Integers,1,0.8438702218551662
+70693,Addition and Subtraction Fractions,1,0.9902862849519312
+70693,Multiplication Fractions,0,0.018946165919948937
+70693,Multiplication Fractions,1,0.9961521899433431
+70693,Multiplication Fractions,1,0.9976650455686011
+70693,Multiplication Fractions,0,0.004528477615921317
+70693,Multiplication Fractions,1,0.9976095281211759
+70693,Addition and Subtraction Positive Decimals,0,0.8860100097231656
+70693,Addition Whole Numbers,1,0.9873803334072916
+70693,Addition and Subtraction Integers,0,6.587732609216781e-05
+70693,Addition and Subtraction Integers,0,7.086936045923905e-05
+70693,Addition Whole Numbers,0,0.0008803100456236776
+70693,Subtraction Whole Numbers,1,0.5567864836832428
+70693,Absolute Value,1,0.9949920284421443
+70693,Subtraction Whole Numbers,0,0.7549858111813106
+70693,Subtraction Whole Numbers,1,0.6263973741348617
+70693,Subtraction Whole Numbers,1,0.7442471139637634
+70693,Subtraction Whole Numbers,1,0.840065507055335
+70693,Subtraction Whole Numbers,1,0.838540707671524
+70693,Addition and Subtraction Positive Decimals,1,0.6802690354511725
+70693,Addition and Subtraction Fractions,1,0.9920088961261778
+70693,Addition and Subtraction Fractions,1,0.9755704262258946
+70693,Addition Whole Numbers,1,0.9943092556998886
+70693,Addition Whole Numbers,1,0.9975924273334191
+70693,Addition Whole Numbers,1,0.9965687185219045
+70693,Addition Whole Numbers,1,0.9977543855120667
+70693,Addition Whole Numbers,1,0.9978232750654215
+70693,Addition and Subtraction Integers,1,0.9899207076035729
+70693,Addition and Subtraction Positive Decimals,1,0.8975092154354376
+70693,Addition Whole Numbers,0,8.401692870793064e-05
+70693,Square Root,1,0.9914674645733899
+70693,Addition Whole Numbers,1,0.8265938083487087
+70693,Addition Whole Numbers,1,0.7547966027798932
+70693,Addition and Subtraction Integers,0,6.472251274251401e-05
+70693,Addition and Subtraction Fractions,0,0.016280182074842366
+70693,Addition and Subtraction Fractions,1,0.9907960751900354
+70693,Addition and Subtraction Fractions,1,0.9941541350460291
+70693,Addition and Subtraction Fractions,1,0.9935571954591628
+70693,Ordering Positive Decimals,1,0.9960123522973378
+70693,Multiplication and Division Integers,0,0.8829638158105322
+70693,Multiplication and Division Integers,1,0.7747921157961276
+70693,Multiplication and Division Integers,1,0.8301384501807126
+70693,Multiplication and Division Integers,1,0.8293632148081689
+70693,Ordering Integers,1,0.9949122352463177
+70693,Ordering Fractions,1,0.9975966268592759
+70693,Ordering Fractions,1,0.8915538638538794
+70693,Ordering Fractions,0,0.9334364801556402
+70693,Ordering Fractions,1,0.8465674988319964
+70693,Ordering Fractions,1,0.9260587491281329
+70693,Ordering Fractions,1,0.9041579865332862
+70693,Ordering Fractions,1,0.913110731338123
+70693,Ordering Fractions,1,0.913110731338123
+70693,Ordering Positive Decimals,1,0.9983484246038908
+70693,Ordering Positive Decimals,1,0.9169728547401543
+70693,Ordering Integers,1,0.8839666189255704
+70693,Ordering Integers,0,0.007091855980225582
+70693,Ordering Integers,0,0.04646703833192728
+70693,Ordering Integers,0,0.40975057384553903
+70693,Ordering Integers,0,0.018048192039904508
+70693,Ordering Positive Decimals,1,0.9462863927930494
+70693,Ordering Integers,0,0.04397459373496367
+70693,Ordering Integers,0,0.00013548671093478596
+70693,Ordering Integers,0,0.003443048126945104
+70693,Ordering Integers,0,0.0012035671849190842
+70693,Ordering Integers,1,0.9951640135002907
+70693,Ordering Integers,0,0.0034992468262207027
+70693,Proportion,1,0.9876006635226698
+70693,Proportion,1,0.9951434311195335
+70693,Proportion,0,0.006668445095519117
+70693,Proportion,0,0.9977296830950312
+70693,Conversion of Fraction Decimals Percents,0,0.995305745704286
+70693,Table,0,0.00358094298611087
+70695,Addition and Subtraction Positive Decimals,1,0.557136791568297
+70695,Addition and Subtraction Fractions,1,0.9957501558343652
+70695,Addition and Subtraction Fractions,1,0.9956641075352689
+70695,Addition and Subtraction Positive Decimals,1,0.8459520294968347
+70695,Addition Whole Numbers,1,0.9938031629837688
+70695,Multiplication and Division Integers,1,0.7035315491332493
+70695,Multiplication Fractions,1,0.9938031629837688
+70695,Addition and Subtraction Integers,0,0.00013147597800075244
+70695,Addition and Subtraction Integers,0,0.014693837240181072
+70695,Multiplication and Division Integers,1,0.9969067193261283
+70695,Multiplication and Division Integers,1,0.9040469847213706
+70695,Rounding,1,0.9962335050096013
+70695,Table,0,0.6653832490489306
+70695,Table,1,0.6450605436592641
+70695,Table,1,0.7246950385053623
+70695,Table,0,0.6927141425548878
+70695,Addition Whole Numbers,1,0.836470181365011
+70695,Subtraction Whole Numbers,1,0.769359633632461
+70695,Addition and Subtraction Positive Decimals,1,0.7240786677795203
+70695,Addition and Subtraction Fractions,0,0.017746315476566295
+70695,Addition Whole Numbers,1,0.9973251975025181
+70695,Addition Whole Numbers,1,0.9973945221714856
+70695,Addition Whole Numbers,1,0.9976454160608431
+70695,Addition Whole Numbers,1,0.9973423614152891
+70695,Addition Whole Numbers,1,0.9973204024011255
+70695,Addition and Subtraction Fractions,1,0.9864933310112013
+70695,Ordering Positive Decimals,0,0.0033254202399159187
+70695,Ordering Positive Decimals,1,0.994291073596406
+70695,Ordering Positive Decimals,1,0.9980071255897469
+70695,Ordering Positive Decimals,0,0.01603429221381154
+70695,Ordering Positive Decimals,1,0.9978600876889874
+70695,Ordering Positive Decimals,1,0.9978589927599545
+70695,Ordering Positive Decimals,1,0.998116884718484
+70695,Conversion of Fraction Decimals Percents,1,0.9974876356420951
+70695,Conversion of Fraction Decimals Percents,1,0.997737772301339
+70695,Conversion of Fraction Decimals Percents,1,0.9978861337252233
+70695,Conversion of Fraction Decimals Percents,0,0.006725358112664372
+70695,Conversion of Fraction Decimals Percents,1,0.9936652886111774
+70695,Conversion of Fraction Decimals Percents,1,0.981416164500958
+70695,Conversion of Fraction Decimals Percents,1,0.9968212004578655
+70695,Conversion of Fraction Decimals Percents,0,6.587732609216781e-05
+70695,Conversion of Fraction Decimals Percents,0,6.587732609216781e-05
+70695,Conversion of Fraction Decimals Percents,0,0.016364636963825296
+70695,Conversion of Fraction Decimals Percents,1,0.9776073715669032
+70695,Conversion of Fraction Decimals Percents,0,0.016364636963825296
+70695,Conversion of Fraction Decimals Percents,0,0.0027685800960008298
+70695,Conversion of Fraction Decimals Percents,1,0.9870362512656794
+70695,Conversion of Fraction Decimals Percents,0,0.014809137160131694
+70695,Conversion of Fraction Decimals Percents,0,0.014782049528925293
+70695,Conversion of Fraction Decimals Percents,0,6.727048558538967e-05
+70695,Conversion of Fraction Decimals Percents,1,0.9963819105890931
+70695,Conversion of Fraction Decimals Percents,1,0.9958885274761194
+70695,Multiplication and Division Positive Decimals,1,0.9874472467633458
+70695,Division Fractions,1,0.9608286677357968
+70695,Multiplication and Division Integers,1,0.9951655633522589
+70695,Exponents,1,0.9592654617159778
+70695,Multiplication and Division Integers,1,0.6856174303598224
+70695,Multiplication and Division Integers,1,0.790029190719632
+70695,Addition and Subtraction Integers,1,0.9931433315316148
+70695,Multiplication and Division Integers,1,0.9240389238952539
+70695,Addition and Subtraction Integers,1,0.9833890766513771
+70695,Ordering Integers,1,0.9959739789583403
+70695,Ordering Integers,1,0.9972223239852868
+70695,Ordering Fractions,1,0.9966929603691094
+70695,Ordering Positive Decimals,1,0.8354652887592741
+70695,Ordering Fractions,1,0.8266093983805465
+70695,Ordering Fractions,1,0.9169728547401543
+70695,Ordering Fractions,1,0.9169728547401543
+70695,Ordering Fractions,0,0.9240389238952539
+70695,Ordering Fractions,1,0.8927073688103314
+70695,Ordering Fractions,1,0.913110731338123
+70695,Ordering Fractions,1,0.9023004379807233
+70695,Ordering Fractions,1,0.9052310707114022
+70695,Ordering Fractions,1,0.9145457977266342
+70695,Ordering Positive Decimals,1,0.6503143357899704
+70695,"Order of Operations +,-,/,* () positive reals",0,0.653107975009009
+70695,"Order of Operations +,-,/,* () positive reals",1,0.9861934956676475
+70695,"Order of Operations +,-,/,* () positive reals",1,0.9810804991441094
+70695,"Order of Operations +,-,/,* () positive reals",1,0.9707454580465825
+70695,"Order of Operations +,-,/,* () positive reals",1,0.6726441322826936
+70695,"Order of Operations +,-,/,* () positive reals",1,0.9938891590358025
+70695,Ordering Positive Decimals,0,0.809263246218643
+70695,"Order of Operations +,-,/,* () positive reals",0,0.015982044300417792
+70695,"Order of Operations +,-,/,* () positive reals",1,0.9909745832178107
+70695,"Order of Operations +,-,/,* () positive reals",1,0.9905872688634417
+70695,"Order of Operations +,-,/,* () positive reals",1,0.9933541911503179
+70695,Order of Operations All,1,0.9939758947817033
+70695,Order of Operations All,0,0.7011446920271105
+70695,Square Root,1,0.5843915963101217
+70695,Square Root,1,0.7214559671137666
+70695,Square Root,1,0.8600556559456496
+70695,Square Root,1,0.9334364801556402
+70695,Square Root,1,0.8867799929680976
+70695,Square Root,0,0.01848247253464179
+70695,Square Root,0,0.018227116752638484
+70695,Square Root,1,0.9909745832178107
+70695,Square Root,1,0.9978633437188453
+70695,Square Root,1,0.9973278558495365
+70695,Estimation,1,0.6081237385404188
+70695,Estimation,0,0.8266093983805465
+70695,Estimation,1,0.7747921157961276
+70695,Estimation,0,0.8465674988319964
+70695,Estimation,1,0.774235276711863
+70695,Estimation,1,0.8518255847006515
+70695,Estimation,0,0.8195629811399933
+70695,Estimation,0,0.7777613923636975
+70695,Estimation,1,0.7495624201056186
+70695,Estimation,1,0.8020380179354187
+70695,Addition and Subtraction Integers,1,0.9970560756968322
+70695,Finding Percents,1,0.5699096487334554
+70695,Finding Percents,1,0.7118200163359395
+70695,Finding Percents,1,0.7932274025686127
+70695,Least Common Multiple,1,0.9942413864423547
+70695,Least Common Multiple,0,0.006180334520948814
+70695,Multiplication Fractions,1,0.9900057225129237
+70695,Addition and Subtraction Integers,1,0.9971474421203756
+70695,Addition and Subtraction Positive Decimals,1,0.868895828515695
+70695,Absolute Value,1,0.9968879775298939
+70695,Addition and Subtraction Fractions,1,0.9973462644527024
+70695,Subtraction Whole Numbers,1,0.836470181365011
+70695,Addition and Subtraction Fractions,1,0.9788838248519234
+70695,Addition Whole Numbers,1,0.9979602656875497
+70695,Addition Whole Numbers,1,0.998220323062129
+70695,Addition Whole Numbers,1,0.998220323062129
+70695,Addition Whole Numbers,1,0.9982562382256165
+70695,Addition Whole Numbers,1,0.9982562382256165
+70695,Ordering Positive Decimals,1,0.9979302012367117
+70695,Conversion of Fraction Decimals Percents,1,0.9975851891345767
+70695,Conversion of Fraction Decimals Percents,1,0.9975851891345767
+70695,Conversion of Fraction Decimals Percents,0,0.009425195018875985
+70695,Conversion of Fraction Decimals Percents,1,0.9977572375897934
+70695,Conversion of Fraction Decimals Percents,1,0.9977381803179215
+70695,Conversion of Fraction Decimals Percents,1,0.9974803160911524
+70695,Conversion of Fraction Decimals Percents,1,0.9952655983684178
+70695,Conversion of Fraction Decimals Percents,0,6.769007412774309e-05
+70695,Conversion of Fraction Decimals Percents,0,6.769007412774309e-05
+70695,Conversion of Fraction Decimals Percents,0,6.769007412774309e-05
+70695,Conversion of Fraction Decimals Percents,1,0.9845217662353061
+70695,Conversion of Fraction Decimals Percents,0,6.769007412774309e-05
+70695,Conversion of Fraction Decimals Percents,0,0.019152723589297368
+70695,Conversion of Fraction Decimals Percents,1,0.9972605815791847
+70695,Unit Conversion Within a System,1,0.9809695962851906
+70695,Multiplication and Division Positive Decimals,1,0.9979781804938435
+70695,Division Fractions,0,0.006180334520948814
+70695,Division Fractions,1,0.9973131632477588
+70695,Multiplication and Division Integers,1,0.8760956286109665
+70695,Addition and Subtraction Integers,1,0.9973256773784607
+70695,Multiplication Fractions,1,0.9960281722564833
+70695,Multiplication Fractions,0,0.007601474654861406
+70695,Multiplication and Division Integers,1,0.998177787753865
+70695,Multiplication and Division Integers,1,0.998177787753865
+70695,Exponents,1,0.9980260821451132
+70695,Multiplication and Division Integers,1,0.8162810933847998
+70695,Ordering Positive Decimals,1,0.9979916353164349
+70695,Ordering Fractions,1,0.998197688674938
+70695,Ordering Integers,1,0.9981609610339764
+70695,Square Root,1,0.8354182949258564
+70695,Square Root,1,0.9038299631333782
+70695,Square Root,1,0.8810646704586018
+70695,Square Root,1,0.8810646704586018
+70695,Square Root,1,0.9082722168408258
+70695,Ordering Integers,1,0.9962507662437444
+70695,"Order of Operations +,-,/,* () positive reals",1,0.9967207012146003
+70695,"Order of Operations +,-,/,* () positive reals",0,0.8333111406488768
+70695,"Order of Operations +,-,/,* () positive reals",0,0.9963581658624093
+70695,Ordering Positive Decimals,1,0.9981168648742973
+70695,Ordering Positive Decimals,1,0.6607860622027646
+70695,Ordering Fractions,1,0.838647554940856
+70695,Ordering Fractions,0,0.9145457977266342
+70695,Ordering Fractions,1,0.8762077946853077
+70695,Ordering Fractions,0,0.9320908776507454
+70695,Ordering Fractions,0,0.9036907308644068
+70695,Ordering Fractions,1,0.8287724547338374
+70695,Ordering Fractions,1,0.895544929790434
+70695,Ordering Fractions,1,0.8869896857345803
+70695,Ordering Fractions,1,0.8619761185700286
+70695,Ordering Fractions,0,0.8893080415324836
+70695,Ordering Integers,0,0.01641265925832452
+70695,Ordering Integers,0,0.0059663597922873235
+70695,Ordering Integers,1,0.9977889961864937
+70695,Addition and Subtraction Integers,1,0.9978908187846202
+70695,Addition and Subtraction Fractions,1,0.9975188933924952
+70695,Square Root,1,0.9934242116047788
+70695,Estimation,0,0.7035542452736419
+70695,Estimation,0,0.9069623370055605
+70695,Mean,0,7.086936045923905e-05
+70695,Median,1,0.9806818764501151
+70695,Median,1,0.9943273661078371
+70695,Median,1,0.9972046714352301
+70695,Table,1,0.6173085886944429
+70695,Table,1,0.6246735132822399
+70695,Table,1,0.8977702069360457
+70695,Table,1,0.8977702069360457
+70695,Table,1,0.7959474200686482
+70695,Table,1,0.8322928493907741
+70695,Perimeter of a Polygon,0,0.0003703822702219982
+70695,Box and Whisker,1,0.9940753876084514
+70695,Box and Whisker,1,0.9895524878878701
+70695,Histogram as Table or Graph,0,6.587732609216781e-05
+70695,Histogram as Table or Graph,0,0.9952153337467952
+70695,Venn Diagram,0,0.019688743973055107
+70695,Venn Diagram,1,0.9925110753128792
+70695,Venn Diagram,1,0.9977415670154203
+70695,Venn Diagram,1,0.9976923603362093
+70695,Venn Diagram,1,0.8963955663041452
+70695,Venn Diagram,1,0.9041579865332862
+70695,Venn Diagram,1,0.8669459849708825
+70695,Venn Diagram,1,0.913110731338123
+70695,Equation Solving Two or Fewer Steps,1,0.9739737481372754
+70695,Equation Solving Two or Fewer Steps,0,0.00927517816761919
+70695,Least Common Multiple,1,0.9956893616143497
+70695,Least Common Multiple,0,0.016131742173195702
+70695,Least Common Multiple,0,0.014957213604658688
+70695,Least Common Multiple,1,0.9964354475913391
+70695,Least Common Multiple,1,0.997420476843232
+70695,Multiplication and Division Integers,1,0.9980003503172119
+70695,Finding Percents,1,0.7897970115501903
+70695,Finding Percents,1,0.796850125615283
+70695,Finding Percents,1,0.796850125615283
+70695,Divisibility Rules,0,0.004259565622723523
+70695,Divisibility Rules,1,0.9798282651915006
+70695,Divisibility Rules,1,0.9810143569181407
+70695,Divisibility Rules,1,0.9864499668459478
+70695,Divisibility Rules,1,0.9782980960369538
+70695,Divisibility Rules,1,0.9855479598492181
+70695,Multiplication Fractions,1,0.9806928591616579
+70695,Ordering Fractions,1,0.6832933272979516
+70695,Ordering Fractions,1,0.7601234903527243
+70695,Ordering Fractions,0,0.7313467742810544
+70695,Ordering Fractions,0,0.7211866989931829
+70695,Ordering Fractions,0,0.9434438403518396
+70695,Ordering Fractions,1,0.781172437219984
+70695,Ordering Fractions,1,0.7704431377355823
+70695,Ordering Fractions,0,0.7660692714694344
+70695,Ordering Fractions,1,0.7597792794246924
+70695,Ordering Fractions,0,0.76976782231358
+70695,Ordering Fractions,0,0.6780138267875079
+70695,Ordering Integers,1,0.9957792568817639
+70695,Ordering Integers,1,0.9418258076023635
+70695,Ordering Integers,1,0.9955606648393067
+70695,Ordering Integers,1,0.9967482980887571
+70695,Percent Of,1,0.9941647584948187
+70695,Rounding,0,8.401692870793064e-05
+70695,Rounding,0,7.086936045923905e-05
+70695,Rounding,0,7.086936045923905e-05
+70695,Exponents,1,0.9788348605013788
+70695,Scientific Notation,0,0.012132091142147448
+70695,Scientific Notation,0,6.472251274251401e-05
+70695,Scientific Notation,1,0.9959026978884683
+70695,Scientific Notation,0,6.472251274251401e-05
+70695,Scientific Notation,1,0.9967751667569692
+70695,Scientific Notation,1,0.9978850137227747
+70695,Scientific Notation,1,0.9979618244141277
+70695,Scientific Notation,1,0.9979610606539087
+70695,Scientific Notation,0,0.003785245382899719
+70695,Scientific Notation,1,0.9978660874176482
+70695,Complementary and Supplementary Angles,0,6.587732609216781e-05
+70695,Complementary and Supplementary Angles,0,0.019853528820799046
+70695,Complementary and Supplementary Angles,1,0.9701105473220173
+70695,Congruence,1,0.9955106326143649
+70695,Complementary and Supplementary Angles,1,0.9753436102201564
+70695,Congruence,1,0.997489990967946
+70695,Pythagorean Theorem,0,0.003138301644610692
+70695,Pythagorean Theorem,0,0.004660955254123341
+70695,Conversion of Fraction Decimals Percents,1,0.985495869090783
+70695,Percent Of,0,0.006285060748535306
+70695,Percent Of,0,0.0029991690851130124
+70702,Addition and Subtraction Positive Decimals,1,0.5996420995337217
+70702,Addition and Subtraction Fractions,0,6.587732609216781e-05
+70702,Addition and Subtraction Fractions,1,0.9843455201441534
+70702,Addition and Subtraction Fractions,0,6.587732609216781e-05
+70702,Addition and Subtraction Fractions,1,0.9916735282440807
+70702,Addition and Subtraction Fractions,1,0.9965148994232046
+70702,Multiplication and Division Integers,1,0.744586281821603
+70702,Addition and Subtraction Fractions,0,6.587732609216781e-05
+70702,Addition and Subtraction Fractions,1,0.9916030526484939
+70702,Addition and Subtraction Fractions,1,0.9951453771655381
+70702,Addition and Subtraction Fractions,1,0.995438733897412
+70702,Multiplication Fractions,1,0.9974319781438055
+70702,Addition and Subtraction Positive Decimals,1,0.8238661497535097
+70702,Addition Whole Numbers,1,0.996098116931106
+70702,Addition and Subtraction Integers,1,0.9967901214697593
+70702,Multiplication and Division Integers,1,0.860722679282871
+70702,Multiplication and Division Integers,1,0.938381031666221
+70702,Addition and Subtraction Integers,1,0.9983307580958877
+70702,Addition and Subtraction Integers,1,0.9956783124150151
+70702,Rounding,1,0.9962579615490633
+70702,Congruence,1,0.9968257063265932
+70702,Multiplication and Division Integers,1,0.9982287795121849
+70702,Addition and Subtraction Fractions,0,0.003806395228099573
+70702,Addition and Subtraction Fractions,1,0.9973159929537385
+70702,Addition and Subtraction Fractions,1,0.9968489422163976
+70702,Addition and Subtraction Fractions,1,0.9968489422163976
+70702,Subtraction Whole Numbers,1,0.8236840207993604
+70702,Addition Whole Numbers,1,0.9439822772907344
+70702,Addition and Subtraction Positive Decimals,1,0.7691798051947784
+70702,Addition and Subtraction Fractions,1,0.9974680269312898
+70702,Addition and Subtraction Fractions,1,0.9783135936432381
+70702,Addition Whole Numbers,1,0.9972805521630805
+70702,Addition Whole Numbers,1,0.9972805521630805
+70702,Addition Whole Numbers,1,0.9974590272192324
+70702,Addition Whole Numbers,1,0.9974590272192324
+70702,Addition Whole Numbers,1,0.9974590272192324
+70702,Ordering Positive Decimals,1,0.9961775026252581
+70702,Conversion of Fraction Decimals Percents,1,0.997517758025981
+70702,Conversion of Fraction Decimals Percents,1,0.9979027072537814
+70702,Conversion of Fraction Decimals Percents,1,0.9977518788874473
+70702,Conversion of Fraction Decimals Percents,1,0.9886868027564226
+70702,Conversion of Fraction Decimals Percents,1,0.9962398179675093
+70702,Conversion of Fraction Decimals Percents,1,0.9982433402672524
+70702,Unit Conversion Within a System,0,0.016304860504282388
+70702,Unit Conversion Within a System,1,0.9899442447126791
+70702,Unit Conversion Within a System,1,0.9949337611306567
+70702,Unit Conversion Within a System,1,0.9954198485951025
+70702,Percent Of,0,8.401692870793064e-05
+70702,Percent Of,1,0.9936962770621973
+70702,Percent Of,1,0.9976680581695503
+70702,Percent Of,1,0.9977128366071965
+70702,Multiplication and Division Positive Decimals,1,0.9938901341639571
+70702,Division Fractions,1,0.9941013341523406
+70702,Multiplication and Division Integers,1,0.9977488083111207
+70702,Multiplication and Division Integers,1,0.9379439270412726
+70702,Exponents,1,0.993828333581197
+70702,Finding Percents,0,0.7503848935466677
+70702,Finding Percents,0,0.711059362839126
+70702,Finding Percents,1,0.7246472958693424
+70702,Finding Percents,1,0.7239738857407282
+70702,Finding Percents,0,0.6746014737308437
+70702,Finding Percents,1,0.7437133429813318
+70702,Finding Percents,1,0.7648725716813121
+70702,Finding Percents,1,0.8079421625515477
+70702,Divisibility Rules,0,6.587732609216781e-05
+70702,Divisibility Rules,0,6.587732609216781e-05
+70702,Divisibility Rules,1,0.9822895497073061
+70702,Divisibility Rules,1,0.9969366987271624
+70702,Divisibility Rules,1,0.9966632478286751
+70702,Divisibility Rules,1,0.9966781316550591
+70702,Divisibility Rules,1,0.9975850561621968
+70702,Addition and Subtraction Integers,1,0.9883435109014179
+70702,Multiplication and Division Integers,1,0.9983381071405022
+70702,Multiplication and Division Integers,1,0.944387343110489
+70702,Addition and Subtraction Integers,1,0.998319994023225
+70702,Least Common Multiple,0,0.000395832982513132
+70702,Least Common Multiple,1,0.99558291462491
+70702,Least Common Multiple,1,0.998135309703818
+70702,Least Common Multiple,0,0.013326271761343043
+70702,Least Common Multiple,1,0.998076202685879
+70702,Least Common Multiple,1,0.9980607297607715
+70702,Least Common Multiple,1,0.9974564781398424
+70702,Least Common Multiple,0,6.587732609216781e-05
+70702,Least Common Multiple,1,0.9981832186252476
+70702,Least Common Multiple,0,0.0154830494721383
+70702,Least Common Multiple,0,0.014772686620806665
+70702,Least Common Multiple,1,0.9981576257342227
+70702,Least Common Multiple,1,0.9979278564827032
+70702,Least Common Multiple,1,0.9981443993658216
+70702,Multiplication Fractions,0,0.016129653326993742
+70702,Multiplication Fractions,1,0.9978284728143388
+70702,Multiplication Fractions,0,0.02350518073908559
+70702,Multiplication Fractions,1,0.9981541393003404
+70702,Multiplication Fractions,1,0.9978004284114652
+70702,Multiplication Fractions,1,0.9915784104740256
+70702,Multiplication and Division Integers,1,0.9493932818582916
+70702,Ordering Positive Decimals,1,0.7900794557574131
+70702,Ordering Positive Decimals,1,0.9982793267708976
+70702,Ordering Positive Decimals,1,0.9408508746592491
+70702,Ordering Fractions,1,0.8330407501897595
+70702,Ordering Fractions,1,0.9349538908513599
+70702,Ordering Fractions,1,0.9220489687907912
+70702,Ordering Fractions,1,0.9411833092853257
+70702,Ordering Fractions,1,0.9471185850513657
+70702,Ordering Fractions,1,0.9441243901948227
+70702,Ordering Integers,1,0.9943980514507544
+70702,Ordering Integers,1,0.9983416194572089
+70702,Ordering Integers,0,0.014948789731266775
+70702,Ordering Integers,0,0.004722213068964465
+70702,Ordering Integers,0,0.0025788323187238226
+70702,Ordering Integers,0,0.014747250484628676
+70702,Ordering Integers,0,0.006539492823114344
+70702,Ordering Integers,0,0.0022986609753923052
+70702,Ordering Integers,0,0.01664656985205767
+70702,"Order of Operations +,-,/,* () positive reals",1,0.9967901214697593
+70702,"Order of Operations +,-,/,* () positive reals",0,0.7597373213702366
+70702,"Order of Operations +,-,/,* () positive reals",0,0.021823488318649196
+70702,"Order of Operations +,-,/,* () positive reals",1,0.9886478708704335
+70702,"Order of Operations +,-,/,* () positive reals",1,0.9913663050408421
+70702,"Order of Operations +,-,/,* () positive reals",1,0.9965196720363474
+70702,"Order of Operations +,-,/,* () positive reals",1,0.764585846372155
+70702,Order of Operations All,0,0.015370493774260509
+70702,Order of Operations All,1,0.994348321413452
+70702,Order of Operations All,1,0.9980071255897469
+70702,Order of Operations All,1,0.9976156277575693
+70702,Order of Operations All,0,0.6361091282215702
+70702,Order of Operations All,1,0.9941800996225799
+70702,Order of Operations All,1,0.9975832675578009
+70702,Order of Operations All,0,7.086936045923905e-05
+70702,Order of Operations All,1,0.6466247708312436
+70702,Order of Operations All,0,0.6570420545667748
+70702,Order of Operations All,1,0.9978780043092366
+70702,Order of Operations All,1,0.9974205612788867
+70702,Order of Operations All,0,7.086936045923905e-05
+70702,Order of Operations All,1,0.612077800280428
+70702,Order of Operations All,1,0.6372704883779718
+70702,Square Root,1,0.8492333318642905
+70702,Square Root,0,0.8795159068693769
+70702,Square Root,1,0.8514624402633072
+70702,Square Root,1,0.8341996353836652
+70702,Square Root,1,0.9451270071048103
+70702,Square Root,1,0.9041579865332862
+70702,Square Root,1,0.9356584836256889
+70702,Percent Of,1,0.9978117286602984
+70702,Prime Number,1,0.9939534119589319
+70702,Proportion,1,0.9316667531302881
+70702,Proportion,0,0.015320393208700439
+70702,Proportion,1,0.9979692038133045
+70702,Proportion,1,0.9982416585678261
+70702,Proportion,1,0.9981374299106939
+70702,Rounding,1,0.9976757046052068
+70702,Scale Factor,0,6.472251274251401e-05
+70702,Scale Factor,1,0.994291073596406
+70702,Scale Factor,1,0.9976029470304159
+70702,Scale Factor,1,0.9976156277575693
+70702,Scientific Notation,1,0.9963546594847327
+70702,Scientific Notation,1,0.998062943873873
+70702,Scientific Notation,1,0.9982959672190022
+70702,Scientific Notation,1,0.995957503187499
+70702,Scientific Notation,1,0.9973459621757861
+70702,Proportion,1,0.9980880867999042
+70702,Proportion,1,0.9981468669341566
+70702,Proportion,1,0.9983956050404063
+70702,Proportion,1,0.9981669974696179
+70702,Proportion,1,0.9982232295515447
+70702,Exponents,1,0.9932076767020361
+70702,Proportion,1,0.9816853517848794
+70702,Proportion,1,0.9875964320417356
+70702,Circle Graph,1,0.9841448906168592
+70702,Percent Of,1,0.9913210843676664
+70702,Percent Of,1,0.9915856663368107
+70702,Square Root,1,0.9979627782334012
+70702,Estimation,0,0.751167005463715
+70702,Estimation,1,0.8304189361199256
+70702,Estimation,1,0.9110402105169789
+70702,Estimation,1,0.9091969145647963
+70702,Estimation,0,0.9294435710477507
+70702,Estimation,1,0.8806471289301896
+70702,Estimation,1,0.9277582233816698
+70702,Estimation,1,0.9480680934430651
+70702,Estimation,1,0.956622831084404
+70702,Estimation,1,0.9559879023603123
+70702,Addition and Subtraction Fractions,1,0.9975854785435275
+70702,Addition and Subtraction Integers,0,0.05306234128052037
+70702,Addition and Subtraction Integers,1,0.9982218355671921
+70702,Addition and Subtraction Integers,1,0.9982218355671921
+70702,Addition and Subtraction Integers,1,0.9981467582888482
+70702,Unit Rate,1,0.99768173397614
+70702,Unit Rate,0,0.81359372251152
+70702,Unit Rate,1,0.701384439543298
+70702,Unit Rate,0,0.7798724241551502
+70702,Unit Rate,1,0.6924581178473052
+70702,Unit Rate,0,0.7423711118846743
+70702,Multiplication Fractions,1,0.9977243683857615
+70702,Ordering Integers,0,0.015451004796277475
+70702,Ordering Integers,1,0.9960390475532578
+70702,Ordering Integers,1,0.9958712013200199
+70702,Ordering Integers,1,0.9966344002695245
+70702,Ordering Integers,1,0.6704705062110519
+70702,Ordering Integers,0,0.014529466495967138
+70702,Ordering Integers,0,0.005182149417124549
+70702,Ordering Integers,1,0.9660266242776502
+70702,Ordering Integers,1,0.9937458317234844
+70702,Ordering Integers,1,0.9963501945653512
+70702,Ordering Integers,1,0.664636878896334
+70702,Order of Operations All,1,0.6861902511827177
+70702,Unit Rate,1,0.6800911546526607
+70702,Unit Rate,1,0.7166644612528841
+70702,Unit Rate,1,0.8000432951818178
+70702,Ordering Integers,1,0.996211050219493
+70702,Subtraction Whole Numbers,1,0.8095653234180381
+70702,Subtraction Whole Numbers,1,0.9097317311649264
+70702,Addition and Subtraction Integers,1,0.9982952141688186
+70702,Addition and Subtraction Positive Decimals,1,0.9186438503305179
+70702,Addition and Subtraction Fractions,0,7.086937895579253e-05
+70702,Addition and Subtraction Fractions,1,0.9974742554090963
+70702,Addition and Subtraction Fractions,1,0.9978554020851322
+70702,Addition and Subtraction Fractions,1,0.9972311004247311
+70702,Addition and Subtraction Fractions,1,0.9819914363841777
+70702,Addition Whole Numbers,1,0.9973423614152891
+70702,Addition Whole Numbers,1,0.9979959603619679
+70702,Addition Whole Numbers,1,0.9980760335438587
+70702,Addition Whole Numbers,1,0.998029341684501
+70702,Addition Whole Numbers,1,0.9980760335438587
+70702,Ordering Positive Decimals,1,0.9982903172334612
+70702,Conversion of Fraction Decimals Percents,1,0.9979225627854218
+70702,Conversion of Fraction Decimals Percents,1,0.998004290767687
+70702,Conversion of Fraction Decimals Percents,1,0.998004290767687
+70702,Conversion of Fraction Decimals Percents,1,0.9974265922601143
+70702,Conversion of Fraction Decimals Percents,1,0.9956697655964027
+70702,Conversion of Fraction Decimals Percents,0,7.975042886844087e-05
+70702,Conversion of Fraction Decimals Percents,1,0.9982592659210128
+70702,Conversion of Fraction Decimals Percents,1,0.9982592659210128
+70702,Conversion of Fraction Decimals Percents,1,0.9982592659210128
+70702,Unit Conversion Within a System,1,0.9937523377708067
+70702,Percent Of,1,0.9974361633653487
+70702,Multiplication and Division Positive Decimals,1,0.9982024352715987
+70702,Division Fractions,1,0.9983123240283082
+70702,Multiplication and Division Integers,1,0.9972836288774449
+70702,Multiplication and Division Integers,1,0.8352888027407956
+70702,Exponents,1,0.9947800662260794
+70702,Finding Percents,1,0.8017880155838475
+70702,Finding Percents,1,0.8987759258384043
+70702,Finding Percents,1,0.8432413811692199
+70702,Divisibility Rules,0,6.587732609216781e-05
+70702,Divisibility Rules,0,6.587732609216781e-05
+70702,Divisibility Rules,1,0.9790657520109756
+70702,Divisibility Rules,1,0.9974295526485146
+70702,Divisibility Rules,0,0.016191212952439218
+70702,Divisibility Rules,0,6.127652714014218e-05
+70702,Divisibility Rules,1,0.9932691692058342
+70702,Divisibility Rules,0,6.472251274251401e-05
+70702,Divisibility Rules,1,0.9972541206363171
+70702,Divisibility Rules,1,0.9723862035037963
+70702,Multiplication and Division Integers,1,0.9973727226735981
+70702,Multiplication and Division Integers,1,0.8241942912521931
+70702,Addition and Subtraction Integers,1,0.9979725853556718
+70702,Least Common Multiple,1,0.9973950576889543
+70702,Least Common Multiple,1,0.9974861862906211
+70702,Least Common Multiple,0,6.58773432859108e-05
+70702,Least Common Multiple,1,0.9983645837544436
+70702,Least Common Multiple,1,0.9983392747723703
+70702,Least Common Multiple,1,0.998034809647987
+70702,Multiplication Fractions,0,0.017320009741496754
+70702,Multiplication Fractions,1,0.9966151321079817
+70702,Multiplication Fractions,1,0.9979706391575772
+70702,Multiplication Fractions,1,0.9962430113103166
+70702,Multiplication Fractions,0,0.015496421882183255
+70702,Multiplication Fractions,1,0.9977131612876727
+70702,Multiplication Fractions,0,0.016837223504130944
+70702,Multiplication Fractions,1,0.9966306180672
+70702,Multiplication Fractions,1,0.983210284039985
+70702,Multiplication Fractions,1,0.9969398717324777
+70702,Multiplication and Division Integers,1,0.9382559095943074
+70702,Ordering Positive Decimals,1,0.7694899945469237
+70702,Ordering Positive Decimals,1,0.8363790758103237
+70702,Ordering Positive Decimals,1,0.9983497244224411
+70702,Ordering Fractions,1,0.8603726932017917
+70702,Ordering Fractions,1,0.8893430497440309
+70702,Ordering Fractions,1,0.9376736372178825
+70702,Ordering Fractions,1,0.9443304488852783
+70702,Ordering Fractions,1,0.9376736372178825
+70702,Ordering Fractions,1,0.9980760335438587
+70702,Ordering Integers,1,0.9974990247298543
+70702,Ordering Integers,1,0.9981717748073672
+70702,Ordering Integers,0,0.006284531519251321
+70702,Ordering Integers,1,0.997567131547553
+70702,Ordering Integers,1,0.8322841319056733
+70702,Ordering Integers,1,0.997541346586811
+70702,Ordering Integers,1,0.9939607505720776
+70702,Ordering Integers,1,0.9963552000604193
+70702,"Order of Operations +,-,/,* () positive reals",1,0.9830576419481374
+70702,"Order of Operations +,-,/,* () positive reals",1,0.8161621688800528
+70702,Order of Operations All,1,0.9973756266653249
+70702,Order of Operations All,1,0.6821425700821804
+70702,Square Root,1,0.8808948928976708
+70702,Square Root,1,0.9156630875668214
+70702,Square Root,1,0.9238469099582831
+70702,Square Root,1,0.9107313056124516
+70702,Square Root,1,0.8764917221823124
+70702,Percent Of,0,8.401692870793064e-05
+70702,Percent Of,1,0.9980703336835998
+70702,Percent Of,1,0.998091405898588
+70702,Percent Of,1,0.9975249377621914
+70702,Prime Number,1,0.9971648190174319
+70702,Proportion,1,0.9973942540489941
+70702,Proportion,0,0.04414756469879927
+70702,Proportion,1,0.9975044835293528
+70702,Proportion,1,0.9976401716712565
+70702,Proportion,1,0.9977905245846229
+70702,Rounding,1,0.9982793267708976
+70702,Scale Factor,1,0.9980450942907161
+70702,Scientific Notation,1,0.9979710021197152
+70702,Scientific Notation,1,0.9983089912686594
+70702,Scientific Notation,1,0.9979225627854218
+70702,Scientific Notation,1,0.9980854727658732
+70702,Scientific Notation,1,0.997887130405399
+70702,Proportion,1,0.9976251317525109
+70702,Proportion,1,0.9975716038764585
+70702,Proportion,1,0.9979301681499281
+70702,Proportion,1,0.9976628340377515
+70702,Proportion,1,0.9979301681499281
+70702,Divisibility Rules,1,0.9536512454468538
+70702,Divisibility Rules,1,0.9647228144274209
+70702,Divisibility Rules,1,0.964177571902739
+70702,Exponents,1,0.9883854367002665
+70702,Proportion,1,0.9792746516026011
+70702,Proportion,1,0.9792746516026011
+70702,Circle Graph,0,6.472251274251401e-05
+70702,Finding Percents,1,0.9787434213621931
+70702,Finding Percents,1,0.9966470640874537
+70702,Percent Of,1,0.9940451966536096
+70702,Square Root,1,0.9970532330025962
+70702,Estimation,0,0.8591502233558965
+70702,Estimation,1,0.9455445252832723
+70702,Estimation,1,0.9270783507899427
+70702,Estimation,1,0.9347130289198494
+70702,Estimation,1,0.9562088268009974
+70702,Estimation,0,0.9259970870380162
+70702,Estimation,1,0.9384061028047829
+70702,Estimation,1,0.9107181890655506
+70702,Estimation,1,0.9566615358818652
+70702,Estimation,1,0.9581014032344958
+70702,Addition and Subtraction Fractions,1,0.9972902899815504
+70702,Addition and Subtraction Integers,0,6.587732609216781e-05
+70702,Addition and Subtraction Integers,1,0.9940451966536096
+70702,Addition and Subtraction Integers,1,0.9983285200982134
+70702,Addition and Subtraction Integers,1,0.9976163921071376
+70702,Unit Rate,0,0.026083662094894586
+70702,Unit Rate,1,0.9978312294328908
+70702,Unit Rate,1,0.9974908817141842
+70702,Unit Rate,1,0.9979407784294113
+70702,Unit Rate,1,0.6162612937381777
+70702,Complementary and Supplementary Angles,1,0.9949618135435261
+70702,Congruence,1,0.9974184554870672
+70702,Nets of 3D Figures,1,0.8753590318834256
+70702,Pythagorean Theorem,1,0.9942282966489491
+70702,Pythagorean Theorem,1,0.9970250327934482
+70702,Pythagorean Theorem,0,0.006725358112664372
+70702,Pythagorean Theorem,0,6.587732609216781e-05
+70702,Pythagorean Theorem,1,0.9966258479242482
+70702,Pythagorean Theorem,1,0.9974869070389676
+70702,Pythagorean Theorem,1,0.9976162298127612
+70702,D.4.8-understanding-concept-of-probabilities,1,0.9976649069169208
+70702,Pythagorean Theorem,0,0.81705025365472
+70702,Pythagorean Theorem,0,0.8010711232830687
+70702,Pythagorean Theorem,1,0.702222979517801
+70702,Pythagorean Theorem,1,0.7878957353864119
+70702,Pythagorean Theorem,1,0.8070308133303372
+70702,Pythagorean Theorem,1,0.7859911498330355
+70702,Pythagorean Theorem,1,0.8988247709647852
+70702,Pythagorean Theorem,0,6.464884166000648e-05
+70702,Pythagorean Theorem,0,0.00017610540474417095
+70702,Estimation,0,0.899212836012571
+70702,Estimation,0,0.9478728685686787
+70702,Estimation,1,0.8258135965970609
+70702,Estimation,1,0.9595458694046065
+70702,Estimation,1,0.9561359608439508
+70702,Estimation,1,0.9563173670994046
+70702,Pythagorean Theorem,0,0.6281979403148648
+70702,Pythagorean Theorem,1,0.8380086293893356
+70702,Pythagorean Theorem,1,0.9975423896570043
+70702,Pythagorean Theorem,0,6.472298782055076e-05
+70702,Pythagorean Theorem,0,0.014102712507779806
+70702,Pythagorean Theorem,1,0.6521446150230916
+70702,Pythagorean Theorem,1,0.6912413763334039
+70702,Pythagorean Theorem,0,9.395870584724161e-05
+70702,Pythagorean Theorem,1,0.9973540251116716
+70702,Pythagorean Theorem,1,0.9972745880509443
+70702,Pythagorean Theorem,1,0.9973131828648736
+70702,Complementary and Supplementary Angles,1,0.9878217068810735
+70702,Calculations with Similar Figures,0,0.0007767115950813704
+70702,Calculations with Similar Figures,1,0.9944583503675805
+70702,Calculations with Similar Figures,1,0.9976497635005473
+70702,Calculations with Similar Figures,0,0.01644855862591379
+70702,Calculations with Similar Figures,1,0.9974760800266435
+70702,Calculations with Similar Figures,1,0.9974751347052164
+70702,Calculations with Similar Figures,1,0.9974894302080209
+70702,Calculations with Similar Figures,1,0.9975123120748303
+70702,Calculations with Similar Figures,1,0.9978126829689328
+70702,Interior Angles Figures with More than 3 Sides,1,0.6355113338137768
+70702,Interior Angles Figures with More than 3 Sides,1,0.9961874701752735
+70702,Rotations,0,7.975042886844087e-05
+70702,Translations,1,0.9957098738919294
+70702,Rotations,0,6.727046802806617e-05
+70702,Rotations,0,0.01682512704968446
+70702,Reflection,0,8.074272151066509e-05
+70702,Rotations,0,6.727046802806617e-05
+70702,Estimation,1,0.8919875862464223
+70702,Pythagorean Theorem,1,0.9973719315845998
+70702,Pythagorean Theorem,1,0.8750152974784614
+70702,Translations,1,0.9971648190174319
+70704,Equation Solving Two or Fewer Steps,0,6.236985922473596e-05
+70704,Addition and Subtraction Positive Decimals,1,0.5803544032448437
+70704,Addition and Subtraction Fractions,0,6.587732609216781e-05
+70704,Multiplication and Division Integers,1,0.6334652193498221
+70704,Addition and Subtraction Fractions,1,0.9912559371996301
+70704,Multiplication Fractions,0,0.0004110544438261194
+70704,Multiplication Fractions,1,0.9927406634943793
+70704,Multiplication Fractions,1,0.996771114647192
+70704,Multiplication Fractions,1,0.9969472600833844
+70704,Addition and Subtraction Positive Decimals,1,0.7141444250623219
+70704,Addition Whole Numbers,1,0.9861194126706921
+70704,Addition and Subtraction Integers,1,0.993632742270777
+70704,Multiplication and Division Integers,1,0.8238661497535097
+70704,Subtraction Whole Numbers,1,0.7673911604537818
+70704,Subtraction Whole Numbers,1,0.8063220750466707
+70704,Addition and Subtraction Positive Decimals,1,0.8164619971044426
+70704,Addition and Subtraction Fractions,1,0.9976258772926755
+70704,Addition and Subtraction Fractions,1,0.9902357026551061
+70704,Addition Whole Numbers,1,0.9977359225487215
+70704,Addition Whole Numbers,1,0.9980136617193448
+70704,Addition Whole Numbers,1,0.9980550250978139
+70704,Addition Whole Numbers,1,0.9980566893149616
+70704,Addition Whole Numbers,1,0.9973898014458531
+70704,Ordering Positive Decimals,0,0.014969738675295873
+70704,Ordering Positive Decimals,1,0.9961261261242766
+70704,Ordering Positive Decimals,1,0.9981800738956045
+70704,Ordering Positive Decimals,1,0.998287238924422
+70704,Conversion of Fraction Decimals Percents,1,0.9972330881847087
+70704,Conversion of Fraction Decimals Percents,1,0.9978999971544106
+70704,Conversion of Fraction Decimals Percents,1,0.9979583347382652
+70704,Conversion of Fraction Decimals Percents,1,0.9975356603993064
+70704,Conversion of Fraction Decimals Percents,0,6.587732609216781e-05
+70704,Conversion of Fraction Decimals Percents,0,0.016144722649417225
+70704,Conversion of Fraction Decimals Percents,1,0.9945861530168145
+70704,Conversion of Fraction Decimals Percents,1,0.9945861530168145
+70704,Conversion of Fraction Decimals Percents,1,0.9966842296092726
+70704,Conversion of Fraction Decimals Percents,1,0.9977507464892773
+70704,Unit Conversion Within a System,1,0.9963735050903118
+70704,Percent Of,0,8.401692870793064e-05
+70704,Percent Of,0,7.086936045923905e-05
+70704,Percent Of,1,0.9939176187883058
+70704,Percent Of,1,0.9776136169234411
+70704,Percent Of,1,0.9974760800266435
+70704,Multiplication and Division Positive Decimals,1,0.9961535530342404
+70704,Division Fractions,0,6.472251274251401e-05
+70704,Division Fractions,1,0.9748390241910793
+70704,Division Fractions,1,0.99775287862872
+70704,Division Fractions,1,0.997679040076929
+70704,Multiplication and Division Integers,1,0.997348585404644
+70704,Multiplication and Division Integers,1,0.9983534438810646
+70704,Exponents,1,0.9834253537978215
+70704,Finding Percents,0,0.6825479844554921
+70704,Finding Percents,0,0.6522309001408251
+70704,Finding Percents,0,0.6378522695003015
+70704,Finding Percents,1,0.7353029415747911
+70704,Finding Percents,0,0.7315940192401035
+70704,Finding Percents,0,0.739376827449068
+70704,Finding Percents,0,0.6618524227541444
+70704,Finding Percents,1,0.7130093322799125
+70704,Finding Percents,1,0.6659562369254238
+70704,Finding Percents,1,0.6594596951350922
+70704,Divisibility Rules,0,0.013728240390826435
+70704,Divisibility Rules,0,6.587732609216781e-05
+70704,Divisibility Rules,1,0.9926658838868643
+70704,Divisibility Rules,0,6.236985922473596e-05
+70704,Divisibility Rules,1,0.9960535987272398
+70704,Divisibility Rules,1,0.9962284091109506
+70704,Divisibility Rules,0,6.587732609216781e-05
+70704,Divisibility Rules,1,0.9906417734932453
+70704,Divisibility Rules,1,0.9934903554627271
+70704,Divisibility Rules,1,0.9961713007994328
+70704,Addition and Subtraction Integers,1,0.985298013795664
+70704,Multiplication and Division Integers,1,0.998192662468856
+70704,Multiplication and Division Integers,1,0.950229433218681
+70704,Addition and Subtraction Integers,1,0.9977757066748689
+70704,Least Common Multiple,0,7.086936045923905e-05
+70704,Least Common Multiple,0,7.086936045923905e-05
+70704,Least Common Multiple,1,0.9950017698199753
+70704,Least Common Multiple,1,0.9972538344385835
+70704,Least Common Multiple,1,0.9978600876889874
+70704,Least Common Multiple,1,0.9979195891662118
+70704,Least Common Multiple,0,0.006344531965326512
+70704,Least Common Multiple,1,0.9981084240255398
+70704,Least Common Multiple,1,0.9980439353817336
+70704,Least Common Multiple,1,0.9982290267880924
+70704,Multiplication Fractions,1,0.9954353677081041
+70704,Multiplication Fractions,1,0.9787126055774714
+70704,Multiplication and Division Integers,1,0.950229433218681
+70704,Ordering Positive Decimals,1,0.7615855514458594
+70704,Ordering Positive Decimals,1,0.9980357100035967
+70704,Ordering Positive Decimals,1,0.9982291474354322
+70704,Ordering Fractions,1,0.8022534241805674
+70704,Ordering Fractions,1,0.9169728547401543
+70704,Ordering Fractions,1,0.9169728547401543
+70704,Ordering Fractions,1,0.9429524989372211
+70704,Ordering Fractions,1,0.93919431557086
+70704,Ordering Fractions,1,0.9240389238952539
+70704,Ordering Integers,1,0.9949824979949424
+70704,Ordering Integers,1,0.9977969561003002
+70704,Ordering Integers,1,0.9972554961307748
+70704,Ordering Integers,0,0.16005121392211388
+70704,Ordering Integers,1,0.9960717036063788
+70704,Ordering Integers,1,0.9962636913303154
+70704,Ordering Integers,1,0.9819772141570302
+70704,Ordering Integers,1,0.9974708771537146
+70704,Ordering Integers,1,0.9964678137134784
+70704,"Order of Operations +,-,/,* () positive reals",1,0.9949824979949424
+70704,"Order of Operations +,-,/,* () positive reals",1,0.9960672727174233
+70704,Order of Operations All,0,6.587732609216781e-05
+70704,Order of Operations All,1,0.9941921214069732
+70704,Order of Operations All,1,0.9975364748858166
+70704,Order of Operations All,1,0.99763280540943
+70704,Order of Operations All,1,0.656926551989629
+70704,Square Root,1,0.7945246506237558
+70704,Square Root,1,0.9409093998271135
+70704,Square Root,1,0.9406692385742041
+70704,Square Root,1,0.9227053866822965
+70704,Square Root,1,0.9440703247185129
+70704,Percent Of,1,0.9976586635374062
+70704,Prime Number,1,0.9942282966489491
+70704,Proportion,1,0.9965289189053654
+70704,Proportion,1,0.9972764347887582
+70704,Proportion,1,0.9981470575064058
+70704,Proportion,1,0.9983534438810646
+70704,Rounding,0,0.01103135496158425
+70704,Rounding,0,0.01116996526519849
+70704,Rounding,1,0.9941131850722529
+70704,Rounding,1,0.9980466977901243
+70704,Rounding,1,0.9980541891977734
+70704,Scale Factor,0,0.01487362349772805
+70704,Scale Factor,1,0.9951938706577249
+70704,Scale Factor,1,0.9981412481727298
+70704,Scale Factor,1,0.9980176724075938
+70704,Scientific Notation,1,0.9962335050096013
+70704,Scientific Notation,1,0.9983123240283082
+70704,Scientific Notation,1,0.9983207732835354
+70704,Scientific Notation,1,0.9982793267708976
+70704,Scientific Notation,0,6.472251274251401e-05
+70704,Scientific Notation,1,0.998145917385167
+70704,Scientific Notation,1,0.9982461035891474
+70704,Scientific Notation,1,0.9971355159208916
+70704,Scientific Notation,1,0.9982028174040408
+70704,Scientific Notation,1,0.9983285200982134
+70704,Proportion,1,0.9975336152080355
+70704,Proportion,1,0.9982996287335649
+70704,Proportion,1,0.9982794269132542
+70704,Proportion,1,0.997377670987657
+70704,Proportion,1,0.9982544111385296
+70704,Exponents,1,0.9965020798068603
+70704,Proportion,1,0.9838972977151217
+70704,Proportion,1,0.99542248780457
+70704,Percent Of,1,0.9940330633610301
+70704,Circle Graph,1,0.9841448906168592
+70704,Circle Graph,1,0.9947561784723774
+70704,Square Root,1,0.9976606481298501
+70704,Estimation,1,0.7785316751347765
+70704,Estimation,1,0.9053725915403554
+70704,Estimation,0,0.9306991328178656
+70704,Estimation,1,0.9129599663236051
+70704,Estimation,1,0.9031322534858335
+70704,Estimation,1,0.8606401627417909
+70704,Estimation,1,0.8805756779635955
+70704,Estimation,1,0.9199395086652743
+70704,Addition and Subtraction Fractions,1,0.9975218251117665
+70704,Addition and Subtraction Integers,1,0.997407881249797
+70704,Unit Rate,1,0.9974876356420951
+70704,Unit Rate,1,0.7811084637260678
+70704,Addition and Subtraction Integers,1,0.9983153083212353
+70704,Subtraction Whole Numbers,1,0.8739698259593159
+70704,Subtraction Whole Numbers,0,0.9250397212460135
+70704,Addition Whole Numbers,1,0.9249272745306857
+70704,Addition Whole Numbers,1,0.9411833092853257
+70704,Addition Whole Numbers,1,0.9514763175166049
+70704,Addition and Subtraction Positive Decimals,1,0.854024483091649
+70704,Addition and Subtraction Fractions,1,0.9974584427896558
+70704,Addition and Subtraction Fractions,1,0.9832038974914165
+70704,Addition Whole Numbers,1,0.9977064169172412
+70704,Addition Whole Numbers,1,0.9980885491640517
+70704,Addition Whole Numbers,1,0.9980478973404945
+70704,Addition Whole Numbers,1,0.9977316885017342
+70704,Addition Whole Numbers,1,0.9980421604447268
+70704,Ordering Positive Decimals,0,0.01522693278916225
+70704,Ordering Positive Decimals,1,0.9980883167282705
+70704,Ordering Positive Decimals,1,0.9981579792420406
+70704,Ordering Positive Decimals,1,0.998166895033286
+70704,Conversion of Fraction Decimals Percents,1,0.9979708900677554
+70704,Conversion of Fraction Decimals Percents,1,0.9979437554847388
+70704,Conversion of Fraction Decimals Percents,1,0.9985526601014676
+70704,Conversion of Fraction Decimals Percents,1,0.9975852205738335
+70704,Conversion of Fraction Decimals Percents,0,0.007085329337945511
+70704,Conversion of Fraction Decimals Percents,0,6.472251274251401e-05
+70704,Conversion of Fraction Decimals Percents,1,0.9682866480274004
+70704,Conversion of Fraction Decimals Percents,1,0.9682866480274004
+70704,Conversion of Fraction Decimals Percents,1,0.9935360286458541
+70704,Conversion of Fraction Decimals Percents,1,0.9982967319992695
+70704,Unit Conversion Within a System,1,0.9934133463294454
+70704,Percent Of,1,0.9977226434046189
+70704,Multiplication and Division Positive Decimals,1,0.9983416194572089
+70704,Division Fractions,1,0.9982806746602325
+70704,Multiplication and Division Integers,1,0.9980885491640517
+70704,Multiplication and Division Integers,1,0.9327798876204016
+70704,Exponents,1,0.9981857878365579
+70704,Finding Percents,1,0.6935552713444926
+70704,Finding Percents,1,0.7727532251596012
+70704,Finding Percents,1,0.8308540965560652
+70704,Divisibility Rules,0,0.016330130772224737
+70704,Divisibility Rules,0,0.005975450947151068
+70704,Multiplication and Division Integers,1,0.9983281269402816
+70704,Multiplication and Division Integers,1,0.9438883077652088
+70704,Addition and Subtraction Integers,1,0.9980885491640517
+70704,Multiplication Fractions,0,0.015747136776247526
+70704,Multiplication Fractions,1,0.997983838995267
+70704,Multiplication Fractions,1,0.9980790194861588
+70704,Multiplication Fractions,1,0.9981579792420406
+70704,Multiplication Fractions,1,0.9968357077465767
+70704,Multiplication and Division Integers,1,0.9389815611842537
+70704,Ordering Positive Decimals,1,0.876829906695445
+70704,Ordering Positive Decimals,1,0.9195492746254165
+70704,Ordering Positive Decimals,1,0.9979419790339039
+70704,Ordering Fractions,1,0.9102287295431463
+70704,Ordering Fractions,1,0.8705506011527749
+70704,Ordering Fractions,1,0.9389815611842537
+70704,Ordering Fractions,1,0.928806702296645
+70704,Ordering Fractions,1,0.9399763931684254
+70704,Ordering Fractions,1,0.9980885491640517
+70704,Ordering Integers,1,0.9974195467119974
+70704,Ordering Integers,1,0.9983153083212353
+70704,Ordering Integers,0,0.010401916093017606
+70704,Ordering Integers,0,0.046971835082579155
+70704,Ordering Integers,1,0.9974792734368532
+70704,Ordering Integers,1,0.7934748721488423
+70704,Ordering Integers,1,0.9981337324603353
+70704,Ordering Integers,1,0.9974923870885357
+70704,Ordering Integers,0,0.16067488498418073
+70704,"Order of Operations +,-,/,* () positive reals",1,0.9975475809518143
+70704,"Order of Operations +,-,/,* () positive reals",1,0.9885131225350152
+70704,Order of Operations All,1,0.997372248196081
+70704,Order of Operations All,0,0.7898229498793709
+70704,Order of Operations All,1,0.9830135729083099
+70704,Order of Operations All,1,0.9968568472756191
+70704,Order of Operations All,0,6.587732609216781e-05
+70704,Order of Operations All,1,0.7912045904135105
+70704,Order of Operations All,1,0.7873628892263691
+70704,Order of Operations All,1,0.7794390036107628
+70704,Square Root,1,0.8833135348725063
+70704,Square Root,1,0.8272518598552548
+70704,Square Root,1,0.9274244483812526
+70704,Square Root,1,0.9154958697658004
+70704,Square Root,1,0.9313282500974246
+70704,Percent Of,0,6.587732609216781e-05
+70704,Percent Of,1,0.9981497060076959
+70704,Percent Of,1,0.9979679597940837
+70704,Percent Of,1,0.9983494457621477
+70704,Prime Number,1,0.99684326573974
+70704,Proportion,1,0.9975267890310558
+70704,Proportion,1,0.9976708878056233
+70704,Proportion,0,0.008037282259791665
+70704,Proportion,1,0.9983314063445453
+70704,Proportion,1,0.998278224426074
+70704,Proportion,1,0.9982710125365847
+70704,Rounding,1,0.9980661221609107
+70704,Scale Factor,1,0.9975379370274081
+70704,Scientific Notation,1,0.9963114853007612
+70704,Scientific Notation,1,0.9974111932185641
+70704,Scientific Notation,0,6.472251274251401e-05
+70704,Scientific Notation,1,0.996838776654849
+70704,Scientific Notation,1,0.9978654943780041
+70704,Scientific Notation,1,0.9981473191060026
+70704,Scientific Notation,1,0.9980954979532078
+70704,Scientific Notation,1,0.9981829185273917
+70704,Proportion,1,0.9972924716242404
+70704,Proportion,1,0.9982246596716304
+70704,Proportion,1,0.9982794867613978
+70704,Proportion,1,0.9982794867613978
+70704,Proportion,1,0.9982794867613978
+70704,Exponents,1,0.9965725272356051
+70704,Proportion,1,0.9972914140827894
+70704,Proportion,1,0.9874978737322312
+70704,Finding Percents,1,0.9926644242675247
+70704,Finding Percents,1,0.9934788502832416
+70704,Percent Of,1,0.9789748527691924
+70704,Square Root,1,0.9966174102063161
+70704,Estimation,1,0.8900766968020177
+70704,Estimation,0,0.9562090379200924
+70704,Estimation,1,0.9362946269273659
+70704,Estimation,0,0.955811119886553
+70704,Estimation,1,0.9473563438323857
+70704,Estimation,1,0.9194378938043112
+70704,Estimation,1,0.909518750699802
+70704,Estimation,1,0.9480414237717213
+70704,Estimation,1,0.8701103611235278
+70704,Addition and Subtraction Fractions,0,0.004538781106214612
+70707,Counting Methods,0,0.5570344425456947
+70707,Addition and Subtraction Positive Decimals,1,0.4528091491122065
+70707,Addition and Subtraction Fractions,1,0.9918054660987583
+70707,Multiplication and Division Integers,1,0.7428757503668156
+70707,Addition and Subtraction Fractions,0,0.015405220756405043
+70707,Addition and Subtraction Fractions,1,0.9911593854541106
+70707,Addition and Subtraction Fractions,1,0.992909879723747
+70707,Addition and Subtraction Fractions,1,0.9725690719835701
+70707,Multiplication Fractions,1,0.9976611242058292
+70707,Addition and Subtraction Positive Decimals,0,0.836470181365011
+70707,Addition and Subtraction Positive Decimals,1,0.7753207757550888
+70707,Addition and Subtraction Positive Decimals,1,0.8907252755251954
+70707,Addition and Subtraction Positive Decimals,1,0.8841363848810048
+70707,Addition Whole Numbers,1,0.996161963359567
+70707,Addition and Subtraction Integers,1,0.9949618135435261
+70707,Multiplication and Division Integers,1,0.7704359462687206
+70707,Multiplication and Division Integers,1,0.934342658144587
+70707,Addition and Subtraction Integers,1,0.9974965790802517
+70707,Addition and Subtraction Integers,1,0.9975356603993064
+70707,Rounding,1,0.9968890093534942
+70707,Congruence,1,0.9974136750499373
+70707,Multiplication and Division Integers,1,0.9269753806893269
+70707,Subtraction Whole Numbers,1,0.6673173720994326
+70707,Subtraction Whole Numbers,1,0.9399559943982454
+70707,Addition and Subtraction Positive Decimals,0,0.9187010900324315
+70707,Addition and Subtraction Positive Decimals,1,0.701735271621334
+70707,Addition and Subtraction Positive Decimals,1,0.9117495574147807
+70707,Addition and Subtraction Positive Decimals,1,0.8286587068694093
+70707,Addition and Subtraction Fractions,1,0.9973601211014698
+70707,Addition and Subtraction Fractions,1,0.9832038974914165
+70707,Addition Whole Numbers,1,0.9981131481801692
+70707,Addition Whole Numbers,1,0.9979920212560089
+70707,Addition Whole Numbers,1,0.9979920212560089
+70707,Addition Whole Numbers,1,0.9983328534554796
+70707,Addition Whole Numbers,1,0.9981591817530863
+70707,Ordering Positive Decimals,1,0.9971434287499689
+70707,Conversion of Fraction Decimals Percents,1,0.9981513979258428
+70707,Conversion of Fraction Decimals Percents,1,0.9979359484734603
+70707,Conversion of Fraction Decimals Percents,1,0.997945380991476
+70707,Conversion of Fraction Decimals Percents,1,0.9962319138357392
+70707,Conversion of Fraction Decimals Percents,0,0.006970854841741083
+70707,Conversion of Fraction Decimals Percents,1,0.9968790552109871
+70707,Conversion of Fraction Decimals Percents,1,0.9969747161782395
+70707,Conversion of Fraction Decimals Percents,1,0.9948840892913857
+70707,Conversion of Fraction Decimals Percents,1,0.9982451043319395
+70707,Unit Conversion Within a System,1,0.9860221225105742
+70707,Percent Of,1,0.9933064461429781
+70707,Multiplication and Division Positive Decimals,1,0.9948133045082765
+70707,Division Fractions,1,0.9974607117283634
+70707,Multiplication and Division Integers,1,0.9974590272192324
+70707,Multiplication and Division Integers,1,0.9098057879332686
+70707,Exponents,1,0.9945332589847817
+70707,Finding Percents,0,0.6825067176870382
+70707,Finding Percents,0,0.7016258219810564
+70707,Finding Percents,0,0.7182281428887951
+70707,Finding Percents,0,0.7235033233356366
+70707,Finding Percents,1,0.7472356784478654
+70707,Finding Percents,1,0.8112327272519793
+70707,Finding Percents,1,0.8235605774915374
+70707,Divisibility Rules,0,0.01557144558200589
+70707,Divisibility Rules,1,0.9926594163613862
+70707,Divisibility Rules,1,0.9976463795316163
+70707,Divisibility Rules,1,0.9971072194033486
+70707,Divisibility Rules,1,0.997592717606073
+70707,Divisibility Rules,1,0.9975765152007087
+70707,Addition and Subtraction Integers,1,0.9982857544499936
+70707,Multiplication and Division Integers,1,0.9345298227803615
+70707,Multiplication and Division Integers,1,0.9345298227803615
+70707,Addition and Subtraction Integers,1,0.9979456192215781
+70707,Least Common Multiple,0,8.401692870793064e-05
+70707,Least Common Multiple,1,0.99558291462491
+70707,Least Common Multiple,1,0.9980952870422604
+70707,Least Common Multiple,0,0.016554680199464097
+70707,Least Common Multiple,1,0.9980455038072984
+70707,Least Common Multiple,1,0.9980754817036767
+70707,Least Common Multiple,1,0.9983065302051843
+70707,Least Common Multiple,1,0.9981920124735288
+70707,Least Common Multiple,1,0.9983280371091275
+70707,Multiplication Fractions,1,0.9980730185066886
+70707,Multiplication Fractions,1,0.9880100087685614
+70707,Multiplication and Division Integers,1,0.9345298227803615
+70707,Ordering Positive Decimals,1,0.7090126701588655
+70707,Ordering Positive Decimals,1,0.9269753806893269
+70707,Ordering Positive Decimals,1,0.8930937277405582
+70707,Ordering Fractions,1,0.9175963106138508
+70707,Ordering Fractions,1,0.9367601827454934
+70707,Ordering Fractions,1,0.9379933400499227
+70707,Ordering Fractions,1,0.9463753559260818
+70707,Ordering Fractions,1,0.9463753559260818
+70707,Ordering Fractions,1,0.998319994023225
+70707,Ordering Integers,1,0.9974136750499373
+70707,Ordering Integers,1,0.99791015902211
+70707,Ordering Integers,1,0.9968824698196761
+70707,Ordering Integers,0,0.003808072346182567
+70707,Ordering Integers,1,0.8657377188973068
+70707,Ordering Integers,1,0.9980992874801888
+70707,Ordering Integers,1,0.9979278419809348
+70707,Ordering Integers,1,0.9981878220987912
+70707,Ordering Integers,1,0.9359335677424636
+70707,Order of Operations All,1,0.9968257063265932
+70707,"Order of Operations +,-,/,* () positive reals",1,0.9968410502077774
+70707,Order of Operations All,1,0.9966598525694583
+70707,Order of Operations All,1,0.8222991374738134
+70707,Square Root,1,0.8853252586246045
+70707,Square Root,1,0.928969795752179
+70707,Square Root,1,0.9510435828759054
+70707,Square Root,1,0.9512513411694831
+70707,Square Root,1,0.9528386621991841
+70707,Percent Of,1,0.9982839374320119
+70707,Prime Number,0,0.014881792295466973
+70707,Prime Number,1,0.9960535795939718
+70707,Prime Number,1,0.9980842186502692
+70707,Prime Number,1,0.9982675940655981
+70707,Proportion,1,0.9968553007994535
+70707,Proportion,1,0.9969668474085285
+70707,Proportion,1,0.9982310660629082
+70707,Proportion,1,0.9984670416849966
+70707,Rounding,1,0.9983437605793035
+70707,Scale Factor,0,0.016368229584027217
+70707,Scale Factor,1,0.9954381300874332
+70707,Scale Factor,1,0.9981364496371152
+70707,Scale Factor,1,0.9982995050018808
+70707,Scientific Notation,1,0.9959210076414666
+70707,Scientific Notation,1,0.9962345682874615
+70707,Scientific Notation,0,0.024080460891702106
+70707,Scientific Notation,1,0.9980166123091233
+70707,Scientific Notation,1,0.9980901685773923
+70707,Scientific Notation,0,6.472251274251401e-05
+70707,Scientific Notation,1,0.9978875524015263
+70707,Scientific Notation,1,0.9981656935641166
+70707,Scientific Notation,1,0.9979030537510177
+70707,Scientific Notation,1,0.9978099668455158
+70707,Proportion,1,0.9978673612477477
+70707,Proportion,1,0.9982773399060213
+70707,Proportion,1,0.9982821310294013
+70707,Proportion,1,0.9974494787058518
+70707,Proportion,1,0.9981168362459083
+70707,Exponents,1,0.9927737809858046
+70707,Proportion,0,6.587732609216781e-05
+70707,Proportion,0,0.0005101084149819135
+70707,Proportion,1,0.9905568306380402
+70707,Proportion,1,0.9935097198584487
+70707,Proportion,1,0.9969177931590333
+70707,Proportion,1,0.9780872258285153
+70707,Circle Graph,1,0.9842258586963356
+70707,Percent Of,1,0.9950558639593463
+70707,Finding Percents,1,0.9848649517955151
+70707,Square Root,1,0.9975533177347357
+70707,Estimation,1,0.8350298880028302
+70707,Estimation,0,0.8715664590801404
+70707,Estimation,0,0.874197246159248
+70707,Estimation,1,0.8588378964244973
+70707,Estimation,1,0.8363289435897608
+70707,Estimation,1,0.8937883949422353
+70707,Estimation,1,0.9185262604415431
+70707,Estimation,1,0.9185262604415431
+70707,Addition and Subtraction Fractions,1,0.9977485375388676
+70707,Addition and Subtraction Integers,1,0.9983153083212353
+70707,Unit Rate,1,0.9972330881847087
+70707,Unit Rate,1,0.7241213385753811
+70707,Scientific Notation,1,0.9979042613841083
+70707,Addition and Subtraction Integers,1,0.9942579881426382
+70707,Addition Whole Numbers,1,0.998026629124817
+70707,Addition Whole Numbers,1,0.997446717739992
+70707,Addition Whole Numbers,1,0.998026629124817
+70707,Addition Whole Numbers,1,0.9973485582307428
+70707,Addition Whole Numbers,0,0.018507967629024208
+70707,Addition Whole Numbers,1,0.9980885491640517
+70707,Addition Whole Numbers,1,0.9972777696869348
+70707,Addition Whole Numbers,1,0.9973273894892655
+70707,Addition Whole Numbers,1,0.998026629124817
+70707,Addition Whole Numbers,1,0.9979146549364396
+70707,Calculations with Similar Figures,1,0.9883612334886811
+70707,Calculations with Similar Figures,1,0.9980520234526573
+70707,Calculations with Similar Figures,0,0.014775159189658936
+70707,Calculations with Similar Figures,0,7.086936045923905e-05
+70707,Calculations with Similar Figures,1,0.9973745748490567
+70707,Calculations with Similar Figures,1,0.9979144719926822
+70707,Calculations with Similar Figures,1,0.9974980716700944
+70707,Calculations with Similar Figures,1,0.9981072471353287
+70707,Calculations with Similar Figures,1,0.9981500985838019
+70707,Complementary and Supplementary Angles,1,0.9972330881847087
+70707,Nets of 3D Figures,1,0.6870123814895668
+70707,Pythagorean Theorem,1,0.6673173720994326
+70707,Pythagorean Theorem,1,0.7519729161818304
+70707,Pythagorean Theorem,0,0.001513441277773269
+70707,Pythagorean Theorem,1,0.7738475696824767
+70707,Pythagorean Theorem,1,0.8657377188973068
+70707,Pythagorean Theorem,1,0.8378392034489591
+70707,Pattern Finding ,1,0.9959622340167849
+70707,Subtraction Whole Numbers,0,0.7717661998157731
+70707,Subtraction Whole Numbers,0,6.307006375171795e-05
+70707,Subtraction Whole Numbers,0,6.307006375171795e-05
+70707,Subtraction Whole Numbers,0,0.6483082382225961
+70707,Equation Solving Two or Fewer Steps,1,0.9842258586963356
+70707,Equation Solving Two or Fewer Steps,1,0.9902738289174972
+70707,Equation Solving Two or Fewer Steps,0,0.03596469103457078
+70707,Equation Solving Two or Fewer Steps,1,0.9864580754926137
+70707,Equation Solving Two or Fewer Steps,1,0.997592717606073
+70707,Equation Solving Two or Fewer Steps,0,8.401692870793064e-05
+70707,Equation Solving Two or Fewer Steps,0,0.016370325248496968
+70707,Equation Solving Two or Fewer Steps,1,0.9966183300290319
+70707,Equation Solving Two or Fewer Steps,1,0.9981605782959068
+70707,Equation Solving Two or Fewer Steps,1,0.9981605782959068
+70707,Congruence,1,0.99769452020975
+70707,Interior Angles Figures with More than 3 Sides,1,0.9965680120982515
+70707,Pattern Finding ,0,0.822274845134508
+70707,Pattern Finding ,1,0.9977445928716485
+70707,Pattern Finding ,0,6.587732609216781e-05
+70707,Pattern Finding ,1,0.7216875855659763
+70707,Pattern Finding ,1,0.7474705021034276
+70707,Pattern Finding ,1,0.9066577202825276
+70707,Pythagorean Theorem,1,0.8829962164783725
+70707,Pythagorean Theorem,1,0.9171237191662995
+70707,Write Linear Equation from Graph,0,0.0011810707141142545
+70707,Write Linear Equation from Graph,0,6.81074896579853e-05
+70707,Write Linear Equation from Graph,1,0.9962331582015883
+70707,Write Linear Equation from Graph,1,0.9977967908769226
+70707,Write Linear Equation from Graph,0,0.7346006356947136
+70707,Write Linear Equation from Graph,0,6.587732609216781e-05
+70707,Write Linear Equation from Graph,0,0.021592141898003087
+70707,Write Linear Equation from Graph,1,0.9971185714948357
+70707,D.4.8-understanding-concept-of-probabilities,1,0.9976649069169208
+70707,Reflection,0,0.017465088550403157
+70707,Pythagorean Theorem,1,0.9977003437391792
+70707,Pythagorean Theorem,0,0.00799712613492216
+70707,Pythagorean Theorem,1,0.9975471000671176
+70707,Pythagorean Theorem,0,7.975042886844087e-05
+70707,Pythagorean Theorem,0,0.019650627972060068
+70707,Pythagorean Theorem,0,6.727046802806617e-05
+70707,Pythagorean Theorem,1,0.9978573152496966
+70707,Complementary and Supplementary Angles,1,0.9878217068810735
+70707,Interior Angles Figures with More than 3 Sides,1,0.7023906023591675
+70707,Equation Solving Two or Fewer Steps,1,0.980297587078222
+70707,Number Line,1,0.9942625198376496
+70707,Number Line,1,0.9972764347887582
+70707,Number Line,1,0.9973090803061064
+70707,Equation Solving Two or Fewer Steps,1,0.9976219425295341
+70707,Equation Solving Two or Fewer Steps,1,0.8033081751927994
+70707,Equation Solving Two or Fewer Steps,1,0.9967846931549629
+70707,Equation Solving Two or Fewer Steps,0,6.587732609216781e-05
+70707,Equation Solving Two or Fewer Steps,0,6.587732609216781e-05
+70707,Equation Solving Two or Fewer Steps,0,0.9707320598357936
+70707,Equation Solving Two or Fewer Steps,1,0.794134413063897
+70707,Equation Solving Two or Fewer Steps,1,0.899350268565658
+70707,Equation Solving Two or Fewer Steps,0,0.00044668627139184944
+70707,Equation Solving Two or Fewer Steps,1,0.9837274879354007
+70707,Equation Solving Two or Fewer Steps,1,0.9753108490739621
+70707,Equation Solving Two or Fewer Steps,0,0.009727430772032671
+70707,Solving for a variable,1,0.9967912489477763
+70707,Solving for a variable,1,0.9960905430807797
+70707,Complementary and Supplementary Angles,1,0.9965180421042928
+70707,Complementary and Supplementary Angles,1,0.9975080144604145
+70707,Rotations,0,7.975042886844087e-05
+70707,Translations,0,8.401692870793064e-05
+70707,Translations,1,0.9944022107977423
+70707,Reflection,1,0.9953012867656272
+70707,Translations,0,0.01582254865782829
+70707,Equation Solving More Than Two Steps,0,0.6640335154810836
+70707,Equation Solving More Than Two Steps,1,0.8564399180312925
+70707,Equation Solving More Than Two Steps,1,0.922642890585408
+70707,Equation Solving More Than Two Steps,1,0.9497746673112033
+70707,Equation Solving More Than Two Steps,0,0.7933664052462693
+70707,Equation Solving More Than Two Steps,1,0.7466741622989407
+70707,Equation Solving More Than Two Steps,0,0.7902809722438928
+70707,Equation Solving More Than Two Steps,1,0.7115846033572911
+70707,Number Line,1,0.9971624383664492
+70707,Number Line,1,0.9956579215319435
+70707,Number Line,0,0.17596639782401285
+70707,Number Line,1,0.997385103154738
+70707,Number Line,0,0.015344507920668623
+70707,Number Line,1,0.9973170837358702
+70707,Number Line,0,0.014387801891699284
+70707,Number Line,1,0.9965449940509106
+70707,Addition Whole Numbers,1,0.9514127825469144
+70707,Addition Whole Numbers,1,0.957401977632844
+70707,Addition and Subtraction Integers,1,0.9861480667756275
+70707,Addition and Subtraction Positive Decimals,1,0.9046569291629383
+70707,Addition and Subtraction Fractions,1,0.9974916061449349
+70707,Addition and Subtraction Fractions,1,0.9934753602969593
+70707,Addition Whole Numbers,1,0.9979040630302527
+70707,Addition Whole Numbers,1,0.9979863022013248
+70707,Addition Whole Numbers,1,0.9979477039914285
+70707,Addition Whole Numbers,1,0.9979477039914285
+70707,Addition Whole Numbers,1,0.9979863022013248
+70707,Ordering Positive Decimals,1,0.9982801383815171
+70707,Conversion of Fraction Decimals Percents,1,0.9979225627854218
+70707,Conversion of Fraction Decimals Percents,1,0.998004290767687
+70707,Conversion of Fraction Decimals Percents,1,0.9965605740093793
+70707,Conversion of Fraction Decimals Percents,1,0.9976606481298501
+70707,Conversion of Fraction Decimals Percents,0,0.015346934055172283
+70707,Conversion of Fraction Decimals Percents,1,0.9940451966536096
+70707,Conversion of Fraction Decimals Percents,1,0.996849760024169
+70707,Conversion of Fraction Decimals Percents,1,0.9969505965377706
+70707,Conversion of Fraction Decimals Percents,0,0.004451708155500818
+70707,Conversion of Fraction Decimals Percents,0,0.004611305394267018
+70707,Number Line,1,0.9973390698735773
+70707,Number Line,1,0.9972261084110748
+70707,Number Line,1,0.977821975035425
+70707,Unit Conversion Within a System,1,0.9960672727174233
+70707,Conversion of Fraction Decimals Percents,1,0.9980047590889611
+70707,Percent Of,1,0.9973942540489941
+70707,Multiplication and Division Positive Decimals,1,0.9978667912726811
+70707,Division Fractions,1,0.9971648190174319
+70707,Multiplication and Division Integers,1,0.9973942540489941
+70707,Multiplication and Division Integers,1,0.9983089912686594
+70707,Exponents,0,0.0160979755021259
+70707,Exponents,1,0.9983534843536045
+70707,Exponents,1,0.9982524801085467
+70707,Exponents,1,0.9981373704872181
+70707,Finding Percents,1,0.7241888002926439
+70707,Finding Percents,1,0.7293997538282224
+70707,Finding Percents,1,0.7853596320259713
+70707,Divisibility Rules,0,6.587732609216781e-05
+70707,Divisibility Rules,1,0.9968751530411086
+70707,Divisibility Rules,0,6.587732609216781e-05
+70707,Divisibility Rules,1,0.9977131612876727
+70707,Divisibility Rules,0,6.587732609216781e-05
+70707,Divisibility Rules,0,6.587732609216781e-05
+70707,Divisibility Rules,1,0.9973644689508516
+70707,Divisibility Rules,1,0.9973940158053677
+70707,Divisibility Rules,1,0.993516934907825
+70707,Divisibility Rules,1,0.9982240248168879
+70707,Multiplication and Division Integers,1,0.9982752838461919
+70707,Addition and Subtraction Integers,1,0.9979707169424903
+70707,Addition and Subtraction Integers,1,0.9983089912686594
+70707,Ordering Positive Decimals,0,0.9417348306166345
+70707,Ordering Positive Decimals,0,0.9164505928068739
+70707,Ordering Positive Decimals,1,0.935243706474798
+70707,Ordering Positive Decimals,1,0.956622831084404
+70707,Ordering Positive Decimals,1,0.9334827822766053
+70707,Ordering Positive Decimals,1,0.9308817215602863
+70707,Ordering Positive Decimals,1,0.8532454068564704
+70707,Multiplication and Division Integers,1,0.9373844705878241
+70707,Multiplication Fractions,1,0.9883854367002665
+70707,Multiplication Fractions,1,0.9980337446504388
+70707,Ordering Fractions,1,0.9277294013274708
+70707,Ordering Fractions,1,0.936991951205532
+70707,Ordering Fractions,1,0.9397524371397764
+70707,Ordering Fractions,1,0.9382559095943074
+70707,Ordering Fractions,1,0.9234821846100997
+70707,Ordering Fractions,1,0.9979204758407823
+70707,Ordering Integers,1,0.9976515573613587
+70707,Ordering Integers,1,0.9978544062479555
+70707,Ordering Integers,0,0.037355750874977965
+70707,Ordering Integers,0,0.014816709119296691
+70707,Ordering Integers,1,0.8160340985444576
+70707,Ordering Integers,1,0.9978905416517907
+70707,Ordering Integers,1,0.9220519594964236
+70707,Ordering Integers,1,0.9087344617960492
+70707,Ordering Integers,1,0.9982117093733776
+70707,"Order of Operations +,-,/,* () positive reals",1,0.9975568337915022
+70707,"Order of Operations +,-,/,* () positive reals",1,0.8333457266869466
+70707,Order of Operations All,1,0.997348585404644
+70707,Order of Operations All,0,0.8299760395001571
+70707,Order of Operations All,0,0.007032469801753245
+70707,Order of Operations All,0,0.015329633706494651
+70707,Order of Operations All,1,0.9979886605010202
+70707,Order of Operations All,1,0.879476941173444
+70707,Order of Operations All,0,0.8090569756079328
+70707,Order of Operations All,0,0.006314772872227451
+70707,Square Root,1,0.9112066243486525
+70707,Square Root,1,0.8744393689855325
+70707,Square Root,1,0.9161145653333888
+70707,Square Root,1,0.9567917561948424
+70707,Square Root,1,0.9128853418363128
+70707,Percent Of,1,0.9982562382256165
+70707,Prime Number,0,0.014414759706386943
+70707,Prime Number,1,0.997992869017838
+70707,Prime Number,1,0.9981732192998426
+70707,Prime Number,1,0.9981715354469747
+70707,Proportion,1,0.998098022268192
+70707,Proportion,1,0.9973830680831318
+70707,Proportion,1,0.9976251317525109
+70707,Proportion,1,0.998145780881309
+70707,Rounding,1,0.9982499686196545
+70707,Scale Factor,1,0.9976665117819703
+70707,Scientific Notation,1,0.9982028174040408
+70707,Scientific Notation,0,6.472251274251401e-05
+70707,Proportion,1,0.9975901397771673
+70707,Proportion,1,0.9981950806159541
+70707,Proportion,1,0.9981802257664693
+70707,Proportion,1,0.9981950806159541
+70707,Proportion,1,0.9979148231727947
+70707,Exponents,1,0.9968832373975675
+70707,Proportion,1,0.9853792769072608
+70707,Proportion,1,0.9919409736169421
+70707,Finding Percents,1,0.9932586585052636
+70707,Circle Graph,1,0.9878217068810735
+70707,Finding Percents,0,6.587732609216781e-05
+70707,Percent Of,1,0.9961262036187634
+70707,Percent Of,1,0.9961262036187634
+70707,Finding Percents,1,0.9965476188459529
+70707,Square Root,1,0.9966610330461648
+70707,Estimation,1,0.9219870372584364
+70707,Estimation,0,0.9561951707267862
+70707,Estimation,1,0.9458616240855772
+70707,Estimation,0,0.899579516204763
+70707,Estimation,1,0.8985822838900693
+70707,Estimation,1,0.8985822838900693
+70707,Estimation,1,0.9478448681112907
+70707,Estimation,1,0.9484180935522536
+70707,Estimation,1,0.917495246764305
+70707,Addition and Subtraction Fractions,1,0.997510604344189
+70707,Addition and Subtraction Integers,1,0.9960717449322878
+70707,Unit Rate,1,0.9973230064387517
+70707,Unit Rate,0,0.7897290920098153
+70707,Unit Rate,0,0.770298727086307
+70707,Perimeter of a Polygon,1,0.9957098738919294
+70707,Circumference ,1,0.9841448906168592
+70707,Circumference ,0,0.9969991173245738
+70707,Volume Rectangular Prism,1,0.997447055336742
+70707,Box and Whisker,1,0.9974181082918999
+70707,Box and Whisker,1,0.9977242840513257
+70707,Circle Graph,0,0.0053869040998058455
+70707,Histogram as Table or Graph,0,0.9939993417829811
+70707,Table,1,0.6751751845248373
+70707,Table,1,0.7704359462687206
+70707,Table,1,0.8631303184848608
+70707,Table,1,0.9194579030744738
+70707,Table,1,0.9277294013274708
+70707,Table,1,0.9431521464145722
+70707,Table,1,0.8011287707460872
+70707,Table,0,0.7660707716985761
+70707,Table,1,0.7660707716985761
+70707,Nets of 3D Figures,1,0.9440605084881899
+70707,Complementary and Supplementary Angles,1,0.9977629377618145
+70707,Median,1,0.975821550169281
+70707,Mean,1,0.9970542623740277
+70707,Table,1,0.9826978124128719
+70707,Venn Diagram,1,0.9974876356420951
+70707,Stem and Leaf Plot,1,0.9840512853833397
+70707,Venn Diagram,0,0.7704359462687206
+70707,Venn Diagram,1,0.8405590776097244
+70707,Venn Diagram,1,0.9194345382633394
+70707,Venn Diagram,1,0.905017020278701
+70707,Venn Diagram,1,0.9263722332877163
+70707,Venn Diagram,1,0.9391708705885434
+70707,Scatter Plot,1,0.9961204940738319
+70707,Scatter Plot,1,0.9982775620356164
+70707,Scatter Plot,1,0.9961483823498296
+70707,Stem and Leaf Plot,1,0.8355624378551986
+70707,Stem and Leaf Plot,1,0.87123767531224
+70707,Venn Diagram,1,0.7645081684162451
+70707,Venn Diagram,1,0.7324019460420432
+70707,Venn Diagram,1,0.9025515331128066
+70707,Venn Diagram,1,0.9139259618983171
+70707,Equation Solving Two or Fewer Steps,1,0.9655878941432181
+70707,Equation Solving Two or Fewer Steps,1,0.9710017188823608
+70707,Equation Solving Two or Fewer Steps,1,0.9952836547785697
+70707,Equation Solving Two or Fewer Steps,1,0.99734309076342
+70707,Counting Methods,1,0.9957103308389177
+70707,Probability of Two Distinct Events,1,0.9970680595102516
+70707,Probability of Two Distinct Events,1,0.998343640239472
+70707,Table,1,0.8241942912521931
+70707,Table,0,0.737377473810496
+70707,Table,0,0.7706163489618076
+70707,Table,0,0.7286985788651048
+70707,Table,1,0.6611546783286578
+70707,Scientific Notation,1,0.998145917385167
+70707,Scientific Notation,1,0.9974642454747671
+70707,Scientific Notation,1,0.9981259770532184
+70707,Scientific Notation,1,0.998104778890351
+70707,Scientific Notation,1,0.9982417082230326
+70707,Order of Operations All,1,0.9932691692058342
+70707,Order of Operations All,0,7.086936045923905e-05
+70707,Order of Operations All,1,0.6650523106518905
+70707,Divisibility Rules,0,0.07252922443854774
+70707,Divisibility Rules,1,0.9845543101537912
+70707,Divisibility Rules,1,0.9976317179018641
+70707,Divisibility Rules,1,0.9976317179018641
+70707,Divisibility Rules,0,0.07252922443854774
+70707,Divisibility Rules,1,0.9976317179018641
+70707,Congruence,1,0.9836485185260243
+70707,Pythagorean Theorem,1,0.689673127529563
+70707,Pythagorean Theorem,1,0.8167774799397519
+70707,Pythagorean Theorem,1,0.7856765620032556
+70707,Pythagorean Theorem,1,0.7843735697018233
+70707,Pythagorean Theorem,0,0.07394970804158237
+70707,Pythagorean Theorem,0,0.6872625786657462
+70707,Pythagorean Theorem,1,0.6532101845453271
+70707,Pythagorean Theorem,1,0.7822510492497253
+70707,Table,1,0.6583555072115224
+70707,Pythagorean Theorem,1,0.9643698865143774
+70707,Pythagorean Theorem,1,0.9974489483305745
+70707,Calculations with Similar Figures,0,7.086936045923905e-05
+70707,Calculations with Similar Figures,1,0.9976234034706576
+70707,Calculations with Similar Figures,1,0.9977707642893743
+70707,Calculations with Similar Figures,1,0.9978126829689328
+70707,Calculations with Similar Figures,1,0.9978456877884831
+70707,Calculations with Similar Figures,1,0.9978393579199272
+70707,Circle Graph,0,0.806052137474087
+70707,Circle Graph,1,0.6413429096660407
+70707,Circle Graph,1,0.8802094216664198
+70707,Circle Graph,1,0.9040680271191223
+70707,Circle Graph,1,0.9975123120748303
+70707,Circle Graph,1,0.8208199932192406
+70707,Circle Graph,1,0.9807121067111348
+70707,Probability of Two Distinct Events,0,8.401692870793064e-05
+70707,Pythagorean Theorem,1,0.9973049244008673
+70707,Pythagorean Theorem,0,0.07364767055175664
+70707,Pythagorean Theorem,1,0.997379477386353
+70707,Pattern Finding ,1,0.9975786864700082
+70707,Subtraction Whole Numbers,0,0.621466157383828
+70707,Probability of Two Distinct Events,1,0.9974398345195555
+70707,Unit Rate,0,0.748738305614945
+70707,Unit Rate,1,0.7020426643264541
+70707,Unit Rate,1,0.7462768911529069
+70707,Unit Rate,1,0.8015997415781184
+70707,D.4.8-understanding-concept-of-probabilities,1,0.9983709677841739
+70707,Pythagorean Theorem,0,0.04041653511798269
+70707,Pythagorean Theorem,0,0.022541333012587077
+70707,Complementary and Supplementary Angles,1,0.9865256759441516
+70707,Interior Angles Figures with More than 3 Sides,1,0.9962048626845367
+70707,Pythagorean Theorem,1,0.9975160495665952
+70707,Equation Solving Two or Fewer Steps,0,6.408609839216468e-05
+70707,Equation Solving Two or Fewer Steps,1,0.9864540295346423
+70707,Equation Solving Two or Fewer Steps,1,0.9964123255913396
+70707,Equation Solving Two or Fewer Steps,1,0.988744893701375
+70707,Probability of a Single Event,1,0.832058435296282
+70707,Probability of a Single Event,1,0.9194579030744738
+70707,Calculations with Similar Figures,1,0.8187899129917076
+70707,Calculations with Similar Figures,1,0.99822229249528
+70707,Calculations with Similar Figures,0,0.0006423215341866932
+70707,Calculations with Similar Figures,1,0.9975595379194954
+70707,Calculations with Similar Figures,1,0.9977445679029504
+70707,Calculations with Similar Figures,1,0.998026545971428
+70707,Calculations with Similar Figures,1,0.9975473648957732
+70707,Area Circle,1,0.9942625198376496
+70707,Area Circle,1,0.9926837131628157
+70707,Number Line,1,0.9974627785989325
+70707,Number Line,1,0.9973357739955352
+70707,Number Line,0,0.01115101226870086
+70707,Number Line,0,0.005507513305540091
+70707,Calculations with Similar Figures,0,0.05399626816798419
+70707,Calculations with Similar Figures,1,0.9083228178083058
+70707,Calculations with Similar Figures,1,0.927285595914521
+70707,Calculations with Similar Figures,1,0.9547797776620651
+70707,Greatest Common Factor,1,0.9977136117550848
+70707,Probability of a Single Event,1,0.9973436580269033
+70707,Probability of a Single Event,1,0.9985687459241784
+70707,Volume Sphere,0,0.6281139538144823
+70707,Volume Sphere,1,0.8554782331890258
+70707,Volume Sphere,0,0.9979157853762539
+70707,Translations,1,0.9969423621282518
+70707,Least Common Multiple,0,0.017527953727808177
+70707,Least Common Multiple,1,0.9982792507885768
+70707,Least Common Multiple,0,0.005670424904529564
+70707,Least Common Multiple,1,0.9986625775811655
+70707,Least Common Multiple,1,0.9978136924224671
+70707,Least Common Multiple,1,0.9981451709576948
+70707,D.4.8-understanding-concept-of-probabilities,1,0.9982499686196545
+70707,Interior Angles Figures with More than 3 Sides,1,0.7532803853101327
+70707,Area Irregular Figure,0,0.6640335154810836
+70707,Effect of Changing Dimensions of a Shape Prportionally,0,8.401692870793064e-05
+70707,Effect of Changing Dimensions of a Shape Prportionally,1,0.9950374272856961
+70707,Effect of Changing Dimensions of a Shape Prportionally,1,0.9983244244552923
+70707,Effect of Changing Dimensions of a Shape Prportionally,1,0.9983207221292013
+70707,Unit Conversion Within a System,0,0.8318205206193316
+70707,Unit Conversion Within a System,0,0.8443957370862366
+70707,Unit Conversion Within a System,1,0.7842949557044631
+70707,Unit Conversion Within a System,1,0.8156897292652658
+70707,Unit Conversion Within a System,1,0.8385278328122191
+70707,Pattern Finding ,1,0.7924306883492023
+70707,Solving for a variable,1,0.9976041387408727
+70707,Solving for a variable,1,0.9972957857597
+70707,Write Linear Equation from Ordered Pairs,0,7.524115471654156e-05
+70707,Write Linear Equation from Ordered Pairs,0,0.994348321413452
+70707,Equation Solving Two or Fewer Steps,1,0.9970998053288606
+70707,Write Linear Equation from Situation,0,8.401692870793064e-05
+70707,Surface Area Rectangular Prism,1,0.9944458289581276
+70707,Surface Area Cylinder,1,0.996147637288287
+70707,Write Linear Equation from Graph,1,0.6156849060721954
+70707,Circumference ,0,0.9975785861665809
+70708,Addition and Subtraction Positive Decimals,0,0.5982854542192841
+70708,Addition and Subtraction Positive Decimals,1,0.5404288303882269
+70708,Addition and Subtraction Positive Decimals,1,0.7137434813404631
+70708,Addition and Subtraction Positive Decimals,1,0.9320593221078939
+70708,Addition and Subtraction Fractions,0,0.015718076700377063
+70708,Addition and Subtraction Fractions,1,0.9951300999259214

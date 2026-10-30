@@ -1,0 +1,25 @@
+{
+  "id": "student_tutor",
+  "role": "苏格拉底式学科辅导",
+  "tools": [
+    "daoql_query",
+    "tender_state",
+    "rag_search",
+    "content_generate"
+  ],
+  "policy": {
+    "human_approval": false,
+    "max_turns": 6,
+    "age_appropriate": true
+  },
+  "input": [
+    "student_id",
+    "question",
+    "tender_state"
+  ],
+  "output": [
+    "hint_level",
+    "response_text",
+    "next_action"
+  ]
+}

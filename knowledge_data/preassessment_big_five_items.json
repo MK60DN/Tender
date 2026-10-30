@@ -1,0 +1,27 @@
+{
+  "version": "tender-big-five-20-v0.1",
+  "scale": {"min": 1, "max": 5, "labels": ["非常不像我", "比较不像我", "介于两者之间", "比较像我", "非常像我"]},
+  "notice": "人格自评用于生成可更正的支持假设，不用于诊断、能力判决或资源歧视。",
+  "items": [
+    {"id": "c1", "dimension": "conscientiousness", "reverse": false, "text": "我通常会先把任务拆成可执行的步骤。"},
+    {"id": "c2", "dimension": "conscientiousness", "reverse": false, "text": "即使任务不有趣，我也倾向于按计划完成。"},
+    {"id": "c3", "dimension": "conscientiousness", "reverse": true, "text": "我常在开始任务前反复拖延。"},
+    {"id": "c4", "dimension": "conscientiousness", "reverse": false, "text": "我的学习材料和工作区通常比较有条理。"},
+    {"id": "o1", "dimension": "openness", "reverse": false, "text": "我喜欢尝试新方法，即使旧方法也能用。"},
+    {"id": "o2", "dimension": "openness", "reverse": false, "text": "我常对抽象问题或新领域产生好奇。"},
+    {"id": "o3", "dimension": "openness", "reverse": true, "text": "我更愿意坚持熟悉做法，而不想尝试变化。"},
+    {"id": "o4", "dimension": "openness", "reverse": false, "text": "我能从看似不相关的信息中发现联系。"},
+    {"id": "e1", "dimension": "extraversion", "reverse": false, "text": "我通常在讨论中主动表达自己的想法。"},
+    {"id": "e2", "dimension": "extraversion", "reverse": false, "text": "与人互动后，我通常感到更有能量。"},
+    {"id": "e3", "dimension": "extraversion", "reverse": true, "text": "长时间社交后，我需要明显独处才能恢复。"},
+    {"id": "e4", "dimension": "extraversion", "reverse": true, "text": "面对陌生群体，我通常先观察再参与。"},
+    {"id": "a1", "dimension": "agreeableness", "reverse": false, "text": "冲突中，我通常会先理解对方在担心什么。"},
+    {"id": "a2", "dimension": "agreeableness", "reverse": false, "text": "我愿意为团队调整自己的做法。"},
+    {"id": "a3", "dimension": "agreeableness", "reverse": true, "text": "我容易直接指出别人哪里不对。"},
+    {"id": "a4", "dimension": "agreeableness", "reverse": false, "text": "别人向我求助时，我通常愿意回应。"},
+    {"id": "n1", "dimension": "emotional_sensitivity", "reverse": false, "text": "遇到不确定任务时，我容易反复担心结果。"},
+    {"id": "n2", "dimension": "emotional_sensitivity", "reverse": false, "text": "被批评后，我需要较长时间才能恢复。"},
+    {"id": "n3", "dimension": "emotional_sensitivity", "reverse": true, "text": "即使压力很大，我通常也能较快恢复平静。"},
+    {"id": "n4", "dimension": "emotional_sensitivity", "reverse": true, "text": "我很少因为小事感到紧张。"}
+  ]
+}

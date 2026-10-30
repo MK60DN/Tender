@@ -1,0 +1,369 @@
+{
+  "generated_at": "2026-10-20T23:11:56.921755+08:00",
+  "health_advisor": {
+    "metrics": {
+      "auc": 0.7235,
+      "ap": 0.6529,
+      "brier": 0.2136,
+      "logloss": 0.6169,
+      "f1": 0.6366,
+      "n": 1250,
+      "positive_rate": 0.4632
+    },
+    "example": {
+      "predicted_elevated_bp_proxy": 0.2727
+    }
+  },
+  "nutrition_advisor": {
+    "metrics": {
+      "mae": 3.3369,
+      "rmse": 5.9192,
+      "r2": 0.8844,
+      "n": 1437,
+      "mean_true_score": 80.654,
+      "tier_counts": {
+        "low_0_29": 101,
+        "medium_30_59": 744,
+        "high_60_100": 4902
+      },
+      "flag_definition": "0-100 score from low fiber, high sodium, low potassium, high sugar"
+    },
+    "example": {
+      "predicted_nutrition_risk_score": 73.169,
+      "true_nutrition_risk_score": 75.0
+    }
+  },
+  "neurocognitive_advisor": {
+    "rows": 272,
+    "diagnosis_counts": {
+      "CONTROL": 130,
+      "SCHZ": 50,
+      "BIPOLAR": 49,
+      "ADHD": 43
+    },
+    "domain_features": {
+      "memory": {
+        "wais_mr_totalraw": 1,
+        "wais_voc_totalraw": 1,
+        "wais_lns_totalraw": 1,
+        "wms_vr1ir_totalraw": 1,
+        "wms_vr2dr_total3": 1,
+        "wms_ds_ldsf": 1,
+        "wms_ds_totalraw": 1,
+        "dkefs_s_total": 1
+      },
+      "executive": {
+        "dkefs_c": 1,
+        "dkefs_a_three": 1,
+        "dkefs_f_total": 1,
+        "stroop_scwt_accinc": 1,
+        "stroop_scwt_ii_std_rt": -1,
+        "stroop_scwt_conflict_rt_effect": -1,
+        "stopsignal_sst_ses_ssd50": 1,
+        "stopsignal_sst_ses_stdev_rt": -1,
+        "stopsignal_sst_ses_ssrt": -1,
+        "taskswitch_ts_accuracy": 1,
+        "taskswitch_ts_costlong": -1,
+        "taskswitch_ts_costshort": -1
+      },
+      "attention": {
+        "cpt_cpt_fa": -1,
+        "cpt_cpt_miss": -1,
+        "cpt_cpt_sd_h": -1
+      }
+    },
+    "cluster_profiles": [
+      {
+        "cluster": 0,
+        "n": 49,
+        "memory": 0.1439,
+        "executive": -0.1516,
+        "attention": -0.6753,
+        "overall": -0.2277,
+        "label": "monitor"
+      },
+      {
+        "cluster": 1,
+        "n": 101,
+        "memory": -0.7119,
+        "executive": -0.2702,
+        "attention": 0.0294,
+        "overall": -0.3176,
+        "label": "higher_support_need"
+      },
+      {
+        "cluster": 2,
+        "n": 122,
+        "memory": 0.5315,
+        "executive": 0.2846,
+        "attention": 0.2469,
+        "overall": 0.3543,
+        "label": "lower_support_need"
+      }
+    ],
+    "note": "Unsupervised research profile; diagnosis labels were not used in clustering."
+  },
+  "psychology_advisor": {
+    "rows": 272,
+    "features": [
+      "hopkins_depression",
+      "hopkins_anxiety",
+      "hopkins_somatization",
+      "hopkins_obscomp",
+      "hopkins_intsensitivity",
+      "hopkins_globalseverity",
+      "asrs_score"
+    ],
+    "cluster_profiles": [
+      {
+        "cluster": 0,
+        "n": 146,
+        "hopkins_depression": 0.252,
+        "hopkins_anxiety": 0.143,
+        "hopkins_somatization": 0.184,
+        "hopkins_obscomp": 0.388,
+        "hopkins_intsensitivity": 0.277,
+        "hopkins_globalseverity": 0.248,
+        "asrs_score": 8.425,
+        "overall": -0.6137,
+        "label": "low_support_signal"
+      },
+      {
+        "cluster": 1,
+        "n": 47,
+        "hopkins_depression": 1.48,
+        "hopkins_anxiety": 1.365,
+        "hopkins_somatization": 1.014,
+        "hopkins_obscomp": 1.859,
+        "hopkins_intsensitivity": 1.574,
+        "hopkins_globalseverity": 1.39,
+        "asrs_score": 15.17,
+        "overall": 1.4854,
+        "label": "high_support_signal"
+      },
+      {
+        "cluster": 2,
+        "n": 79,
+        "hopkins_depression": 0.762,
+        "hopkins_anxiety": 0.506,
+        "hopkins_somatization": 0.439,
+        "hopkins_obscomp": 1.038,
+        "hopkins_intsensitivity": 0.897,
+        "hopkins_globalseverity": 0.691,
+        "asrs_score": 12.532,
+        "overall": 0.2504,
+        "label": "monitor"
+      }
+    ],
+    "note": "Questionnaire-derived support signal; not a diagnostic classifier."
+  },
+  "nutrition5k": {
+    "dishes": 5006,
+    "cafeterias": 2,
+    "license": "CC BY 4.0",
+    "nutrition_distributions": {
+      "total_calories": {
+        "mean": 213.332,
+        "median": 141.7
+      },
+      "total_mass": {
+        "mean": 189.98,
+        "median": 145.0
+      },
+      "total_fat": {
+        "mean": 10.722,
+        "median": 5.824
+      },
+      "total_carb": {
+        "mean": 17.003,
+        "median": 11.801
+      },
+      "total_protein": {
+        "mean": 14.476,
+        "median": 7.048
+      }
+    }
+  },
+  "learning_science_advisor": {
+    "model_id": "learning_science_advisor",
+    "version": "1.0.0",
+    "weights": {
+      "knowledge_gap": 0.25,
+      "uncertainty": 0.15,
+      "metacognitive_bias": 0.1,
+      "hesitation": 0.15,
+      "neuro_support": 0.15,
+      "psych_support": 0.1,
+      "health_risk": 0.05,
+      "nutrition_risk": 0.05
+    },
+    "quantum_cognition": {
+      "theta": "fusion/ambiguity state variable",
+      "phi": "cognitive phase / cycle variable",
+      "trajectory": "Bloch-sphere representation of state evolution",
+      "boundary": "modeling language, not evidence of physical quantum effects"
+    },
+    "inputs": {
+      "health": {
+        "auc": 0.7235,
+        "ap": 0.6529,
+        "brier": 0.2136,
+        "logloss": 0.6169,
+        "f1": 0.6366,
+        "n": 1250,
+        "positive_rate": 0.4632
+      },
+      "nutrition": {
+        "mae": 3.3369,
+        "rmse": 5.9192,
+        "r2": 0.8844,
+        "n": 1437,
+        "mean_true_score": 80.654,
+        "tier_counts": {
+          "low_0_29": 101,
+          "medium_30_59": 744,
+          "high_60_100": 4902
+        },
+        "flag_definition": "0-100 score from low fiber, high sodium, low potassium, high sugar"
+      },
+      "neurocognitive": {
+        "rows": 272,
+        "diagnosis_counts": {
+          "CONTROL": 130,
+          "SCHZ": 50,
+          "BIPOLAR": 49,
+          "ADHD": 43
+        },
+        "domain_features": {
+          "memory": {
+            "wais_mr_totalraw": 1,
+            "wais_voc_totalraw": 1,
+            "wais_lns_totalraw": 1,
+            "wms_vr1ir_totalraw": 1,
+            "wms_vr2dr_total3": 1,
+            "wms_ds_ldsf": 1,
+            "wms_ds_totalraw": 1,
+            "dkefs_s_total": 1
+          },
+          "executive": {
+            "dkefs_c": 1,
+            "dkefs_a_three": 1,
+            "dkefs_f_total": 1,
+            "stroop_scwt_accinc": 1,
+            "stroop_scwt_ii_std_rt": -1,
+            "stroop_scwt_conflict_rt_effect": -1,
+            "stopsignal_sst_ses_ssd50": 1,
+            "stopsignal_sst_ses_stdev_rt": -1,
+            "stopsignal_sst_ses_ssrt": -1,
+            "taskswitch_ts_accuracy": 1,
+            "taskswitch_ts_costlong": -1,
+            "taskswitch_ts_costshort": -1
+          },
+          "attention": {
+            "cpt_cpt_fa": -1,
+            "cpt_cpt_miss": -1,
+            "cpt_cpt_sd_h": -1
+          }
+        },
+        "cluster_profiles": [
+          {
+            "cluster": 0,
+            "n": 49,
+            "memory": 0.1439,
+            "executive": -0.1516,
+            "attention": -0.6753,
+            "overall": -0.2277,
+            "label": "monitor"
+          },
+          {
+            "cluster": 1,
+            "n": 101,
+            "memory": -0.7119,
+            "executive": -0.2702,
+            "attention": 0.0294,
+            "overall": -0.3176,
+            "label": "higher_support_need"
+          },
+          {
+            "cluster": 2,
+            "n": 122,
+            "memory": 0.5315,
+            "executive": 0.2846,
+            "attention": 0.2469,
+            "overall": 0.3543,
+            "label": "lower_support_need"
+          }
+        ],
+        "note": "Unsupervised research profile; diagnosis labels were not used in clustering."
+      },
+      "psychology": {
+        "rows": 272,
+        "features": [
+          "hopkins_depression",
+          "hopkins_anxiety",
+          "hopkins_somatization",
+          "hopkins_obscomp",
+          "hopkins_intsensitivity",
+          "hopkins_globalseverity",
+          "asrs_score"
+        ],
+        "cluster_profiles": [
+          {
+            "cluster": 0,
+            "n": 146,
+            "hopkins_depression": 0.252,
+            "hopkins_anxiety": 0.143,
+            "hopkins_somatization": 0.184,
+            "hopkins_obscomp": 0.388,
+            "hopkins_intsensitivity": 0.277,
+            "hopkins_globalseverity": 0.248,
+            "asrs_score": 8.425,
+            "overall": -0.6137,
+            "label": "low_support_signal"
+          },
+          {
+            "cluster": 1,
+            "n": 47,
+            "hopkins_depression": 1.48,
+            "hopkins_anxiety": 1.365,
+            "hopkins_somatization": 1.014,
+            "hopkins_obscomp": 1.859,
+            "hopkins_intsensitivity": 1.574,
+            "hopkins_globalseverity": 1.39,
+            "asrs_score": 15.17,
+            "overall": 1.4854,
+            "label": "high_support_signal"
+          },
+          {
+            "cluster": 2,
+            "n": 79,
+            "hopkins_depression": 0.762,
+            "hopkins_anxiety": 0.506,
+            "hopkins_somatization": 0.439,
+            "hopkins_obscomp": 1.038,
+            "hopkins_intsensitivity": 0.897,
+            "hopkins_globalseverity": 0.691,
+            "asrs_score": 12.532,
+            "overall": 0.2504,
+            "label": "monitor"
+          }
+        ],
+        "note": "Questionnaire-derived support signal; not a diagnostic classifier."
+      }
+    },
+    "output": [
+      "support_index",
+      "recommended_support_mode",
+      "uncertainty",
+      "referral_suggestion"
+    ],
+    "status": "transparent_fusion_no_supervised_quantum_label_dataset"
+  },
+  "boundaries": {
+    "health": "screening proxy, not diagnosis or treatment",
+    "nutrition": "nutrition-pattern triage, not medical nutrition therapy",
+    "neurocognitive": "unsupervised profile, not neuropsychological diagnosis",
+    "psychology": "support triage, not clinical diagnosis",
+    "learning_science": "transparent fusion; quantum cognition is a modeling grammar"
+  }
+}

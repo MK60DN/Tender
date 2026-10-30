@@ -1,0 +1,26 @@
+{
+  "TalkBack.Year1.Carter.Fall.121119-2.xlsx": {
+    "has_a_question": 0.3811,
+    "has_a_directive_or_instruction": 0.4794,
+    "has_explanation_or_reasoning": 0.2785,
+    "checks_for_understanding_or_agreement": 0.2721,
+    "evaluates_a_student_response": 0.2323,
+    "manages_classroom_behavior_or_attention": 0.3586,
+    "has_praise_or_encouragement": 0.1557,
+    "has_answer_to_a_math_problem": 0.1446,
+    "uses_collaborative_or_inclusive_language": 0.4095,
+    "shows_uncertainty": 0.1961
+  },
+  "TalkBack.Year2.Strathom.Spring.033121-2.xlsx": {
+    "has_a_question": 0.2593,
+    "has_a_directive_or_instruction": 0.3035,
+    "has_explanation_or_reasoning": 0.2799,
+    "checks_for_understanding_or_agreement": 0.2343,
+    "evaluates_a_student_response": 0.2674,
+    "manages_classroom_behavior_or_attention": 0.2542,
+    "has_praise_or_encouragement": 0.1539,
+    "has_answer_to_a_math_problem": 0.1726,
+    "uses_collaborative_or_inclusive_language": 0.2343,
+    "shows_uncertainty": 0.1053
+  }
+}

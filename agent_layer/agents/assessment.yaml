@@ -1,0 +1,24 @@
+{
+  "id": "assessment",
+  "role": "题目生成、难度标定、知识追踪",
+  "tools": [
+    "daoql_query",
+    "tender_state",
+    "item_bank",
+    "pykt"
+  ],
+  "policy": {
+    "human_approval": true,
+    "item_review": true
+  },
+  "input": [
+    "student_id",
+    "concept_id",
+    "target_difficulty"
+  ],
+  "output": [
+    "item_id",
+    "difficulty",
+    "expected_mastery"
+  ]
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "cluster": 0,
+    "n": 49,
+    "memory": 0.1439,
+    "executive": -0.1516,
+    "attention": -0.6753,
+    "overall": -0.2277,
+    "label": "monitor"
+  },
+  {
+    "cluster": 1,
+    "n": 101,
+    "memory": -0.7119,
+    "executive": -0.2702,
+    "attention": 0.0294,
+    "overall": -0.3176,
+    "label": "higher_support_need"
+  },
+  {
+    "cluster": 2,
+    "n": 122,
+    "memory": 0.5315,
+    "executive": 0.2846,
+    "attention": 0.2469,
+    "overall": 0.3543,
+    "label": "lower_support_need"
+  }
+]

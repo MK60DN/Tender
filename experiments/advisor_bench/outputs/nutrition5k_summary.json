@@ -1,0 +1,27 @@
+{
+  "dishes": 5006,
+  "cafeterias": 2,
+  "license": "CC BY 4.0",
+  "nutrition_distributions": {
+    "total_calories": {
+      "mean": 213.332,
+      "median": 141.7
+    },
+    "total_mass": {
+      "mean": 189.98,
+      "median": 145.0
+    },
+    "total_fat": {
+      "mean": 10.722,
+      "median": 5.824
+    },
+    "total_carb": {
+      "mean": 17.003,
+      "median": 11.801
+    },
+    "total_protein": {
+      "mean": 14.476,
+      "median": 7.048
+    }
+  }
+}

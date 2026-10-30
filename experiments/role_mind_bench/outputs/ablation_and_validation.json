@@ -1,0 +1,399 @@
+{
+  "generated_at_utc": "2026-10-20T09:01:05.099345+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "pandas": "3.0.5",
+    "numpy": "2.2.6",
+    "sklearn": "1.9.0"
+  },
+  "data_hashes": {
+    "external_data\\open_downloads\\assistments2009.csv": {
+      "bytes": 64412812,
+      "sha256": "162ef8d2d28bcbfea6591a282994062bd8d5eaa00636544292a0d268dca6e5da"
+    },
+    "external_data\\open_downloads\\talkmoves_annotated.parquet": {
+      "bytes": 242288,
+      "sha256": "f2eab65f61e27f71530cd76867048a87ec016c493fe3707074c86ed40d9cc5dc"
+    },
+    "external_data\\open_downloads\\oulad_engineered.parquet": {
+      "bytes": 3603678,
+      "sha256": "4029fd31e17ec2cb266994d43c839ae9b1ef2fb45210d3717ddee1ea06dcc395"
+    },
+    "external_data\\open_downloads\\student_performance_uci\\student-mat.csv": {
+      "bytes": 56993,
+      "sha256": "e47f9ee225e1ee6e69b7564e6dac7123e80b8486677fe111f351964cef5dec80"
+    },
+    "external_data\\open_downloads\\student_performance_uci\\student-por.csv": {
+      "bytes": 93220,
+      "sha256": "a7594a11d7771c0efe1a740824e0e833da9c4cad07c39a9766a874575563fb3f"
+    }
+  },
+  "student": {
+    "meta": {
+      "rows": 273364,
+      "train_users": 3302,
+      "test_users": 826
+    },
+    "ablations": {
+      "full_7_features": {
+        "features": [
+          "attempt_count",
+          "hint_count",
+          "hint_total",
+          "ms_first_response",
+          "opportunity",
+          "prior_user_correct",
+          "prior_skill_correct"
+        ],
+        "auc": 0.972,
+        "ap": 0.9795,
+        "logloss": 0.189,
+        "brier": 0.0544,
+        "f1_at_0_5": 0.945,
+        "n": 55555,
+        "positive_rate": 0.6583
+      },
+      "without_process_timing": {
+        "features": [
+          "opportunity",
+          "prior_user_correct",
+          "prior_skill_correct"
+        ],
+        "auc": 0.7156,
+        "ap": 0.8057,
+        "logloss": 0.5702,
+        "brier": 0.1931,
+        "f1_at_0_5": 0.8051,
+        "n": 55555,
+        "positive_rate": 0.6583
+      },
+      "without_prior_correctness": {
+        "features": [
+          "attempt_count",
+          "hint_count",
+          "hint_total",
+          "ms_first_response",
+          "opportunity"
+        ],
+        "auc": 0.9677,
+        "ap": 0.9812,
+        "logloss": 0.1852,
+        "brier": 0.0574,
+        "f1_at_0_5": 0.9444,
+        "n": 55555,
+        "positive_rate": 0.6583
+      },
+      "process_timing_only": {
+        "features": [
+          "attempt_count",
+          "hint_count",
+          "hint_total",
+          "ms_first_response"
+        ],
+        "auc": 0.9668,
+        "ap": 0.9797,
+        "logloss": 0.1893,
+        "brier": 0.0578,
+        "f1_at_0_5": 0.9444,
+        "n": 55555,
+        "positive_rate": 0.6583
+      },
+      "prior_correctness_only": {
+        "features": [
+          "prior_user_correct",
+          "prior_skill_correct"
+        ],
+        "auc": 0.7084,
+        "ap": 0.7971,
+        "logloss": 0.576,
+        "brier": 0.1952,
+        "f1_at_0_5": 0.8055,
+        "n": 55555,
+        "positive_rate": 0.6583
+      }
+    }
+  },
+  "sales": {
+    "meta": {
+      "train_rows": 3127,
+      "test_rows": 2561
+    },
+    "ablations": {
+      "full_5_fields": {
+        "features": [
+          "Lead Origin",
+          "Lead Source",
+          "Last Activity",
+          "Tags",
+          "What is your current occupation"
+        ],
+        "auc": 0.9817,
+        "ap": 0.9687,
+        "logloss": 0.1428,
+        "brier": 0.0337,
+        "f1_at_0_5": 0.9528,
+        "n": 2561,
+        "positive_rate": 0.392,
+        "top10_capture": 0.251
+      },
+      "without_tags": {
+        "features": [
+          "Lead Origin",
+          "Lead Source",
+          "Last Activity",
+          "What is your current occupation"
+        ],
+        "auc": 0.7699,
+        "ap": 0.7005,
+        "logloss": 0.5772,
+        "brier": 0.1951,
+        "f1_at_0_5": 0.6301,
+        "n": 2561,
+        "positive_rate": 0.392,
+        "top10_capture": 0.2311
+      },
+      "without_last_activity": {
+        "features": [
+          "Lead Origin",
+          "Lead Source",
+          "Tags",
+          "What is your current occupation"
+        ],
+        "auc": 0.9755,
+        "ap": 0.9524,
+        "logloss": 0.1439,
+        "brier": 0.0328,
+        "f1_at_0_5": 0.95,
+        "n": 2561,
+        "positive_rate": 0.392,
+        "top10_capture": 0.246
+      },
+      "without_tags_or_activity": {
+        "features": [
+          "Lead Origin",
+          "Lead Source",
+          "What is your current occupation"
+        ],
+        "auc": 0.68,
+        "ap": 0.6293,
+        "logloss": 0.5943,
+        "brier": 0.2016,
+        "f1_at_0_5": 0.5042,
+        "n": 2561,
+        "positive_rate": 0.392,
+        "top10_capture": 0.2221
+      },
+      "origin_and_source_only": {
+        "features": [
+          "Lead Origin",
+          "Lead Source"
+        ],
+        "auc": 0.5975,
+        "ap": 0.5174,
+        "logloss": 0.6528,
+        "brier": 0.2289,
+        "f1_at_0_5": 0.4315,
+        "n": 2561,
+        "positive_rate": 0.392,
+        "top10_capture": 0.1843
+      }
+    }
+  },
+  "parent": {
+    "sensitivity": {
+      "full_random_holdout": {
+        "auc": 0.7091,
+        "ap": 0.2934,
+        "logloss": 0.61,
+        "brier": 0.2102,
+        "f1_at_0_5": 0.3577,
+        "n": 261,
+        "positive_rate": 0.1456
+      },
+      "without_subject": {
+        "auc": 0.6617,
+        "ap": 0.2472,
+        "logloss": 0.6316,
+        "brier": 0.2206,
+        "f1_at_0_5": 0.3111,
+        "n": 261,
+        "positive_rate": 0.1456
+      },
+      "train_math_test_portuguese": {
+        "auc": 0.5982,
+        "ap": 0.1678,
+        "logloss": 0.6793,
+        "brier": 0.243,
+        "f1_at_0_5": 0.2067,
+        "n": 649,
+        "positive_rate": 0.1079
+      },
+      "train_portuguese_test_math": {
+        "auc": 0.5652,
+        "ap": 0.2482,
+        "logloss": 0.6079,
+        "brier": 0.2083,
+        "f1_at_0_5": 0.2659,
+        "n": 395,
+        "positive_rate": 0.2101
+      }
+    }
+  },
+  "institution": {
+    "sensitivity": {
+      "student_holdout": {
+        "auc": 0.7429,
+        "ap": 0.5023,
+        "logloss": 0.4979,
+        "brier": 0.1638,
+        "f1_at_0_5": 0.3388,
+        "n": 120776,
+        "positive_rate": 0.259
+      },
+      "module_AAA": {
+        "auc": 0.7134,
+        "ap": 0.3205,
+        "logloss": 0.3713,
+        "brier": 0.1102,
+        "f1_at_0_5": 0.0508,
+        "n": 3840,
+        "positive_rate": 0.1385
+      },
+      "module_BBB": {
+        "auc": 0.7121,
+        "ap": 0.4067,
+        "logloss": 0.4832,
+        "brier": 0.1571,
+        "f1_at_0_5": 0.149,
+        "n": 25689,
+        "positive_rate": 0.225
+      },
+      "module_CCC": {
+        "auc": 0.7124,
+        "ap": 0.54,
+        "logloss": 0.5694,
+        "brier": 0.1929,
+        "f1_at_0_5": 0.4256,
+        "n": 15045,
+        "positive_rate": 0.3256
+      },
+      "module_DDD": {
+        "auc": 0.7415,
+        "ap": 0.5629,
+        "logloss": 0.543,
+        "brier": 0.1833,
+        "f1_at_0_5": 0.4305,
+        "n": 24159,
+        "positive_rate": 0.3193
+      },
+      "module_EEE": {
+        "auc": 0.771,
+        "ap": 0.4464,
+        "logloss": 0.3996,
+        "brier": 0.1264,
+        "f1_at_0_5": 0.2355,
+        "n": 12046,
+        "positive_rate": 0.1826
+      },
+      "module_FFF": {
+        "auc": 0.7581,
+        "ap": 0.5241,
+        "logloss": 0.4949,
+        "brier": 0.1631,
+        "f1_at_0_5": 0.3818,
+        "n": 31805,
+        "positive_rate": 0.2659
+      },
+      "module_GGG": {
+        "auc": 0.656,
+        "ap": 0.3159,
+        "logloss": 0.4949,
+        "brier": 0.1572,
+        "f1_at_0_5": 0.0024,
+        "n": 8192,
+        "positive_rate": 0.2069
+      }
+    }
+  },
+  "inference_checks": {
+    "student": {
+      "operational_features": [
+        "opportunity",
+        "prior_user_correct",
+        "prior_skill_correct"
+      ],
+      "pre_answer_prediction": 0.5289,
+      "research_benchmark_features": [
+        "attempt_count",
+        "hint_count",
+        "hint_total",
+        "ms_first_response",
+        "opportunity",
+        "prior_user_correct",
+        "prior_skill_correct"
+      ],
+      "posthoc_benchmark_prediction": 0.2718
+    },
+    "teacher": {
+      "text": "What strategy did you use, and can you explain why your answer works?",
+      "top_labels": [
+        {
+          "label": "has_a_question",
+          "probability": 0.9892
+        },
+        {
+          "label": "checks_for_understanding_or_agreement",
+          "probability": 0.8725
+        },
+        {
+          "label": "has_a_directive_or_instruction",
+          "probability": 0.7609
+        }
+      ]
+    },
+    "sales": {
+      "operational_input": {
+        "Lead Origin": "Landing Page Submission",
+        "Lead Source": "Google",
+        "What is your current occupation": "Working Professional"
+      },
+      "pre_contact_prediction": 0.9325,
+      "research_benchmark_input": {
+        "Lead Origin": "Landing Page Submission",
+        "Lead Source": "Google",
+        "Last Activity": "SMS Sent",
+        "Tags": "Interested in other courses",
+        "What is your current occupation": "Working Professional"
+      },
+      "posthoc_benchmark_prediction": 0.2757
+    },
+    "parent": {
+      "input": {
+        "Medu": 3,
+        "Fedu": 3,
+        "Pstatus": "T",
+        "famsup": "yes",
+        "paid": "no",
+        "schoolsup": "no",
+        "studytime": 2,
+        "famrel": 4,
+        "internet": "yes",
+        "address": "U",
+        "subject": "math"
+      },
+      "high_absence_risk_proxy": 0.628
+    },
+    "institution": {
+      "input": {
+        "week": 0.0,
+        "weekly_clicks": 72.0,
+        "activity_count": 21.0,
+        "cumulative_clicks": 72.0,
+        "click_diff": 0.0,
+        "code_module": 0.0,
+        "code_presentation": 0.0
+      },
+      "weekly_attrition_risk_proxy": 0.3264
+    }
+  }
+}

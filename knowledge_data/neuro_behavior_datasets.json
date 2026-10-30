@@ -1,0 +1,170 @@
+{
+  "version": "1.0",
+  "scope": "学习行为数据用于知识追踪、会话分析和低打扰设计；不包含运行时神经解码。",
+  "datasets": [
+    {
+      "id": "assistments_data_shop",
+      "name": "ASSISTments / PSLC DataShop",
+      "record_type": "dataset_repository",
+      "modalities": [
+        "learning_interaction",
+        "correctness",
+        "hint_use",
+        "response_time"
+      ],
+      "learning_signals": [
+        "练习序列",
+        "正确率",
+        "提示使用",
+        "知识追踪"
+      ],
+      "neuro_signals": [],
+      "life_stages": [
+        "middle",
+        "high",
+        "university"
+      ],
+      "access": "registered",
+      "license": "DataShop terms; verify before redistribution",
+      "url": "https://pslcdatashop.web.cmu.edu/",
+      "doi": null,
+      "tender_use": [
+        "knowledge_tracing_benchmark",
+        "error_pattern_analysis"
+      ],
+      "runtime_personalization_allowed": false,
+      "privacy_risk": "medium",
+      "notes": "适合行为序列和知识追踪，不含神经测量。"
+    },
+    {
+      "id": "ednet",
+      "name": "EdNet",
+      "record_type": "dataset",
+      "modalities": [
+        "learning_interaction",
+        "question_metadata",
+        "lecture_metadata"
+      ],
+      "learning_signals": [
+        "作答序列",
+        "正确性",
+        "学习会话",
+        "平台行为"
+      ],
+      "neuro_signals": [],
+      "life_stages": [
+        "middle",
+        "high"
+      ],
+      "access": "public_download",
+      "license": "dataset-specific terms; verify before redistribution",
+      "url": "https://github.com/riiid/ednet",
+      "doi": "https://doi.org/10.1007/978-3-030-52240-7_13",
+      "tender_use": [
+        "knowledge_tracing_benchmark",
+        "session_modeling"
+      ],
+      "runtime_personalization_allowed": false,
+      "privacy_risk": "medium",
+      "notes": "大规模辅导平台交互数据，适合会话级建模。"
+    },
+    {
+      "id": "oulad",
+      "name": "Open University Learning Analytics Dataset",
+      "record_type": "dataset",
+      "modalities": [
+        "learning_interaction",
+        "vle_clicks",
+        "assessment_scores",
+        "course_registration"
+      ],
+      "learning_signals": [
+        "在线学习行为",
+        "提交记录",
+        "成绩",
+        "退课风险"
+      ],
+      "neuro_signals": [],
+      "life_stages": [
+        "university",
+        "employment"
+      ],
+      "access": "open",
+      "license": "CC BY 4.0; verify at source",
+      "url": "https://analyse.kmi.open.ac.uk/open_dataset",
+      "doi": "https://doi.org/10.1038/sdata.2017.171",
+      "tender_use": [
+        "adult_learning_analytics",
+        "dropout_risk_benchmark"
+      ],
+      "runtime_personalization_allowed": false,
+      "privacy_risk": "medium",
+      "notes": "点击不等于认知负荷；只用于宏观行为模型验证。"
+    },
+    {
+      "id": "studentlife",
+      "name": "StudentLife",
+      "record_type": "dataset",
+      "modalities": [
+        "smartphone_sensing",
+        "ema",
+        "academic_outcomes"
+      ],
+      "learning_signals": [
+        "活动",
+        "位置",
+        "手机使用",
+        "自评情绪",
+        "学业结果"
+      ],
+      "neuro_signals": [],
+      "life_stages": [
+        "university"
+      ],
+      "access": "research_terms",
+      "license": "dataset-specific terms",
+      "url": "https://doi.org/10.1145/2632048.2632054",
+      "doi": "https://doi.org/10.1145/2632048.2632054",
+      "tender_use": [
+        "ambient_signal_design",
+        "ema_design",
+        "privacy_boundary"
+      ],
+      "runtime_personalization_allowed": false,
+      "privacy_risk": "high",
+      "notes": "用于低打扰信号与EMA设计，不可把传感数据当诊断。"
+    },
+    {
+      "id": "kdd_cup_2010",
+      "name": "KDD Cup 2010 Educational Data Mining Challenge",
+      "record_type": "benchmark_dataset",
+      "modalities": [
+        "tutor_logs",
+        "problem_metadata",
+        "correctness"
+      ],
+      "learning_signals": [
+        "知识追踪",
+        "练习历史",
+        "技能标签"
+      ],
+      "neuro_signals": [],
+      "life_stages": [
+        "middle",
+        "high",
+        "university"
+      ],
+      "access": "registered",
+      "license": "competition and DataShop terms",
+      "url": "https://pslcdatashop.web.cmu.edu/KDDCup/",
+      "doi": null,
+      "tender_use": [
+        "knowledge_tracing_benchmark",
+        "replication"
+      ],
+      "runtime_personalization_allowed": false,
+      "privacy_risk": "medium",
+      "notes": "经典教育数据挖掘基准，适合与现有Tender theta比较。"
+    }
+  ]
+}

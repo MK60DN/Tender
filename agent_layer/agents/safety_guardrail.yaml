@@ -1,0 +1,21 @@
+{
+  "id": "safety_guardrail",
+  "role": "内容安全、年龄适配、隐私、人工升级",
+  "tools": [
+    "policy_engine",
+    "moderation"
+  ],
+  "policy": {
+    "always_on": true,
+    "block_on_violation": true
+  },
+  "input": [
+    "message",
+    "context"
+  ],
+  "output": [
+    "allowed",
+    "reason",
+    "escalate_to_human"
+  ]
+}

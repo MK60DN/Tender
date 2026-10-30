@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this repository, cite the project and the relevant release."
+title: "Tender: Mentalization, Predictive Processing and Lifelong Learning"
+type: software
+version: 1.5.0
+date-released: 2026-10-30
+authors:
+  - name: "Tender Contributors"
+repository-code: "https://github.com/MK60DN/Tender"
+license: PolyForm-Noncommercial-1.0.0
+abstract: >-
+  A research-oriented lifelong-learning system that separates objective events,
+  language evidence, Tender state hypotheses and long-term outcomes.

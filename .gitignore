@@ -1,0 +1,42 @@
+# secrets
+.env
+.env.*
+!.env.example
+.tender_session_secret
+*.pem
+*.key
+
+# runtime databases
+agent_layer/tender_agent.db
+agent_layer/tender_agent.db-*
+agent_layer/tenant_data/
+
+# caches and generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.log
+*.aux
+*.toc
+*.out
+*.synctex.gz
+
+# local and large artifacts
+tmp/
+tmp_*/
+_logs/
+*.zip
+*.bundle
+*.parquet
+*.joblib
+*.pkl
+.DS_Store
+Thumbs.db
+
+# editor files
+.idea/
+.vscode/

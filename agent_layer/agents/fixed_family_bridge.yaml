@@ -1,0 +1,10 @@
+id: fixed_family_bridge
+role: 生成经授权的最小必要家庭支持摘要
+tools: [tender_state, privacy_filter, approved_summary]
+policy:
+  always_on: true
+  human_approval: true
+  no_raw_conversation: true
+  no_diagnosis: true
+input: [student_id, guardian_consent, summary_scope]
+output: [family_summary, support_action, boundary_note]

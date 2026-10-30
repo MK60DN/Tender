@@ -1,0 +1,41 @@
+[
+  {
+    "cluster": 0,
+    "n": 146,
+    "hopkins_depression": 0.252,
+    "hopkins_anxiety": 0.143,
+    "hopkins_somatization": 0.184,
+    "hopkins_obscomp": 0.388,
+    "hopkins_intsensitivity": 0.277,
+    "hopkins_globalseverity": 0.248,
+    "asrs_score": 8.425,
+    "overall": -0.6137,
+    "label": "low_support_signal"
+  },
+  {
+    "cluster": 1,
+    "n": 47,
+    "hopkins_depression": 1.48,
+    "hopkins_anxiety": 1.365,
+    "hopkins_somatization": 1.014,
+    "hopkins_obscomp": 1.859,
+    "hopkins_intsensitivity": 1.574,
+    "hopkins_globalseverity": 1.39,
+    "asrs_score": 15.17,
+    "overall": 1.4854,
+    "label": "high_support_signal"
+  },
+  {
+    "cluster": 2,
+    "n": 79,
+    "hopkins_depression": 0.762,
+    "hopkins_anxiety": 0.506,
+    "hopkins_somatization": 0.439,
+    "hopkins_obscomp": 1.038,
+    "hopkins_intsensitivity": 0.897,
+    "hopkins_globalseverity": 0.691,
+    "asrs_score": 12.532,
+    "overall": 0.2504,
+    "label": "monitor"
+  }
+]

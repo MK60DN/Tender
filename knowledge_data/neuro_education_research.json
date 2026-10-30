@@ -1,0 +1,71 @@
+{
+  "version": "1.0",
+  "research": [
+    {
+      "id": "sleep_activity_outcomes",
+      "title": "Combinations of physical activity, sedentary behavior, and sleep duration and educational outcomes",
+      "year": 2022,
+      "doi": "https://doi.org/10.1093/aje/kwac212",
+      "constructs": ["sleep", "physical_activity", "academic_outcomes"],
+      "evidence_level": "systematic_review",
+      "finding": "睡眠、久坐和身体活动与儿童青少年健康及教育结果存在关联。",
+      "tender_use": "把睡眠和活动作为学习负荷的上下文弱先验，提示休息和恢复。",
+      "boundary": "关联不是个体因果，不能用穿戴设备直接诊断学习能力。"
+    },
+    {
+      "id": "adolescent_brain_maturation",
+      "title": "Maturation of the adolescent brain",
+      "year": 2013,
+      "doi": "https://doi.org/10.2147/NDT.S39776",
+      "constructs": ["adolescent_development", "reward", "self_control", "emotion"],
+      "evidence_level": "review",
+      "finding": "青春期奖赏、社会情绪和控制系统的发育节奏不同，影响动机与自我调节。",
+      "tender_use": "初中和高中阶段采用自主支持、同伴情境和情绪调节设计。",
+      "boundary": "不能用单一脑发育时间表给个体贴标签。"
+    },
+    {
+      "id": "neuroscience_education_myths",
+      "title": "Neuroscience and education: myths and messages",
+      "year": 2014,
+      "doi": "https://doi.org/10.1038/nrn3819",
+      "constructs": ["neuroeducation", "translation", "myths"],
+      "evidence_level": "review",
+      "finding": "神经科学进入教育需要警惕过度简化、脑区标签和商业化的神经神话。",
+      "tender_use": "建立证据分级和专家复核，使用行为结果验证教育价值。",
+      "boundary": "不能用脑科学术语替代教育效果证据。"
+    },
+    {
+      "id": "learning_styles_pashler",
+      "title": "Learning Styles: Concepts and Evidence",
+      "year": 2008,
+      "doi": "https://doi.org/10.1111/j.1539-6053.2009.01038.x",
+      "constructs": ["learning_styles", "individual_differences"],
+      "evidence_level": "review",
+      "finding": "没有可靠证据支持按视觉、听觉或动觉学习风格匹配教学能够提高学习。",
+      "tender_use": "不做学习风格标签，改为观察真实有效的策略和结果。",
+      "boundary": "禁止把 MBTI 或学习风格包装成神经科学诊断。"
+    },
+    {
+      "id": "cognitive_training_limits",
+      "title": "Cognitive Training Does Not Enhance General Cognition",
+      "year": 2018,
+      "doi": "https://doi.org/10.1016/j.tics.2018.10.004",
+      "constructs": ["cognitive_training", "transfer", "working_memory_training"],
+      "evidence_level": "review",
+      "finding": "认知训练通常产生任务特异性提升，向一般认知能力迁移的证据有限。",
+      "tender_use": "不做脑力训练神话，优先减少负荷、改善策略和验证真实迁移。",
+      "boundary": "不得承诺提高智商、注意力或大脑能力。"
+    },
+    {
+      "id": "healthy_brain_network_resource",
+      "title": "An open resource for transdiagnostic research in pediatric mental health and learning disorders",
+      "year": 2017,
+      "doi": "https://doi.org/10.1038/sdata.2017.181",
+      "constructs": ["neurodevelopment", "learning_disorders", "mental_health", "open_science"],
+      "evidence_level": "cohort_resource",
+      "finding": "公开的儿童青少年神经发育、心理健康和学习表型资源可以支持跨诊断研究。",
+      "tender_use": "用于研究先验、构念验证和偏差检查，不进入个人运行时推理。",
+      "boundary": "队列关联不能转化为个体诊断或商业读脑。"
+    }
+  ]
+}
