@@ -52,13 +52,13 @@ window.TENDER_COURSE = {
       },
       objectives: [
         { zh: "区分人—世界问题与人—人问题", en: "Distinguish person–world from person–person problems" },
-        { zh: "理解精度和学习率在模型中的位置", en: "Understand precision and learning rate in the model" }
+        { zh: "理解预测、行动和反馈之间的关系", en: "Understand how prediction, action and feedback fit together" }
       ],
       blocks: [
         { type: "concept", title: { zh: "人—世界回路", en: "Person–world loop" }, body: { zh: "人形成预测，行动改变输入，观测产生误差，模型根据误差更新。", en: "A person forms predictions, action changes inputs, observations produce error, and the model updates." } },
         { type: "concept", title: { zh: "人—人回路", en: "Person–person loop" }, body: { zh: "人还需要推断他人的信念、情绪、意图和视角，并通过表达、回应与修复校准关系模型。", en: "People also infer others' beliefs, emotions, intentions and perspectives, then calibrate the relational model through expression, response and repair." } },
-        { type: "formula", title: { zh: "最小预测闭环", en: "Minimal predictive loop" }, lines: ["z_t ~ q_theta(z_t | h_t)", "O_hat_t = g_theta(z_t)", "e_t = O_t - O_hat_t", "E_t = e_t^T Pi_t e_t", "theta_t+1 = theta_t - eta * grad_theta E_t", "a_t* = argmin[a in A_t] E[E_t+1(a) | h_t, a]"] },
-        { type: "boundary", body: { zh: "Pi_t 是精度权重，不是概率；theta 是模型参数，不是人格；行动集合必须包含恢复、求助和退出。", en: "Pi_t is a precision weight, not probability; theta denotes model parameters, not personality; the action set must include recovery, help-seeking and exit." } },
+        { type: "concept", title: { zh: "预测—行动—反馈", en: "Prediction, action and feedback" }, body: { zh: "人会先预期接下来会发生什么，再通过行动获得真实反馈。反馈与预期不一致时，人可以调整理解、换一种行动，或承认当前信息不足。系统做的是记录和校准这个过程，而不是给出一条不可更改的结论。", en: "A person anticipates what will happen, acts, and receives real feedback. When feedback differs from expectation, the person can revise understanding, change the action, or acknowledge missing information. The system records and calibrates this process rather than issuing an irreversible conclusion." } },
+        { type: "boundary", body: { zh: "不同来源的证据不能等权相信；行动选择也不能只剩做题。系统必须允许恢复、求助、暂停和退出。", en: "Evidence from different sources should not be trusted equally; action choices must not be limited to doing exercises. Recovery, help-seeking, pausing and exit must remain available." } },
         { type: "quiz", question: { zh: "“老师是不是觉得我不行”首先属于哪类信号？", en: "Which signal does “Maybe the teacher thinks I'm incapable” primarily contain?" }, options: [
           { zh: "人—人心智化推断", en: "A person–person mentalizing inference" },
           { zh: "确定的知识掌握度", en: "Confirmed knowledge mastery" },
@@ -101,14 +101,14 @@ window.TENDER_COURSE = {
       title: { zh: "Tender 如何形成状态假设", en: "How Tender forms state hypotheses" },
       summary: {
         zh: "状态是语言、行为、作答、结果、历史与情境的联合函数，并持续保留不确定性。",
-        en: "State is a joint function of language, behavior, answers, outcomes, history and context—with uncertainty retained."
+        en: "State is formed from language, behavior, answers, outcomes, history and context—with uncertainty retained."
       },
       objectives: [
-        { zh: "理解融合式 S_t", en: "Understand the fusion equation S_t" },
+        { zh: "理解多源证据如何共同形成状态假设", en: "Understand how multiple evidence sources form a state hypothesis" },
         { zh: "解释为什么模型输出必须可更正", en: "Explain why model outputs must remain correctable" }
       ],
       blocks: [
-        { type: "formula", title: { zh: "状态融合", en: "State fusion" }, lines: ["S_t = f(L_t, B_t, K_t, R_t, H_t, C_t)", "", "L = language evidence", "B = behavior and response", "K = knowledge answers", "R = real outcomes", "H = history and baseline", "C = context and relationships"] },
+        { type: "concept", title: { zh: "多源证据一起说话", en: "Multiple sources speak together" }, body: { zh: "系统不会只看一句话、一次点击或一道题。它会同时参考用户怎么表达、实际做了什么、答题结果怎样、后来发生了什么、过去有没有类似模式，以及当时的任务和关系情境。任何单一来源都只能提供部分证据。", en: "The system does not rely on one sentence, one click or one answer. It considers how the user expressed something, what they actually did, how they answered, what happened next, whether similar patterns existed before, and the task and relationship context. Any single source provides only partial evidence." } },
         { type: "concept", title: { zh: "四个常见状态维度", en: "Four common dimensions" }, body: { zh: "注意与工作记忆、认知负荷、元认知校准、节律与恢复。它们都是假设，不是固定人格。", en: "Attention and working memory, cognitive load, metacognitive calibration, and rhythm/recovery. All are hypotheses, not fixed personality." } },
         { type: "list", title: { zh: "每次输出至少包含", en: "Every output should include" }, items: [
           { zh: "状态假设与置信度", en: "State hypothesis and confidence" },

@@ -17,7 +17,7 @@
       modulesEyebrow: "课程模块", modulesTitle: "课程路径", modulesIntro: "按顺序学习，也可以直接从左侧进入任一模块。",
       back: "返回课程首页", prev: "上一课", next: "下一课", markComplete: "标记为已完成", completed: "已完成", objectives: "本课目标",
       footer: "Tender Academy 是教学材料，不是临床诊断或教育效果承诺。", correct: "回答正确", wrong: "再想一次", minute: "分钟",
-      lessonCompleted: "本课已完成", lessonReopened: "已恢复为未完成", noLesson: "没有找到课程", format: "格式"
+      lessonCompleted: "本课已完成", lessonReopened: "已恢复为未完成", noLesson: "没有找到课程"
     },
     en: {
       brandSub: "Mentalization learning system course", progress: "Progress", curriculum: "CURRICULUM", courseTitle: "Understand Tender in 45 minutes",
@@ -111,7 +111,6 @@
     if (block.type === "concept") return `<section class="content-block">${title}<p>${escapeHTML(t(block.body))}</p></section>`;
     if (block.type === "list") return `<section class="content-block">${title}<ul>${block.items.map((item) => `<li>${escapeHTML(t(item))}</li>`).join("")}</ul></section>`;
     if (block.type === "table") return `<section class="content-block">${title}<div style="overflow:auto"><table class="data-table"><thead><tr>${block.headers.map((h) => `<th>${escapeHTML(t(h))}</th>`).join("")}</tr></thead><tbody>${block.rows.map((row) => `<tr>${row.map((cell) => `<td>${escapeHTML(t(cell))}</td>`).join("")}</tr>`).join("")}</tbody></table></div></section>`;
-    if (block.type === "formula") return `<section class="content-block">${title}<div class="formula">${block.lines.map((line) => line ? `<div>${escapeHTML(line)}</div>` : "<br>").join("")}</div></section>`;
     if (block.type === "boundary") return `<aside class="boundary content-block"><strong>${state.lang === "zh" ? "边界：" : "Boundary: "}</strong>${escapeHTML(t(block.body))}</aside>`;
     if (block.type === "action") return `<aside class="action-box content-block"><strong>${escapeHTML(t(block.title))}</strong><span>${escapeHTML(t(block.body))}</span></aside>`;
     if (block.type === "quiz") {

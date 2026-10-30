@@ -18,7 +18,7 @@ The application also mounts the site at `/guide/` when running FastAPI.
 - local learning progress;
 - language switch;
 - knowledge checks;
-- formula and evidence-boundary cards;
+- concept and evidence-boundary cards;
 - printable course;
 - no external CDN, tracking or runtime dependency.
 
