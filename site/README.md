@@ -26,3 +26,4 @@ The application also mounts the site at `/guide/` when running FastAPI.
 
 `.github/workflows/pages.yml` deploys this directory whenever `site/` changes on
 `main`. In repository settings, Pages must use GitHub Actions as its source.
+

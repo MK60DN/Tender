@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#0b1d18">
   <title>Tender Academy · 心智化学习系统教学</title>
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="assets/styles.css?v=noformula2">
+  <link rel="stylesheet" href="assets/styles.css?v=arch4">
 </head>
 <body>
 <a class="skip-link" href="#courseMain">Skip to content / 跳到正文</a>
@@ -71,6 +71,29 @@
         <div><strong>1,075</strong><span data-i18n="statNodes">知识节点</span></div>
         <div><strong>93</strong><span data-i18n="statTests">自动测试</span></div>
       </div>
+      <section class="architecture-section">
+        <div class="section-head"><div><span class="eyebrow" data-i18n="archEyebrow">WHITEPAPER ARCHITECTURE</span><h2 data-i18n="archTitle">白皮书架构导航</h2></div><p data-i18n="archIntro">点击任意层，进入对应课程。世界、观测、体验与行动是不同层。</p></div>
+        <div class="arch-map">
+          <div class="arch-stack">
+            <button class="arch-node world" data-lesson="world-layer" type="button"><span class="arch-icon">◎</span><span><strong data-i18n="archWorld">世界与黑盒 API</strong><small data-i18n="archWorldSub">平台、设备、人物、行动与结果</small></span></button>
+            <div class="arch-arrow">↓</div>
+            <button class="arch-node daoql" data-lesson="world-layer" type="button"><span class="arch-icon">▥</span><span><strong data-i18n="archDaoql">DAOQL 客观层</strong><small data-i18n="archDaoqlSub">事件、来源、因果、授权与审计</small></span></button>
+            <div class="arch-arrow">↓</div>
+            <button class="arch-node bloch" data-lesson="world-layer" type="button"><span class="arch-icon">◐</span><span><strong data-i18n="archBloch">有限接触面</strong><small data-i18n="archBlochSub">人类实际能观测和测量的证据</small></span></button>
+            <div class="arch-arrow">↓</div>
+            <button class="arch-node bridge" data-lesson="world-layer" type="button"><span class="arch-icon">⇅</span><span><strong data-i18n="archBridge">Agent Bridge</strong><small data-i18n="archBridgeSub">把客观事件翻译为可更正的主观体验</small></span></button>
+            <div class="arch-arrow">↓</div>
+            <button class="arch-node tree" data-lesson="canopy" type="button"><span class="arch-icon">♧</span><span><strong data-i18n="archTree">生命树树冠</strong><small data-i18n="archTreeSub">注意、记忆、语言、内省、情绪与身体</small></span></button>
+          </div>
+          <div class="arch-side">
+            <button class="arch-mini angels" data-lesson="agents-governance" type="button"><strong data-i18n="archAngels">天使 Agent</strong><small data-i18n="archAngelsSub">围绕树冠提供专业支持</small></button>
+            <button class="arch-mini flower" data-lesson="flowering-results" type="button"><strong data-i18n="archFlower">开花</strong><small data-i18n="archFlowerSub">表达、提问、教学、协作、试验、发表</small></button>
+            <button class="arch-mini result" data-lesson="flowering-results" type="button"><strong data-i18n="archResult">结果</strong><small data-i18n="archResultSub">作品、反馈、机会、失败与新问题</small></button>
+            <button class="arch-mini forest" data-lesson="forest" type="button"><strong data-i18n="archForest">知识森林</strong><small data-i18n="archForestSub">全部知识体系构成的生态</small></button>
+          </div>
+        </div>
+        <p class="arch-note" data-i18n="archNote">白皮书不是一组功能列表，而是一条从客观世界进入主观体验、再通过行动回到世界的生长链。</p>
+      </section>
       <section class="home-grid">
         <article class="info-card"><span class="eyebrow" data-i18n="forWhoEyebrow">FOR WHOM</span><h2 data-i18n="forWhoTitle">适合谁</h2><ul id="audienceList"></ul></article>
         <article class="info-card"><span class="eyebrow" data-i18n="outcomeEyebrow">OUTCOMES</span><h2 data-i18n="outcomeTitle">学完能做什么</h2><ul id="outcomeList"></ul></article>
@@ -99,7 +122,9 @@
   </main>
 </div>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
-<script src="assets/course.js?v=noformula2"></script>
-<script src="assets/app.js?v=noformula2"></script>
+<script src="assets/course.js?v=arch4"></script>
+<script src="assets/app.js?v=arch4"></script>
 </body>
 </html>
+
+

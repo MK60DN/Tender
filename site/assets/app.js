@@ -33,6 +33,8 @@
       lessonCompleted: "Lesson completed", lessonReopened: "Marked incomplete", noLesson: "No lesson found", format: "Format"
     }
   };
+  Object.assign(UI.zh, { archEyebrow: "WHITEPAPER ARCHITECTURE", archTitle: "白皮书架构导航", archIntro: "点击任意层，进入对应课程。世界、观测、体验与行动是不同层。", archWorld: "世界与黑盒 API", archWorldSub: "平台、设备、人物、行动与结果", archDaoql: "DAOQL 客观层", archDaoqlSub: "事件、来源、因果、授权与审计", archBloch: "有限接触面", archBlochSub: "人类实际能观测和测量的证据", archBridge: "Agent Bridge", archBridgeSub: "把客观事件翻译为可更正的主观体验", archTree: "生命树树冠", archTreeSub: "注意、记忆、语言、内省、情绪与身体", archAngels: "天使 Agent", archAngelsSub: "围绕树冠提供专业支持", archFlower: "开花", archFlowerSub: "表达、提问、教学、协作、试验、发表", archResult: "结果", archResultSub: "作品、反馈、机会、失败与新问题", archForest: "知识森林", archForestSub: "全部知识体系构成的生态", archNote: "白皮书不是一组功能列表，而是一条从客观世界进入主观体验、再通过行动回到世界的生长链。" });
+  Object.assign(UI.en, { archEyebrow: "WHITEPAPER ARCHITECTURE", archTitle: "Architecture map", archIntro: "Click any layer to enter the matching lesson. World, observation, experience and action are distinct layers.", archWorld: "World and black-box APIs", archWorldSub: "Platforms, devices, people, actions and outcomes", archDaoql: "DAOQL objective layer", archDaoqlSub: "Events, provenance, causality, authorization and audit", archBloch: "Limited observation surface", archBlochSub: "Evidence people can actually observe and measure", archBridge: "Agent Bridge", archBridgeSub: "Translates objective events into correctable subjective experience", archTree: "Life-tree canopy", archTreeSub: "Attention, memory, language, reflection, emotion and body", archAngels: "Angel Agents", archAngelsSub: "Provide expertise around the canopy", archFlower: "Flowering", archFlowerSub: "Expression, questioning, teaching, collaboration, trials and publishing", archResult: "Outcomes", archResultSub: "Works, feedback, opportunity, failure and new questions", archForest: "Knowledge forest", archForestSub: "The ecosystem formed by all knowledge systems", archNote: "The whitepaper is not a feature list. It is a growth chain from the objective world to subjective experience and back into the world through action." });
   const state = {
     lang: localStorage.getItem(STORAGE_LANG) || (((navigator.language || "zh").toLowerCase().startsWith("zh")) ? "zh" : "en"),
     lessonIndex: null,
@@ -244,5 +246,6 @@
     if (hash) openLessonById(hash);
   }
 
+  $$(".arch-node, .arch-mini").forEach((button) => button.addEventListener("click", () => openLessonById(button.dataset.lesson)));
   init();
 })();
