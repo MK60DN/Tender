@@ -12,6 +12,9 @@ required = [
     ROOT / "docs/whitepaper/Tender-Whitepaper-v1.5.pdf",
     ROOT / "agent_layer/app/main.py",
     ROOT / "agent_layer/tests/run_all.py",
+    ROOT / "site/index.html",
+    ROOT / "site/assets/app.js",
+    ROOT / "site/assets/course.js",
     K / "db_k12.sqlite",
     K / "db_university.sqlite",
     K / "db_university_courses.sqlite",
@@ -42,3 +45,4 @@ if "PolyForm Noncommercial License 1.0.0" not in license_text:
     raise SystemExit("LICENSE is not PolyForm Noncommercial 1.0.0")
 print("ok license=PolyForm-Noncommercial-1.0.0")
 print("repository verification passed")
+

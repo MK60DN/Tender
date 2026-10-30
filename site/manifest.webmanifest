@@ -1,0 +1,10 @@
+{
+  "name": "Tender Academy",
+  "short_name": "Tender",
+  "description": "Bilingual teaching course for the Tender mentalization system.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f2eb",
+  "theme_color": "#0b1d18",
+  "icons": []
+}

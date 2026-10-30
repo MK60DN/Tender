@@ -11,6 +11,7 @@ COPY agent_layer ./agent_layer
 COPY knowledge_data ./knowledge_data
 COPY experiments ./experiments
 COPY docs ./docs
+COPY site ./site
 
 RUN useradd --create-home --uid 10001 tender \
     && chown -R tender:tender /app/agent_layer

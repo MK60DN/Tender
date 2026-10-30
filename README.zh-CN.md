@@ -26,6 +26,10 @@
 
 Tender 不是心理或医学诊断工具，也不是“读心”系统。语言证据不能单独决定知识掌握度、人格或临床状态。合成实验与公开基准结果不等于真实教育效果。
 
+## 教学网站
+
+双语课程位于 `site/`。FastAPI 在 `/guide/` 提供页面，GitHub Pages 由 `.github/workflows/pages.yml` 部署。
+
 ## 快速开始
 
 ```bash
@@ -60,3 +64,4 @@ python agent_layer/tests/run_all.py
 ## 许可证
 
 PolyForm Noncommercial License 1.0.0。允许个人、教育、研究和其他非商业用途；未经另行书面许可，禁止商业化使用。本许可证不是 OSI 批准的开源许可证。
+

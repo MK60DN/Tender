@@ -24,6 +24,10 @@
 
 Tender is not a diagnostic or mind-reading system. Language evidence does not determine mastery, personality or clinical state. Synthetic and benchmark results are not proof of real-world educational effect.
 
+## Teaching site
+
+The bilingual course is in `site/`. FastAPI serves it at `/guide/` and GitHub Pages deploys it from `.github/workflows/pages.yml`.
+
 ## Quick start
 
 ```bash
@@ -58,3 +62,4 @@ Expected baseline: `passed 93 tests`.
 ## License
 
 PolyForm Noncommercial License 1.0.0. Commercial use is prohibited without separate written permission. This is source-available, not an OSI-approved open-source license.
+

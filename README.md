@@ -74,6 +74,10 @@ Minimal action → real outcome → model update
 | Governance / 治理 | signed sessions, object authorization, audit hash chain, safety tickets / 签名会话、对象授权、审计哈希链、安全工单 |
 | Tests / 测试 | 93 automated tests / 93 项自动测试 |
 
+## Teaching site / 教学网站
+
+双语教学网站位于 `site/`，包含 8 个模块、学习进度、语言切换与知识检查。FastAPI 在 `/guide/` 提供页面，GitHub Pages 由 `.github/workflows/pages.yml` 部署。
+
 ## Quick start / 快速开始
 
 Requirements: Python 3.11–3.12.
@@ -131,6 +135,7 @@ experiments/       selected reproducible research code / 精简可复现研究�
 docs/whitepaper/   Whitepaper V1.5: TeX, PDF, Word / 白皮书 V1.5
 docs/product/      product and user manuals / 产品与用户手册
 docs/research/     evidence and validation reports / 证据与验证报告
+site/               bilingual teaching website / 双语教学网站
 ```
 
 ## Data and safety / 数据与安全
@@ -157,3 +162,4 @@ Commercial use is prohibited without separate written permission.
 允许个人、教育、研究和其他非商业用途。未经另行书面许可，禁止商业化使用。
 
 This is source-available, not an OSI-approved open-source license. See [LICENSE](LICENSE) and [COMMERCIAL_LICENSE.md](COMMERCIAL_LICENSE.md). / 这是源码可见许可证，不是 OSI 批准的开源许可证。
+

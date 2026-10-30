@@ -50,6 +50,7 @@ from .tender_context import build_tender_context
 
 STATIC = pathlib.Path(__file__).resolve().parent / "static"
 STATIC.mkdir(parents=True, exist_ok=True)
+GUIDE = pathlib.Path(__file__).resolve().parents[2] / "site"
 
 DEV_DOCS = os.getenv("TENDER_ENABLE_DEV_DOCS", "0") == "1"
 app = FastAPI(
@@ -2524,6 +2525,8 @@ def role_home(role_id: str, student_id: str = "S01", class_id: str = "理科班"
         "note": "角色界面已拆分；生产环境需要服务端鉴权、最小权限和审计。",
     }
 app.mount("/ui", StaticFiles(directory=str(STATIC), html=True), name="ui")
+if GUIDE.exists():
+    app.mount("/guide", StaticFiles(directory=str(GUIDE), html=True), name="guide")
 
 
 @app.get("/")
