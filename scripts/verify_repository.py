@@ -37,4 +37,8 @@ for name, (path, sql, expected) in checks.items():
 for forbidden in [ROOT / ".env", ROOT / "agent_layer/tender_agent.db", ROOT / "agent_layer/tenant_data"]:
     if forbidden.exists():
         print(f"warning runtime artifact exists locally: {forbidden}")
+license_text = (ROOT / "LICENSE").read_text(encoding="utf-8")
+if "PolyForm Noncommercial License 1.0.0" not in license_text:
+    raise SystemExit("LICENSE is not PolyForm Noncommercial 1.0.0")
+print("ok license=PolyForm-Noncommercial-1.0.0")
 print("repository verification passed")
