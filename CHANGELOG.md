@@ -11,3 +11,5 @@
 - Added 93-test regression suite and repository-level CI.
 - Prepared a clean GitHub release repository without tenant or runtime data.
 - Changed the project license to PolyForm Noncommercial 1.0.0; commercial use is prohibited without separate written permission.
+- Added a bilingual repository homepage plus dedicated English and Chinese README files.
+- Added bilingual introductory copy to the learner application home.

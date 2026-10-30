@@ -336,3 +336,6 @@ button:disabled{opacity:.55;cursor:not-allowed}
 @media(max-width:700px){.ambient-surface{padding:16px}.ambient-feed{min-height:220px}.ambient-card{padding:18px}.ambient-card-text{font-size:20px}.ambient-top{align-items:flex-start}.ambient-live{max-width:60%}}
 
 .ambient-scenario-row{display:grid;grid-template-columns:auto minmax(140px,220px) 1fr;gap:10px;align-items:center;font-size:12px;color:#a7c5c0;margin-bottom:12px}.ambient-scenario-row select{background:#0d2b31;color:#effffb;border:1px solid rgba(137,213,196,.28);border-radius:8px;padding:7px 9px}.ambient-scenario-row span{color:#789c96}@media(max-width:700px){.ambient-scenario-row{grid-template-columns:1fr}.ambient-scenario-row span{font-size:11px}}
+
+.hero-en{display:block;margin-top:8px;font-size:.48em;line-height:1.35;letter-spacing:0;color:#b9d9cf;font-weight:600}
+.intro-en{display:block;margin-top:5px;color:#8ea8a0;font-size:.92em}
