@@ -35,14 +35,14 @@
   "user_guide": {
     "source": "Tender-用户手册-V6.7.md",
     "pdf": "Tender-用户手册-V6.7.pdf",
-    "pages": 21,
-    "pdf_bytes": 372499,
-    "sha256": "a994048fefcc3f2cb93d1605bdce07c70e13db79e9115db04e90d8be98b3986b",
-    "validation": "V6.7 user guide regenerated with the language-evidence explanation; Chinese extraction verified"
+    "pages": 22,
+    "pdf_bytes": 379366,
+    "sha256": "df8bf7f5c68bbd2ba5f3fc90c78791fac6f81168c881a2e7df5c5812e0c1f925",
+    "validation": "V6.7 regenerated with teaching-site navigation; zero replacement characters"
   },
   "pdf_render": {
-    "pages": 55,
-    "validation": "V6.19 PDF regenerated with the language-evidence section; Chinese extraction verified with zero replacement characters; objective/subjective separation preserved"
+    "pages": 56,
+    "validation": "V6.19 PDF regenerated with teaching-site and manual navigation; Chinese extraction verified with zero replacement characters"
   },
   "implemented": true,
   "positioning": "Tender：温柔地了解您的心智。日常只保留桌面弹幕与任务栏上方对话输入条",
@@ -64,7 +64,7 @@
     "workflow_execution": "gated",
     "status_endpoint": "GET /agent-runtime/status"
   },
-  "sha256": "27f537e08da5705b14c25c5a09167a8385d3eb788d386ed039e45e2d89113a5a",
+  "sha256": "5055db0c1ede82d914201597e3f5c9f00927479ecb5880548c5a2e893202748c",
   "tests": 93,
   "identity": {
     "development": "signed HMAC bearer session",
@@ -111,7 +111,7 @@
   "decision_loop": "implemented",
   "manual_title": "Tender 产品手册 V6.19",
   "builder": "build_v67_reports.py",
-  "pdf_bytes": 647086,
+  "pdf_bytes": 652377,
   "narrative_order": [
     "opportunity",
     "user_segmentation",
@@ -627,15 +627,15 @@
     "word": "../产品管理文档/Tender-项目白皮书-V1.5.docx",
     "version": "1.5",
     "pages": 40,
-    "pdf_bytes": 416371,
-    "pdf_sha256": "14293cdb747496209b8542f1e9e02a15e903648200c45ede185143567be7dd94",
-    "word_bytes": 1169234,
-    "word_sha256": "d11feae8e69c9af586e7f2953fe0fb30e60a1b526231d7dcfdf5e6d087cf3ff4",
+    "pdf_bytes": 416959,
+    "pdf_sha256": "d8a37309374782edbb73f025112fee72320d0e49e3e357ceca372c468ff909c8",
+    "word_bytes": 1169322,
+    "word_sha256": "037a9434bd8f05ade94b485384bffae1d09c90798e72ea84c938d9fd8f9f9f85",
     "figures": 14,
     "tables_in_word": 21,
     "citations": 11,
     "focus": "dual-loop theory; language-signal detection and Tender state fusion; knowledge forest; introversion/extraversion as attention orientation; life-tree growth-flowering-outcomes",
-    "validation": "40 pages and zero replacement characters; DOCX has 14 figures, 21 editable tables, no raw LaTeX and no replacement characters; formula notation includes latent state, observation prediction, prediction error, precision matrix, parameter update and constrained action selection; 93 automated tests pass"
+    "validation": "40 pages; zero replacement characters; DOCX includes 14 figures and 21 editable tables; teaching-site appendix added; 93 tests pass"
   },
   "knowledge_forest": {
     "version": "knowledge-forest-1.0",
@@ -692,5 +692,14 @@
     "high_risk_routing": true,
     "language_cannot_update_mastery": true,
     "boundary": "Language evidence is weak evidence and cannot determine mastery, personality, diagnosis or factual truth by itself."
+  },
+  "teaching_manual": {
+    "source": "../教学手册/Tender零基础全流程教学手册-完整版-V5.2.tex",
+    "pdf": "../教学手册/Tender零基础全流程教学手册-完整版-V5.2.pdf",
+    "version": "5.2",
+    "pages": 181,
+    "pdf_bytes": 926246,
+    "sha256": "3896ae664c2d5dac333fc63865e2b478d8e3182f8ef4afc5dfad7f49799417e8",
+    "validation": "V5.2 includes teaching site, architecture navigation, companion documents, local entry points and 93-test baseline; zero replacement characters"
   }
 }

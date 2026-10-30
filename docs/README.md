@@ -5,6 +5,7 @@
 - [Whitepaper V1.5](whitepaper/Tender-Whitepaper-v1.5.pdf)
 - [Product manual](product/Tender-Product-Manual-v6.19.pdf)
 - [User guide](product/Tender-User-Guide-v6.7.pdf)
+- [Teaching manual](teaching/Tender-Teaching-Manual-v5.2.pdf)
 - [Central thesis](product/Tender-Central-Thesis.md)
 - [Version index](product/VERSION_INDEX.md)
 
@@ -22,3 +23,4 @@
 - `agent_layer/ARCHITECTURE.md`
 - `agent_layer/API.md`
 - `agent_layer/AGENT_INVENTORY.md`
+

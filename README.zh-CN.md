@@ -7,8 +7,8 @@
 ## 从这里开始
 
 - [教学网站](https://mk60dn.github.io/Tender/) · [本地课程](http://127.0.0.1:8080/guide/) · [站点源码](site/)
-- [白皮书 PDF](docs/whitepaper/Tender-Whitepaper-v1.5.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v1.5.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v1.5.tex)
-- [产品手册](docs/product/Tender-Product-Manual-v6.19.pdf) · [用户手册](docs/product/Tender-User-Guide-v6.7.pdf)
+- [白皮书本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v1.5.pdf) · [仓库 PDF](docs/whitepaper/Tender-Whitepaper-v1.5.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v1.5.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v1.5.tex)
+- [产品手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v6.19.pdf) · [用户手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v6.7.pdf) · [零基础教学手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v5.2.pdf)
 
 
 [![CI](https://github.com/MK60DN/Tender/actions/workflows/ci.yml/badge.svg)](https://github.com/MK60DN/Tender/actions/workflows/ci.yml)
@@ -71,5 +71,6 @@ python agent_layer/tests/run_all.py
 ## 许可证
 
 PolyForm Noncommercial License 1.0.0。允许个人、教育、研究和其他非商业用途；未经另行书面许可，禁止商业化使用。本许可证不是 OSI 批准的开源许可证。
+
 
 

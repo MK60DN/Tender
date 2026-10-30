@@ -1192,6 +1192,32 @@ GET /language/schema
 
 页面：`/ui/language.html`
 
+### 13.6.2 教学网站、白皮书与手册入口
+
+Tender Academy 教学网站已经接入应用，地址为 `/guide/`。它不是功能说明页，而是按白皮书架构组织的双语课程：从世界与黑盒 API 进入 DAOQL、有限接触面、Agent Bridge，再进入生命树树冠、开花、结果与知识森林。
+
+教学网站包含：
+
+- 8 个中英文双语模块；
+- 可点击的白皮书架构导航；
+- 学习者进度保存；
+- 知识检查；
+- 白皮书、产品手册、用户手册和教学手册下载；
+- 明确的安全、隐私与研究边界；
+- 不包含公式推导。
+
+文档入口：
+
+```text
+教学网站：GET /guide/
+白皮书：docs/whitepaper/Tender-Whitepaper-v1.5.pdf
+产品手册：docs/product/Tender-Product-Manual-v6.19.pdf
+用户手册：docs/product/Tender-User-Guide-v6.7.pdf
+教学手册：docs/teaching/Tender-Teaching-Manual-v5.2.pdf
+```
+
+GitHub Pages 的静态站点源位于 `site/`，部署工作流为 `.github/workflows/pages.yml`。
+
 ### 13.7 首次预检测：大五人格、MBTI 与荣格八维
 
 首次使用 Tender 时，可以做一次 5–7 分钟的预检测：

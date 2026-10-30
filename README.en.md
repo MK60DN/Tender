@@ -7,8 +7,8 @@
 ## Start here
 
 - [Teaching website](https://mk60dn.github.io/Tender/) · [Local course](http://127.0.0.1:8080/guide/) · [Source](site/)
-- [Whitepaper PDF](docs/whitepaper/Tender-Whitepaper-v1.5.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v1.5.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v1.5.tex)
-- [Product manual](docs/product/Tender-Product-Manual-v6.19.pdf) · [User guide](docs/product/Tender-User-Guide-v6.7.pdf)
+- [Whitepaper local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v1.5.pdf) · [Repo PDF](docs/whitepaper/Tender-Whitepaper-v1.5.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v1.5.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v1.5.tex)
+- [Product manual local](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v6.19.pdf) · [User guide local](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v6.7.pdf) · [Teaching manual local](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v5.2.pdf)
 
 
 > Tender learns, with explicit authorization, from behavior, language and real outcomes to form revisable hypotheses about attention, cognitive load, motivation and friction. It separates objective events, language evidence, subjective experience and optional Agent support.
@@ -69,5 +69,6 @@ Expected baseline: `passed 93 tests`.
 ## License
 
 PolyForm Noncommercial License 1.0.0. Commercial use is prohibited without separate written permission. This is source-available, not an OSI-approved open-source license.
+
 
 
