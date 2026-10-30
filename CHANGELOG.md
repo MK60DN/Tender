@@ -14,5 +14,7 @@
 - Added a bilingual repository homepage plus dedicated English and Chinese README files.
 - Added bilingual introductory copy to the learner application home.
 - Added a self-contained bilingual teaching website with eight modules, progress, quizzes and GitHub Pages deployment.
+- Added a Start Here section linking the bilingual teaching site and Whitepaper V1.5 files.
 - Added a safe GitHub publishing guide and release bundle.
+
 

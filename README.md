@@ -5,6 +5,14 @@
 
 [English detail](README.en.md) · [中文完整版](README.zh-CN.md)
 
+## Start here / 从这里开始
+
+- **Teaching website / 教学网站**： [GitHub Pages](https://mk60dn.github.io/Tender/) · [Local course / 本地课程](http://127.0.0.1:8080/guide/) · [Source / 源码](site/)
+- **Whitepaper V1.5 / 白皮书 V1.5**： [PDF](docs/whitepaper/Tender-Whitepaper-v1.5.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v1.5.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v1.5.tex)
+- **Product manual / 产品手册**： [PDF](docs/product/Tender-Product-Manual-v6.19.pdf)
+- **User guide / 用户手册**： [PDF](docs/product/Tender-User-Guide-v6.7.pdf)
+
+
 [![CI](https://github.com/MK60DN/Tender/actions/workflows/ci.yml/badge.svg)](https://github.com/MK60DN/Tender/actions/workflows/ci.yml)
 
 > **EN** — Tender learns, with explicit authorization, from behavior, language and real outcomes to form revisable hypotheses about attention, cognitive load, motivation and friction. It separates objective events, language evidence, subjective experience and optional Agent support.
@@ -162,4 +170,5 @@ Commercial use is prohibited without separate written permission.
 允许个人、教育、研究和其他非商业用途。未经另行书面许可，禁止商业化使用。
 
 This is source-available, not an OSI-approved open-source license. See [LICENSE](LICENSE) and [COMMERCIAL_LICENSE.md](COMMERCIAL_LICENSE.md). / 这是源码可见许可证，不是 OSI 批准的开源许可证。
+
 
