@@ -1,0 +1,115 @@
+{
+  "version": "rhythm-phase-detection-1.0",
+  "design": "synthetic_periodic_and_aperiodic_validation",
+  "seed": 20261102,
+  "days": 112,
+  "analysis_days": 84,
+  "end": "2026-11-01T23:59:00+00:00",
+  "n_per_period": 80,
+  "n_aperiodic": 400,
+  "n_per_phase": 80,
+  "true_periods": [
+    7,
+    10,
+    14,
+    21,
+    28
+  ],
+  "periodic_results": [
+    {
+      "true_period_days": 7,
+      "n": 80,
+      "detected_rate": 0.875,
+      "stable_rate": 0.875,
+      "within_tolerance_rate": 0.775,
+      "mae_days_among_detected": 1.64
+    },
+    {
+      "true_period_days": 10,
+      "n": 80,
+      "detected_rate": 0.988,
+      "stable_rate": 0.988,
+      "within_tolerance_rate": 0.988,
+      "mae_days_among_detected": 0.08
+    },
+    {
+      "true_period_days": 14,
+      "n": 80,
+      "detected_rate": 0.9,
+      "stable_rate": 0.9,
+      "within_tolerance_rate": 0.9,
+      "mae_days_among_detected": 0.1
+    },
+    {
+      "true_period_days": 21,
+      "n": 80,
+      "detected_rate": 1.0,
+      "stable_rate": 1.0,
+      "within_tolerance_rate": 1.0,
+      "mae_days_among_detected": 0.19
+    },
+    {
+      "true_period_days": 28,
+      "n": 80,
+      "detected_rate": 1.0,
+      "stable_rate": 0.463,
+      "within_tolerance_rate": 1.0,
+      "mae_days_among_detected": 0.25
+    }
+  ],
+  "summary": {
+    "periodic_detection_rate": 0.953,
+    "periodic_stable_rate": 0.845,
+    "period_within_tolerance_rate": 0.933,
+    "period_mae_days": 0.45,
+    "aperiodic_false_positive_rate": 0.135,
+    "aperiodic_stable_false_positive_rate": 0.07,
+    "aperiodic_candidate_rate": 0.065,
+    "insufficient_evidence_rate_aperiodic": 0.0,
+    "phase_accuracy": 1.0,
+    "phase_n": 400
+  },
+  "phase_confusion": {
+    "absorb": {
+      "absorb": 80,
+      "integrate": 0,
+      "express": 0,
+      "calibrate": 0,
+      "recover": 0
+    },
+    "integrate": {
+      "absorb": 0,
+      "integrate": 80,
+      "express": 0,
+      "calibrate": 0,
+      "recover": 0
+    },
+    "express": {
+      "absorb": 0,
+      "integrate": 0,
+      "express": 80,
+      "calibrate": 0,
+      "recover": 0
+    },
+    "calibrate": {
+      "absorb": 0,
+      "integrate": 0,
+      "express": 0,
+      "calibrate": 80,
+      "recover": 0
+    },
+    "recover": {
+      "absorb": 0,
+      "integrate": 0,
+      "express": 0,
+      "calibrate": 0,
+      "recover": 80
+    }
+  },
+  "fixed_7_baseline": {
+    "periodic_accuracy": 0.2,
+    "aperiodic_false_positive_rate": 1.0,
+    "note": "A fixed seven-day rule labels every learner as seven-day periodic and cannot abstain."
+  },
+  "boundary": "This is a synthetic detector validation, not evidence that human learning or emotion is periodic, nor a clinical or educational efficacy study."
+}

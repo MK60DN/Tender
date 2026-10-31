@@ -12,7 +12,7 @@ from .preassessment import big_five_change_state, latest_preassessment
 from .golden_bias import build_golden_bias
 from .tender import compute_state
 
-CONTEXT_VERSION = "tender-context-1.6"
+CONTEXT_VERSION = "tender-context-1.7"
 
 
 def _json_safe(value):
@@ -169,6 +169,8 @@ def build_tender_context(student_id: str, user_message: str | None = None, task_
             "big_five_pulse_available": big_five_pulse.get("available", False),
             "golden_bias_status": golden_bias.get("status"),
             "golden_bias_phase": golden_bias.get("phase"),
+            "rhythm_phase": (golden_bias.get("rhythm_phase") or {}).get("code"),
+            "periodicity_status": (((golden_bias.get("rhythm") or {}).get("detected_periodicity")) or {}).get("status"),
             "mentalization_summary": mentalization.get("summary"),
             "hypothesis_count": len(hypotheses),
             "knowledge_available": knowledge.get("available", False),
@@ -226,13 +228,23 @@ def format_tender_context(context: dict[str, Any] | None) -> str:
             ))
         golden = context.get("golden_bias") or {}
         if golden.get("available"):
+            rhythm = golden.get("rhythm") or {}
+            rhythm_phase = rhythm.get("current_phase") or golden.get("rhythm_phase") or {}
+            periodicity = rhythm.get("detected_periodicity") or {}
+            period_text = "未发现稳定周期"
+            if periodicity.get("status") in {"stable_period", "candidate_period"}:
+                period_text = f"{periodicity.get('period_days')} 天（{periodicity.get('confidence')}）"
+            elif periodicity.get("status") == "insufficient_evidence":
+                period_text = "周期证据不足"
             lines.append(
                 f"学习与创造动态偏置：{golden.get('long_band_status')}；学习占比={golden.get('learning_share')}；"
-                f"创造占比={golden.get('creation_share')}；新异比={golden.get('novelty_ratio')}；"
+                f"创造占比={golden.get('creation_share')}；节律相位={rhythm_phase.get('label')}；"
+                f"周期证据={period_text}；新异比={golden.get('novelty_ratio')}；"
                 f"创造后校准={golden.get('post_creation_calibration')}；下一步={((golden.get('next_probe') or {}).get('action'))}"
             )
         elif golden:
-            lines.append("学习与创造动态偏置：证据不足，不输出比例结论。")
+            phase = golden.get("rhythm_phase") or {}
+            lines.append(f"学习与创造动态偏置：证据不足，不输出比例或稳定周期结论；当前可观察相位={phase.get('label')}。")
         pulse = context.get("big_five_pulse") or {}
         if pulse.get("available"):
             lines.append("近期大五脉搏：" + "；".join(

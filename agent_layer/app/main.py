@@ -60,7 +60,7 @@ GUIDE = pathlib.Path(__file__).resolve().parents[2] / "site"
 DEV_DOCS = os.getenv("TENDER_ENABLE_DEV_DOCS", "0") == "1"
 app = FastAPI(
     title="Tender C-End Mentalization Learning App",
-    version="6.22.0",
+    version="6.23.0",
     docs_url="/docs" if DEV_DOCS else None,
     redoc_url=None,
     openapi_url="/openapi.json" if DEV_DOCS else None,

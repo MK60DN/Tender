@@ -94,6 +94,11 @@ from tests.test_golden_bias import (
     test_golden_bias_inside_band_collects_quality_metrics,
     test_golden_bias_insufficient_evidence,
     test_learning_overweight_returns_output_probe,
+    test_rhythm_periodicity_detects_known_cycle,
+    test_rhythm_periodicity_refuses_sparse_series,
+    test_rhythm_phase_detects_absorbing,
+    test_rhythm_phase_detects_calibrating,
+    test_rhythm_phase_detects_recovery_without_claiming_rest,
 )
 from tests.test_governance_phases import (
     test_cannot_skip_from_expert_council_to_public_autonomy,
@@ -226,6 +231,11 @@ TESTS = [
     test_learning_overweight_returns_output_probe,
     test_creation_overweight_with_low_calibration_returns_calibration_probe,
     test_golden_bias_api_exists,
+    test_rhythm_periodicity_detects_known_cycle,
+    test_rhythm_periodicity_refuses_sparse_series,
+    test_rhythm_phase_detects_recovery_without_claiming_rest,
+    test_rhythm_phase_detects_absorbing,
+    test_rhythm_phase_detects_calibrating,
 ]
 
 if __name__ == "__main__":

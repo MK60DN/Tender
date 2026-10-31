@@ -384,4 +384,4 @@ GET  /golden-bias/{student_id}
 `/preassessment/*` 保存标准化八功能态度、大五基线与大五脉搏，不保存逐题原文。`/world-tree/{student_id}` 返回 DAOQL 客观根系、Agent Bridge 树干、五类树枝、11 个体验节点、开花、结果与共享枝边界。共享枝默认不生成，需双方明确授权。
 ## 动态黄金比偏置
 
-`GET /golden-bias/{student_id}` 返回 7 天和 28 天窗口下的学习/创造投入、较小极与较大极占比、带内状态、滞回状态、新异比、创造后 72 小时校准比、置信度和下一步探针。证据不足时返回 `insufficient_evidence`，不输出比例结论。该接口只用于节律支持，不用于人格、能力、关系匹配或绩效评分。
+`GET /golden-bias/{student_id}` 返回 7 天和 28 天窗口下的学习/创造投入、较小极与较大极占比、带内状态、滞回状态、新异比、创造后 72 小时校准比、置信度和下一步探针。V1.9 还返回 `rhythm.detected_periodicity`、`rhythm.current_phase` 与 `rhythm.phase_sequence`：真实周期从 84 天事件序列估计，状态为 `insufficient_evidence`、`no_stable_period`、`candidate_period` 或 `stable_period`；7/28 天窗口不被解释为用户周期。证据不足时既不输出比例结论，也不输出稳定周期。该接口只用于节律支持，不用于人格、能力、关系匹配、绩效或临床评分。

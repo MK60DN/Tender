@@ -1,6 +1,6 @@
 {
   "product": "Tender",
-  "manual_version": "6.22",
+  "manual_version": "6.23",
   "date": "2026-11-01",
   "product_type": "B端完整系统 / B端嵌入式模块 / C端生活界面共享核心的心智化终身学习系统",
   "default_surfaces": [
@@ -31,22 +31,26 @@
     "metameta_cartographer",
     "Dynamic golden-bias regulator",
     "Novelty ratio",
-    "Post-creation calibration"
+    "Post-creation calibration",
+    "Phase-aware rhythm guidance",
+    "Periodicity evidence with permutation null",
+    "Recovery-phase uncertainty",
+    "Candidate-period provisional boundary"
   ],
-  "status": "V6.22 implements the dynamic golden-bias regulator with 7/28-day windows, hysteresis, novelty and post-creation calibration; 100 tests pass",
-  "source": "Tender-Product-Manual-v6.22.md",
-  "pdf": "Tender-Product-Manual-v6.22.pdf",
+  "status": "V6.23 implements dynamic golden-bias regulation with phase-aware rhythm guidance, evidence-gated periodicity, novelty and post-creation calibration; 105 tests pass",
+  "source": "Tender-Product-Manual-v6.23.md",
+  "pdf": "Tender-Product-Manual-v6.23.pdf",
   "user_guide": {
-    "source": "Tender-User-Guide-v6.10.md",
-    "pdf": "Tender-User-Guide-v6.10.pdf",
+    "source": "Tender-User-Guide-v6.11.md",
+    "pdf": "Tender-User-Guide-v6.11.pdf",
     "pages": 25,
-    "pdf_bytes": 408752,
-    "sha256": "ecc2e3344dca8a9ac4df2e125f8088ddfccbf2cf2abbaaeb0255ca53c2ca28e8",
-    "validation": "V6.10 adds user-facing dynamic learning/creation rhythm guidance; zero replacement characters"
+    "pdf_bytes": 412890,
+    "sha256": "7d7b10a8a64a4cb06761554974bc29070bce2dfce9db213cb55d4b73e117bf55",
+    "validation": "V6.11 adds user-facing phase and period-evidence boundaries; zero replacement characters"
   },
   "pdf_render": {
-    "pages": 58,
-    "validation": "V6.22 rebuilt with dynamic golden-bias rule, 100-test baseline and experiment tradeoffs; zero replacement characters"
+    "pages": 59,
+    "validation": "V6.23 rebuilt with phase-aware rhythm guidance, evidence-gated periodicity, 105-test baseline; zero replacement characters"
   },
   "implemented": true,
   "positioning": "Tender：温柔地了解您的心智。B端可提供完整教育系统或嵌入合作方系统，C端以自有界面融入用户生活。",
@@ -68,8 +72,8 @@
     "workflow_execution": "gated",
     "status_endpoint": "GET /agent-runtime/status"
   },
-  "sha256": "31c26b9492d576a958dceaa3cfac123447150b77e7a8aac5fd31de291ac1403c",
-  "tests": 100,
+  "sha256": "151080d0c54307b52628a81165723c95d0cfcb11963db64cc63e56bed1f9fe38",
+  "tests": 105,
   "identity": {
     "development": "signed HMAC bearer session",
     "session_revocation": "implemented",
@@ -113,9 +117,9 @@
     ]
   },
   "decision_loop": "implemented",
-  "manual_title": "Tender 产品手册 V6.22",
+  "manual_title": "Tender 产品手册 V6.23",
   "builder": "build_v67_reports.py",
-  "pdf_bytes": 666185,
+  "pdf_bytes": 672116,
   "narrative_order": [
     "opportunity",
     "user_segmentation",
@@ -172,7 +176,7 @@
     ],
     "status": "observational association and methodological validation only; no human causal claim"
   },
-  "api_version": "6.22.0",
+  "api_version": "6.23.0",
   "latex_manual": {
     "source": "../教学手册/Tender零基础全流程教学手册-完整版.tex",
     "pdf": "../教学手册/Tender零基础全流程教学手册-完整版.pdf",
@@ -315,10 +319,10 @@
     "raw_responses_stored": false,
     "diagnosis": false,
     "user_review_required": true,
-    "report": "Tender-Product-Manual-v6.22.pdf §13.7",
-    "report_source": "Tender-Product-Manual-v6.22.md",
+    "report": "Tender-Product-Manual-v6.23.pdf §13.7",
+    "report_source": "Tender-Product-Manual-v6.23.md",
     "report_pages": 58,
-    "tests": 100,
+    "tests": 105,
     "attention_profile": true,
     "cognitive_correction_plan": true,
     "correction_card_fields": [
@@ -335,7 +339,7 @@
   },
   "tender_context": {
     "module": "../agent_layer/app/tender_context.py",
-    "version": "tender-context-1.6",
+    "version": "tender-context-1.7",
     "endpoint": "GET /tender/context/{student_id}",
     "sources": [
       "preassessment profile",
@@ -351,7 +355,7 @@
     "max_hypotheses": 3,
     "context_digest_recorded": true,
     "llm_end_to_end_verified": true,
-    "tests": 100,
+    "tests": 105,
     "knowledge_context": true,
     "major_career_context": true,
     "longitudinal_state_fields": [
@@ -585,9 +589,9 @@
     "core": "生命不是被某个框架评价出来的形状，而是在有限时间里，通过选择、关系、承担和创造长出来的年轮。",
     "source": "Tender-中心主旨.md",
     "manuals": [
-      "Tender-Product-Manual-V6.22.md",
-      "Tender-User-Guide-V6.10.md",
-      "../教学手册/Tender零基础全流程教学手册-完整版-V5.5.tex"
+      "Tender-Product-Manual-V6.23.md",
+      "Tender-User-Guide-V6.11.md",
+      "../教学手册/Tender零基础全流程教学手册-完整版-V5.6.tex"
     ],
     "role": "narrative and modeling grammar; not a clinical, diagnostic or efficacy claim"
   },
@@ -623,25 +627,25 @@
       "POST /metameta/decompose/{student_id}",
       "GET /metameta/map/{student_id}"
     ],
-    "context_version": "tender-context-1.6",
-    "tests": 100,
+    "context_version": "tender-context-1.7",
+    "tests": 105,
     "boundary": "The cognitive-map regions are interpretive retrieval labels, not brain scans, clinical diagnoses or objective facts."
   },
   "project_whitepaper": {
-    "source": "../产品管理文档/Tender-项目白皮书-V1.8.tex",
-    "pdf": "../产品管理文档/Tender-项目白皮书-V1.8.pdf",
-    "word": "../产品管理文档/Tender-项目白皮书-V1.8.docx",
-    "version": "1.8",
+    "source": "../产品管理文档/Tender-项目白皮书-V1.9.tex",
+    "pdf": "../产品管理文档/Tender-项目白皮书-V1.9.pdf",
+    "word": "../产品管理文档/Tender-项目白皮书-V1.9.docx",
+    "version": "1.9",
     "pages": 45,
-    "pdf_bytes": 434022,
-    "pdf_sha256": "92348de751b6b2b078e5e655c5e0f79fe73d2306f26c7006f87aa4e9aba32941",
-    "word_bytes": 1174995,
-    "word_sha256": "3c3dee5697153124c8da92dca5703994b1ae7c28ac1d9dbcf63dfd6e18e9b023",
+    "pdf_bytes": 438397,
+    "pdf_sha256": "edfc49509c55b63cd0d42c7dd348768764a3f206f311ddd832d853ab085ee7b5",
+    "word_bytes": 1175512,
+    "word_sha256": "04e363c546de64d4afe9acef27591398b73ea27b42135d154535f19c74d4f88c",
     "figures": 14,
     "tables_in_word": 22,
     "citations": 11,
-    "focus": "dynamic golden-bias law, 7/28-day windows, novelty, post-creation calibration, world tree and synthetic multi-arm evidence",
-    "validation": "45 pages; API 6.22.0 and tender-context-1.6 aligned; zero replacement characters; dynamic golden-bias and experiment results verified"
+    "focus": "dynamic golden-bias law, phase-aware rhythm guidance, evidence-gated periodicity, world tree and synthetic multi-arm validation",
+    "validation": "45 pages; API 6.23.0 and tender-context-1.7 aligned; zero replacement characters; rhythm evidence verified"
   },
   "knowledge_forest": {
     "version": "knowledge-forest-1.0",
@@ -700,29 +704,30 @@
     "boundary": "Language evidence is weak evidence and cannot determine mastery, personality, diagnosis or factual truth by itself."
   },
   "teaching_manual": {
-    "source": "../教学手册/Tender零基础全流程教学手册-完整版-V5.5.tex",
-    "pdf": "../教学手册/Tender零基础全流程教学手册-完整版-V5.5.pdf",
-    "version": "5.5",
+    "source": "../教学手册/Tender零基础全流程教学手册-完整版-V5.6.tex",
+    "pdf": "../教学手册/Tender零基础全流程教学手册-完整版-V5.6.pdf",
+    "version": "5.6",
     "pages": 185,
-    "pdf_bytes": 938839,
-    "sha256": "5f6b3ad3303280b6fef2875a7726339836770bbfa433ce145d1543c1fd6b1c5c",
-    "validation": "V5.5 adds dynamic golden-bias regulation, experiment results and 100-test baseline; zero replacement characters"
+    "pdf_bytes": 918428,
+    "sha256": "152912a8e879f2f156117b20b221d28e0f8b4050ade964eeca9ed67ef688e93b",
+    "validation": "V5.6 adds phase-aware rhythm evidence and 105-test baseline; zero replacement characters"
   },
   "teaching_site": {
-    "version": "2.2",
+    "version": "2.3",
     "entry": "GET /guide/",
-    "modules": 11,
+    "modules": 12,
     "languages": [
       "zh",
       "en"
     ],
     "formulas": false,
-    "architecture": "world tree -> DAOQL roots -> limited observation -> Agent Bridge trunk -> five experience branches with local state axes -> flowering/outcomes/shared branches",
+    "architecture": "world tree -> DAOQL roots -> limited observation -> Agent Bridge trunk -> five experience branches with local state axes -> flowering/outcomes/shared branches -> evidence-gated rhythm phases and periodicity",
     "documents": [
-      "Whitepaper V1.8",
-      "Product Manual V6.22",
-      "User Guide V6.10",
-      "Teaching Manual V5.5"
+      "Whitepaper V1.9",
+      "Product Manual V6.23",
+      "User Guide V6.11",
+      "Teaching Manual V5.6",
+      "Rhythm Phase Experiment V1.0"
     ]
   },
   "world_tree": {
@@ -732,10 +737,10 @@
     "experience_nodes": 11,
     "local_state_axes": true,
     "shared_branches": "authorization_required",
-    "golden_ratio": "dynamic_regulator_experimental_boundary"
+    "golden_ratio": "dynamic_band_phase_and_periodicity_evidence"
   },
   "golden_bias": {
-    "version": "dynamic-golden-bias-1.0",
+    "version": "dynamic-golden-bias-2.0",
     "endpoint": "GET /golden-bias/{student_id}",
     "module": "../agent_layer/app/golden_bias.py",
     "minor_floor": 0.382,
@@ -743,7 +748,27 @@
     "short_window_days": 7,
     "long_window_days": 28,
     "hysteresis": true,
-    "daily_kpi": false
+    "daily_kpi": false,
+    "period_analysis_days": 84,
+    "period_search_days": [
+      5,
+      28
+    ],
+    "period_states": [
+      "insufficient_evidence",
+      "no_stable_period",
+      "candidate_period",
+      "stable_period"
+    ],
+    "phase_states": [
+      "absorb",
+      "integrate",
+      "express",
+      "calibrate",
+      "recover",
+      "dormant"
+    ],
+    "candidate_period_is_schedule": false
   },
   "golden_bias_experiment": {
     "version": "1.0",
@@ -758,5 +783,36 @@
     "pdf_bytes": 101812,
     "sha256": "ec3455b551a4cfea98205632e8616f2c74cca06187f77284c559b30c13ab82ee"
   },
-  "context_version": "tender-context-1.6"
+  "context_version": "tender-context-1.7",
+  "rhythm_phase_experiment": {
+    "version": "1.0",
+    "pdf": "../research/Tender-Rhythm-Phase-Experiment-v1.0.pdf",
+    "source": "../experiments/rhythm_phase_detection/REPORT.md",
+    "results": "../experiments/rhythm_phase_detection/results.json",
+    "design": "synthetic_periodic_and_aperiodic_validation",
+    "days": 112,
+    "analysis_days": 84,
+    "true_periods": [
+      7,
+      10,
+      14,
+      21,
+      28
+    ],
+    "n_per_period": 80,
+    "n_aperiodic": 400,
+    "n_per_phase": 80,
+    "pages": 2,
+    "summary": {
+      "periodic_detection_rate": 0.953,
+      "periodic_stable_rate": 0.845,
+      "period_within_tolerance_rate": 0.933,
+      "period_mae_days": 0.45,
+      "aperiodic_stable_false_positive_rate": 0.07,
+      "aperiodic_candidate_rate": 0.065,
+      "phase_accuracy": 1.0
+    },
+    "pdf_bytes": 111001,
+    "sha256": "a4d3a4d99045fa1d06a0b28840723f9bf078ab97aeedd566f69ff4d0e16f8622"
+  }
 }

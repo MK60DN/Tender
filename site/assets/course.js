@@ -1,5 +1,5 @@
 window.TENDER_COURSE = {
-  version: "2.2-golden-bias",
+  version: "2.3-rhythm-evidence",
   audience: [
     { zh: "第一次使用 Tender 的学习者与家庭", en: "Learners and families using Tender for the first time" },
     { zh: "需要理解产品逻辑的教师、产品与研究团队", en: "Educators, product teams and researchers who need the product logic" },
@@ -178,6 +178,31 @@ window.TENDER_COURSE = {
         { type: "boundary", body: { zh: "实验是每臂 1,000 名合成学习者、84 天的机制仿真，不是真人教育或临床因果证据。黄金比不能变成人格评分、关系匹配、绩效排名或每日考核。", en: "The experiment is an 84-day mechanism simulation with 1,000 synthetic learners per arm. It is not human educational or clinical causal evidence. The golden ratio must not become a personality score, relationship match, performance rank or daily KPI." } }
       ]
     },    {
+      id: "rhythm-evidence", time: "8 min", level: { zh: "节律证据", en: "Rhythm evidence" },
+      title: { zh: "相位与周期：不把波动写成定律", en: "Phase and period: do not turn fluctuation into law" },
+      summary: { zh: "7/28 天窗口只是观察尺度。真实周期必须从事件序列估计，与随机波动比较，并在证据不足时明确弃判。", en: "Seven- and 28-day windows are observation scales, not the learner's true period. Periodicity must be estimated from events, compared with random fluctuation, and explicitly withheld when evidence is insufficient." },
+      objectives: [{ zh: "区分观察窗口、用户周期与相位", en: "Distinguish observation windows, learner periods and phases" }, { zh: "理解候选周期为什么不能直接变成日程", en: "Understand why a candidate period must not become a schedule" }],
+      blocks: [
+        { type: "table", title: { zh: "五类当前相位", en: "Five current phases" }, headers: [{ zh: "相位", en: "Phase" }, { zh: "可观察依据", en: "Observable basis" }, { zh: "支持方式", en: "Support" }], rows: [
+          [{ zh: "吸收与编码", en: "Absorb" }, { zh: "学习与校准明显多于表达", en: "Learning and calibration exceed expression" }, { zh: "完成一个最小可验证输出", en: "Create one minimal verifiable output" }],
+          [{ zh: "整合与巩固", en: "Integrate" }, { zh: "学习、输出和校准都有证据", en: "Learning, output and calibration all have evidence" }, { zh: "保持节律并记录有效组合", en: "Maintain the rhythm and record what works" }],
+          [{ zh: "表达与分叉", en: "Express" }, { zh: "近期创造投入明显更高", en: "Recent creation investment is higher" }, { zh: "检查现实价值与可验证下一步", en: "Check real value and the next verifiable step" }],
+          [{ zh: "现实校准", en: "Calibrate" }, { zh: "有输出但缺少反馈、复测或结果", en: "Output exists without enough feedback, testing or outcomes" }, { zh: "先收集一次真实反馈", en: "Collect one real piece of feedback first" }],
+          [{ zh: "恢复或低活动", en: "Recover or low activity" }, { zh: "近期活动减少或出现恢复事件", en: "Recent activity decreased or a recovery event appeared" }, { zh: "先确认恢复、阻塞或离开，不追加负荷", en: "Clarify recovery, blockage or exit before adding load" }]
+        ] },
+        { type: "concept", title: { zh: "周期证据闸门", en: "Period evidence gate" }, body: { zh: "系统使用 84 天每日学习—创造序列，在 5—28 天范围内估计候选周期，并用置换零分布、自相关强度和反相位关系判断它是否区别于平滑随机波动。状态分为证据不足、无稳定周期、候选周期和稳定周期。", en: "Tender uses an 84-day daily learning-creation series, searches 5–28 days, and compares autocorrelation and antiphase structure against a permutation null. States are insufficient evidence, no stable period, candidate period and stable period." } },
+        { type: "table", title: { zh: "合成验证结果", en: "Synthetic validation" }, headers: [{ zh: "指标", en: "Metric" }, { zh: "结果", en: "Result" }], rows: [
+          [{ zh: "周期检出率", en: "Periodic detection" }, { zh: "95.3%", en: "95.3%" }],
+          [{ zh: "周期估计在容忍范围内", en: "Within tolerance" }, { zh: "93.3%", en: "93.3%" }],
+          [{ zh: "平均绝对周期误差", en: "Mean absolute error" }, { zh: "0.45 天", en: "0.45 days" }],
+          [{ zh: "非周期稳定周期误报率", en: "Aperiodic stable false positive" }, { zh: "7.0%", en: "7.0%" }],
+          [{ zh: "五类受控相位分类", en: "Five controlled phases" }, { zh: "100%", en: "100%" }]
+        ] },
+        { type: "boundary", body: { zh: "这是合成检测器验证，不是真人周期诊断。候选周期不能变成固定日程；恢复与低活动不能推断休息、放弃或临床状态。", en: "This is synthetic detector validation, not a human rhythm diagnosis. A candidate period must not become a fixed schedule; recovery and low activity cannot determine rest, disengagement or clinical state." } },
+        { type: "quiz", question: { zh: "看到“候选周期”时，产品应该怎么做？", en: "What should the product do with a candidate period?" }, options: [{ zh: "立即生成固定日程", en: "Immediately create a fixed schedule" }, { zh: "保持试探性，继续收集证据并允许用户关闭", en: "Keep it provisional, collect more evidence and let the user turn it off" }, { zh: "把它写成人格类型", en: "Turn it into a personality type" }], answer: 1, why: { zh: "候选周期不是稳定结论，更不能成为新的绩效或人格标签。", en: "A candidate period is not a stable conclusion and must not become a performance or personality label." } }
+      ]
+    },
+    {
       id: "delivery-model", time: "6 min", level: { zh: "交付", en: "Delivery" },
       title: { zh: "一套核心，三种交付", en: "One core, three delivery surfaces" },
       summary: { zh: "Tender 不是 B 端和 C 端各做一套产品。它用同一套客观事件、语言证据、Tender 状态、知识森林、Agent 和治理核心，分别支持 B 端完整系统、B 端嵌入模块与 C 端生活界面。", en: "Tender does not build two separate products for B2B and C-end. One core of objective events, language evidence, Tender state, knowledge forest, Agents and governance supports a full B2B suite, an embedded B2B module and a C-end life interface." },

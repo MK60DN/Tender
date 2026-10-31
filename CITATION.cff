@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this repository, cite the project and the relevant release."
 title: "Tender: Mentalization, Predictive Processing and Lifelong Learning"
 type: software
-version: 1.8.0
+version: 1.9.0
 date-released: 2026-11-01
 authors:
   - name: "Tender Contributors"
@@ -11,6 +11,7 @@ license: PolyForm-Noncommercial-1.0.0
 abstract: >-
   A research-oriented lifelong-learning system with one shared mentalization core.
   Its world tree separates objective roots, an Agent Bridge trunk and subjective
-  experience branches. A dynamic golden-bias regulator uses 7/28-day windows,
-  novelty and post-creation calibration to support learning-creation rhythm without
-  becoming a daily KPI.
+  experience branches. A dynamic golden-bias regulator separates observation
+  windows from evidence-gated rhythm periodicity, combines learning-creation
+  balance, novelty and post-creation calibration, and keeps candidate periods
+  provisional rather than turning them into a fixed schedule or daily KPI.
