@@ -9,11 +9,11 @@ From this directory:
 
 ```bash
 git fetch origin
-git push origin HEAD:release/v1.7.0
-git push origin v1.7.0
+git push origin HEAD:release/v1.8.0
+git push origin v1.8.0
 ```
 
-Then open a pull request from `release/v1.7.0` to `main`, review the full diff,
+Then open a pull request from `release/v1.8.0` to `main`, review the full diff,
 and merge when satisfied.
 
 ## Replace main directly
@@ -24,7 +24,7 @@ content may be replaced:
 ```bash
 git fetch origin
 git push --force-with-lease origin HEAD:main
-git push origin v1.7.0
+git push origin v1.8.0
 ```
 
 This is a destructive history replacement. The recommended branch workflow is
@@ -33,7 +33,7 @@ safer.
 ## Restore from bundle
 
 ```bash
-git clone Tender-v1.7.0.bundle Tender
+git clone Tender-v1.8.0.bundle Tender
 cd Tender
 git remote set-url origin https://github.com/MK60DN/Tender.git
 ```

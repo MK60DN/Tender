@@ -1,9 +1,9 @@
-# Tender 产品手册 V6.21
+# Tender 产品手册 V6.22
 
 ## 温柔地了解您的心智：环境型多 Agent 学习系统的产品设计全过程
 
 版本：6.20  
-日期：2026-10-31  
+日期：2026-11-01  
 文档性质：产品经理工作手册、设计决策记录、需求规格与验收基线  
 产品阶段：可运行 MVP，进入真实使用与因果验证前夜
 
@@ -940,7 +940,7 @@ agent_layer/app/mechanism_design.py
 - 同一签署人申报多个来源时，产生来源冲突，不能增加独立性；
 - 至少两个来源组、两种来源类型时，才进入人工政策复核；
 - 单一来源占 100% 时，返回高优先级复核，不返回责任结论；
-- 截至 2026-10-30，全量 95 项测试通过。
+- 截至 2026-10-30，全量 100 项测试通过。
 
 #### 与 Shapley 贡献报告的关系
 
@@ -1079,7 +1079,7 @@ bft_consensus_enabled = false
 external_anchor_enabled = false
 ```
 
-截至 2026-10-30，全量 95 项测试通过。
+截至 2026-10-30，全量 100 项测试通过。
 
 
 ### 13.6 神经学习证据层：承认语言模型的边界
@@ -1243,7 +1243,7 @@ Tender Academy 教学网站已经接入应用，地址为 `/guide/`。它不是�
 
 教学网站包含：
 
-- 10 个中英文双语模块；
+- 11 个中英文双语模块；
 - 可点击的白皮书架构导航；
 - 学习者进度保存；
 - 知识检查；
@@ -1255,10 +1255,10 @@ Tender Academy 教学网站已经接入应用，地址为 `/guide/`。它不是�
 
 ```text
 教学网站：GET /guide/
-白皮书：docs/whitepaper/Tender-Whitepaper-v1.7.pdf
-产品手册：docs/product/Tender-Product-Manual-v6.21.pdf
-用户手册：docs/product/Tender-User-Guide-v6.9.pdf
-教学手册：docs/teaching/Tender-Teaching-Manual-v5.4.pdf
+白皮书：docs/whitepaper/Tender-Whitepaper-v1.8.pdf
+产品手册：docs/product/Tender-Product-Manual-v6.22.pdf
+用户手册：docs/product/Tender-User-Guide-v6.10.pdf
+教学手册：docs/teaching/Tender-Teaching-Manual-v5.5.pdf
 ```
 
 GitHub Pages 的静态站点源位于 `site/`，部署工作流为 `.github/workflows/pages.yml`。
@@ -1347,7 +1347,8 @@ GET  /preassessment/profile/{learner_id}
 GET  /preassessment/pulse/items
 POST /preassessment/pulse/{learner_id}
 GET  /preassessment/pulse/{learner_id}
-GET  /world-tree/{student_id}
+GET  /world-tree/{student_id}
+GET  /golden-bias/{student_id}
 ```
 
 关键文件：
@@ -1380,6 +1381,51 @@ big_five_pulse
 - 当前问题、真实行为与结果优先于先验；
 - 世界树只做可更正投影，不做脑区或量子脑诊断；
 - 共享枝未经双方授权不得生成。
+
+#### 13.7.8 动态黄金比偏置律
+
+黄金比不作为每日 KPI。系统把它定义为带滞回的弹性带：
+
+- 学习和创造中较小一极长期不低于约 38.2%；
+- 较大一极长期不高于约 61.8%；
+- 7 天窗口用于短期提示；
+- 28 天窗口用于阶段判断；
+- 证据不足时不输出比例结论；
+- 只有连续偏离才进入观察和提示，连续回到带内后解除。
+
+计算同时使用三类指标：
+
+| 指标 | 含义 | 用途 |
+|---|---|---|
+| 投入比 | 学习与创造的滚动时间/事件权重 | 判断吸收和输出是否长期失衡 |
+| 新异比 | 输出中真正产生新分支的比例 | 识别重复或过度发散 |
+| 创造后校准比 | 输出后 72 小时内是否出现反馈、复测或结果校验 | 防止创造脱离现实 |
+
+接口：
+
+```text
+GET /golden-bias/{student_id}
+```
+
+返回字段包括 `learning_share`、`creation_share`、`minor_share`、`larger_share`、`band_status`、`short_band_status`、`long_band_status`、`hysteresis_state`、`novelty_ratio`、`post_creation_calibration`、`next_probe` 和 `confidence`。
+
+用户界面只显示自然语言，例如：
+
+- “最近吸收和校准偏多，建议完成一个最小输出。”
+- “最近输出和探索偏多，建议先收集一次真实反馈。”
+- “当前处于弹性平衡带，保持并记录有效方式。”
+
+不显示“黄金比分数”，不将比例用于人格、能力、关系匹配或绩效排名。
+
+#### 13.7.9 实验证据与产品边界
+
+V1.8 完成 4 个实验臂、每臂 1,000 名合成学习者、84 天的机制实验。动态规则使用阶段目标和滞回。结果显示：
+
+- 相对不调节：行动恢复和带内时间提高；
+- 相对固定 50:50：提示负担约减半，恢复相近；
+- 相对固定阈值：恢复和带内时间提高，但提示更多，创造后校准没有提高。
+
+因此产品结论是“负担感知的节律权衡”，不是“动态黄金比全面胜出”。完整实验见 `Tender-Golden-Bias-Experiment-v1.0.pdf`。下一步必须做预注册真人研究，并保留不调节、固定 50:50、固定阈值和动态规则四个对照。
 
 ### 13.8 Agent 上下文注入：让回答真正使用 Tender 建模
 
@@ -1481,7 +1527,7 @@ tender_context_used
   hypothesis_count
 ```
 
-截至 2026-10-30，全量 95 项自动测试通过，并用真实模型完成一次端到端验证。
+截至 2026-10-30，全量 100 项自动测试通过，并用真实模型完成一次端到端验证。
 
 
 ### 13.9 知识体系接入：从理解状态到定位学习内容
@@ -1600,7 +1646,7 @@ agent_layer/app/tender_context.py
 GET /tender/context/{student_id}?message=...
 ```
 
-截至 2026-10-30，全量 95 项自动测试通过，并完成真实函数题对话验证。
+截至 2026-10-30，全量 100 项自动测试通过，并完成真实函数题对话验证。
 
 
 ### 13.10 长期验证：基线、周期、群体与 metameta 进入回答
@@ -1897,7 +1943,7 @@ ActionRecovery =
 
 ### 验证
 
-- [x] 95 项自动测试通过；
+- [x] 100 项自动测试通过；
 - [x] BFT 节点名单、法定人数、来源冲突和集中度复核原型通过测试；
 - [x] 当前阶段锁定为链下专家议会，链上写入和 BFT 默认关闭；
 - [x] 联盟 BFT 与开放自治均设置了不可跳级的前置条件；

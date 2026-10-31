@@ -4,6 +4,7 @@ from __future__ import annotations
 from collections import Counter
 
 from .daoql import list_events
+from .golden_bias import build_golden_bias
 from .metameta_cartographer import build_metameta_annotation_map
 from .preassessment import big_five_change_state, latest_preassessment
 
@@ -57,6 +58,7 @@ def build_world_tree(student_id: str) -> dict:
     experience_map = build_metameta_annotation_map(events)
     profile = latest_preassessment(student_id)
     pulse = big_five_change_state(student_id)
+    golden_bias = build_golden_bias(student_id)
     region_counts = experience_map.get("region_counts", {})
     region_by_id = {item["id"]: item for item in experience_map.get("legend", [])}
     branches = []
@@ -128,6 +130,6 @@ def build_world_tree(student_id: str) -> dict:
             "rule": "只连接双方明确授权的共同事实、目标、任务、承诺和结果；不得共享完整私人生命树。",
             "allowed_categories": ["shared_fact", "shared_goal", "shared_task", "shared_commitment", "shared_outcome"],
         },
-        "golden_ratio_lens": GOLDEN_RATIO_LENS,
+        "golden_ratio_lens": {**GOLDEN_RATIO_LENS, "dynamic_regulator": golden_bias},
         "boundary": "世界树是从客观事件派生的可更正体验视图，不是脑区诊断、量子脑证据或关系匹配评分。",
     }

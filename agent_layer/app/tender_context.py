@@ -9,9 +9,10 @@ from .daoql import list_events
 from .knowledge_context import build_knowledge_context
 from .mentalization import build_mentalization
 from .preassessment import big_five_change_state, latest_preassessment
+from .golden_bias import build_golden_bias
 from .tender import compute_state
 
-CONTEXT_VERSION = "tender-context-1.5"
+CONTEXT_VERSION = "tender-context-1.6"
 
 
 def _json_safe(value):
@@ -111,6 +112,7 @@ def build_tender_context(student_id: str, user_message: str | None = None, task_
     mentalization = build_mentalization(student_id, state, events)
     preassessment = _preassessment_digest(latest_preassessment(student_id))
     big_five_pulse = big_five_change_state(student_id)
+    golden_bias = build_golden_bias(student_id)
     knowledge = build_knowledge_context(user_message or "", task_hint, events)
     hypotheses = mentalization.get("hypotheses") or []
     return _json_safe({
@@ -120,6 +122,7 @@ def build_tender_context(student_id: str, user_message: str | None = None, task_
         "event_count": len(events),
         "preassessment": preassessment,
         "big_five_pulse": big_five_pulse,
+        "golden_bias": golden_bias,
         "state": {
             "mastery": state.get("knowledge", {}).get("mastery"),
             "cognitive_theta": state.get("cognitive", {}).get("theta"),
@@ -164,6 +167,8 @@ def build_tender_context(student_id: str, user_message: str | None = None, task_
             "world_entry": (preassessment.get("world_interface", {}).get("world_entry") or {}).get("code"),
             "gateway_function": (preassessment.get("world_interface", {}).get("gateway") or {}).get("function"),
             "big_five_pulse_available": big_five_pulse.get("available", False),
+            "golden_bias_status": golden_bias.get("status"),
+            "golden_bias_phase": golden_bias.get("phase"),
             "mentalization_summary": mentalization.get("summary"),
             "hypothesis_count": len(hypotheses),
             "knowledge_available": knowledge.get("available", False),
@@ -219,6 +224,15 @@ def format_tender_context(context: dict[str, Any] | None) -> str:
             lines.append("心理资源基线：" + "；".join(
                 f"{value.get('label')}={value.get('band')}" for value in big_five.values()
             ))
+        golden = context.get("golden_bias") or {}
+        if golden.get("available"):
+            lines.append(
+                f"学习与创造动态偏置：{golden.get('long_band_status')}；学习占比={golden.get('learning_share')}；"
+                f"创造占比={golden.get('creation_share')}；新异比={golden.get('novelty_ratio')}；"
+                f"创造后校准={golden.get('post_creation_calibration')}；下一步={((golden.get('next_probe') or {}).get('action'))}"
+            )
+        elif golden:
+            lines.append("学习与创造动态偏置：证据不足，不输出比例结论。")
         pulse = context.get("big_five_pulse") or {}
         if pulse.get("available"):
             lines.append("近期大五脉搏：" + "；".join(

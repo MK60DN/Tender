@@ -33,6 +33,7 @@ def test_world_tree_projects_roots_canopy_flowers_outcomes_and_shared_boundary()
     assert tree['outcomes']['count'] >= 1
     assert tree['shared_branches']['status'] == 'not_materialized'
     assert tree['golden_ratio_lens']['status'] == 'design_hypothesis_not_scientific_law'
+    assert tree['golden_ratio_lens']['dynamic_regulator']['status'] == 'insufficient_evidence'
     assert '不是脑区诊断' in tree['boundary']
 
 

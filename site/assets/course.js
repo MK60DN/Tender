@@ -1,5 +1,5 @@
 window.TENDER_COURSE = {
-  version: "2.1-world-tree",
+  version: "2.2-golden-bias",
   audience: [
     { zh: "第一次使用 Tender 的学习者与家庭", en: "Learners and families using Tender for the first time" },
     { zh: "需要理解产品逻辑的教师、产品与研究团队", en: "Educators, product teams and researchers who need the product logic" },
@@ -154,6 +154,28 @@ window.TENDER_COURSE = {
           [{ zh: "共享枝", en: "Shared branch" }, { zh: "共同承诺、沟通规则与共同结果", en: "Shared commitments, communication rules and outcomes" }, { zh: "私人生命树不默认共享", en: "Private life trees are not shared by default" }]
         ] },
         { type: "boundary", body: { zh: "黄金比是设计假设，不是科学定律。它可以组织外部输入与内部整合、探索与巩固、共享与私密、支持与自主的视觉和交互比例，但不能做人格评分、关系匹配或效果承诺。", en: "The golden ratio is a design hypothesis, not a scientific law. It may guide visual and interaction proportions among external input and internal integration, exploration and consolidation, shared and private, support and autonomy. It must not become a personality score, relationship match or efficacy claim." } }
+      ]
+    },    {
+      id: "dynamic-golden-bias", time: "10 min", level: { zh: "节律调节", en: "Rhythm regulation" },
+      title: { zh: "动态黄金比偏置律", en: "Dynamic golden-bias regulation" },
+      summary: { zh: "黄金比不是每日 KPI，而是一条带滞回的弹性带：学习与创造中较小的一极长期不低于约 38.2%，较大的一极长期不高于约 61.8%。", en: "The golden ratio is not a daily KPI. It is a hysteresis-aware elastic band: the smaller pole should not remain below about 38.2%, and the larger pole should not remain above about 61.8%." },
+      objectives: [{ zh: "区分投入比、新异比与创造后校准比", en: "Distinguish input ratio, novelty ratio and post-creation calibration" }, { zh: "理解实验结果中的收益与权衡", en: "Understand the benefits and tradeoffs in the experiment" }],
+      blocks: [
+        { type: "concept", title: { zh: "学习与创造分别做什么", en: "What learning and creation do" }, body: { zh: "学习偏测量、输入、更新、修剪和客观校准；创造偏制备、分叉、表达和选择新的测量基。两者不是被动与主动的二分，任何一极长期缺席都会让世界树失衡。", en: "Learning leans toward measurement, input, updating, pruning and objective calibration. Creation leans toward preparation, branching, expression and choosing new measurement bases. Neither is simply passive or active, and a long absence of either pole destabilizes the world tree." } },
+        { type: "table", title: { zh: "三类指标", en: "Three regulators" }, headers: [{ zh: "指标", en: "Metric" }, { zh: "看什么", en: "What it observes" }, { zh: "防止什么", en: "What it prevents" }], rows: [
+          [{ zh: "投入比", en: "Input ratio" }, { zh: "学习与创造的滚动时间/事件权重", en: "Rolling time and event weight across learning and creation" }, { zh: "长期只吸收或只输出", en: "Prolonged absorption or output without the other pole" }],
+          [{ zh: "新异比", en: "Novelty ratio" }, { zh: "输出中真正产生新分支的比例", en: "The share of output that creates a genuinely new branch" }, { zh: "重复、空转或无根发散", en: "Repetition, stagnation or rootless divergence" }],
+          [{ zh: "创造后校准比", en: "Post-creation calibration" }, { zh: "输出后 72 小时内是否获得反馈、复测或结果校验", en: "Whether feedback, retest or outcome validation follows within 72 hours" }, { zh: "脱离现实的自繁殖", en: "Self-reproduction detached from reality" }]
+        ] },
+        { type: "list", title: { zh: "7 天与 28 天", en: "Seven days and twenty-eight days" }, items: [{ zh: "7 天窗口用于温和提示短期偏移", en: "The seven-day window supports gentle short-term prompts" }, { zh: "28 天窗口用于判断学习期或创造期", en: "The twenty-eight-day window estimates a learning or creation phase" }, { zh: "证据不足时不判断比例", en: "When evidence is insufficient, no ratio conclusion is produced" }, { zh: "连续偏离才提示，回到带内后解除", en: "Prompts require sustained deviation and clear when the band is regained" }] },
+        { type: "table", title: { zh: "合成实验结果", en: "Synthetic experiment" }, headers: [{ zh: "规则", en: "Rule" }, { zh: "行动恢复", en: "Recovery" }, { zh: "带内时间", en: "In-band" }, { zh: "提示负担", en: "Burden" }], rows: [
+          [{ zh: "不调节", en: "No regulation" }, { zh: "0.884", en: "0.884" }, { zh: "0.474", en: "0.474" }, { zh: "0", en: "0" }],
+          [{ zh: "固定 50:50", en: "Fixed 50:50" }, { zh: "0.945", en: "0.945" }, { zh: "0.775", en: "0.775" }, { zh: "63.7", en: "63.7" }],
+          [{ zh: "固定阈值", en: "Fixed band" }, { zh: "0.927", en: "0.927" }, { zh: "0.476", en: "0.476" }, { zh: "6.3", en: "6.3" }],
+          [{ zh: "动态黄金比", en: "Dynamic golden" }, { zh: "0.947", en: "0.947" }, { zh: "0.572", en: "0.572" }, { zh: "33.1", en: "33.1" }]
+        ] },
+        { type: "concept", title: { zh: "结果怎么看", en: "How to read the result" }, body: { zh: "动态规则相对不调节提高恢复与带内时间；相对固定 50:50 用更少提示保持相近恢复；但严格带内时间低于固定 50:50，创造后校准也不优于固定阈值。这是负担、平衡和校准之间的权衡，不是全面胜出。", en: "The dynamic rule improves recovery and in-band time versus no regulation. It preserves recovery with fewer prompts than fixed 50:50. It is less strictly in-band than fixed 50:50 and does not outperform the fixed band on calibration. This is a tradeoff among burden, balance and calibration, not universal superiority." } },
+        { type: "boundary", body: { zh: "实验是每臂 1,000 名合成学习者、84 天的机制仿真，不是真人教育或临床因果证据。黄金比不能变成人格评分、关系匹配、绩效排名或每日考核。", en: "The experiment is an 84-day mechanism simulation with 1,000 synthetic learners per arm. It is not human educational or clinical causal evidence. The golden ratio must not become a personality score, relationship match, performance rank or daily KPI." } }
       ]
     },    {
       id: "delivery-model", time: "6 min", level: { zh: "交付", en: "Delivery" },

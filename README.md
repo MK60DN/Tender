@@ -8,10 +8,11 @@
 ## Start here / 从这里开始
 
 - **Teaching website / 教学网站**： [GitHub Pages](https://mk60dn.github.io/Tender/) · [Local course / 本地课程](http://127.0.0.1:8080/guide/) · [Source / 源码](site/)
-- **Whitepaper V1.7 / 白皮书 V1.7**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v1.7.pdf) · [Repo PDF](docs/whitepaper/Tender-Whitepaper-v1.7.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v1.7.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v1.7.tex)
-- **Product manual / 产品手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v6.21.pdf) · [Repo PDF](docs/product/Tender-Product-Manual-v6.21.pdf)
-- **User guide / 用户手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v6.9.pdf) · [Repo PDF](docs/product/Tender-User-Guide-v6.9.pdf)
-- **Teaching manual / 零基础教学手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v5.4.pdf) · [Repo PDF](docs/teaching/Tender-Teaching-Manual-v5.4.pdf)
+- **Whitepaper V1.8 / 白皮书 V1.8**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v1.8.pdf) · [Repo PDF](docs/whitepaper/Tender-Whitepaper-v1.8.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v1.8.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v1.8.tex)
+- **Product manual / 产品手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v6.22.pdf) · [Repo PDF](docs/product/Tender-Product-Manual-v6.22.pdf)
+- **User guide / 用户手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v6.10.pdf) · [Repo PDF](docs/product/Tender-User-Guide-v6.10.pdf)
+- **Golden-bias experiment / 动态黄金比实验**： [Repo PDF](docs/research/Tender-Golden-Bias-Experiment-v1.0.pdf) · [Results](experiments/golden_bias_regulation/results.json)
+- **Teaching manual / 零基础教学手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v5.5.pdf) · [Repo PDF](docs/teaching/Tender-Teaching-Manual-v5.5.pdf)
 
 
 [![CI](https://github.com/MK60DN/Tender/actions/workflows/ci.yml/badge.svg)](https://github.com/MK60DN/Tender/actions/workflows/ci.yml)
@@ -82,11 +83,11 @@ Minimal action → real outcome → model update
 | State modeling / 状态建模 | baseline, rhythm, JOL, metacognition, fit, outcomes / 基线、节律、JOL、元认知、匹配、结果 |
 | Agent runtime / Agent 运行时 | fixed helpers, advisors, workbench, marketplace MVP / 固定辅助、顾问、工作台、市场 MVP |
 | Governance / 治理 | signed sessions, object authorization, audit hash chain, safety tickets / 签名会话、对象授权、审计哈希链、安全工单 |
-| Tests / 测试 | 95 automated tests / 95 项自动测试 |
+| Tests / 测试 | 100 automated tests / 100 项自动测试 |
 
 ## Teaching site / 教学网站
 
-双语教学网站位于 `site/`，包含 10 个模块、64 分钟、学习进度、语言切换与知识检查。FastAPI 在 `/guide/` 提供页面，GitHub Pages 由 `.github/workflows/pages.yml` 部署。
+双语教学网站位于 `site/`，包含 11 个模块、74 分钟、学习进度、语言切换与知识检查。FastAPI 在 `/guide/` 提供页面，GitHub Pages 由 `.github/workflows/pages.yml` 部署。
 
 ## Quick start / 快速开始
 
@@ -120,7 +121,7 @@ Open / 打开：
 python agent_layer/tests/run_all.py
 ```
 
-Expected baseline / 当前基线：`passed 95 tests`.
+Expected baseline / 当前基线：`passed 100 tests`.
 
 ## Core APIs / 核心接口
 
@@ -142,7 +143,7 @@ POST /workforce/plan
 agent_layer/       runnable app, Agents, UI and tests / 可运行应用、Agent、UI、测试
 knowledge_data/    subject, major, course and career databases / 学科、专业、课程、职业数据库
 experiments/       selected reproducible research code / 精简可复现研究代码
-docs/whitepaper/   Whitepaper V1.7: TeX, PDF, Word / 白皮书 V1.7
+docs/whitepaper/   Whitepaper V1.8: TeX, PDF, Word / 白皮书 V1.8
 docs/product/      product and user manuals / 产品与用户手册
 docs/research/     evidence and validation reports / 证据与验证报告
 site/               bilingual teaching website / 双语教学网站
@@ -157,9 +158,9 @@ site/               bilingual teaching website / 双语教学网站
 
 ## Documentation / 文档
 
-- [Whitepaper V1.7 / 白皮书 V1.7](docs/whitepaper/Tender-Whitepaper-v1.7.pdf)
-- [Product manual / 产品手册](docs/product/Tender-Product-Manual-v6.21.pdf)
-- [User guide / 用户手册](docs/product/Tender-User-Guide-v6.9.pdf)
+- [Whitepaper V1.8 / 白皮书 V1.8](docs/whitepaper/Tender-Whitepaper-v1.8.pdf)
+- [Product manual / 产品手册](docs/product/Tender-Product-Manual-v6.22.pdf)
+- [User guide / 用户手册](docs/product/Tender-User-Guide-v6.10.pdf)
 - [Central thesis / 中心主旨](docs/product/Tender-Central-Thesis.md)
 
 ## License / 许可证

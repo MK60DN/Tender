@@ -7,8 +7,8 @@
 ## 从这里开始
 
 - [教学网站](https://mk60dn.github.io/Tender/) · [本地课程](http://127.0.0.1:8080/guide/) · [站点源码](site/)
-- [白皮书本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v1.7.pdf) · [仓库 PDF](docs/whitepaper/Tender-Whitepaper-v1.7.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v1.7.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v1.7.tex)
-- [产品手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v6.21.pdf) · [用户手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v6.9.pdf) · [零基础教学手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v5.4.pdf)
+- [白皮书本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v1.8.pdf) · [仓库 PDF](docs/whitepaper/Tender-Whitepaper-v1.8.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v1.8.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v1.8.tex)
+- [产品手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v6.22.pdf) · [用户手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v6.10.pdf) · [零基础教学手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v5.5.pdf)
 
 
 [![CI](https://github.com/MK60DN/Tender/actions/workflows/ci.yml/badge.svg)](https://github.com/MK60DN/Tender/actions/workflows/ci.yml)
@@ -60,13 +60,13 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8080
 python agent_layer/tests/run_all.py
 ```
 
-当前基线：`passed 95 tests`。
+当前基线：`passed 100 tests`。
 
 ## 文档
 
-- [项目白皮书 V1.7](docs/whitepaper/Tender-Whitepaper-v1.7.pdf)
-- [产品手册](docs/product/Tender-Product-Manual-v6.21.pdf)
-- [用户手册](docs/product/Tender-User-Guide-v6.9.pdf)
+- [项目白皮书 V1.8](docs/whitepaper/Tender-Whitepaper-v1.8.pdf)
+- [产品手册](docs/product/Tender-Product-Manual-v6.22.pdf)
+- [用户手册](docs/product/Tender-User-Guide-v6.10.pdf)
 - [研究边界](docs/RESEARCH_CLAIMS.md)
 
 ## 许可证

@@ -88,6 +88,13 @@ from tests.test_preassessment_api import (
     test_big_five_pulse_api,
 )
 from tests.test_world_tree import test_world_tree_projects_roots_canopy_flowers_outcomes_and_shared_boundary
+from tests.test_golden_bias import (
+    test_creation_overweight_with_low_calibration_returns_calibration_probe,
+    test_golden_bias_api_exists,
+    test_golden_bias_inside_band_collects_quality_metrics,
+    test_golden_bias_insufficient_evidence,
+    test_learning_overweight_returns_output_probe,
+)
 from tests.test_governance_phases import (
     test_cannot_skip_from_expert_council_to_public_autonomy,
     test_chain_accepts_only_commitments_after_federation,
@@ -214,6 +221,11 @@ TESTS = [
     test_sensitive_file_visibility,
     test_2026_projection_rules,
     test_world_tree_projects_roots_canopy_flowers_outcomes_and_shared_boundary,
+    test_golden_bias_insufficient_evidence,
+    test_golden_bias_inside_band_collects_quality_metrics,
+    test_learning_overweight_returns_output_probe,
+    test_creation_overweight_with_low_calibration_returns_calibration_probe,
+    test_golden_bias_api_exists,
 ]
 
 if __name__ == "__main__":

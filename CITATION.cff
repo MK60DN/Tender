@@ -2,14 +2,15 @@ cff-version: 1.2.0
 message: "If you use this repository, cite the project and the relevant release."
 title: "Tender: Mentalization, Predictive Processing and Lifelong Learning"
 type: software
-version: 1.7.0
-date-released: 2026-10-31
+version: 1.8.0
+date-released: 2026-11-01
 authors:
   - name: "Tender Contributors"
 repository-code: "https://github.com/MK60DN/Tender"
 license: PolyForm-Noncommercial-1.0.0
 abstract: >-
   A research-oriented lifelong-learning system with one shared mentalization core.
-  It uses strict eight-function-attitude entry, a dynamic Big Five pulse, a world-tree
-  projection and authorized shared branches to support objective, subjective and
-  person-to-person learning contexts.
+  Its world tree separates objective roots, an Agent Bridge trunk and subjective
+  experience branches. A dynamic golden-bias regulator uses 7/28-day windows,
+  novelty and post-creation calibration to support learning-creation rhythm without
+  becoming a daily KPI.

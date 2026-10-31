@@ -378,6 +378,10 @@ GET  /preassessment/pulse/items
 POST /preassessment/pulse/{learner_id}
 GET  /preassessment/pulse/{learner_id}
 GET  /world-tree/{student_id}
+GET  /golden-bias/{student_id}
 ```
 
 `/preassessment/*` 保存标准化八功能态度、大五基线与大五脉搏，不保存逐题原文。`/world-tree/{student_id}` 返回 DAOQL 客观根系、Agent Bridge 树干、五类树枝、11 个体验节点、开花、结果与共享枝边界。共享枝默认不生成，需双方明确授权。
+## 动态黄金比偏置
+
+`GET /golden-bias/{student_id}` 返回 7 天和 28 天窗口下的学习/创造投入、较小极与较大极占比、带内状态、滞回状态、新异比、创造后 72 小时校准比、置信度和下一步探针。证据不足时返回 `insufficient_evidence`，不输出比例结论。该接口只用于节律支持，不用于人格、能力、关系匹配或绩效评分。

@@ -10,23 +10,26 @@ required = [
     ROOT / "README.md",
     ROOT / "LICENSE",
     ROOT / "VERSION",
-    ROOT / "docs/whitepaper/Tender-Whitepaper-v1.7.pdf",
-    ROOT / "docs/product/Tender-Product-Manual-v6.21.pdf",
-    ROOT / "docs/product/Tender-User-Guide-v6.9.pdf",
-    ROOT / "docs/teaching/Tender-Teaching-Manual-v5.4.pdf",
+    ROOT / "docs/whitepaper/Tender-Whitepaper-v1.8.pdf",
+    ROOT / "docs/product/Tender-Product-Manual-v6.22.pdf",
+    ROOT / "docs/product/Tender-User-Guide-v6.10.pdf",
+    ROOT / "docs/teaching/Tender-Teaching-Manual-v5.5.pdf",
+    ROOT / "docs/research/Tender-Golden-Bias-Experiment-v1.0.pdf",
     ROOT / "agent_layer/app/main.py",
     ROOT / "agent_layer/app/preassessment.py",
     ROOT / "agent_layer/app/world_tree.py",
+    ROOT / "agent_layer/app/golden_bias.py",
     ROOT / "agent_layer/tests/run_all.py",
     ROOT / "knowledge_data/preassessment_world_interface_items.json",
     ROOT / "knowledge_data/preassessment_big_five_pulse_items.json",
+    ROOT / "experiments/golden_bias_regulation/results.json",
     ROOT / "site/index.html",
     ROOT / "site/assets/app.js",
     ROOT / "site/assets/course.js",
-    ROOT / "site/assets/docs/Tender-Whitepaper-v1.7.pdf",
-    ROOT / "site/assets/docs/Tender-Product-Manual-v6.21.pdf",
-    ROOT / "site/assets/docs/Tender-User-Guide-v6.9.pdf",
-    ROOT / "site/assets/docs/Tender-Teaching-Manual-v5.4.pdf",
+    ROOT / "site/assets/docs/Tender-Whitepaper-v1.8.pdf",
+    ROOT / "site/assets/docs/Tender-Product-Manual-v6.22.pdf",
+    ROOT / "site/assets/docs/Tender-User-Guide-v6.10.pdf",
+    ROOT / "site/assets/docs/Tender-Teaching-Manual-v5.5.pdf",
     K / "db_k12.sqlite",
     K / "db_university.sqlite",
     K / "db_university_courses.sqlite",
@@ -37,10 +40,10 @@ if missing:
     raise SystemExit("missing required files:\n" + "\n".join(missing))
 
 forbidden = [
-    ROOT / "docs/whitepaper/Tender-Whitepaper-v1.6.pdf",
-    ROOT / "docs/product/Tender-Product-Manual-v6.20.pdf",
-    ROOT / "docs/product/Tender-User-Guide-v6.8.pdf",
-    ROOT / "docs/teaching/Tender-Teaching-Manual-v5.3.pdf",
+    ROOT / "docs/whitepaper/Tender-Whitepaper-v1.7.pdf",
+    ROOT / "docs/product/Tender-Product-Manual-v6.21.pdf",
+    ROOT / "docs/product/Tender-User-Guide-v6.9.pdf",
+    ROOT / "docs/teaching/Tender-Teaching-Manual-v5.4.pdf",
     ROOT / "knowledge_data/preassessment_mbti_items.json",
     ROOT / "knowledge_data/preassessment_jungian_items.json",
 ]
@@ -62,8 +65,8 @@ for name, (path, sql, expected) in checks.items():
     print(f"ok {name}={actual}")
 
 version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
-if version != "1.7.0":
-    raise SystemExit(f"VERSION: expected 1.7.0, got {version}")
+if version != "1.8.0":
+    raise SystemExit(f"VERSION: expected 1.8.0, got {version}")
 print(f"ok version={version}")
 
 license_text = (ROOT / "LICENSE").read_text(encoding="utf-8")
@@ -72,4 +75,6 @@ if "PolyForm Noncommercial License 1.0.0" not in license_text:
 print("ok license=PolyForm-Noncommercial-1.0.0")
 print("ok active-docs=current-only")
 print("ok world-tree=present")
+print("ok golden-bias=present")
+print("ok experiment=present")
 print("repository verification passed")

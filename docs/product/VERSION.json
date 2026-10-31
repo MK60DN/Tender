@@ -1,7 +1,7 @@
 {
   "product": "Tender",
-  "manual_version": "6.21",
-  "date": "2026-10-31",
+  "manual_version": "6.22",
+  "date": "2026-11-01",
   "product_type": "B端完整系统 / B端嵌入式模块 / C端生活界面共享核心的心智化终身学习系统",
   "default_surfaces": [
     "learner",
@@ -28,22 +28,25 @@
     "Subjective life-tree experience layer",
     "World tree projection",
     "Shared-branch authorization boundary",
-    "metameta_cartographer"
+    "metameta_cartographer",
+    "Dynamic golden-bias regulator",
+    "Novelty ratio",
+    "Post-creation calibration"
   ],
-  "status": "V6.21 implements strict eight-function-attitude onboarding, dynamic Big Five pulse, world-tree projection and shared-branch boundaries; 95 tests pass",
-  "source": "Tender-Product-Manual-v6.21.md",
-  "pdf": "Tender-Product-Manual-v6.21.pdf",
+  "status": "V6.22 implements the dynamic golden-bias regulator with 7/28-day windows, hysteresis, novelty and post-creation calibration; 100 tests pass",
+  "source": "Tender-Product-Manual-v6.22.md",
+  "pdf": "Tender-Product-Manual-v6.22.pdf",
   "user_guide": {
-    "source": "Tender-User-Guide-v6.9.md",
-    "pdf": "Tender-User-Guide-v6.9.pdf",
-    "pages": 24,
-    "pdf_bytes": 401995,
-    "sha256": "6ba3f12d54a71f0db79e5be053220d7419b4de098bcee2ad3292272135f3ee98",
-    "validation": "V6.9 rebuilt with world-entry onboarding, Big Five pulse and shared-branch guidance; zero replacement characters"
+    "source": "Tender-User-Guide-v6.10.md",
+    "pdf": "Tender-User-Guide-v6.10.pdf",
+    "pages": 25,
+    "pdf_bytes": 408752,
+    "sha256": "ecc2e3344dca8a9ac4df2e125f8088ddfccbf2cf2abbaaeb0255ca53c2ca28e8",
+    "validation": "V6.10 adds user-facing dynamic learning/creation rhythm guidance; zero replacement characters"
   },
   "pdf_render": {
-    "pages": 57,
-    "validation": "V6.21 rebuilt with strict 2x4 function-attitudes, dynamic Big Five and world-tree API; zero replacement characters"
+    "pages": 58,
+    "validation": "V6.22 rebuilt with dynamic golden-bias rule, 100-test baseline and experiment tradeoffs; zero replacement characters"
   },
   "implemented": true,
   "positioning": "Tender：温柔地了解您的心智。B端可提供完整教育系统或嵌入合作方系统，C端以自有界面融入用户生活。",
@@ -65,8 +68,8 @@
     "workflow_execution": "gated",
     "status_endpoint": "GET /agent-runtime/status"
   },
-  "sha256": "137c64a4729c9ac25f1685af2530e8d3294a4fcdceb7feb1e6bab0276ff40a1d",
-  "tests": 95,
+  "sha256": "31c26b9492d576a958dceaa3cfac123447150b77e7a8aac5fd31de291ac1403c",
+  "tests": 100,
   "identity": {
     "development": "signed HMAC bearer session",
     "session_revocation": "implemented",
@@ -110,9 +113,9 @@
     ]
   },
   "decision_loop": "implemented",
-  "manual_title": "Tender 产品手册 V6.21",
+  "manual_title": "Tender 产品手册 V6.22",
   "builder": "build_v67_reports.py",
-  "pdf_bytes": 659698,
+  "pdf_bytes": 666185,
   "narrative_order": [
     "opportunity",
     "user_segmentation",
@@ -169,7 +172,7 @@
     ],
     "status": "observational association and methodological validation only; no human causal claim"
   },
-  "api_version": "6.21.0",
+  "api_version": "6.22.0",
   "latex_manual": {
     "source": "../教学手册/Tender零基础全流程教学手册-完整版.tex",
     "pdf": "../教学手册/Tender零基础全流程教学手册-完整版.pdf",
@@ -312,10 +315,10 @@
     "raw_responses_stored": false,
     "diagnosis": false,
     "user_review_required": true,
-    "report": "Tender-Product-Manual-v6.21.pdf §13.7",
-    "report_source": "Tender-Product-Manual-v6.21.md",
-    "report_pages": 57,
-    "tests": 95,
+    "report": "Tender-Product-Manual-v6.22.pdf §13.7",
+    "report_source": "Tender-Product-Manual-v6.22.md",
+    "report_pages": 58,
+    "tests": 100,
     "attention_profile": true,
     "cognitive_correction_plan": true,
     "correction_card_fields": [
@@ -327,11 +330,12 @@
       "boundary"
     ],
     "world_interface_items": 24,
-    "big_five_pulse_items": 10
+    "big_five_pulse_items": 10,
+    "report_bytes": 666185
   },
   "tender_context": {
     "module": "../agent_layer/app/tender_context.py",
-    "version": "tender-context-1.5",
+    "version": "tender-context-1.6",
     "endpoint": "GET /tender/context/{student_id}",
     "sources": [
       "preassessment profile",
@@ -347,7 +351,7 @@
     "max_hypotheses": 3,
     "context_digest_recorded": true,
     "llm_end_to_end_verified": true,
-    "tests": 88,
+    "tests": 100,
     "knowledge_context": true,
     "major_career_context": true,
     "longitudinal_state_fields": [
@@ -581,9 +585,9 @@
     "core": "生命不是被某个框架评价出来的形状，而是在有限时间里，通过选择、关系、承担和创造长出来的年轮。",
     "source": "Tender-中心主旨.md",
     "manuals": [
-      "Tender-Product-Manual-V6.21.md",
-      "Tender-User-Guide-V6.9.md",
-      "../教学手册/Tender零基础全流程教学手册-完整版-V5.4.tex"
+      "Tender-Product-Manual-V6.22.md",
+      "Tender-User-Guide-V6.10.md",
+      "../教学手册/Tender零基础全流程教学手册-完整版-V5.5.tex"
     ],
     "role": "narrative and modeling grammar; not a clinical, diagnostic or efficacy claim"
   },
@@ -619,25 +623,25 @@
       "POST /metameta/decompose/{student_id}",
       "GET /metameta/map/{student_id}"
     ],
-    "context_version": "tender-context-1.4",
-    "tests": 88,
+    "context_version": "tender-context-1.6",
+    "tests": 100,
     "boundary": "The cognitive-map regions are interpretive retrieval labels, not brain scans, clinical diagnoses or objective facts."
   },
   "project_whitepaper": {
-    "source": "../产品管理文档/Tender-项目白皮书-V1.7.tex",
-    "pdf": "../产品管理文档/Tender-项目白皮书-V1.7.pdf",
-    "word": "../产品管理文档/Tender-项目白皮书-V1.7.docx",
-    "version": "1.7",
-    "pages": 43,
-    "pdf_bytes": 430677,
-    "pdf_sha256": "5355fa6d73e5b660d287acb21a14bfd2f0ce111a0496954e8de56f203ea7ca38",
-    "word_bytes": 1173486,
-    "word_sha256": "19e7fbcde190fbd6c547cbf750ccc471ad280270075bc668a55633309aecdc6b",
+    "source": "../产品管理文档/Tender-项目白皮书-V1.8.tex",
+    "pdf": "../产品管理文档/Tender-项目白皮书-V1.8.pdf",
+    "word": "../产品管理文档/Tender-项目白皮书-V1.8.docx",
+    "version": "1.8",
+    "pages": 45,
+    "pdf_bytes": 434022,
+    "pdf_sha256": "92348de751b6b2b078e5e655c5e0f79fe73d2306f26c7006f87aa4e9aba32941",
+    "word_bytes": 1174995,
+    "word_sha256": "3c3dee5697153124c8da92dca5703994b1ae7c28ac1d9dbcf63dfd6e18e9b023",
     "figures": 14,
     "tables_in_word": 22,
     "citations": 11,
-    "focus": "strict function-attitude entry, dynamic Big Five, world tree, shared branches and golden-ratio design boundary",
-    "validation": "43 pages; zero replacement characters; strict 2x4 matrix and world tree verified"
+    "focus": "dynamic golden-bias law, 7/28-day windows, novelty, post-creation calibration, world tree and synthetic multi-arm evidence",
+    "validation": "45 pages; API 6.22.0 and tender-context-1.6 aligned; zero replacement characters; dynamic golden-bias and experiment results verified"
   },
   "knowledge_forest": {
     "version": "knowledge-forest-1.0",
@@ -696,18 +700,18 @@
     "boundary": "Language evidence is weak evidence and cannot determine mastery, personality, diagnosis or factual truth by itself."
   },
   "teaching_manual": {
-    "source": "../教学手册/Tender零基础全流程教学手册-完整版-V5.4.tex",
-    "pdf": "../教学手册/Tender零基础全流程教学手册-完整版-V5.4.pdf",
-    "version": "5.4",
-    "pages": 184,
-    "pdf_bytes": 937438,
-    "sha256": "518608f3407960f4fa41e915a9c3b82959c4aa365a77b3957bf2f8ef2f09a6a7",
-    "validation": "V5.4 adds current world-tree architecture, strict 2x4 model, dynamic Big Five and 95-test baseline; zero replacement characters"
+    "source": "../教学手册/Tender零基础全流程教学手册-完整版-V5.5.tex",
+    "pdf": "../教学手册/Tender零基础全流程教学手册-完整版-V5.5.pdf",
+    "version": "5.5",
+    "pages": 185,
+    "pdf_bytes": 938839,
+    "sha256": "5f6b3ad3303280b6fef2875a7726339836770bbfa433ce145d1543c1fd6b1c5c",
+    "validation": "V5.5 adds dynamic golden-bias regulation, experiment results and 100-test baseline; zero replacement characters"
   },
   "teaching_site": {
-    "version": "2.1",
+    "version": "2.2",
     "entry": "GET /guide/",
-    "modules": 10,
+    "modules": 11,
     "languages": [
       "zh",
       "en"
@@ -715,10 +719,10 @@
     "formulas": false,
     "architecture": "world tree -> DAOQL roots -> limited observation -> Agent Bridge trunk -> five experience branches with local state axes -> flowering/outcomes/shared branches",
     "documents": [
-      "Whitepaper V1.7",
-      "Product Manual V6.21",
-      "User Guide V6.9",
-      "Teaching Manual V5.4"
+      "Whitepaper V1.8",
+      "Product Manual V6.22",
+      "User Guide V6.10",
+      "Teaching Manual V5.5"
     ]
   },
   "world_tree": {
@@ -728,6 +732,31 @@
     "experience_nodes": 11,
     "local_state_axes": true,
     "shared_branches": "authorization_required",
-    "golden_ratio": "design_hypothesis_only"
-  }
+    "golden_ratio": "dynamic_regulator_experimental_boundary"
+  },
+  "golden_bias": {
+    "version": "dynamic-golden-bias-1.0",
+    "endpoint": "GET /golden-bias/{student_id}",
+    "module": "../agent_layer/app/golden_bias.py",
+    "minor_floor": 0.382,
+    "major_ceiling": 0.618,
+    "short_window_days": 7,
+    "long_window_days": 28,
+    "hysteresis": true,
+    "daily_kpi": false
+  },
+  "golden_bias_experiment": {
+    "version": "1.0",
+    "pdf": "../research/Tender-Golden-Bias-Experiment-v1.0.pdf",
+    "source": "../experiments/golden_bias_regulation/REPORT.md",
+    "results": "../experiments/golden_bias_regulation/results.json",
+    "design": "in_silico_multi_arm_simulation",
+    "n_per_arm": 1000,
+    "days": 84,
+    "arms": 4,
+    "pages": 2,
+    "pdf_bytes": 101812,
+    "sha256": "ec3455b551a4cfea98205632e8616f2c74cca06187f77284c559b30c13ab82ee"
+  },
+  "context_version": "tender-context-1.6"
 }

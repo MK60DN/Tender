@@ -51,6 +51,7 @@ from .preassessment import (
 )
 from .tender_context import build_tender_context
 from .world_tree import build_world_tree
+from .golden_bias import build_golden_bias
 
 STATIC = pathlib.Path(__file__).resolve().parent / "static"
 STATIC.mkdir(parents=True, exist_ok=True)
@@ -59,7 +60,7 @@ GUIDE = pathlib.Path(__file__).resolve().parents[2] / "site"
 DEV_DOCS = os.getenv("TENDER_ENABLE_DEV_DOCS", "0") == "1"
 app = FastAPI(
     title="Tender C-End Mentalization Learning App",
-    version="6.21.0",
+    version="6.22.0",
     docs_url="/docs" if DEV_DOCS else None,
     redoc_url=None,
     openapi_url="/openapi.json" if DEV_DOCS else None,
@@ -71,7 +72,7 @@ app.include_router(language_router)
 seed_demo_consents([r["student_id"] for r in ROSTER])
 
 PUBLIC_PATHS = {"/health", "/preassessment/items", "/preassessment/pulse/items", "/governance/policy", "/research/neuro-learning/catalog", "/research/neuro-learning/datasets", "/research/neuro-learning/research", "/research/neuro-learning/claim", "/roles", "/agents", "/agents/fixed", "/agents/marketplace", "/agents/catalog", "/agent-runtime/status", "/benchmark/tender-theta", "/cognition/constructs", "/ambient/personas", "/openapi.json", "/docs", "/auth/demo-session", "/tenant/demo-session"}
-SENSITIVE_PREFIXES = ("/preassessment/", "/auth/me", "/cognition/", "/metameta/", "/ambient/", "/auth/logout", "/auth/logout-all", "/auth/sessions", "/guardian/", "/safety/", "/agents/catalog", "/workforce/", "/learner/", "/decision-loops", "/daoql/", "/tender/", "/world-tree/", "/reports/", "/audit", "/agents/generate", "/agents/entitlements/", "/workforce/", "/head_teacher", "/sales", "/institution", "/teaching", "/dorm", "/workflow", "/workbench", "/advisors", "/rag/ingest", "/tenant/")
+SENSITIVE_PREFIXES = ("/preassessment/", "/auth/me", "/cognition/", "/metameta/", "/ambient/", "/auth/logout", "/auth/logout-all", "/auth/sessions", "/guardian/", "/safety/", "/agents/catalog", "/workforce/", "/learner/", "/decision-loops", "/daoql/", "/tender/", "/world-tree/", "/golden-bias/", "/reports/", "/audit", "/agents/generate", "/agents/entitlements/", "/workforce/", "/head_teacher", "/sales", "/institution", "/teaching", "/dorm", "/workflow", "/workbench", "/advisors", "/rag/ingest", "/tenant/")
 
 
 def _target_learner(path: str) -> str | None:
@@ -85,6 +86,8 @@ def _target_learner(path: str) -> str | None:
     if parts[0] == "tender" and len(parts) >= 3:
         return parts[2]
     if parts[0] == "world-tree" and len(parts) >= 2:
+        return parts[1]
+    if parts[0] == "golden-bias" and len(parts) >= 2:
         return parts[1]
     if parts[0] == "preassessment" and len(parts) >= 3:
         if parts[-1] == "items":
@@ -1216,6 +1219,11 @@ def tender_context(student_id: str, message: str | None = Query(default=None)):
 def world_tree(student_id: str):
     _require_decision_learner_access(student_id)
     return build_world_tree(student_id)
+
+@app.get("/golden-bias/{student_id}")
+def golden_bias(student_id: str):
+    _require_decision_learner_access(student_id)
+    return build_golden_bias(student_id)
 
 @app.get("/tender/state/{student_id}")
 def tender_state(student_id: str):
