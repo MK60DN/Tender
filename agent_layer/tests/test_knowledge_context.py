@@ -63,7 +63,7 @@ def test_career_intent_returns_riasec_exploration_context():
 def test_tender_context_includes_knowledge_and_node_mastery():
     student_id = _student()
     items = preassessment_items()
-    responses = {item['id']: 3 for section in ['big_five', 'mbti', 'jungian'] for item in items[section]['items']}
+    responses = {item['id']: 3 for section in ['big_five', 'world_interface'] for item in items[section]['items']}
     submit_preassessment(student_id, responses, consent=True)
     initial = build_knowledge_context('这道函数题不会，怎么做？', '数学作业')
     node = initial['matches'][0]

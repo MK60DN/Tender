@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tender · 我的世界树</title>
+<style>
+:root{--ink:#17191b;--muted:#686d72;--line:#d7dadd;--panel:#f5f6f6;--green:#236b57;--gold:#9b6c25;--pink:#9a4d72;--violet:#61558f}*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#edf0ef,#e5e8e7);color:var(--ink);font:15px/1.65 "Microsoft YaHei",system-ui,sans-serif}.shell{width:min(1100px,calc(100% - 30px));margin:28px auto 80px}.hero,.card{background:rgba(250,250,250,.94);border:1px solid var(--line);border-radius:22px;box-shadow:0 18px 50px rgba(20,30,26,.08)}.hero{padding:28px}.eyebrow{font-size:12px;letter-spacing:.16em;color:var(--green);font-weight:700}h1{font-size:clamp(28px,5vw,46px);line-height:1.15;margin:8px 0}.lead{color:var(--muted);max-width:760px}.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.pill{padding:6px 10px;border-radius:99px;background:#e8eeeb;font-size:12px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.card{padding:22px}.full{grid-column:1/-1}.branch{margin:14px 0;padding:14px;border-left:4px solid var(--violet);background:#f2f0f6;border-radius:0 12px 12px 0}.node{display:grid;grid-template-columns:1.2fr 1fr .8fr;gap:12px;padding:10px;border-bottom:1px dashed var(--line);font-size:13px}.node:last-child{border:0}.muted{color:var(--muted)}.tag{display:inline-block;padding:4px 8px;border-radius:8px;background:#eceff0;margin:3px 4px 3px 0;font-size:12px}.error{color:#8b1e1e}.footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}a{color:var(--green)}@media(max-width:760px){.grid{grid-template-columns:1fr}.node{grid-template-columns:1fr}.full{grid-column:auto}}
+</style>
+</head>
+<body><div class="shell">
+<section class="hero"><div class="eyebrow">TENDER WORLD TREE</div><h1>我的世界树</h1><p class="lead">DAOQL 是客观事件根系，Agent Bridge 是树干，五类树枝承载可更正的体验节点。局部状态轴只表示当前证据和偏向，不代表脑区诊断或量子脑过程。</p><div class="meta" id="meta"></div></section>
+<div class="grid">
+<section class="card"><h2>客观根系</h2><div id="roots"></div></section>
+<section class="card"><h2>树干与入口</h2><div id="trunk"></div></section>
+<section class="card full"><h2>体验树冠</h2><div id="canopy"></div></section>
+<section class="card"><h2>开花</h2><div id="flowers"></div></section>
+<section class="card"><h2>结果回流</h2><div id="outcomes"></div></section>
+<section class="card full"><h2>共享枝边界</h2><div id="shared"></div></section>
+</div><p class="footer"><a href="/ui/">返回 Tender</a> · 世界树是可更正投影，不是能力、人格或关系评分。</p>
+</div>
+<script>
+const $=(id)=>document.getElementById(id);const esc=(v)=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+const params=new URLSearchParams(location.search);const studentId=params.get("student")||"S01";let token="";
+async function session(){if(token)return token;const r=await fetch("/auth/demo-session",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({actor_id:studentId,role:"learner",learner_id:studentId})});const d=await r.json();if(!r.ok)throw new Error(d.detail||"无法建立会话");token=d.token;return token;}
+async function load(){try{await session();const r=await fetch("/world-tree/"+encodeURIComponent(studentId),{headers:{Authorization:"Bearer "+token}});const d=await r.json();if(!r.ok)throw new Error(d.detail||"无法加载世界树");render(d);}catch(e){$("meta").innerHTML='<span class="error">'+esc(e.message||"加载失败")+'</span>';}}
+function render(d){$("meta").innerHTML='<span class="pill">'+esc(d.tree_version)+'</span><span class="pill">学习者 '+esc(d.student_id)+'</span><span class="pill">体验节点 '+esc(d.canopy.experience_nodes)+'</span>';$("roots").innerHTML='<p><b>事件数：</b>'+esc(d.roots.event_count)+'</p><p class="muted">'+esc(d.roots.boundary)+'</p>'+Object.entries(d.roots.event_types||{}).slice(0,12).map(([k,v])=>'<span class="tag">'+esc(k)+' '+esc(v)+'</span>').join("");const entry=d.trunk.world_entry||{},gateway=d.trunk.gateway||{};$("trunk").innerHTML='<p><b>世界入口：</b>'+esc(entry.label||"证据不足")+'</p><p class="muted">'+esc(entry.guardrail||"")+'</p><p><b>更自然的起点：</b>'+esc(gateway.label||"证据不足")+'</p><p class="muted">'+esc(d.trunk.boundary)+'</p>';$("canopy").innerHTML=(d.canopy.branches||[]).map(b=>'<div class="branch"><h3>'+esc(b.label)+'</h3>'+(b.nodes||[]).map(n=>'<div class="node"><span>'+esc(n.label)+'</span><span>'+esc(n.local_state_axis)+'</span><span class="muted">证据 '+esc(n.observation_count)+' · '+esc(n.local_state_status)+'</span></div>').join("")+'</div>').join("");$("flowers").innerHTML='<p><b>数量：</b>'+esc(d.flowers.count)+'</p><p class="muted">表达、提问、协作、教学与行动会在这里形成开花事件。</p>';$("outcomes").innerHTML='<p><b>数量：</b>'+esc(d.outcomes.count)+'</p><p class="muted">作答、基线和反馈结果回到 DAOQL，再形成新的体验节点。</p>';$("shared").innerHTML='<p><b>状态：</b>'+esc(d.shared_branches.status)+'</p><p>'+esc(d.shared_branches.rule)+'</p><p class="tag">'+esc((d.golden_ratio_lens.balances||[]).join(" · "))+'</p><p class="muted">'+esc(d.golden_ratio_lens.notice||"")+'</p>';}
+load();
+</script></body></html>

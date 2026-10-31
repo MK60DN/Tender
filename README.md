@@ -8,10 +8,10 @@
 ## Start here / 从这里开始
 
 - **Teaching website / 教学网站**： [GitHub Pages](https://mk60dn.github.io/Tender/) · [Local course / 本地课程](http://127.0.0.1:8080/guide/) · [Source / 源码](site/)
-- **Whitepaper V1.6 / 白皮书 V1.6**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v1.6.pdf) · [Repo PDF](docs/whitepaper/Tender-Whitepaper-v1.6.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v1.6.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v1.6.tex)
-- **Product manual / 产品手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v6.20.pdf) · [Repo PDF](docs/product/Tender-Product-Manual-v6.20.pdf)
-- **User guide / 用户手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v6.8.pdf) · [Repo PDF](docs/product/Tender-User-Guide-v6.8.pdf)
-- **Teaching manual / 零基础教学手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v5.3.pdf) · [Repo PDF](docs/teaching/Tender-Teaching-Manual-v5.3.pdf)
+- **Whitepaper V1.7 / 白皮书 V1.7**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v1.7.pdf) · [Repo PDF](docs/whitepaper/Tender-Whitepaper-v1.7.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v1.7.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v1.7.tex)
+- **Product manual / 产品手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v6.21.pdf) · [Repo PDF](docs/product/Tender-Product-Manual-v6.21.pdf)
+- **User guide / 用户手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v6.9.pdf) · [Repo PDF](docs/product/Tender-User-Guide-v6.9.pdf)
+- **Teaching manual / 零基础教学手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v5.4.pdf) · [Repo PDF](docs/teaching/Tender-Teaching-Manual-v5.4.pdf)
 
 
 [![CI](https://github.com/MK60DN/Tender/actions/workflows/ci.yml/badge.svg)](https://github.com/MK60DN/Tender/actions/workflows/ci.yml)
@@ -32,6 +32,7 @@
 
 - **Mentalization layer / 心智化层**：turn authorized evidence into competing, reversible state hypotheses. / 把授权证据转化为竞争性、可撤回的状态假设。
 - **Language evidence layer / 语言证据层**：extract emotion, uncertainty, avoidance, help-seeking and mentalizing signals with source spans. / 从话语中提取情绪、不确定性、回避、求助与心智化信号，并保留来源片段。
+- **World tree / 世界树**：DAOQL roots → Agent Bridge trunk → five experience branches → local state axes → flowering and outcomes; shared branches require explicit consent. / DAOQL 根系 → Agent Bridge 树干 → 五类体验树枝 → 局部状态轴 → 开花与结果；共享枝必须获得明确授权。
 - **Knowledge forest / 知识森林**：13 subjects, 1,075 K12 nodes, 875 majors, 319 course seeds and 1,016 occupations. / 连接 13 个学科、1,075 个知识节点、875 个专业、319 门课程与 1,016 个职业。
 - **DAOQL event layer / DAOQL 事件层**：facts, provenance, causality, authorization and audit. / 保存事实、来源、因果、授权与审计。
 - **Agent system / Agent 系统**：fixed helpers, professional advisors, orchestration and an expert-Agent marketplace MVP. / 固定辅助、专业顾问、编排与专家 Agent 市场 MVP。
@@ -81,11 +82,11 @@ Minimal action → real outcome → model update
 | State modeling / 状态建模 | baseline, rhythm, JOL, metacognition, fit, outcomes / 基线、节律、JOL、元认知、匹配、结果 |
 | Agent runtime / Agent 运行时 | fixed helpers, advisors, workbench, marketplace MVP / 固定辅助、顾问、工作台、市场 MVP |
 | Governance / 治理 | signed sessions, object authorization, audit hash chain, safety tickets / 签名会话、对象授权、审计哈希链、安全工单 |
-| Tests / 测试 | 93 automated tests / 93 项自动测试 |
+| Tests / 测试 | 95 automated tests / 95 项自动测试 |
 
 ## Teaching site / 教学网站
 
-双语教学网站位于 `site/`，包含 8 个模块、学习进度、语言切换与知识检查。FastAPI 在 `/guide/` 提供页面，GitHub Pages 由 `.github/workflows/pages.yml` 部署。
+双语教学网站位于 `site/`，包含 10 个模块、64 分钟、学习进度、语言切换与知识检查。FastAPI 在 `/guide/` 提供页面，GitHub Pages 由 `.github/workflows/pages.yml` 部署。
 
 ## Quick start / 快速开始
 
@@ -119,7 +120,7 @@ Open / 打开：
 python agent_layer/tests/run_all.py
 ```
 
-Expected baseline / 当前基线：`passed 93 tests`.
+Expected baseline / 当前基线：`passed 95 tests`.
 
 ## Core APIs / 核心接口
 
@@ -141,7 +142,7 @@ POST /workforce/plan
 agent_layer/       runnable app, Agents, UI and tests / 可运行应用、Agent、UI、测试
 knowledge_data/    subject, major, course and career databases / 学科、专业、课程、职业数据库
 experiments/       selected reproducible research code / 精简可复现研究代码
-docs/whitepaper/   Whitepaper V1.6: TeX, PDF, Word / 白皮书 V1.6
+docs/whitepaper/   Whitepaper V1.7: TeX, PDF, Word / 白皮书 V1.7
 docs/product/      product and user manuals / 产品与用户手册
 docs/research/     evidence and validation reports / 证据与验证报告
 site/               bilingual teaching website / 双语教学网站
@@ -156,9 +157,9 @@ site/               bilingual teaching website / 双语教学网站
 
 ## Documentation / 文档
 
-- [Whitepaper V1.6 / 白皮书 V1.6](docs/whitepaper/Tender-Whitepaper-v1.6.pdf)
-- [Product manual / 产品手册](docs/product/Tender-Product-Manual-v6.20.pdf)
-- [User guide / 用户手册](docs/product/Tender-User-Guide-v6.8.pdf)
+- [Whitepaper V1.7 / 白皮书 V1.7](docs/whitepaper/Tender-Whitepaper-v1.7.pdf)
+- [Product manual / 产品手册](docs/product/Tender-Product-Manual-v6.21.pdf)
+- [User guide / 用户手册](docs/product/Tender-User-Guide-v6.9.pdf)
 - [Central thesis / 中心主旨](docs/product/Tender-Central-Thesis.md)
 
 ## License / 许可证

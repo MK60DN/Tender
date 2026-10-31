@@ -14,7 +14,7 @@ The application also mounts the site at `/guide/` when running FastAPI.
 
 ## Features
 
-- nine bilingual modules;
+- ten bilingual modules;
 - local learning progress;
 - language switch;
 - knowledge checks;

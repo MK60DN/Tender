@@ -1,8 +1,8 @@
 {
   "product": "Tender",
-  "manual_version": "6.20",
+  "manual_version": "6.21",
   "date": "2026-10-31",
-  "product_type": "B端完整系统 / B端嵌入式模块 / C端生活界面共享核心的多 Agent 心智化系统",
+  "product_type": "B端完整系统 / B端嵌入式模块 / C端生活界面共享核心的心智化终身学习系统",
   "default_surfaces": [
     "learner",
     "family",
@@ -22,27 +22,28 @@
     "Neuro-learning Evidence Layer",
     "Research Claim Boundary",
     "Preassessment Profile",
-    "Big Five",
-    "MBTI Communication Preference",
-    "Jungian Function Screen",
+    "Strict 2x4 function-attitude matrix",
+    "Dynamic Big Five baseline and pulse",
     "Objective DAOQL layer",
     "Subjective life-tree experience layer",
+    "World tree projection",
+    "Shared-branch authorization boundary",
     "metameta_cartographer"
   ],
-  "status": "V6.20 defines one shared Tender Core with three delivery surfaces: full B2B system, embedded B2B module and C-end life interface; 93 tests pass",
-  "source": "Tender-产品手册-V6.20.md",
-  "pdf": "Tender-产品手册-V6.20.pdf",
+  "status": "V6.21 implements strict eight-function-attitude onboarding, dynamic Big Five pulse, world-tree projection and shared-branch boundaries; 95 tests pass",
+  "source": "Tender-Product-Manual-v6.21.md",
+  "pdf": "Tender-Product-Manual-v6.21.pdf",
   "user_guide": {
-    "source": "Tender-用户手册-V6.8.md",
-    "pdf": "Tender-用户手册-V6.8.pdf",
-    "pages": 23,
-    "pdf_bytes": 385287,
-    "sha256": "cd51163fe6feac8bf845b3b6937c2bab07fe2f69077edbd4d9a908eedbf572a4",
-    "validation": "V6.8 rebuilt with B2B/C-end entry explanation and teaching-site navigation; zero replacement characters"
+    "source": "Tender-User-Guide-v6.9.md",
+    "pdf": "Tender-User-Guide-v6.9.pdf",
+    "pages": 24,
+    "pdf_bytes": 401995,
+    "sha256": "6ba3f12d54a71f0db79e5be053220d7419b4de098bcee2ad3292272135f3ee98",
+    "validation": "V6.9 rebuilt with world-entry onboarding, Big Five pulse and shared-branch guidance; zero replacement characters"
   },
   "pdf_render": {
-    "pages": 58,
-    "validation": "V6.20 rebuilt with B2B full-system, B2B embedded and C-end delivery model; zero replacement characters"
+    "pages": 57,
+    "validation": "V6.21 rebuilt with strict 2x4 function-attitudes, dynamic Big Five and world-tree API; zero replacement characters"
   },
   "implemented": true,
   "positioning": "Tender：温柔地了解您的心智。B端可提供完整教育系统或嵌入合作方系统，C端以自有界面融入用户生活。",
@@ -64,8 +65,8 @@
     "workflow_execution": "gated",
     "status_endpoint": "GET /agent-runtime/status"
   },
-  "sha256": "9b214077f4dc576b27bccaa8798dcdf4634edf38b8634d8d1b7004d1c934c6f6",
-  "tests": 93,
+  "sha256": "137c64a4729c9ac25f1685af2530e8d3294a4fcdceb7feb1e6bab0276ff40a1d",
+  "tests": 95,
   "identity": {
     "development": "signed HMAC bearer session",
     "session_revocation": "implemented",
@@ -109,9 +110,9 @@
     ]
   },
   "decision_loop": "implemented",
-  "manual_title": "Tender 产品手册 V6.20",
+  "manual_title": "Tender 产品手册 V6.21",
   "builder": "build_v67_reports.py",
-  "pdf_bytes": 662307,
+  "pdf_bytes": 659698,
   "narrative_order": [
     "opportunity",
     "user_segmentation",
@@ -168,7 +169,7 @@
     ],
     "status": "observational association and methodological validation only; no human causal claim"
   },
-  "api_version": "6.14.0",
+  "api_version": "6.21.0",
   "latex_manual": {
     "source": "../教学手册/Tender零基础全流程教学手册-完整版.tex",
     "pdf": "../教学手册/Tender零基础全流程教学手册-完整版.pdf",
@@ -295,27 +296,26 @@
     "endpoints": [
       "GET /preassessment/items",
       "POST /preassessment/submit/{learner_id}",
-      "GET /preassessment/profile/{learner_id}"
+      "GET /preassessment/profile/{learner_id}",
+      "GET /preassessment/pulse/items",
+      "POST /preassessment/pulse/{learner_id}",
+      "GET /preassessment/pulse/{learner_id}"
     ],
     "item_files": [
       "../knowledge_data/preassessment_big_five_items.json",
-      "../knowledge_data/preassessment_mbti_items.json",
-      "../knowledge_data/preassessment_jungian_items.json"
+      "../knowledge_data/preassessment_world_interface_items.json",
+      "../knowledge_data/preassessment_big_five_pulse_items.json"
     ],
     "big_five_items": 20,
-    "mbti_items": 8,
-    "jungian_items": 8,
-    "estimated_minutes": "5-7",
+    "estimated_minutes": "7-9",
     "explicit_consent_required": true,
     "raw_responses_stored": false,
     "diagnosis": false,
     "user_review_required": true,
-    "report": "../产品管理文档/Tender-首次预检测-V1.1.pdf",
-    "report_source": "../产品管理文档/Tender-首次预检测-V1.1.md",
-    "report_pages": 19,
-    "report_bytes": 307880,
-    "report_sha256": "14e07ec122fb99f462e655b110a2dd4b732ce374b035082f3eef241c55369a12",
-    "tests": 88,
+    "report": "Tender-Product-Manual-v6.21.pdf §13.7",
+    "report_source": "Tender-Product-Manual-v6.21.md",
+    "report_pages": 57,
+    "tests": 95,
     "attention_profile": true,
     "cognitive_correction_plan": true,
     "correction_card_fields": [
@@ -325,11 +325,13 @@
       "success_evidence",
       "fade_rule",
       "boundary"
-    ]
+    ],
+    "world_interface_items": 24,
+    "big_five_pulse_items": 10
   },
   "tender_context": {
     "module": "../agent_layer/app/tender_context.py",
-    "version": "tender-context-1.4",
+    "version": "tender-context-1.5",
     "endpoint": "GET /tender/context/{student_id}",
     "sources": [
       "preassessment profile",
@@ -579,9 +581,9 @@
     "core": "生命不是被某个框架评价出来的形状，而是在有限时间里，通过选择、关系、承担和创造长出来的年轮。",
     "source": "Tender-中心主旨.md",
     "manuals": [
-      "Tender-产品手册-V6.20.md",
-      "Tender-用户手册-V6.8.md",
-      "../教学手册/Tender零基础全流程教学手册-完整版-V5.3.tex"
+      "Tender-Product-Manual-V6.21.md",
+      "Tender-User-Guide-V6.9.md",
+      "../教学手册/Tender零基础全流程教学手册-完整版-V5.4.tex"
     ],
     "role": "narrative and modeling grammar; not a clinical, diagnostic or efficacy claim"
   },
@@ -622,20 +624,20 @@
     "boundary": "The cognitive-map regions are interpretive retrieval labels, not brain scans, clinical diagnoses or objective facts."
   },
   "project_whitepaper": {
-    "source": "../产品管理文档/Tender-项目白皮书-V1.6.tex",
-    "pdf": "../产品管理文档/Tender-项目白皮书-V1.6.pdf",
-    "word": "../产品管理文档/Tender-项目白皮书-V1.6.docx",
-    "version": "1.6",
-    "pages": 40,
-    "pdf_bytes": 421465,
-    "pdf_sha256": "a854f9d255b2a7ca6e9600208e1d418e40fba621e5935c2e79de472d5af3438f",
-    "word_bytes": 1170425,
-    "word_sha256": "15c2696dbdfb24969075b2cf07e6031b32d8e6b6071fa726dd6278d0cb0ada89",
+    "source": "../产品管理文档/Tender-项目白皮书-V1.7.tex",
+    "pdf": "../产品管理文档/Tender-项目白皮书-V1.7.pdf",
+    "word": "../产品管理文档/Tender-项目白皮书-V1.7.docx",
+    "version": "1.7",
+    "pages": 43,
+    "pdf_bytes": 430677,
+    "pdf_sha256": "5355fa6d73e5b660d287acb21a14bfd2f0ce111a0496954e8de56f203ea7ca38",
+    "word_bytes": 1173486,
+    "word_sha256": "19e7fbcde190fbd6c547cbf750ccc471ad280270075bc668a55633309aecdc6b",
     "figures": 14,
     "tables_in_word": 22,
     "citations": 11,
-    "focus": "one shared core with full B2B system, embedded B2B module and C-end owned interface; dual-loop theory; language evidence; knowledge forest; life-tree growth-flowering-outcomes",
-    "validation": "40 pages; zero replacement characters; 14 figures and 22 editable tables; B2B/C-end delivery model verified"
+    "focus": "strict function-attitude entry, dynamic Big Five, world tree, shared branches and golden-ratio design boundary",
+    "validation": "43 pages; zero replacement characters; strict 2x4 matrix and world tree verified"
   },
   "knowledge_forest": {
     "version": "knowledge-forest-1.0",
@@ -694,29 +696,38 @@
     "boundary": "Language evidence is weak evidence and cannot determine mastery, personality, diagnosis or factual truth by itself."
   },
   "teaching_manual": {
-    "source": "../教学手册/Tender零基础全流程教学手册-完整版-V5.3.tex",
-    "pdf": "../教学手册/Tender零基础全流程教学手册-完整版-V5.3.pdf",
-    "version": "5.3",
-    "pages": 182,
-    "pdf_bytes": 929709,
-    "sha256": "477921abb942e4c59168665b546bd0bce1d287d00d7367b392b41675ddcda448",
-    "validation": "V5.3 includes B2B/C-end delivery model, teaching site, architecture navigation and 93-test baseline; zero replacement characters"
+    "source": "../教学手册/Tender零基础全流程教学手册-完整版-V5.4.tex",
+    "pdf": "../教学手册/Tender零基础全流程教学手册-完整版-V5.4.pdf",
+    "version": "5.4",
+    "pages": 184,
+    "pdf_bytes": 937438,
+    "sha256": "518608f3407960f4fa41e915a9c3b82959c4aa365a77b3957bf2f8ef2f09a6a7",
+    "validation": "V5.4 adds current world-tree architecture, strict 2x4 model, dynamic Big Five and 95-test baseline; zero replacement characters"
   },
   "teaching_site": {
     "version": "2.1",
     "entry": "GET /guide/",
-    "modules": 9,
+    "modules": 10,
     "languages": [
       "zh",
       "en"
     ],
     "formulas": false,
-    "architecture": "world -> DAOQL -> limited observation -> Agent Bridge -> life-tree canopy; flowering/outcomes/knowledge forest/support Agents",
+    "architecture": "world tree -> DAOQL roots -> limited observation -> Agent Bridge trunk -> five experience branches with local state axes -> flowering/outcomes/shared branches",
     "documents": [
-      "Whitepaper V1.6",
-      "Product Manual V6.20",
-      "User Guide V6.8",
-      "Teaching Manual V5.3"
+      "Whitepaper V1.7",
+      "Product Manual V6.21",
+      "User Guide V6.9",
+      "Teaching Manual V5.4"
     ]
+  },
+  "world_tree": {
+    "endpoint": "GET /world-tree/{student_id}",
+    "module": "../agent_layer/app/world_tree.py",
+    "branches": 5,
+    "experience_nodes": 11,
+    "local_state_axes": true,
+    "shared_branches": "authorization_required",
+    "golden_ratio": "design_hypothesis_only"
   }
 }

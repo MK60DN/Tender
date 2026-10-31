@@ -45,8 +45,12 @@ from .knowledge_api import router as knowledge_router
 from .language_api import router as language_router
 from .governance_phases import CURRENT_PHASE, PHASE_POLICIES, TRANSITION_REQUIREMENTS, governance_phase_policy
 from .neuro_learning_evidence import catalog_summary, get_claim_boundary, get_integration_layers, list_datasets, list_research
-from .preassessment import latest_preassessment, preassessment_items, submit_preassessment
+from .preassessment import (
+    big_five_change_state, big_five_pulse_items, latest_big_five_pulse,
+    latest_preassessment, preassessment_items, submit_big_five_pulse, submit_preassessment,
+)
 from .tender_context import build_tender_context
+from .world_tree import build_world_tree
 
 STATIC = pathlib.Path(__file__).resolve().parent / "static"
 STATIC.mkdir(parents=True, exist_ok=True)
@@ -55,7 +59,7 @@ GUIDE = pathlib.Path(__file__).resolve().parents[2] / "site"
 DEV_DOCS = os.getenv("TENDER_ENABLE_DEV_DOCS", "0") == "1"
 app = FastAPI(
     title="Tender C-End Mentalization Learning App",
-    version="6.14.0",
+    version="6.21.0",
     docs_url="/docs" if DEV_DOCS else None,
     redoc_url=None,
     openapi_url="/openapi.json" if DEV_DOCS else None,
@@ -66,8 +70,8 @@ app.include_router(knowledge_router)
 app.include_router(language_router)
 seed_demo_consents([r["student_id"] for r in ROSTER])
 
-PUBLIC_PATHS = {"/health", "/preassessment/items", "/governance/policy", "/research/neuro-learning/catalog", "/research/neuro-learning/datasets", "/research/neuro-learning/research", "/research/neuro-learning/claim", "/roles", "/agents", "/agents/fixed", "/agents/marketplace", "/agents/catalog", "/agent-runtime/status", "/benchmark/tender-theta", "/cognition/constructs", "/ambient/personas", "/openapi.json", "/docs", "/auth/demo-session", "/tenant/demo-session"}
-SENSITIVE_PREFIXES = ("/preassessment/", "/auth/me", "/cognition/", "/metameta/", "/ambient/", "/auth/logout", "/auth/logout-all", "/auth/sessions", "/guardian/", "/safety/", "/agents/catalog", "/workforce/", "/learner/", "/decision-loops", "/daoql/", "/tender/", "/reports/", "/audit", "/agents/generate", "/agents/entitlements/", "/workforce/", "/head_teacher", "/sales", "/institution", "/teaching", "/dorm", "/workflow", "/workbench", "/advisors", "/rag/ingest", "/tenant/")
+PUBLIC_PATHS = {"/health", "/preassessment/items", "/preassessment/pulse/items", "/governance/policy", "/research/neuro-learning/catalog", "/research/neuro-learning/datasets", "/research/neuro-learning/research", "/research/neuro-learning/claim", "/roles", "/agents", "/agents/fixed", "/agents/marketplace", "/agents/catalog", "/agent-runtime/status", "/benchmark/tender-theta", "/cognition/constructs", "/ambient/personas", "/openapi.json", "/docs", "/auth/demo-session", "/tenant/demo-session"}
+SENSITIVE_PREFIXES = ("/preassessment/", "/auth/me", "/cognition/", "/metameta/", "/ambient/", "/auth/logout", "/auth/logout-all", "/auth/sessions", "/guardian/", "/safety/", "/agents/catalog", "/workforce/", "/learner/", "/decision-loops", "/daoql/", "/tender/", "/world-tree/", "/reports/", "/audit", "/agents/generate", "/agents/entitlements/", "/workforce/", "/head_teacher", "/sales", "/institution", "/teaching", "/dorm", "/workflow", "/workbench", "/advisors", "/rag/ingest", "/tenant/")
 
 
 def _target_learner(path: str) -> str | None:
@@ -80,7 +84,11 @@ def _target_learner(path: str) -> str | None:
         return parts[2]
     if parts[0] == "tender" and len(parts) >= 3:
         return parts[2]
+    if parts[0] == "world-tree" and len(parts) >= 2:
+        return parts[1]
     if parts[0] == "preassessment" and len(parts) >= 3:
+        if parts[-1] == "items":
+            return None
         return parts[-1]
     if parts[0] == "reports" and len(parts) >= 3 and parts[1] in {"parent", "student"}:
         return parts[-1]
@@ -141,6 +149,12 @@ async def identity_guard(request: Request, call_next):
 
 class PreassessmentSubmission(BaseModel):
     responses: dict[str, int]
+    consent: bool = False
+
+
+class BigFivePulseSubmission(BaseModel):
+    responses: dict[str, int]
+    context: dict[str, Any] = Field(default_factory=dict)
     consent: bool = False
 
 
@@ -674,6 +688,27 @@ def get_preassessment_profile(learner_id: str):
     return profile
 
 
+@app.get("/preassessment/pulse/items")
+def get_big_five_pulse_items():
+    return big_five_pulse_items()
+
+
+@app.post("/preassessment/pulse/{learner_id}")
+def post_big_five_pulse(learner_id: str, submission: BigFivePulseSubmission):
+    try:
+        return submit_big_five_pulse(
+            learner_id, submission.responses, consent=submission.consent, context=submission.context
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+
+
+@app.get("/preassessment/pulse/{learner_id}")
+def get_big_five_pulse(learner_id: str):
+    latest = latest_big_five_pulse(learner_id)
+    if latest is None:
+        raise HTTPException(status_code=404, detail="big_five_pulse_not_found")
+    return {"latest": latest, "change": big_five_change_state(learner_id)}
 @app.get("/research/neuro-learning/catalog")
 def neuro_learning_catalog():
     return {
@@ -1176,6 +1211,11 @@ def tender_context(student_id: str, message: str | None = Query(default=None)):
     _require_decision_learner_access(student_id)
     return build_tender_context(student_id, user_message=message)
 
+
+@app.get("/world-tree/{student_id}")
+def world_tree(student_id: str):
+    _require_decision_learner_access(student_id)
+    return build_world_tree(student_id)
 
 @app.get("/tender/state/{student_id}")
 def tender_state(student_id: str):

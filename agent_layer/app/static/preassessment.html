@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Tender · 5分钟预检测</title>
+  <title>Tender · 世界入口预检测</title>
   <style>
     :root{--ink:#151719;--muted:#6d7177;--line:#d9dadd;--panel:rgba(244,244,245,.94);--accent:#1a6b57;--soft:#eceff0;--warn:#8b4f18}
     *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#f2f3f4,#e9ebec);color:var(--ink);font:15px/1.65 "Microsoft YaHei",system-ui,sans-serif}
@@ -27,8 +27,8 @@
   <section class="hero">
     <div class="eyebrow">TENDER FIRST-RUN PROFILE</div>
     <h1>先了解你怎样行动，<br>再决定怎样帮助。</h1>
-    <p class="lead">大五人格帮助你看见稳定的行动倾向；MBTI 只描述沟通偏好；荣格八维作为探索性的认知模式。所有结果都是待你确认的假设。</p>
-    <div class="meta"><span class="pill">约 5–7 分钟</span><span class="pill">20 大五题</span><span class="pill">8 沟通偏好题</span><span class="pill">8 八维筛查</span></div>
+    <p class="lead">系统会观察你更自然地怎样进入世界、怎样处理信息和行动，并用大五脉搏理解近期心理资源变化。所有结果都是待你确认的支持假设。</p>
+    <div class="meta"><span class="pill">约 7–9 分钟</span><span class="pill">20 大五基线题</span><span class="pill">24 世界入口题</span><span class="pill">不显示人格标签</span></div>
     <div class="notice"><strong>不是诊断，也不是能力排名</strong>系统不会用结果给你贴“缺陷”标签，也不会阻止你使用任何功能。结果只用于调整沟通、支持方式和初始 Agent 组合，并可随时重测。</div>
     <label class="consent"><input id="consent" type="checkbox"><span>我理解这是自我反思工具。我同意保存标准化分数，用于生成本次支持画像。逐题原文默认不保存。</span></label>
     <div class="actions"><button class="primary" id="startBtn">开始预检测</button><a class="secondary" href="/ui/">返回 Tender</a></div>
@@ -41,7 +41,7 @@
     <div id="scaleHint" class="scalehint"></div>
     <div id="bipolar" class="bipolar hidden"><span id="lowLabel"></span><span id="highLabel"></span></div>
     <div id="scale" class="scale"></div>
-    <div class="actions" style="margin-top:18px"><button class="secondary" id="backBtn">上一题</button><button class="link" id="skipOptionalBtn">跳过可选部分</button></div>
+    <div class="actions" style="margin-top:18px"><button class="secondary" id="backBtn">上一题</button></div>
   </section>
   <section id="resultArea" class="hidden">
     <div class="card"><div class="eyebrow">YOUR FIRST-RUN PROFILE</div><h2>你的初始支持画像</h2><p class="tiny" id="resultNotice"></p></div>
@@ -85,14 +85,14 @@ async function ensureSession() {
 function buildQuestions() {
   questions = [];
   catalog.big_five.items.forEach((item) => questions.push({...item, section: "big_five", optional: false}));
-  catalog.mbti.items.forEach((item) => questions.push({...item, section: "mbti", optional: true}));
-  catalog.jungian.items.forEach((item) => questions.push({...item, section: "jungian", optional: true}));
+  catalog.world_interface.items.forEach((item) => questions.push({...item, section: "world_interface", optional: false}));
+
 }
 
 function sectionName(section) {
   if (section === "big_five") return "大五人格 · 核心";
-  if (section === "mbti") return "MBTI · 沟通偏好";
-  return "荣格八维 · 探索性筛查";
+  if (section === "world_interface") return "世界入口 · 八功能态度";
+
 }
 
 function currentQuestion() {
@@ -101,8 +101,8 @@ function currentQuestion() {
 
 function scaleLabels(question) {
   if (question.section === "big_five") return catalog.big_five.scale.labels;
-  if (question.section === "mbti") return catalog.mbti.scale.labels;
-  return catalog.jungian.scale.labels;
+  return catalog.world_interface.scale.labels;
+
 }
 
 function renderQuestion() {
@@ -112,15 +112,9 @@ function renderQuestion() {
   $("progressText").textContent = (index + 1) + " / " + questions.length;
   $("progressBar").style.width = ((index / questions.length) * 100) + "%";
   $("questionText").textContent = q.text;
-  $("scaleHint").textContent = q.section === "mbti" ? "选择更接近的一端；中间表示两种都能适应。" : "根据最近三个月的真实情况选择，不需要选择理想中的自己。";
+  $("scaleHint").textContent = "根据最近三个月的真实情况选择，不需要选择理想中的自己。";
   const bipolar = $("bipolar");
-  if (q.section === "mbti") {
-    bipolar.classList.remove("hidden");
-    $("lowLabel").innerHTML = "<b>" + esc(q.low_pole) + "</b> · " + esc(q.low_label);
-    $("highLabel").innerHTML = "<b>" + esc(q.high_pole) + "</b> · " + esc(q.high_label);
-  } else {
-    bipolar.classList.add("hidden");
-  }
+  bipolar.classList.add("hidden");
   const labels = scaleLabels(q);
   $("scale").innerHTML = "";
   for (let value = 1; value <= 5; value += 1) {
@@ -132,7 +126,6 @@ function renderQuestion() {
     $("scale").appendChild(button);
   }
   $("backBtn").disabled = index === 0;
-  $("skipOptionalBtn").classList.toggle("hidden", index < 20);
   saveDraft();
 }
 
@@ -184,14 +177,13 @@ function startQuiz() {
 }
 
 async function submit() {
-  const missing = catalog.big_five.items.filter((item) => !responses[item.id]).map((item) => item.id);
+  const missing = questions.filter((item) => !responses[item.id]).map((item) => item.id);
   if (missing.length) {
-    index = catalog.big_five.items.findIndex((item) => item.id === missing[0]);
+    index = questions.findIndex((item) => item.id === missing[0]);
     renderQuestion();
-    showError("大五人格是核心部分，请先完成 20 道题。");
+    showError("所有题目共同构成世界入口画像，请完成后再提交。");
     return;
-  }
-  $("quizCard").classList.add("hidden");
+  }  $("quizCard").classList.add("hidden");
   try {
     await ensureSession();
     const response = await fetch("/preassessment/submit/" + encodeURIComponent(studentId), {
@@ -218,21 +210,26 @@ function renderResults(profile) {
   $("resultArea").classList.remove("hidden");
   $("resultNotice").textContent = profile.notice + " 置信级别：" + profile.confidence + "。";
   const cards = [];
-  cards.push('<div class="result-card full"><h3>大五人格</h3>' + Object.entries(profile.big_five).map(([key, value]) => {
+  cards.push('<div class="result-card full"><h3>心理资源基线</h3>' + Object.entries(profile.big_five).map(([key, value]) => {
     return '<div class="kv"><span>' + esc(value.label) + '</span><b>' + Math.round(value.score * 100) + ' / 100</b></div><div class="bar"><i style="width:' + (value.score * 100) + '%"></i></div>';
   }).join('') + '<p class="tiny">分数是本次自评的相对位置，不是人群百分位，也不是能力分数。</p></div>');
 
-  if (profile.mbti_preference) {
-    const m = profile.mbti_preference;
-    const axisNames = {energy:"能量", information:"信息", decision:"决策", lifestyle:"生活"};
-    cards.push('<div class="result-card"><h3>MBTI 沟通偏好</h3><div class="kv"><span>偏好代码</span><b>' + esc(m.type_hint) + '</b></div>' + Object.entries(axisNames).map(([axis, name]) => '<div class="kv"><span>' + name + '</span><b>' + esc(m[axis].preference) + '</b></div>').join('') + '<p class="tiny">' + esc(m.notice) + '</p></div>');
+  if (profile.world_interface) {
+    const w = profile.world_interface;
+    const entry = w.world_entry || {};
+    const gateway = w.gateway || {};
+    cards.push('<div class="result-card full"><h3>你的世界入口</h3>' +
+      '<div class="kv"><span>更自然的开始方式</span><b>' + esc(entry.label || '证据不足') + '</b></div>' +
+      '<p>' + esc(entry.description || '') + '</p>' +
+      '<div class="kv"><span>第一个现实动作</span><b>' + esc(entry.first_step || '') + '</b></div>' +
+      '<p class="tiny">' + esc(entry.guardrail || '') + '</p>' +
+      '<p class="tiny">' + esc(w.notice || '') + '</p></div>');
+    const fnRows = Object.values(w.functions || {}).sort((a,b) => b.score - a.score).map((value) =>
+      '<div class="kv"><span>' + esc(value.label) + '</span><b>' + Math.round(value.score * 100) + ' / 100</b></div>' +
+      '<div class="bar"><i style="width:' + (value.score * 100) + '%"></i></div>').join('');
+    cards.push('<div class="result-card full"><h3>更自然的八种入口</h3>' + fnRows +
+      '<p class="tiny">这些是当前更自然的入口，不是固定类型、能力排名或命运结论。系统会按当前问题动态选择支持方式。</p></div>');
   }
-
-  if (profile.jungian_functions) {
-    const j = profile.jungian_functions;
-    cards.push('<div class="result-card"><h3>荣格八维探索</h3><div class="kv"><span>更常用</span><b>' + esc(j.top_functions.join(" · ") || "中间区间") + '</b></div><div class="kv"><span>较少使用</span><b>' + esc(j.less_preferred.join(" · ") || "中间区间") + '</b></div><p class="tiny">' + esc(j.notice) + '</p></div>');
-  }
-
   if (profile.attention_profile) {
     const a = profile.attention_profile;
     cards.push('<div class="result-card full"><h3>注意力成本画像</h3>' +
@@ -258,7 +255,7 @@ function renderResults(profile) {
   cards.push('<div class="result-card"><h3>容易卡住的条件</h3>' + renderList(profile.friction_hypotheses) + '</div>');
   cards.push('<div class="result-card full"><h3>支持偏好</h3>' + renderList(profile.support_preferences) + '</div>');
   cards.push('<div class="result-card full"><h3>初始 Agent 组合建议</h3>' + (profile.agent_routing_hypotheses.length ? profile.agent_routing_hypotheses.map((item) => '<span class="tag">' + esc(item.agent_id) + ' · ' + esc(item.reason) + '</span>').join('') : '<p class="tiny">暂不增加额外 Agent，先观察真实使用。</p>') + '<p class="tiny">这些只是初始假设。你可以在 Agent 圆桌中删除、替换或关闭任何专家。</p></div>');
-  $("resultGrid").innerHTML = cards.join('');
+  cards.push('<div class="result-card full"><h3>查看世界树</h3><p>把当前世界入口、体验节点、开花、结果与共享枝边界放在同一张图里。</p><p><a class="secondary" style="display:inline-block;text-decoration:none" href="/ui/world-tree.html?student=' + encodeURIComponent(studentId) + '">打开我的世界树</a></p></div>');  $("resultGrid").innerHTML = cards.join('');
   $("resultArea").scrollIntoView({behavior: "smooth", block: "start"});
 }
 
@@ -272,11 +269,6 @@ async function init() {
     loadDraft();
     $("startBtn").addEventListener("click", startQuiz);
     $("backBtn").addEventListener("click", () => { if (index > 0) { index -= 1; renderQuestion(); } });
-    $("skipOptionalBtn").addEventListener("click", () => {
-      catalog.mbti.items.forEach((item) => delete responses[item.id]);
-      catalog.jungian.items.forEach((item) => delete responses[item.id]);
-      submit();
-    });
     $("retakeBtn").addEventListener("click", () => { localStorage.removeItem("tender.preassessment.draft"); window.location.reload(); });
   } catch (error) {
     showError(error.message || "无法加载预检测。");

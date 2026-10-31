@@ -8,10 +8,10 @@ from typing import Any
 from .daoql import list_events
 from .knowledge_context import build_knowledge_context
 from .mentalization import build_mentalization
-from .preassessment import latest_preassessment
+from .preassessment import big_five_change_state, latest_preassessment
 from .tender import compute_state
 
-CONTEXT_VERSION = "tender-context-1.4"
+CONTEXT_VERSION = "tender-context-1.5"
 
 
 def _json_safe(value):
@@ -50,9 +50,15 @@ def _event_digest(events: list[dict]) -> list[dict]:
 
 def _preassessment_digest(profile: dict | None) -> dict:
     if not profile:
-        return {"available": False, "note": "尚未完成首次预检测"}
+        return {"available": False, "note": "尚未完成首次世界入口与大五基线"}
     attention = profile.get("attention_profile") or {}
     correction = profile.get("cognitive_correction_plan") or {}
+    world = profile.get("world_interface") or {}
+    entry = world.get("world_entry") or {}
+    gateway = world.get("gateway") or {}
+    functions = world.get("functions") or {}
+    top_labels = [functions.get(code, {}).get("label", code) for code in world.get("top_functions", [])]
+    less_labels = [functions.get(code, {}).get("label", code) for code in world.get("less_used", [])]
     return {
         "available": True,
         "profile_version": profile.get("profile_version"),
@@ -60,9 +66,14 @@ def _preassessment_digest(profile: dict | None) -> dict:
             key: {"label": value.get("label"), "score": value.get("score"), "band": value.get("band")}
             for key, value in (profile.get("big_five") or {}).items()
         },
-        "mbti_type_hint": (profile.get("mbti_preference") or {}).get("type_hint"),
-        "jungian_top": (profile.get("jungian_functions") or {}).get("top_functions", []),
-        "jungian_less_preferred": (profile.get("jungian_functions") or {}).get("less_preferred", []),
+        "world_interface": {
+            "world_entry": entry,
+            "gateway": gateway,
+            "top_functions": top_labels,
+            "less_used": less_labels,
+            "attitude_balance": world.get("attitude_balance"),
+            "matrix": world.get("matrix"),
+        },
         "attention_profile": {
             "capture": attention.get("capture_hypotheses", []),
             "sustain": attention.get("sustain_hypotheses", []),
@@ -71,6 +82,8 @@ def _preassessment_digest(profile: dict | None) -> dict:
             "scaffolds": attention.get("scaffold_suggestions", []),
             "boundary": attention.get("boundary"),
         },
+        "support_preferences": (profile.get("support_preferences") or [])[:6],
+        "agent_routing_hypotheses": (profile.get("agent_routing_hypotheses") or [])[:3],
         "cognitive_correction_plan": {
             "items": [
                 {
@@ -86,7 +99,6 @@ def _preassessment_digest(profile: dict | None) -> dict:
         },
     }
 
-
 def build_tender_context(student_id: str, user_message: str | None = None, task_hint: str | None = None) -> dict[str, Any]:
     events = list_events(student_id)
     if not task_hint:
@@ -98,6 +110,7 @@ def build_tender_context(student_id: str, user_message: str | None = None, task_
     state = compute_state(student_id, events)
     mentalization = build_mentalization(student_id, state, events)
     preassessment = _preassessment_digest(latest_preassessment(student_id))
+    big_five_pulse = big_five_change_state(student_id)
     knowledge = build_knowledge_context(user_message or "", task_hint, events)
     hypotheses = mentalization.get("hypotheses") or []
     return _json_safe({
@@ -106,6 +119,7 @@ def build_tender_context(student_id: str, user_message: str | None = None, task_
         "generated_at": datetime.now(timezone.utc).astimezone().isoformat(),
         "event_count": len(events),
         "preassessment": preassessment,
+        "big_five_pulse": big_five_pulse,
         "state": {
             "mastery": state.get("knowledge", {}).get("mastery"),
             "cognitive_theta": state.get("cognitive", {}).get("theta"),
@@ -147,6 +161,9 @@ def build_tender_context(student_id: str, user_message: str | None = None, task_
             "event_count": len(events),
             "preassessment_available": preassessment["available"],
             "attention_available": bool(preassessment.get("attention_profile", {}).get("leakage")),
+            "world_entry": (preassessment.get("world_interface", {}).get("world_entry") or {}).get("code"),
+            "gateway_function": (preassessment.get("world_interface", {}).get("gateway") or {}).get("function"),
+            "big_five_pulse_available": big_five_pulse.get("available", False),
             "mentalization_summary": mentalization.get("summary"),
             "hypothesis_count": len(hypotheses),
             "knowledge_available": knowledge.get("available", False),
@@ -182,7 +199,11 @@ def format_tender_context(context: dict[str, Any] | None) -> str:
     ]
     if pre.get("available"):
         attention = pre.get("attention_profile") or {}
-        lines.append(f"人格先验：MBTI偏好代码={pre.get('mbti_type_hint')}；八维更常用={pre.get('jungian_top')}")
+        world = pre.get("world_interface") or {}
+        entry = world.get("world_entry") or {}
+        gateway = world.get("gateway") or {}
+        lines.append(f"世界入口：{entry.get('label', '证据不足')}；当前更自然的起点={gateway.get('label', '证据不足')}")
+        lines.append(f"内部支持偏好：{pre.get('support_preferences')}")
         lines.append(f"注意捕获={attention.get('capture')}")
         lines.append(f"注意维持={attention.get('sustain')}")
         lines.append(f"注意泄漏={attention.get('leakage')}")
@@ -193,8 +214,20 @@ def format_tender_context(context: dict[str, Any] | None) -> str:
                 f"{item.get('pattern')} -> {item.get('practice')}（有效证据：{item.get('success_evidence')}）"
                 for item in correction["items"]
             ))
+        big_five = pre.get("big_five") or {}
+        if big_five:
+            lines.append("心理资源基线：" + "；".join(
+                f"{value.get('label')}={value.get('band')}" for value in big_five.values()
+            ))
+        pulse = context.get("big_five_pulse") or {}
+        if pulse.get("available"):
+            lines.append("近期大五脉搏：" + "；".join(
+                f"{key}={value.get('direction')}，变化={value.get('delta')}，波动={value.get('volatility')}"
+                for key, value in (pulse.get("dimensions") or {}).items()
+            ))
+            lines.append("人际与沟通支持：" + "；".join(pulse.get("relationship_support") or []))
     else:
-        lines.append("预检测：尚未完成；不要假设用户人格或注意成本。")
+        lines.append("预检测：尚未完成；不要假设用户人格、世界入口或注意成本。")
     if knowledge.get("available"):
         matches = knowledge.get("matches") or []
         if knowledge.get("subject_ambiguous"):

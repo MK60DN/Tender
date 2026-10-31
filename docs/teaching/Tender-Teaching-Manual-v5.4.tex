@@ -34,7 +34,7 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{\small Tender 零基础全流程教学手册 · V5.3}
+\rhead{\small Tender 零基础全流程教学手册 · V5.4}
 \lhead{\small\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 
@@ -7955,7 +7955,7 @@ D:\Tender\agent_layer\desktop_overlay\start_overlay.ps1
 \item 两条并发、其余排队的弹幕调度正常；
 \item 灰底黑字可读；
 \item 回复、反馈、静默和审计事件可追溯；
-\item 全量 93 项自动测试通过。
+\item 全量 95 项自动测试通过。
 \end{itemize}
 
 \subsection{边界}
@@ -7983,15 +7983,15 @@ Agent、治理与路线图 & 支持者如何协作，权力和风险如何受到
 \end{longtable}
 \end{center}
 
-教学网站支持中文和 English 切换、学习进度保存、知识检查和打印。教学网站本身不包含数学公式；需要严格定义的模型公式、符号表和实验边界，请阅读《Tender 项目白皮书 V1.6》。
+教学网站支持中文和 English 切换、学习进度保存、知识检查和打印。教学网站本身不包含数学公式；需要严格定义的模型公式、符号表和实验边界，请阅读《Tender 项目白皮书 V1.7》。
 
 \subsection{配套文档}
 
 \begin{itemize}
-\item 项目白皮书 V1.6：预测加工、心智化、系统架构、语言证据、知识森林、证据与治理；
-\item 产品手册 V6.20：产品架构、角色、Agent、数据契约、实验与验收；
-\item 用户手册 V6.8：第一次启用、桌面弹幕、纠正、隐私与安全；
-\item 本教学手册 V5.3：从零开始的环境、数据、模型、Agent 和验收流程。
+\item 项目白皮书 V1.7：预测加工、心智化、系统架构、语言证据、知识森林、证据与治理；
+\item 产品手册 V6.21：产品架构、角色、Agent、数据契约、实验与验收；
+\item 用户手册 V6.9：第一次启用、桌面弹幕、纠正、隐私与安全；
+\item 本教学手册 V5.4：从零开始的环境、数据、模型、Agent 和验收流程。
 \end{itemize}
 
 \subsection{本地入口}
@@ -7999,9 +7999,9 @@ Agent、治理与路线图 & 支持者如何协作，权力和风险如何受到
 \begin{verbatim}
 教学网站：http://127.0.0.1:8080/guide/
 主应用：http://127.0.0.1:8080/ui/
-白皮书：http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v1.6.pdf
-产品手册：http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v6.20.pdf
-用户手册：http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v6.8.pdf
+白皮书：http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v1.7.pdf
+产品手册：http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v6.21.pdf
+用户手册：http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v6.9.pdf
 \end{verbatim}
 
 \subsection{边界}
@@ -8038,6 +8038,96 @@ C 端由 Tender 提供自己的产品界面，不依附于某个机构后台。�
 \subsection{数据边界}
 
 机构购买系统不等于拥有学习者全部心智数据；合作方保留业务系统不等于 Tender 可以读取其全部数据库；个人使用 C 端也不意味着机构可以读取个人记录。购买关系、监护关系、授权关系和数据处理关系必须分别计算。
+
+
+\section{当前正式架构：八功能态度、世界树与动态大五}
+
+\subsection{版本边界}
+
+本手册前面的 MBTI、荣格八维与节律章节记录了产品与研究演进过程，其中的实验、功效分析和批判性结论仍然保留。自 v1.7 起，活动产品不再把 MBTI 四字母作为主算法，也不向用户展示类型标签。现行实现采用统一八功能态度测评、大五基线与大五脉搏。
+
+\subsection{两种态度乘以四种功能}
+
+\begin{center}
+\begin{longtable}{@{}p{3.0cm}p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}@{}}
+\toprule
+\textbf{态度} & \textbf{感觉} & \textbf{直觉} & \textbf{思维} & \textbf{情感} \\
+\midrule
+外倾 & Se 现实观察 & Ne 可能性探索 & Te 结果执行 & Fe 关系协调 \\
+内倾 & Si 经验对照 & Ni 长期整合 & Ti 结构建模 & Fi 价值边界 \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+每种功能使用三道具体场景题，共 24 题。系统保存连续分数和三题一致性；一致性不足时不强行解释。外倾功能与内倾功能的平均差异形成三种内部世界入口：客观世界优先、主观世界优先、从真实卡点桥接。该入口只影响提问、任务组织和 Agent 支持，不进入能力和成绩模型。
+
+用户界面只显示自然语言，例如“先看现实材料”或“先建立内部框架”，不显示 MBTI 字母、功能代码或固定人格名称。
+
+\subsection{大五基线与大五脉搏}
+
+完整大五用于建立心理资源基线；十题短脉搏用于观察近期变化、波动和恢复。脉搏可以附带关系、角色、任务和时段等最小上下文。系统据此调整沟通和负荷支持：
+
+\begin{itemize}
+\item 外向性下降：优先异步、短互动和恢复时间；
+\item 宜人性下降：先确认边界与冲突，不解释为敌意；
+\item 尽责性下降：缩小承诺与并行任务；
+\item 情绪稳定性下降：降低评价威胁，给可控下一步；
+\item 开放性下降：先连接熟悉经验，再引入变化。
+\end{itemize}
+
+脉搏不等于人格永久改变。数据只用于沟通、协作、负荷和恢复。
+
+\subsection{世界树数据投影}
+
+\texttt{GET /world-tree/\{student\_id\}} 将现有 DAOQL 与 metameta 数据组织为世界树：
+
+\begin{center}
+\begin{longtable}{@{}p{3.2cm}p{5.0cm}p{5.0cm}@{}}
+\toprule
+\textbf{层} & \textbf{当前实现} & \textbf{边界} \\
+\midrule
+根系 & DAOQL 事件、来源、审计与事件类型统计 & 客观事实，不是主观体验 \\
+树干 & Agent Bridge、世界入口、大五脉搏与关系支持 & 支持假设，不是诊断 \\
+树冠 & 五类树枝、11 个体验节点、局部状态轴 & 来自派生体验节点，不是脑扫描 \\
+开花 & 回应、反思、对话与教学任务事件 & 表示向世界表达或行动 \\
+结果 & 作答、基线、元认知与反馈事件 & 结果回流到新事件 \\
+共享枝 & 默认未生成；需双方授权 & 只允许共同事实、目标、任务、承诺与结果 \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+“局部状态轴”只定义产品可测量的二能级变量，例如“保持 / 更新”“安全 / 威胁”“表达 / 保留”。它是可视化和测量语言，不代表脑内真实量子态。
+
+\subsection{黄金比与共享枝}
+
+黄金比在 v1.7 中只作为视觉、节律和交互比例的设计假设，用于思考外部输入与内部整合、探索与巩固、共享与私密、支持与自主之间的平衡。它不作为人格评分、关系匹配、能力预测或教育效果承诺。
+
+两个人合作不合并完整私人生命树，只建立双方授权的共享枝。系统比较共同事实、理解差异、互补入口和需要翻译的边界，不输出“匹配分数”。
+
+\subsection{接口与验收}
+
+\begin{verbatim}
+GET  /preassessment/items
+POST /preassessment/submit/{learner_id}
+GET  /preassessment/profile/{learner_id}
+GET  /preassessment/pulse/items
+POST /preassessment/pulse/{learner_id}
+GET  /preassessment/pulse/{learner_id}
+GET  /world-tree/{student_id}
+\end{verbatim}
+
+验收要求：
+
+\begin{itemize}
+\item 用户统一完成 24 题八功能态度，不自报 MBTI；
+\item UI 不出现 MBTI 字母或功能代码；
+\item 功能一致性进入支持逻辑；
+\item 大五基线与脉搏分开；
+\item 当前问题、真实行为与结果优先于先验；
+\item 世界树不做脑区或量子脑诊断；
+\item 未授权时不得生成共享枝；
+\item 全量自动测试 95 项通过。
+\end{itemize}
 
 
 \end{document}

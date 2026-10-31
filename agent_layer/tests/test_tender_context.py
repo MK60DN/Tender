@@ -20,10 +20,10 @@ def _student() -> str:
 
 def _responses():
     items = preassessment_items()
-    responses = {item['id']: 3 for section in ['big_five', 'mbti', 'jungian'] for item in items[section]['items']}
+    responses = {item['id']: 3 for section in ['big_five', 'world_interface'] for item in items[section]['items']}
     responses.update({'c1': 1, 'c2': 1, 'c3': 5, 'c4': 1})
     responses.update({'o1': 5, 'o2': 5, 'o3': 1, 'o4': 5})
-    responses.update({'jp1': 1, 'jp2': 1, 'ti1': 5})
+    responses.update({'ti1': 5, 'ti2': 5, 'ti3': 5, 'te1': 1, 'te2': 1, 'te3': 1})
     return responses
 
 
@@ -64,6 +64,8 @@ def test_tender_context_contains_preassessment_state_and_corrections():
     assert context['digest']['knowledge_available'] is True
     assert context['preassessment']['attention_profile']['leakage']
     assert context['preassessment']['cognitive_correction_plan']['items']
+    assert context['preassessment']['world_interface']['world_entry']['code'] in {'objective_first','subjective_first','bridge_first'}
+    assert context['digest']['world_entry'] in {'objective_first','subjective_first','bridge_first'}
     assert context['event_count'] >= 4
     assert context['state']['mastery'] == 0.0
     assert context['mentalization']['hypotheses']
@@ -76,6 +78,8 @@ def test_format_tender_context_includes_grounding_rules():
     text = format_tender_context(build_tender_context(student_id, user_message='这道函数题不会，怎么做？'))
     assert 'Tender 状态上下文' in text
     assert '注意泄漏' in text
+    assert '世界入口' in text
+    assert '心理资源基线' in text
     assert '当前主要假设' in text
     assert '学科知识' in text
     assert '知识节点' in text

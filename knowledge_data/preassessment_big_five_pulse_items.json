@@ -1,0 +1,17 @@
+{
+  "version": "tender-big-five-pulse-10-v1.0",
+  "scale": {"min": 1, "max": 5, "labels": ["非常不像最近的我", "比较不像最近的我", "介于两者之间", "比较像最近的我", "非常像最近的我"]},
+  "notice": "这是用于观察近期变化与恢复状态的短脉搏，不是新一轮人格定性。",
+  "items": [
+    {"id": "pc1", "dimension": "conscientiousness", "reverse": false, "text": "最近我能按约定推进重要任务。"},
+    {"id": "pc2", "dimension": "conscientiousness", "reverse": true, "text": "最近我容易拖延或留下很多未收尾的事。"},
+    {"id": "po1", "dimension": "openness", "reverse": false, "text": "最近我愿意尝试新的方法或听取不同观点。"},
+    {"id": "po2", "dimension": "openness", "reverse": true, "text": "最近我更想坚持熟悉做法，不愿接受变化。"},
+    {"id": "pe1", "dimension": "extraversion", "reverse": false, "text": "最近与人交流后，我通常获得能量。"},
+    {"id": "pe2", "dimension": "extraversion", "reverse": true, "text": "最近社交后我需要较长时间独处恢复。"},
+    {"id": "pa1", "dimension": "agreeableness", "reverse": false, "text": "最近冲突中我仍能理解对方在担心什么。"},
+    {"id": "pa2", "dimension": "agreeableness", "reverse": true, "text": "最近我更容易直接否定或回避合作。"},
+    {"id": "pn1", "dimension": "emotional_sensitivity", "reverse": false, "text": "最近批评、不确定或冲突容易让我反复担心。"},
+    {"id": "pn2", "dimension": "emotional_sensitivity", "reverse": true, "text": "最近即使有压力，我也能较快恢复平静。"}
+  ]
+}

@@ -1,5 +1,5 @@
 window.TENDER_COURSE = {
-  version: "2.0-architecture",
+  version: "2.1-world-tree",
   audience: [
     { zh: "第一次使用 Tender 的学习者与家庭", en: "Learners and families using Tender for the first time" },
     { zh: "需要理解产品逻辑的教师、产品与研究团队", en: "Educators, product teams and researchers who need the product logic" },
@@ -136,6 +136,26 @@ window.TENDER_COURSE = {
       ]
     },
     {
+      id: "world-tree-interface", time: "10 min", level: { zh: "世界树", en: "World tree" },
+      title: { zh: "世界树、八功能入口与共享枝", en: "World tree, eight-function entry and shared branches" },
+      summary: { zh: "Tender 不给用户贴 MBTI 标签。系统统一评估八种功能态度，在后台判断用户更容易先进入客观世界还是主观世界，再用动态大五理解近期人际资源。", en: "Tender does not label users with MBTI. A common assessment estimates eight function-attitudes, decides internally whether objective or subjective entry is more natural, and uses a dynamic Big Five pulse to understand recent interpersonal resources." },
+      objectives: [{ zh: "区分客观入口、主观入口和桥接入口", en: "Distinguish objective, subjective and bridge entry" }, { zh: "理解世界树、共享枝与私人边界", en: "Understand the world tree, shared branches and private boundaries" }],
+      blocks: [
+        { type: "concept", title: { zh: "两种态度 × 四种功能", en: "Two attitudes by four functions" }, body: { zh: "八种入口来自两种态度与四种功能的交叉：外倾感觉、外倾直觉、外倾思维、外倾情感，以及对应的内倾形式。它们描述当前更自然的进入方式，不是固定类型或能力排名。", en: "The eight entry modes cross two attitudes with four functions: extraverted and introverted versions of sensation, intuition, thinking and feeling. They describe current entry preferences, not fixed types or ability rankings." } },
+        { type: "table", title: { zh: "内部矩阵", en: "Internal matrix" }, headers: [{ zh: "态度", en: "Attitude" }, { zh: "感觉", en: "Sensation" }, { zh: "直觉", en: "Intuition" }, { zh: "思维", en: "Thinking" }, { zh: "情感", en: "Feeling" }], rows: [
+          [{ zh: "外倾：更直接面向客观世界", en: "Extraverted: more directly toward the objective world" }, { zh: "现实观察", en: "Reality observation" }, { zh: "可能性探索", en: "Possibility exploration" }, { zh: "结果执行", en: "Outcome execution" }, { zh: "关系协调", en: "Relational coordination" }],
+          [{ zh: "内倾：更直接整理主观世界", en: "Introverted: more directly organizes the subjective world" }, { zh: "经验对照", en: "Experience comparison" }, { zh: "长期整合", en: "Long-range integration" }, { zh: "结构建模", en: "Structural modeling" }, { zh: "价值边界", en: "Value boundaries" }]
+        ] },
+        { type: "list", title: { zh: "用户实际看到什么", en: "What the user actually sees" }, items: [{ zh: "更自然地先进入客观世界、主观世界，或从真实卡点进入", en: "A more natural objective, subjective or real-problem entry" }, { zh: "第一个现实动作和需要防止的偏差", en: "A first real action and the bias to guard against" }, { zh: "按当前问题调整后的支持方式", en: "Support adjusted to the current problem" }, { zh: "不显示 MBTI 字母、功能代码或固定人格标签", en: "No MBTI letters, function codes or fixed personality labels" }] },
+        { type: "concept", title: { zh: "大五脉搏服务人与人", en: "The Big Five pulse serves person-to-person interaction" }, body: { zh: "大五不是第二个世界入口。它记录近期开放、尽责、外向、宜人和情绪稳定的变化、波动与恢复，用于沟通频率、冲突、承诺、协作和社交电量。变化不等于人格永久改变。", en: "The Big Five is not a second world-entry model. It tracks recent change, variability and recovery in openness, conscientiousness, extraversion, agreeableness and emotional stability for communication pacing, conflict, commitments, collaboration and social energy. Change is not permanent personality change." } },
+        { type: "table", title: { zh: "两棵世界树如何合作", en: "How two world trees cooperate" }, headers: [{ zh: "层", en: "Layer" }, { zh: "可以比较什么", en: "What can be compared" }, { zh: "边界", en: "Boundary" }], rows: [
+          [{ zh: "客观世界", en: "Objective world" }, { zh: "共同事实、目标、任务、时间与结果", en: "Shared facts, goals, tasks, time and outcomes" }, { zh: "不读取对方完整数据库", en: "Do not read the other person's full database" }],
+          [{ zh: "主观世界", en: "Subjective world" }, { zh: "哪些是事实、哪些是解释、哪些仍未知", en: "What is fact, interpretation or still unknown" }, { zh: "不把推测当对方意图", en: "Do not treat inference as the other's intention" }],
+          [{ zh: "共享枝", en: "Shared branch" }, { zh: "共同承诺、沟通规则与共同结果", en: "Shared commitments, communication rules and outcomes" }, { zh: "私人生命树不默认共享", en: "Private life trees are not shared by default" }]
+        ] },
+        { type: "boundary", body: { zh: "黄金比是设计假设，不是科学定律。它可以组织外部输入与内部整合、探索与巩固、共享与私密、支持与自主的视觉和交互比例，但不能做人格评分、关系匹配或效果承诺。", en: "The golden ratio is a design hypothesis, not a scientific law. It may guide visual and interaction proportions among external input and internal integration, exploration and consolidation, shared and private, support and autonomy. It must not become a personality score, relationship match or efficacy claim." } }
+      ]
+    },    {
       id: "delivery-model", time: "6 min", level: { zh: "交付", en: "Delivery" },
       title: { zh: "一套核心，三种交付", en: "One core, three delivery surfaces" },
       summary: { zh: "Tender 不是 B 端和 C 端各做一套产品。它用同一套客观事件、语言证据、Tender 状态、知识森林、Agent 和治理核心，分别支持 B 端完整系统、B 端嵌入模块与 C 端生活界面。", en: "Tender does not build two separate products for B2B and C-end. One core of objective events, language evidence, Tender state, knowledge forest, Agents and governance supports a full B2B suite, an embedded B2B module and a C-end life interface." },

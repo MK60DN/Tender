@@ -72,20 +72,22 @@ from tests.test_tender_context import (
     test_state_review_precedes_subject_route,
 )
 from tests.test_preassessment import (
-    test_attention_profile_links_strengths_to_attention_cost,
-    test_cognitive_correction_plan_has_practice_evidence_and_boundary,
+    test_attention_profile_and_correction_use_world_interface,
     test_explicit_consent_and_profile_persistence_without_raw_responses,
     test_item_inventory_and_estimated_time,
-    test_jungian_profile_is_exploratory_not_rank,
-    test_mbti_type_is_a_communication_hint_only,
-    test_neutral_profile_is_balanced,
+    test_big_five_pulse_tracks_change_from_baseline,
+    test_function_consistency_is_tracked,
+    test_neutral_profile_is_balanced_and_has_no_type_label,
+    test_world_entry_uses_strict_two_attitudes_by_four_functions,
     test_profile_uses_support_hypotheses_not_defects,
     test_reverse_scored_conscientiousness,
 )
 from tests.test_preassessment_api import (
     test_preassessment_items_are_public,
     test_preassessment_submit_requires_identity_and_explicit_consent,
+    test_big_five_pulse_api,
 )
+from tests.test_world_tree import test_world_tree_projects_roots_canopy_flowers_outcomes_and_shared_boundary
 from tests.test_governance_phases import (
     test_cannot_skip_from_expert_council_to_public_autonomy,
     test_chain_accepts_only_commitments_after_federation,
@@ -181,16 +183,17 @@ TESTS = [
     test_neuro_learning_catalog_endpoint,
     test_neuro_learning_filters_and_claim_boundaries,
     test_item_inventory_and_estimated_time,
-    test_neutral_profile_is_balanced,
+    test_neutral_profile_is_balanced_and_has_no_type_label,
+    test_world_entry_uses_strict_two_attitudes_by_four_functions,
+    test_function_consistency_is_tracked,
     test_reverse_scored_conscientiousness,
-    test_attention_profile_links_strengths_to_attention_cost,
-    test_cognitive_correction_plan_has_practice_evidence_and_boundary,
-    test_mbti_type_is_a_communication_hint_only,
-    test_jungian_profile_is_exploratory_not_rank,
+    test_attention_profile_and_correction_use_world_interface,
     test_profile_uses_support_hypotheses_not_defects,
+    test_big_five_pulse_tracks_change_from_baseline,
     test_explicit_consent_and_profile_persistence_without_raw_responses,
     test_preassessment_items_are_public,
     test_preassessment_submit_requires_identity_and_explicit_consent,
+    test_big_five_pulse_api,
     test_tender_context_contains_preassessment_state_and_corrections,
     test_format_tender_context_includes_grounding_rules,
     test_triage_routes_state_question_with_tender_context,
@@ -210,6 +213,7 @@ TESTS = [
     test_physical_tenant_and_scope_isolation,
     test_sensitive_file_visibility,
     test_2026_projection_rules,
+    test_world_tree_projects_roots_canopy_flowers_outcomes_and_shared_boundary,
 ]
 
 if __name__ == "__main__":

@@ -367,3 +367,17 @@ GET /tenant/projections/students?year=2026&stage=&review_status=&campus_id=&limi
 - 校区管理员只能读所属校区，班主任只能读指定班级，顾问/家长/学习者只能读指定学生；
 - 敏感联系人、财务、合同、HR、账号文件默认不对教师角色开放；
 - 2026 推算学生与原始学生分表保存，返回 `synthetic=true`，不得当作已确认事实。
+
+## 世界树与世界入口
+
+```text
+GET  /preassessment/items
+POST /preassessment/submit/{learner_id}
+GET  /preassessment/profile/{learner_id}
+GET  /preassessment/pulse/items
+POST /preassessment/pulse/{learner_id}
+GET  /preassessment/pulse/{learner_id}
+GET  /world-tree/{student_id}
+```
+
+`/preassessment/*` 保存标准化八功能态度、大五基线与大五脉搏，不保存逐题原文。`/world-tree/{student_id}` 返回 DAOQL 客观根系、Agent Bridge 树干、五类树枝、11 个体验节点、开花、结果与共享枝边界。共享枝默认不生成，需双方明确授权。

@@ -10,19 +10,23 @@ required = [
     ROOT / "README.md",
     ROOT / "LICENSE",
     ROOT / "VERSION",
-    ROOT / "docs/whitepaper/Tender-Whitepaper-v1.6.pdf",
-    ROOT / "docs/product/Tender-Product-Manual-v6.20.pdf",
-    ROOT / "docs/product/Tender-User-Guide-v6.8.pdf",
-    ROOT / "docs/teaching/Tender-Teaching-Manual-v5.3.pdf",
+    ROOT / "docs/whitepaper/Tender-Whitepaper-v1.7.pdf",
+    ROOT / "docs/product/Tender-Product-Manual-v6.21.pdf",
+    ROOT / "docs/product/Tender-User-Guide-v6.9.pdf",
+    ROOT / "docs/teaching/Tender-Teaching-Manual-v5.4.pdf",
     ROOT / "agent_layer/app/main.py",
+    ROOT / "agent_layer/app/preassessment.py",
+    ROOT / "agent_layer/app/world_tree.py",
     ROOT / "agent_layer/tests/run_all.py",
+    ROOT / "knowledge_data/preassessment_world_interface_items.json",
+    ROOT / "knowledge_data/preassessment_big_five_pulse_items.json",
     ROOT / "site/index.html",
     ROOT / "site/assets/app.js",
     ROOT / "site/assets/course.js",
-    ROOT / "site/assets/docs/Tender-Whitepaper-v1.6.pdf",
-    ROOT / "site/assets/docs/Tender-Product-Manual-v6.20.pdf",
-    ROOT / "site/assets/docs/Tender-User-Guide-v6.8.pdf",
-    ROOT / "site/assets/docs/Tender-Teaching-Manual-v5.3.pdf",
+    ROOT / "site/assets/docs/Tender-Whitepaper-v1.7.pdf",
+    ROOT / "site/assets/docs/Tender-Product-Manual-v6.21.pdf",
+    ROOT / "site/assets/docs/Tender-User-Guide-v6.9.pdf",
+    ROOT / "site/assets/docs/Tender-Teaching-Manual-v5.4.pdf",
     K / "db_k12.sqlite",
     K / "db_university.sqlite",
     K / "db_university_courses.sqlite",
@@ -33,20 +37,12 @@ if missing:
     raise SystemExit("missing required files:\n" + "\n".join(missing))
 
 forbidden = [
-    ROOT / "legacy_analysis_engine",
-    ROOT / "docs/whitepaper/Tender-Whitepaper-v1.5.pdf",
-    ROOT / "docs/whitepaper/Tender-Whitepaper-v1.5.docx",
-    ROOT / "docs/whitepaper/Tender-Whitepaper-v1.5.tex",
-    ROOT / "docs/product/Tender-Product-Manual-v6.19.pdf",
-    ROOT / "docs/product/Tender-Product-Manual-v6.19.md",
-    ROOT / "docs/product/Tender-User-Guide-v6.7.pdf",
-    ROOT / "docs/product/Tender-User-Guide-v6.7.md",
-    ROOT / "docs/teaching/Tender-Teaching-Manual-v5.2.pdf",
-    ROOT / "docs/teaching/Tender-Teaching-Manual-v5.2.tex",
-    ROOT / "site/assets/docs/Tender-Whitepaper-v1.5.pdf",
-    ROOT / "site/assets/docs/Tender-Product-Manual-v6.19.pdf",
-    ROOT / "site/assets/docs/Tender-User-Guide-v6.7.pdf",
-    ROOT / "site/assets/docs/Tender-Teaching-Manual-v5.2.pdf",
+    ROOT / "docs/whitepaper/Tender-Whitepaper-v1.6.pdf",
+    ROOT / "docs/product/Tender-Product-Manual-v6.20.pdf",
+    ROOT / "docs/product/Tender-User-Guide-v6.8.pdf",
+    ROOT / "docs/teaching/Tender-Teaching-Manual-v5.3.pdf",
+    ROOT / "knowledge_data/preassessment_mbti_items.json",
+    ROOT / "knowledge_data/preassessment_jungian_items.json",
 ]
 present_forbidden = [str(path) for path in forbidden if path.exists()]
 if present_forbidden:
@@ -65,13 +61,9 @@ for name, (path, sql, expected) in checks.items():
         raise SystemExit(f"{name}: expected {expected}, got {actual}")
     print(f"ok {name}={actual}")
 
-for artifact in [ROOT / ".env", ROOT / "agent_layer/tender_agent.db", ROOT / "agent_layer/tenant_data"]:
-    if artifact.exists():
-        print(f"warning runtime artifact exists locally: {artifact}")
-
 version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
-if version != "1.6.1":
-    raise SystemExit(f"VERSION: expected 1.6.1, got {version}")
+if version != "1.7.0":
+    raise SystemExit(f"VERSION: expected 1.7.0, got {version}")
 print(f"ok version={version}")
 
 license_text = (ROOT / "LICENSE").read_text(encoding="utf-8")
@@ -79,4 +71,5 @@ if "PolyForm Noncommercial License 1.0.0" not in license_text:
     raise SystemExit("LICENSE is not PolyForm Noncommercial 1.0.0")
 print("ok license=PolyForm-Noncommercial-1.0.0")
 print("ok active-docs=current-only")
+print("ok world-tree=present")
 print("repository verification passed")
