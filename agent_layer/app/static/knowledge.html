@@ -16,6 +16,8 @@
     @media(max-width:980px){.metrics{grid-template-columns:repeat(3,1fr)}.forest-layout,.hero,.grid{grid-template-columns:1fr}.forest-side{position:static}.major-results{grid-template-columns:1fr}.tree{min-height:auto}.forest-stage{min-height:0}.forest-stage svg{min-height:0}}
     @media(max-width:620px){.metrics{grid-template-columns:repeat(2,1fr)}.forest-top{display:block}.forest-top p{margin-top:6px}.hero{padding:22px}.toolbar{gap:5px}.layer-btn{font-size:10px;padding:6px 9px}}
   </style>
+  <script src="/ui/onboarding-gate.js?v=2"></script>
+  <link rel="stylesheet" href="/ui/account-menu.css?v=2">
 </head>
 <body>
 <header><div class="brand"><div class="mark">T</div><div><b>Tender</b><div class="sub">学习路径地图</div></div></div><nav class="mode-switch page-mode-switch" aria-label="使用模式"><a href="/ui/ambient.html">环境辅助</a><a href="/ui/single.html">我的数据</a><a href="/ui/multi.html">多人数据</a></nav><a href="/ui/single.html">← 单人界面</a></header>
@@ -197,5 +199,6 @@ $('#majorSearchBtn').onclick=()=>searchMajors();$('#majorQuery').addEventListene
 document.querySelectorAll('.layer-btn').forEach(b=>b.addEventListener('click',()=>{activeLayer=b.dataset.layer;syncLayerButtons();if(activeLayer!=='all'){const layer=forest?.layers?.find(x=>x.id===activeLayer);if(layer){$('#forestDetailTitle').textContent=layer.name;$('#forestDetailText').textContent=layer.meaning;}}}));
 Promise.all([loadForest(),loadSubjects()]).then(()=>searchMajors()).catch(e=>{$('#forestStage').innerHTML=`<div class="empty">加载失败：${esc(e.message)}</div>`; $('#subjects').innerHTML=`<div class="empty">加载失败：${esc(e.message)}</div>`});
 </script>
+<script src="/ui/account-menu.js?v=2" defer></script>
 </body>
 </html>

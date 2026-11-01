@@ -234,6 +234,24 @@ def list_audit(limit: int = 100):
     return out
 
 
+def delete_student_data(student_id: str) -> int:
+    """Permanently delete one learner's event graph.
+
+    Causal edges are removed first so no edge can retain references to deleted
+    event IDs. Audit logs are intentionally not rewritten; callers should audit
+    only an irreversible action summary without storing the learner's raw data.
+    """
+    init_db()
+    with _conn() as c:
+        c.execute(
+            "DELETE FROM causal_edges WHERE source_event_id IN "
+            "(SELECT event_id FROM events WHERE student_id=?) OR target_event_id IN "
+            "(SELECT event_id FROM events WHERE student_id=?)",
+            (student_id, student_id),
+        )
+        result = c.execute("DELETE FROM events WHERE student_id=?", (student_id,))
+        return int(result.rowcount or 0)
+
 def count_events():
     init_db()
     with _conn() as c:

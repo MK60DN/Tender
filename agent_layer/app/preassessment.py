@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 import statistics
 from pathlib import Path
-from typing import Mapping
+from typing import Any, Mapping
 
 from .daoql import insert_event, list_events
 
@@ -15,6 +15,7 @@ BIG_FIVE_PULSE_PATH = BASE / "preassessment_big_five_pulse_items.json"
 
 VERSION = "world-tree-profile-1.0"
 PULSE_VERSION = "big-five-pulse-1.0"
+WORLD_CONTEXT_VERSION = "learner-world-context-1.0"
 
 BIG_FIVE_DIMENSIONS = {
     "openness": "开放性",
@@ -339,17 +340,95 @@ def score_preassessment(responses: Mapping[str, int]) -> dict:
     }
 
 
-def submit_preassessment(student_id: str, responses: Mapping[str, int], *, consent: bool) -> dict:
+def _clean_world_text(value: Any, limit: int) -> str:
+    return str(value or "").strip()[:limit]
+
+
+def _clean_world_list(value: Any, *, limit: int = 12) -> list[str]:
+    if not isinstance(value, (list, tuple, set)):
+        return []
+    seen: list[str] = []
+    for item in value:
+        text = _clean_world_text(item, 40)
+        if text and text not in seen:
+            seen.append(text)
+        if len(seen) >= limit:
+            break
+    return seen
+
+
+def normalize_world_context(context: Mapping[str, Any] | None) -> dict[str, Any]:
+    """Normalize the learner's objective world coordinates.
+
+    These fields describe the task environment, not ability, personality or
+    diagnosis. The result is safe to include in the preassessment payload.
+    """
+    source = dict(context or {})
+    stage = _clean_world_text(source.get("stage"), 20) or "未设置"
+    grade = _clean_world_text(source.get("grade"), 30) or "未设置"
+    school = _clean_world_text(source.get("school"), 120)
+    major = _clean_world_text(source.get("major"), 120)
+    subjects = _clean_world_list(source.get("subjects"))
+    target_subjects = [item for item in _clean_world_list(source.get("target_subjects"), limit=3) if item in subjects]
+    goal = _clean_world_text(source.get("goal"), 300)
+    learning_mode = _clean_world_text(source.get("learning_mode"), 40) or "自主学习"
+    return {
+        "version": WORLD_CONTEXT_VERSION,
+        "stage": stage,
+        "grade": grade,
+        "school": school,
+        "major": major,
+        "subjects": subjects,
+        "target_subjects": target_subjects,
+        "goal": goal,
+        "learning_mode": learning_mode,
+        "boundary": "这些是学习环境与当前目标，不是能力排名、人格标签或诊断。",
+    }
+
+
+def submit_world_context(student_id: str, context: Mapping[str, Any], *, consent: bool) -> dict[str, Any]:
+    if consent is not True:
+        raise ValueError("explicit_consent_required")
+    safe = normalize_world_context(context)
+    if not safe["subjects"]:
+        raise ValueError("world_subjects_required")
+    event_id = insert_event({
+        "event_type": "learner_world_context",
+        "student_id": student_id,
+        "source": "learner_world_setup",
+        "payload": {"world_context": safe, "instrument_version": WORLD_CONTEXT_VERSION},
+        "provenance": {"consent": True, "raw_free_text_stored": False},
+    })
+    return {"status": "recorded", "event_id": event_id, "world_context": safe}
+
+
+def latest_world_context(student_id: str) -> dict[str, Any] | None:
+    events = list_events(student_id)
+    for event in reversed(events):
+        if event.get("event_type") == "learner_world_context":
+            return dict((event.get("payload") or {}).get("world_context") or {})
+        if event.get("event_type") == "preassessment_profile":
+            context = (event.get("payload") or {}).get("world_context")
+            if isinstance(context, dict) and context:
+                return dict(context)
+    return None
+
+
+def submit_preassessment(student_id: str, responses: Mapping[str, int], *, consent: bool, world_context: Mapping[str, Any] | None = None) -> dict:
     if consent is not True:
         raise ValueError("explicit_consent_required")
     profile = score_preassessment(responses)
+    safe_world = normalize_world_context(world_context) if world_context else None
+    payload: dict[str, Any] = {"profile": profile, "instrument_version": VERSION}
+    if safe_world:
+        payload["world_context"] = safe_world
     event_id = insert_event({
         "event_type": "preassessment_profile", "student_id": student_id,
         "source": "structured_world_interface_and_big_five",
-        "payload": {"profile": profile, "instrument_version": VERSION},
+        "payload": payload,
         "provenance": {"consent": True, "raw_responses_stored": False},
     })
-    return {"event_id": event_id, "profile": profile}
+    return {"event_id": event_id, "profile": profile, "world_context": safe_world}
 
 
 def latest_preassessment(student_id: str) -> dict | None:
@@ -357,7 +436,12 @@ def latest_preassessment(student_id: str) -> dict | None:
     if not events:
         return None
     latest = events[-1]
-    return {**latest["payload"].get("profile", {}), "event_id": latest["event_id"], "created_at": latest["timestamp"]}
+    payload = latest.get("payload") or {}
+    result = {**payload.get("profile", {}), "event_id": latest["event_id"], "created_at": latest["timestamp"]}
+    world = payload.get("world_context") or latest_world_context(student_id)
+    if world:
+        result["world_context"] = world
+    return result
 
 def score_big_five_pulse(responses: Mapping[str, int]) -> dict:
     scores = _score_big_five_from_items(_load(BIG_FIVE_PULSE_PATH)["items"], responses)

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Tender · 生成学习支持偏好</title>
   <link rel="stylesheet" href="/ui/mode-switch.css?v=4">
+  <link rel="stylesheet" href="/ui/account-menu.css?v=2">
   <style>
     :root{--ink:#151719;--muted:#6d7177;--line:#d9dadd;--panel:rgba(244,244,245,.94);--accent:#1a6b57;--soft:#eceff0;--warn:#8b4f18}
     *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#f2f3f4,#e9ebec);color:var(--ink);font:15px/1.65 "Microsoft YaHei",system-ui,sans-serif}
@@ -27,15 +28,16 @@
 <body>
 <div class="shell">
   <nav class="mode-switch page-mode-switch" aria-label="使用模式"><a href="/ui/ambient.html">环境辅助</a><a href="/ui/single.html">我的数据</a><a href="/ui/multi.html">多人数据</a></nav>
-  <ol class="onboarding-progress hidden" id="onboardingProgress" aria-label="首次使用进度"><li class="done"><b>1</b><span>登录</span></li><li class="current"><b>2</b><span>认识你</span></li><li><b>3</b><span>进入 Tender</span></li></ol>
+  <ol class="onboarding-progress hidden" id="onboardingProgress" aria-label="首次使用进度"><li class="done"><b>1</b><span>登录</span></li><li class="done"><b>2</b><span>世界坐标</span></li><li class="current"><b>3</b><span>心智测评</span></li></ol>
   <section class="hero">
     <div class="eyebrow">7-MINUTE SETUP</div>
     <h1>生成你的学习支持偏好。</h1>
-    <p class="lead">完成 44 道题后，你会得到更适合自己的提问方式、任务组织和 Agent 组合。结果可重测、可撤回。</p>
+    <p class="lead">客观世界坐标已经建立。完成 44 道题后，系统会再生成你的主观入口、支持偏好和初始 Agent 组合。结果可重测、可撤回。</p>
+    <div class="notice" id="worldContextSummary"><strong>你的客观世界坐标</strong><span>正在读取年级、学科与目标…</span></div>
     <div class="meta"><span class="pill">7–9 分钟</span><span class="pill">44 道题</span><span class="pill">不显示人格标签</span><span class="pill">随时重测</span></div>
     <div class="notice"><strong>不是诊断，也不是排名</strong>系统只保存标准化支持画像，不保存逐题原文。</div>
     <label class="consent"><input id="consent" type="checkbox"><span>我同意保存标准化支持画像，用于调整沟通与支持方式；逐题原文不保存。</span></label>
-    <div class="actions"><button class="primary" id="startBtn">开始 7 分钟检测</button><a class="secondary" href="/ui/login.html">返回登录</a><span class="tiny" id="startHint">完成后可查看并撤回结果</span></div>
+    <div class="actions"><button class="primary" id="startBtn">开始 7 分钟心智测评</button><a class="secondary" href="/ui/login.html">返回登录</a><span class="tiny" id="startHint">完成后可查看并撤回结果</span></div>
     <p class="footer">当前学习者：<b id="studentLabel">S01</b> · 结果属于学习者，可查看、重测和撤回</p>
   </section>
   <section id="quizCard" class="card hidden">
@@ -65,6 +67,7 @@ let questions = [];
 let index = 0;
 let responses = {};
 let token = null;
+let worldContext = (() => { try { return JSON.parse(localStorage.getItem("tender.worldContext." + studentId) || "null"); } catch (_) { return null; } })();
 
 function esc(value) {
   return String(value == null ? "" : value).replace(/[&<>"']/g, (ch) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
@@ -171,6 +174,30 @@ function recomputeIndex() {
   index = firstMissing >= 0 ? firstMissing : 0;
 }
 
+function renderWorldContext(context) {
+  const el = $("worldContextSummary");
+  if (!el || !context) return;
+  const subjects = (context.subjects || []).join("、") || "未选择";
+  const targets = (context.target_subjects || []).join("、") || "尚未指定";
+  el.innerHTML = '<strong>你的客观世界坐标</strong><span>' + esc(context.stage || "未设置") + ' · ' + esc(context.grade || "未设置") + (context.major ? ' · ' + esc(context.major) : '') + '</span><span>学习范围：' + esc(subjects) + ' · 当前重点：' + esc(targets) + '</span><span>目标：' + esc(context.goal || "先建立稳定学习节奏") + '</span><span><a href="/ui/world-setup.html?student=' + encodeURIComponent(studentId) + '&onboarding=1">修改世界坐标</a></span>';
+}
+
+async function ensureWorldContext() {
+  if (worldContext && worldContext.subjects && worldContext.subjects.length) { renderWorldContext(worldContext); return true; }
+  try {
+    const t = await ensureSession();
+    const response = await fetch("/learner/world-setup/" + encodeURIComponent(studentId), {headers: {Authorization: "Bearer " + t}});
+    if (response.ok) {
+      const data = await response.json();
+      worldContext = data.world_context || null;
+      if (worldContext) localStorage.setItem("tender.worldContext." + studentId, JSON.stringify(worldContext));
+      renderWorldContext(worldContext);
+      return Boolean(worldContext);
+    }
+  } catch (_) {}
+  return false;
+}
+
 function startQuiz() {
   if (!$("consent").checked) {
     showError("请先确认你理解预检测的用途和数据保存方式。");
@@ -196,7 +223,7 @@ async function submit() {
     const response = await fetch("/preassessment/submit/" + encodeURIComponent(studentId), {
       method: "POST",
       headers: {"Content-Type": "application/json", "Authorization": "Bearer " + token},
-      body: JSON.stringify({responses, consent: true})
+      body: JSON.stringify({responses, consent: true, world_context: worldContext || {}})
     });
     const data = await response.json();
     if (!response.ok) throw new Error(data.detail || "提交失败");
@@ -204,6 +231,7 @@ async function submit() {
     localStorage.setItem("tender.onboarding." + studentId, "complete");
     const worldEntry = data.profile && data.profile.world_interface && data.profile.world_interface.world_entry;
     if (worldEntry) localStorage.setItem("tender.worldEntry." + studentId, JSON.stringify(worldEntry));
+    if (data.world_context) { worldContext = data.world_context; localStorage.setItem("tender.worldContext." + studentId, JSON.stringify(worldContext)); }
     renderResults(data.profile);
   } catch (error) {
     $("quizCard").classList.remove("hidden");
@@ -220,6 +248,15 @@ function renderResults(profile) {
   $("resultArea").classList.remove("hidden");
   $("resultNotice").textContent = profile.notice + " 置信级别：" + profile.confidence + "。";
   const cards = [];
+  const objective = (profile && profile.world_context) || worldContext;
+  if (objective) {
+    cards.push('<div class="result-card full"><h3>你的客观世界</h3>' +
+      '<div class="kv"><span>阶段</span><b>' + esc(objective.stage || "未设置") + " · " + esc(objective.grade || "未设置") + '</b></div>' +
+      '<div class="kv"><span>学校 / 专业</span><b>' + esc([objective.school, objective.major].filter(Boolean).join(" · ") || "未填写") + '</b></div>' +
+      '<div class="kv"><span>学习范围</span><b>' + esc((objective.subjects || []).join("、") || "未选择") + '</b></div>' +
+      '<div class="kv"><span>当前重点</span><b>' + esc((objective.target_subjects || []).join("、") || "尚未指定") + '</b></div>' +
+      '<div class="kv"><span>当前目标</span><b>' + esc(objective.goal || "先建立稳定学习节奏") + '</b></div><p class="tiny">这只是学习环境和目标，不是能力排名或人格判断。</p></div>');
+  }
   cards.push('<div class="result-card full"><h3>心理资源基线</h3>' + Object.entries(profile.big_five).map(([key, value]) => {
     return '<div class="kv"><span>' + esc(value.label) + '</span><b>' + Math.round(value.score * 100) + ' / 100</b></div><div class="bar"><i style="width:' + (value.score * 100) + '%"></i></div>';
   }).join('') + '<p class="tiny">分数是本次自评的相对位置，不是人群百分位，也不是能力分数。</p></div>');
@@ -268,7 +305,7 @@ function renderResults(profile) {
   cards.push('<div class="result-card full"><h3>下一步</h3><p>你的主观入口和客观入口已经建立。现在进入 Tender，开始今天的一步。</p><p><a class="secondary" style="display:inline-block;text-decoration:none" href="/ui/world-tree.html?student=' + encodeURIComponent(studentId) + '">查看世界树</a></p></div>');  $("resultGrid").innerHTML = cards.join('');
   if (onboarding) {
     $("onboardingProgress").classList.remove("hidden");
-    $("onboardingProgress").innerHTML = '<li class="done"><b>1</b><span>登录</span></li><li class="done"><b>2</b><span>认识你</span></li><li class="current"><b>3</b><span>进入 Tender</span></li>';
+    $("onboardingProgress").innerHTML = '<li class="done"><b>1</b><span>登录</span></li><li class="done"><b>2</b><span>世界坐标</span></li><li class="done"><b>3</b><span>心智测评</span></li>';
   }
   $("resultArea").scrollIntoView({behavior: "smooth", block: "start"});
 }
@@ -285,6 +322,8 @@ async function init() {
     const next = localStorage.getItem("tender.onboarding.next") || "/ui/single.html";
     location.href = next + (next.includes("?") ? "&" : "?") + "student=" + encodeURIComponent(studentId);
   });
+  const hasWorld = await ensureWorldContext();
+  if (!hasWorld && onboarding) { location.replace("/ui/world-setup.html?student=" + encodeURIComponent(studentId) + "&onboarding=1"); return; }
   try {
     const response = await fetch("/preassessment/items");
     catalog = await response.json();
@@ -316,5 +355,6 @@ async function init() {
 
 init();
 </script>
+<script src="/ui/account-menu.js?v=2" defer></script>
 </body>
 </html>

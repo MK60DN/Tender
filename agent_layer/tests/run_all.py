@@ -50,6 +50,18 @@ from tests.test_media_plugins import (
     test_video_samples_frames_for_ocr,
 )
 from tests.test_media_plugins_mcp import test_media_plugins_mcp_exposes_and_runs_local_ocr
+from tests.test_frontend_lifecycle import (
+    test_account_menu_exposes_logout_delete_and_shutdown,
+    test_login_does_not_import_demo_roster,
+    test_world_setup_precedes_preassessment_and_is_visible_in_data_page,
+    test_public_role_workspace_was_removed,
+    test_github_pages_app_and_one_click_backend_links_exist,
+)
+from tests.test_lifecycle_api import (
+    test_world_setup_precedes_profile_and_survives_preassessment,
+    test_irreversible_learner_data_deletion_removes_events,
+    test_role_page_redirects_to_users_current_data_page,
+)
 from tests.test_triage_agent import (
     test_triage_routes_anxiety_to_psychology_not_subject,
     test_triage_routes_high_risk_to_safety,
@@ -202,6 +214,14 @@ TESTS = [
     test_video_samples_frames_for_ocr,
     test_summary_does_not_add_new_content,
     test_media_plugins_mcp_exposes_and_runs_local_ocr,
+    test_world_setup_precedes_profile_and_survives_preassessment,
+    test_irreversible_learner_data_deletion_removes_events,
+    test_role_page_redirects_to_users_current_data_page,
+    test_account_menu_exposes_logout_delete_and_shutdown,
+    test_login_does_not_import_demo_roster,
+    test_world_setup_precedes_preassessment_and_is_visible_in_data_page,
+    test_public_role_workspace_was_removed,
+    test_github_pages_app_and_one_click_backend_links_exist,
     test_life_tree_experience_mapper_labels_multiple_regions,
     test_life_tree_experience_mapper_uses_event_priors_without_text,
     test_objective_event_is_decomposed_into_subjective_nodes_without_mutation,

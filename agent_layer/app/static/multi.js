@@ -2,7 +2,7 @@
   "use strict";
   const API = "";
   const $ = (id) => document.getElementById(id);
-  const state = { actorId: new URLSearchParams(location.search).get("student") || localStorage.getItem("tender.student") || "S01", token: null, groups: [], group: null, events: [], model: null, roster: {}, timer: null };
+  const state = { actorId: new URLSearchParams(location.search).get("student") || localStorage.getItem("tender.student") || "", token: null, groups: [], group: null, events: [], model: null, roster: {}, timer: null };
   function esc(value) { return String(value == null ? "" : value).replace(/[&<>"']/g, (x) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[x])); }
   function toast(message, error) { const el = $("toast"); el.textContent = message; el.className = "toast show" + (error ? " error" : ""); clearTimeout(state.toastTimer); state.toastTimer = setTimeout(() => { el.className = "toast"; }, 3000); }
   async function ensureSession() {
@@ -26,11 +26,11 @@
   }
   async function loadRoster() {
     try {
-      const response = await fetch(API + "/students");
-      if (!response.ok) return;
-      const rows = await response.json();
-      (Array.isArray(rows) ? rows : []).forEach((item) => { const id = item.student_id || item.id; if (id) state.roster[id] = item.name || id; });
-      try { const account = JSON.parse(localStorage.getItem("tender.account") || "null"); if (account && account.studentId) state.roster[account.studentId] = account.displayName || state.roster[account.studentId] || account.studentId; } catch (_) {}
+      const accounts = JSON.parse(localStorage.getItem("tender.accounts") || "[]");
+      if (Array.isArray(accounts)) accounts.forEach((item) => { if (item && item.studentId) state.roster[item.studentId] = item.displayName || item.studentId; });
+      const account = JSON.parse(localStorage.getItem("tender.account") || "null");
+      if (account && account.studentId) state.roster[account.studentId] = account.displayName || account.studentId;
+      state.roster[state.actorId] = state.roster[state.actorId] || state.actorId;
     } catch (_) {}
   }
   function actorName(id) { return state.roster[id] || id; }

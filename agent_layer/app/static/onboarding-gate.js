@@ -9,6 +9,11 @@
     return;
   }
   localStorage.setItem("tender.student", studentId);
+  if (localStorage.getItem("tender.worldSetup." + studentId) !== "complete") {
+    const next = location.pathname + location.search;
+    location.replace("/ui/world-setup.html?student=" + encodeURIComponent(studentId) + "&onboarding=1&next=" + encodeURIComponent(next));
+    return;
+  }
   if (localStorage.getItem("tender.onboarding." + studentId) !== "complete") {
     location.replace("/ui/preassessment.html?student=" + encodeURIComponent(studentId) + "&onboarding=1");
   }

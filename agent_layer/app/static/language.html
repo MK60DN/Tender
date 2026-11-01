@@ -15,9 +15,11 @@
     .hypothesis{padding:13px;border:1px solid var(--line);border-radius:14px;background:#faf8f2}.hypothesis h3{margin:0 0 5px;font-size:14px}.hypothesis p{margin:5px 0;color:#4c5358;font-size:12px;line-height:1.55}.confidence{display:inline-block;padding:3px 7px;border-radius:999px;background:#e8f4ee;color:var(--green);font-size:10px;font-weight:800}.hypothesis.alternative{border-left:4px solid var(--gold)}.probe{font-size:11px;color:var(--violet);line-height:1.5}.empty{padding:18px;color:var(--muted);font-size:12px}.table{display:grid;grid-template-columns:1fr 1fr;gap:8px}.role{padding:12px;border-radius:13px;background:#f7f4ed}.role strong{display:block;font-size:13px;margin-bottom:4px}.role span{display:block;color:var(--muted);font-size:11px;line-height:1.55}.boundary{margin-top:16px;padding:13px 15px;border:1px solid #efddb4;background:#fff7e5;border-radius:14px;color:#65532a;font-size:12px;line-height:1.65}.forbidden{margin:14px 0 0;padding-left:20px;color:#6b4a43;font-size:12px;line-height:1.7}.raw{margin-top:14px;font-size:11px}.raw summary{cursor:pointer;color:var(--accent)}pre{white-space:pre-wrap;word-break:break-word;background:#10211e;color:#d9eee8;padding:14px;border-radius:12px;max-height:300px;overflow:auto}
     @media(max-width:900px){.grid,.result-grid{grid-template-columns:1fr}.table{grid-template-columns:1fr}}
   </style>
+  <script src="/ui/onboarding-gate.js?v=2"></script>
+  <link rel="stylesheet" href="/ui/account-menu.css?v=2">
 </head>
 <body>
-<header><div class="brand"><div class="mark">T</div><div><div style="font-weight:800">Tender</div><div class="sub">语言证据层 · Language Signals</div></div></div><a href="/ui/">← 返回应用</a></header>
+<header><div class="brand"><div class="mark">T</div><div><div style="font-weight:800">Tender</div><div class="sub">语言证据层 · Language Signals</div></div></div><a href="/ui/single.html">← 返回应用</a></header>
 <main>
   <section class="hero"><div class="kicker">LANGUAGE EVIDENCE · NOT MIND READING</div><h1>一句话是证据，<br>不是判决</h1><p>Tender 不从一句话直接判断能力、人格或疾病。它先提取可观察的语言片段，再提出多个竞争假设，最后与答题、行为、时间、真实结果和历史证据共同校准。</p></section>
 
@@ -66,5 +68,6 @@ async function analyze(){
 }
 $('#analyzeBtn').onclick=analyze;$('#fillRiskBtn').onclick=()=>{$('#sampleText').value='我不想活了，想伤害自己。';analyze()};analyze();
 </script>
+<script src="/ui/account-menu.js?v=2" defer></script>
 </body>
 </html>

@@ -47,6 +47,14 @@ required = [
     ROOT / "agent_layer/desktop_overlay/media_plugins_mcp.py",
     ROOT / "agent_layer/desktop_overlay/media_plugin_worker.py",
     ROOT / ".mcp.json",
+    ROOT / "render.yaml",
+    ROOT / "Dockerfile",
+    ROOT / ".devcontainer/devcontainer.json",
+    ROOT / ".devcontainer/start-tender.sh",
+    ROOT / "site/app/index.html",
+    ROOT / "site/app/app.js",
+    ROOT / "site/app/app.css",
+    ROOT / "docs/DEPLOYMENT.md",
     K / "db_k12.sqlite",
     K / "db_university.sqlite",
     K / "db_university_courses.sqlite",
@@ -82,8 +90,8 @@ for name, (path, sql, expected) in checks.items():
     print(f"ok {name}={actual}")
 
 version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
-if version != "2.2.0":
-    raise SystemExit(f"VERSION: expected 2.2.0, got {version}")
+if version != "2.2.1":
+    raise SystemExit(f"VERSION: expected 2.2.1, got {version}")
 print(f"ok version={version}")
 
 license_text = (ROOT / "LICENSE").read_text(encoding="utf-8")
@@ -97,4 +105,5 @@ print("ok experiment=present")
 print("ok rhythm-phase-experiment=present")
 print("ok group-chat=dual-chain-present")
 print("ok mcp=screen-context-and-media-present")
+print("ok deployment=github-pages-static-and-one-click-backend")
 print("repository verification passed")

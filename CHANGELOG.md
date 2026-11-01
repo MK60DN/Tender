@@ -1,5 +1,17 @@
 # Changelog
 
+## v2.2.1 - 2026-11-02
+
+- Added explicit account switching, logout, irreversible learner-data deletion and Tender shutdown controls.
+- Replaced the public role workspace with a redirect to the learner data page and removed the legacy role UI assets.
+- Added a required world-coordinate onboarding step for stage, grade, subjects, major, current focus and goal.
+- Removed automatic demo-roster loading from login and multi-person screens.
+- Added world-coordinate summaries to the assessment and personal data pages.
+- Added regression tests for world setup, data deletion, local shutdown and removed role entry.
+- Added a GitHub Pages static app and one-click full-backend paths through GitHub Codespaces and Render.
+- Added Docker port adaptation, Render Blueprint configuration, a dev container, and deployment documentation.
+
+
 ## v2.2.0 - 2026-11-01
 
 - Added local Screen Context MCP with explicit consent, expiry, revocation, visible-window enumeration, accessible text and optional in-memory screenshots.

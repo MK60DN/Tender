@@ -45,7 +45,7 @@
   };
 
   const state = {
-    studentId: params.get("student") || localStorage.getItem("tender.student") || "S01",
+    studentId: params.get("student") || localStorage.getItem("tender.student") || "",
     role: "admin",
     token: null,
     authBusy: null,
@@ -145,24 +145,14 @@
 
   async function loadStudents() {
     try {
-      const response = await fetch(API + "/students");
-      if (!response.ok) return;
-      const students = await response.json();
-      if (!Array.isArray(students) || !students.length) return;
+      const accounts = JSON.parse(localStorage.getItem("tender.accounts") || "[]");
+      const rows = Array.isArray(accounts) ? accounts.filter((item) => item && item.studentId) : [];
+      if (!rows.length) return;
       const select = $("studentSelect");
-      select.innerHTML = students.map((item) => {
-        const id = item.student_id || item.id;
-        const name = item.name || item.student_name || id;
-        const cls = item.class_id ? " · " + item.class_id : "";
-        return '<option value="' + esc(id) + '">' + esc(id + " · " + name + cls) + "</option>";
-      }).join("");
-      if (!students.some((item) => (item.student_id || item.id) === state.studentId)) {
-        state.studentId = students[0].student_id || students[0].id;
-      }
+      select.innerHTML = rows.map((item) => '<option value="' + esc(item.studentId) + '">' + esc((item.displayName || item.studentId) + " · " + item.studentId) + "</option>").join("");
+      if (!rows.some((item) => item.studentId === state.studentId)) state.studentId = rows[0].studentId;
       select.value = state.studentId;
-    } catch (_) {
-      /* Keep the current learner fallback. */
-    }
+    } catch (_) {}
   }
 
   function setConnector(text, ok) {

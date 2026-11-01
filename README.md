@@ -7,6 +7,7 @@
 
 ## Start here / 从这里开始
 
+- **One-click backend / 一键后端**：[GitHub Codespaces](https://codespaces.new/MK60DN/Tender?quickstart=1) · [Deploy to Render](https://render.com/deploy?repo=https://github.com/MK60DN/Tender) · [Deployment guide](docs/DEPLOYMENT.md)
 - **Teaching website / 教学网站**： [GitHub Pages](https://mk60dn.github.io/Tender/) · [Local course / 本地课程](http://127.0.0.1:8080/guide/) · [Source / 源码](site/)
 - **Whitepaper V2.2 / 白皮书 V2.2**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v2.2.pdf) · [Repo PDF](docs/whitepaper/Tender-Whitepaper-v2.2.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v2.2.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v2.2.tex)
 - **Product manual / 产品手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v7.2.pdf) · [Repo PDF](docs/product/Tender-Product-Manual-v7.2.pdf) · [Word](docs/product/Tender-Product-Manual-v7.2.docx)
@@ -117,7 +118,7 @@ Open / 打开：
 - Solo / 单人：<http://127.0.0.1:8080/ui/single.html>
 - Multi-person / 多人：<http://127.0.0.1:8080/ui/multi.html>
 - Ambient / 环境辅助：<http://127.0.0.1:8080/ui/ambient.html>
-- Full workspace / 完整工作台：<http://127.0.0.1:8080/ui/>
+- World setup / 世界坐标：<http://127.0.0.1:8080/ui/world-setup.html>
 - Language evidence / 语言证据层：<http://127.0.0.1:8080/ui/language.html>
 - Knowledge forest / 知识森林：<http://127.0.0.1:8080/ui/knowledge.html>
 - API docs / API 文档：<http://127.0.0.1:8080/docs>
@@ -130,7 +131,7 @@ Open / 打开：
 python agent_layer/tests/run_all.py
 ```
 
-Expected baseline / 当前基线：`passed 128 tests`；完整 `pytest` 当前为 130 通过、1 个可选重媒体测试跳过。
+Expected baseline / 当前基线：`passed 136 tests`；完整 `pytest` 当前为 139 通过、1 个可选重媒体测试跳过。
 
 ## Core APIs / 核心接口
 

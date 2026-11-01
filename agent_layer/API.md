@@ -477,3 +477,14 @@ list_voices
 ```
 
 MCP 服务要求显式用户授权。原始窗口文字、截图和媒体内容不写入 DAOQL；弹幕规划只使用粗粒度派生信号。
+
+## Learner world setup and lifecycle
+
+```text
+POST /learner/world-setup/{learner_id}
+GET  /learner/world-setup/{learner_id}
+POST /learner/data/{learner_id}/delete
+POST /system/shutdown
+```
+
+World setup stores grade, stage, subjects, current focus, school or major, learning mode and the learner's stated goal. The assessment payload also carries this objective-world context. Data deletion is irreversible and requires the exact learner ID plus explicit acknowledgement. Shutdown is local-only and also leaves a runtime marker so the desktop overlay closes.

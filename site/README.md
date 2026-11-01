@@ -30,3 +30,11 @@ The application also mounts the site at `/guide/` when running FastAPI.
 
 `.github/workflows/pages.yml` deploys this directory whenever `site/` changes on
 `main`. In repository settings, Pages must use GitHub Actions as its source.
+
+## Online app demo
+
+- Static browser demo: `app/`
+- Full backend with GitHub Codespaces: <https://codespaces.new/MK60DN/Tender?quickstart=1>
+- One-click Render Blueprint: <https://render.com/deploy?repo=https://github.com/MK60DN/Tender>
+
+The browser demo stores data only in `localStorage`. Codespaces and Render start the real FastAPI backend.

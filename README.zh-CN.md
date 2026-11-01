@@ -6,6 +6,7 @@
 
 ## 从这里开始
 
+- **One-click backend / 一键后端**：[GitHub Codespaces](https://codespaces.new/MK60DN/Tender?quickstart=1) · [Deploy to Render](https://render.com/deploy?repo=https://github.com/MK60DN/Tender) · [Deployment guide](docs/DEPLOYMENT.md)
 - [教学网站](https://mk60dn.github.io/Tender/) · [本地课程](http://127.0.0.1:8080/guide/) · [站点源码](site/)
 - [白皮书本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v2.2.pdf) · [仓库 PDF](docs/whitepaper/Tender-Whitepaper-v2.2.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v2.2.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v2.2.tex)
 - [产品手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v7.2.pdf) · [Word](docs/product/Tender-Product-Manual-v7.2.docx) · [用户手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v7.2.pdf) · [Word](docs/product/Tender-User-Guide-v7.2.docx) · [零基础教学手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v6.2.pdf)
@@ -61,7 +62,7 @@ cd agent_layer
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8080
 ```
 
-打开登录：<http://127.0.0.1:8080/ui/login.html>。完成引导后：单人 <http://127.0.0.1:8080/ui/single.html>、多人 <http://127.0.0.1:8080/ui/multi.html>、环境辅助 <http://127.0.0.1:8080/ui/ambient.html>。
+打开登录：<http://127.0.0.1:8080/ui/login.html>。完成“登录 → 世界坐标 → 心智测评”后：单人 <http://127.0.0.1:8080/ui/single.html>、多人 <http://127.0.0.1:8080/ui/multi.html>、环境辅助 <http://127.0.0.1:8080/ui/ambient.html>。每个登录后页面右上角都有账号菜单，可退出账号、删除当前学习者数据或关闭 Tender 服务。
 
 ## 测试
 
@@ -69,7 +70,7 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8080
 python agent_layer/tests/run_all.py
 ```
 
-当前基线：`passed 128 tests`；完整 `pytest` 当前为 130 通过、1 个可选重媒体测试跳过。
+当前基线：`passed 136 tests`；完整 `pytest` 当前为 139 通过、1 个可选重媒体测试跳过。
 
 ## 文档
 

@@ -7,7 +7,7 @@
   const STORAGE_PROGRESS = "tender-academy-progress-v1";
   const UI = {
     zh: {
-      brandSub: "心智化学习系统教学", progress: "学习进度", curriculum: "课程目录", courseTitle: "100 分钟理解 Tender",
+      brandSub: "心智化学习系统教学", progress: "学习进度", curriculum: "课程目录", courseTitle: "108 分钟理解 Tender",
       courseIntro: "从预测加工、语言证据和心智化，到知识森林与 Agent 协作。", search: "搜索课程",
       whitepaper: "阅读白皮书 V2.2", heroTitle: "理解一个人的心智，也让他更好地进入世界和关系。",
       heroTitleEn: "Understand a mind, and help it enter the world and relationships.", heroBody: "这门课解释 Tender 如何从自我理解走向世界行动、关系协商和群体协作，并在每一步保留证据、授权和人的选择。",
@@ -20,7 +20,7 @@
       lessonCompleted: "本课已完成", lessonReopened: "已恢复为未完成", noLesson: "没有找到课程"
     },
     en: {
-      brandSub: "Mentalization learning system course", progress: "Progress", curriculum: "CURRICULUM", courseTitle: "Understand Tender in 100 minutes",
+      brandSub: "Mentalization learning system course", progress: "Progress", curriculum: "CURRICULUM", courseTitle: "Understand Tender in 108 minutes",
       courseIntro: "From predictive processing, language evidence and mentalization to the knowledge forest and Agent collaboration.", search: "Search lessons",
       whitepaper: "Read Whitepaper V2.2", heroTitle: "Understand a mind, and help it enter the world and relationships.",
       heroTitleEn: "理解一个人的心智，也让他更好地进入世界和关系。", heroBody: "This course explains how Tender moves from self-understanding to action in the world, relational negotiation and group collaboration, while preserving evidence, consent and human choice.",
@@ -67,6 +67,7 @@
 
   function updateProgress() {
     const count = totalCompleted();
+    $("#globalProgress").max = course.lessons.length;
     $("#globalProgress").value = count;
     $("#globalProgress").textContent = `${count}/${course.lessons.length}`;
     $("#progressText").textContent = `${count}/${course.lessons.length}`;

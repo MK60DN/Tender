@@ -5,7 +5,7 @@
   const studentId = new URLSearchParams(location.search).get("student") || localStorage.getItem("tender.student") || "S01";
   const account = (() => { try { return JSON.parse(localStorage.getItem("tender.account") || "null"); } catch (_) { return null; } })();
   const displayName = localStorage.getItem("tender.displayName") || (account && account.displayName) || studentId;
-  const state = { token: null, busy: false };
+  const state = { token: null, busy: false, worldSetup: null };
   function toast(message, error) { const el = $("toast"); el.textContent = message; el.className = "toast show" + (error ? " error" : ""); clearTimeout(state.toastTimer); state.toastTimer = setTimeout(() => { el.className = "toast"; }, 3200); }
   async function ensureSession() {
     if (state.token) return state.token;
@@ -33,6 +33,7 @@
     $("actorLabel").textContent = displayName + " · " + studentId;
     try {
       const [home, context] = await Promise.all([api("/learner/home/" + encodeURIComponent(studentId)), api("/tender/context/" + encodeURIComponent(studentId))]);
+      try { state.worldSetup = await api("/learner/world-setup/" + encodeURIComponent(studentId)); } catch (_) { state.worldSetup = null; }
       const passport = home.passport || {}, skills = passport.skills || {}, meta = passport.metacognition || {}, mental = home.mentalization || {};
       const digest = context.digest || {}, pre = context.preassessment || {}, world = pre.world_interface || {}, entry = world.world_entry || {};
       const storedEntry = (() => { try { return JSON.parse(localStorage.getItem("tender.worldEntry." + studentId) || "null"); } catch (_) { return null; } })();
@@ -43,6 +44,16 @@
       $("mastery").textContent = pct(skills.mastery);
       $("eventCount").textContent = passport.learning_events || context.event_count || 0;
       $("hesitation").textContent = pct(meta.hesitation);
+      const objective = (state.worldSetup && state.worldSetup.world_context) || pre.world_context || {};
+      $("worldMapView").innerHTML = rows([
+        ["客观世界 · 阶段", (objective.stage || "未设置") + " · " + (objective.grade || "未设置")],
+        ["学习范围", (objective.subjects || []).join("、") || "未选择"],
+        ["当前重点", (objective.target_subjects || []).join("、") || "尚未指定"],
+        ["学校 / 专业", [objective.school, objective.major].filter(Boolean).join(" · ") || "未填写"],
+        ["当前目标", objective.goal || "先建立稳定学习节奏"],
+        ["主观入口", (storedEntry && storedEntry.label) || entry.label || "尚未形成"],
+        ["修改坐标", '<a href="/ui/world-setup.html?student=' + encodeURIComponent(studentId) + '&onboarding=1">重新填写年级、学科与目标</a>']
+      ]);
       const attention = pre.attention_profile || {};
       $("attentionView").innerHTML = rows([
         ["容易吸引注意", (attention.capture_hypotheses || [])[0] || "暂无足够证据"],
@@ -77,6 +88,5 @@
     finally { state.busy = false; $("exportBtn").disabled = false; }
   }
   $("exportBtn").onclick = exportData;
-  $("logoutBtn").onclick = () => { ["tender.account", "tender.student", "tender.displayName"].forEach((key) => localStorage.removeItem(key)); location.href = "/ui/login.html"; };
   load();
 })();

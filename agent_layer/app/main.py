@@ -1,9 +1,9 @@
 """Tender Agent Layer 完整 MVP API + 产品网站。"""
 from __future__ import annotations
-import hashlib, json, os, pathlib
+import hashlib, json, os, pathlib, threading, time
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from fastapi import FastAPI, HTTPException, Query, Request, Header
+from fastapi import BackgroundTasks, FastAPI, HTTPException, Query, Request, Header
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
@@ -11,7 +11,8 @@ from pydantic import BaseModel, Field
 from typing import Any
 
 from .daoql import (insert_event, list_events, insert_edge, causal_path, event_graph,
-                    list_audit, count_events, write_audit, all_events, verify_audit_chain)
+                    list_audit, count_events, write_audit, all_events, verify_audit_chain,
+                    delete_student_data)
 from .tender import compute_state
 from .metameta_cartographer import (annotate_and_store, decompose_and_store, build_metameta_annotation_map, extract_text, region_catalog)
 from .agent_runtime import list_agents, invoke, get_agent as get_runtime_agent, runtime_status, plan_workforce
@@ -47,7 +48,8 @@ from .governance_phases import CURRENT_PHASE, PHASE_POLICIES, TRANSITION_REQUIRE
 from .neuro_learning_evidence import catalog_summary, get_claim_boundary, get_integration_layers, list_datasets, list_research
 from .preassessment import (
     big_five_change_state, big_five_pulse_items, latest_big_five_pulse,
-    latest_preassessment, preassessment_items, submit_big_five_pulse, submit_preassessment,
+    latest_preassessment, latest_world_context, preassessment_items, submit_big_five_pulse,
+    submit_preassessment, submit_world_context,
 )
 from .tender_context import build_tender_context
 from .world_tree import build_world_tree
@@ -67,7 +69,7 @@ GUIDE = pathlib.Path(__file__).resolve().parents[2] / "site"
 DEV_DOCS = os.getenv("TENDER_ENABLE_DEV_DOCS", "0") == "1"
 app = FastAPI(
     title="Tender C-End Mentalization Learning App",
-    version="7.0.0",
+    version="7.2.1",
     docs_url="/docs" if DEV_DOCS else None,
     redoc_url=None,
     openapi_url="/openapi.json" if DEV_DOCS else None,
@@ -79,7 +81,7 @@ app.include_router(language_router)
 seed_demo_consents([r["student_id"] for r in ROSTER])
 
 PUBLIC_PATHS = {"/health", "/preassessment/items", "/preassessment/pulse/items", "/governance/policy", "/research/neuro-learning/catalog", "/research/neuro-learning/datasets", "/research/neuro-learning/research", "/research/neuro-learning/claim", "/roles", "/agents", "/agents/fixed", "/agents/marketplace", "/agents/catalog", "/agent-runtime/status", "/benchmark/tender-theta", "/cognition/constructs", "/ambient/personas", "/openapi.json", "/docs", "/auth/demo-session", "/tenant/demo-session"}
-SENSITIVE_PREFIXES = ("/preassessment/", "/auth/me", "/cognition/", "/metameta/", "/ambient/", "/auth/logout", "/auth/logout-all", "/auth/sessions", "/guardian/", "/safety/", "/agents/catalog", "/workforce/", "/learner/", "/decision-loops", "/daoql/", "/tender/", "/world-tree/", "/golden-bias/", "/group-sessions/", "/group-sessions", "/peer-view-grants", "/peer-view-grants/", "/peer-models/", "/shared-branches/", "/reports/", "/audit", "/agents/generate", "/agents/entitlements/", "/workforce/", "/head_teacher", "/sales", "/institution", "/teaching", "/dorm", "/workflow", "/workbench", "/advisors", "/rag/ingest", "/tenant/")
+SENSITIVE_PREFIXES = ("/preassessment/", "/system/", "/auth/me", "/cognition/", "/metameta/", "/ambient/", "/auth/logout", "/auth/logout-all", "/auth/sessions", "/guardian/", "/safety/", "/agents/catalog", "/workforce/", "/learner/", "/decision-loops", "/daoql/", "/tender/", "/world-tree/", "/golden-bias/", "/group-sessions/", "/group-sessions", "/peer-view-grants", "/peer-view-grants/", "/peer-models/", "/shared-branches/", "/reports/", "/audit", "/agents/generate", "/agents/entitlements/", "/workforce/", "/head_teacher", "/sales", "/institution", "/teaching", "/dorm", "/workflow", "/workbench", "/advisors", "/rag/ingest", "/tenant/")
 
 
 def _target_learner(path: str) -> str | None:
@@ -87,7 +89,7 @@ def _target_learner(path: str) -> str | None:
     if not parts:
         return None
     if parts[0] == "learner" and len(parts) >= 3:
-        return parts[-1]
+        return parts[2]
     if parts[0] == "daoql" and len(parts) >= 3 and parts[1] in {"events", "graph"}:
         return parts[2]
     if parts[0] == "tender" and len(parts) >= 3:
@@ -109,6 +111,8 @@ def _target_learner(path: str) -> str | None:
 
 @app.middleware("http")
 async def identity_guard(request: Request, call_next):
+    if request.url.path in {"/ui", "/ui/", "/ui/index.html"}:
+        return RedirectResponse("/ui/single.html", status_code=307)
     if request.method == "OPTIONS" or request.url.path.startswith("/ui/"):
         return await call_next(request)
     if request.url.path == "/roles" and request.query_params.get("surface", "consumer") != "consumer":
@@ -160,6 +164,17 @@ async def identity_guard(request: Request, call_next):
 class PreassessmentSubmission(BaseModel):
     responses: dict[str, int]
     consent: bool = False
+    world_context: dict[str, Any] = Field(default_factory=dict)
+
+
+class WorldContextSubmission(BaseModel):
+    world_context: dict[str, Any] = Field(default_factory=dict)
+    consent: bool = False
+
+
+class LearnerDataDeletion(BaseModel):
+    confirmation: str
+    acknowledge_irreversible: bool = False
 
 
 class BigFivePulseSubmission(BaseModel):
@@ -732,9 +747,40 @@ def get_preassessment_items():
 @app.post("/preassessment/submit/{learner_id}")
 def post_preassessment(learner_id: str, submission: PreassessmentSubmission):
     try:
-        return submit_preassessment(learner_id, submission.responses, consent=submission.consent)
+        return submit_preassessment(
+            learner_id, submission.responses, consent=submission.consent,
+            world_context=submission.world_context or None,
+        )
     except ValueError as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
+
+
+@app.post("/learner/world-setup/{learner_id}")
+def post_learner_world_setup(learner_id: str, submission: WorldContextSubmission):
+    _require_decision_learner_access(learner_id)
+    try:
+        return submit_world_context(learner_id, submission.world_context, consent=submission.consent)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+
+
+@app.get("/learner/world-setup/{learner_id}")
+def get_learner_world_setup(learner_id: str):
+    _require_decision_learner_access(learner_id)
+    context = latest_world_context(learner_id)
+    if context is None:
+        raise HTTPException(status_code=404, detail="world_setup_not_found")
+    return {"learner_id": learner_id, "world_context": context}
+
+
+@app.post("/learner/data/{learner_id}/delete")
+def delete_learner_data(learner_id: str, request: LearnerDataDeletion):
+    principal = _require_decision_learner_access(learner_id)
+    if not request.acknowledge_irreversible or request.confirmation.strip() != learner_id:
+        raise HTTPException(status_code=422, detail="irreversible_delete_confirmation_required")
+    deleted = delete_student_data(learner_id)
+    write_audit(principal.actor_id, "learner.data.delete", "learner:" + hashlib.sha256(learner_id.encode("utf-8")).hexdigest()[:16], {"deleted_events": deleted})
+    return {"status": "deleted", "learner_id": learner_id, "deleted_events": deleted}
 
 
 @app.get("/preassessment/profile/{learner_id}")
@@ -2753,6 +2799,36 @@ def role_home(role_id: str, student_id: str = "S01", class_id: str = "理科班"
         "rbac_status": "preview_only",
         "note": "角色界面已拆分；生产环境需要服务端鉴权、最小权限和审计。",
     }
+def _runtime_dir() -> pathlib.Path:
+    base = os.environ.get("LOCALAPPDATA") or str(pathlib.Path.home())
+    path = pathlib.Path(base) / "Tender" / "runtime"
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+def request_runtime_shutdown() -> None:
+    marker = _runtime_dir() / "shutdown.request"
+    marker.write_text(json.dumps({"requested_at": datetime.now().isoformat()}), encoding="utf-8")
+    if os.environ.get("TENDER_DISABLE_PROCESS_EXIT") == "1":
+        return
+    def stop_process() -> None:
+        time.sleep(0.8)
+        os._exit(0)
+    threading.Thread(target=stop_process, daemon=True).start()
+
+
+@app.post("/system/shutdown")
+def system_shutdown(request: Request, background_tasks: BackgroundTasks):
+    principal = get_current_principal()
+    if principal is None:
+        raise HTTPException(status_code=401, detail="identity_required")
+    host = request.client.host if request.client else ""
+    if host not in {"127.0.0.1", "::1", "testclient"}:
+        raise HTTPException(status_code=403, detail="local_only")
+    background_tasks.add_task(request_runtime_shutdown)
+    return {"status": "shutting_down", "marker": str(_runtime_dir() / "shutdown.request")}
+
+
 app.mount("/ui", StaticFiles(directory=str(STATIC), html=True), name="ui")
 if GUIDE.exists():
     app.mount("/guide", StaticFiles(directory=str(GUIDE), html=True), name="guide")
@@ -2760,4 +2836,4 @@ if GUIDE.exists():
 
 @app.get("/")
 def root():
-    return RedirectResponse("/ui/")
+    return RedirectResponse("/ui/single.html")

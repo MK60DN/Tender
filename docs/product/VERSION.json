@@ -84,7 +84,7 @@
     "status_endpoint": "GET /agent-runtime/status"
   },
   "sha256": "7a9eec63c378b994a8b749c266dec774f5ee9fab96946e2307d0ba2f67cb0079",
-  "tests": 130,
+  "tests": 139,
   "identity": {
     "development": "signed HMAC bearer session",
     "session_revocation": "implemented",
@@ -333,7 +333,7 @@
     "report": "Tender-Product-Manual-v7.2.pdf §21.6",
     "report_source": "Tender-Product-Manual-v7.2.md",
     "report_pages": 54,
-    "tests": 130,
+    "tests": 139,
     "attention_profile": true,
     "cognitive_correction_plan": true,
     "correction_card_fields": [
@@ -366,7 +366,7 @@
     "max_hypotheses": 3,
     "context_digest_recorded": true,
     "llm_end_to_end_verified": true,
-    "tests": 114,
+    "tests": 139,
     "knowledge_context": true,
     "major_career_context": true,
     "longitudinal_state_fields": [
@@ -639,7 +639,7 @@
       "GET /metameta/map/{student_id}"
     ],
     "context_version": "tender-context-2.0",
-    "tests": 130,
+    "tests": 139,
     "boundary": "The cognitive-map regions are interpretive retrieval labels, not brain scans, clinical diagnoses or objective facts."
   },
   "project_whitepaper": {
@@ -934,5 +934,35 @@
       "Golden-Bias Experiment V1.0",
       "Rhythm Phase Experiment V1.0"
     ]
+  },
+  "world_setup": {
+    "version": "learner-world-context-1.0",
+    "endpoint": "/learner/world-setup/{learner_id}",
+    "required_before_assessment": true,
+    "fields": [
+      "stage",
+      "grade",
+      "school",
+      "major",
+      "subjects",
+      "target_subjects",
+      "goal",
+      "learning_mode"
+    ],
+    "subjective_assessment_follows_objective_world": true
+  },
+  "account_lifecycle": {
+    "account_menu_pages": [
+      "ambient",
+      "single",
+      "multi",
+      "preassessment",
+      "world-tree"
+    ],
+    "logout": true,
+    "delete_learner_data": "irreversible_with_exact_id_confirmation",
+    "shutdown": true,
+    "shutdown_endpoint": "/system/shutdown",
+    "desktop_overlay_shutdown_marker": "%LOCALAPPDATA%/Tender/runtime/shutdown.request"
   }
 }

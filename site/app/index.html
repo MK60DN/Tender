@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Tender static product demo for GitHub Pages">
+  <meta name="theme-color" content="#0d1812">
+  <title>Tender · 静态体验</title>
+  <link rel="stylesheet" href="app.css?v=1">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../"><span class="brand-mark">T</span><span><b>Tender</b><small>静态体验 · GitHub Pages</small></span></a>
+  <nav class="topnav"><a href="../">教育介绍</a><a href="#dashboard" id="appNav">应用</a><a href="../assets/docs/Tender-User-Guide-v7.2.pdf" target="_blank" rel="noreferrer">用户手册</a></nav>
+  <div class="account-wrap" id="accountWrap" hidden>
+    <button class="account-btn" id="accountBtn" type="button"><span id="avatar">T</span><b id="accountName">学习者</b><i>▼</i></button>
+    <div class="account-menu" id="accountMenu" hidden><header><b id="menuName">学习者</b><span id="menuId"></span></header><button type="button" id="logoutBtn">退出账号</button><button type="button" class="danger" id="deleteBtn">清除本机演示数据</button></div>
+  </div>
+</header>
+<main class="app-shell">
+  <aside class="demo-note"><b>STATIC DEMO</b><span>这是 GitHub Pages 可运行的静态体验版。数据只保存在当前浏览器，不会上传。完整后端可一键启动：</span><a href="https://codespaces.new/MK60DN/Tender?quickstart=1" target="_blank" rel="noreferrer">GitHub Codespaces</a><a href="https://render.com/deploy?repo=https://github.com/MK60DN/Tender" target="_blank" rel="noreferrer">Render 一键部署</a><a href="../README.md">部署说明</a></aside>
+  <section class="view login-view" id="loginView">
+    <div class="hero-card"><p class="eyebrow">WELCOME TO TENDER</p><h1>先建立你的世界，<br>再让系统理解你的心智。</h1><p class="lead">真实产品包含 FastAPI、DAOQL、Agent 和桌面弹幕。这个静态版保留完整的首用体验，让你在 GitHub Pages 上直接试用主要流程。</p><div class="flow-grid"><div><b>01</b><span>登录</span><small>创建本机演示学习者</small></div><div><b>02</b><span>世界坐标</span><small>年级、学科与目标</small></div><div><b>03</b><span>心智测评</span><small>生成可更正的支持假设</small></div></div></div>
+    <form class="panel login-panel" id="loginForm"><span class="tag">本机体验</span><h2>进入 Tender</h2><label><span>怎么称呼你</span><input id="nameInput" maxlength="30" placeholder="例如：小林" autocomplete="nickname"></label><label class="check"><input id="consentInput" type="checkbox"><span>我知道这是一个静态体验，不做心理或医学诊断。</span></label><button class="primary" type="submit">开始建立世界坐标</button><p class="muted">不需要密码，也不会自动带入演示名单中的其他用户。</p></form>
+  </section>
+  <section class="view world-view" id="worldView" hidden>
+    <div class="section-head"><div><p class="eyebrow">OBJECTIVE WORLD</p><h1>建立你的客观世界坐标。</h1><p>先告诉 Tender 你在什么阶段、学什么、想完成什么。下一步再理解你的主观入口。</p></div><span class="step-pill">2 / 3</span></div>
+    <form class="panel world-panel" id="worldForm"><div class="two"><label><span>当前阶段</span><select id="stageSelect"></select></label><label><span>具体年级/阶段</span><select id="gradeSelect"></select></label></div><div class="two"><label><span>学校或学习环境</span><input id="schoolInput" maxlength="100" placeholder="可选"></label><label><span>专业或岗位方向</span><input id="majorInput" maxlength="100" placeholder="可选"></label></div><div class="group-title">主要学习科目 <small>至少选择一项</small></div><div class="chips" id="subjectChips"></div><div class="group-title">当前最想提升的 1–3 项</div><div class="chips" id="targetChips"></div><label><span>当前目标</span><textarea id="goalInput" maxlength="260" placeholder="例如：三个月内把数学提高到 105 分"></textarea></label><div class="actions"><button class="primary" type="submit">保存并进入测评</button><button class="ghost" type="button" id="logoutWorldBtn">退出账号</button></div></form>
+  </section>
+  <section class="view assessment-view" id="assessmentView" hidden>
+    <div class="section-head"><div><p class="eyebrow">MENTALIZING SELF-REPORT</p><h1>生成你的支持偏好。</h1><p>演示版用 8 道题展示流程。真实版本使用 44 道结构化题目，并在后端形成可撤回画像。</p></div><span class="step-pill" id="questionCount">1 / 8</span></div>
+    <div class="panel question-panel"><div class="progress"><i id="progressBar"></i></div><p class="question" id="questionText"></p><div class="scale" id="scaleButtons"></div><p class="muted">根据最近三个月的真实情况选择，不需要选择理想中的自己。</p></div>
+  </section>
+  <section class="view dashboard-view" id="dashboardView" hidden>
+    <div class="section-head"><div><p class="eyebrow">YOUR TENDER</p><h1 id="greeting">今天先做一个小步骤。</h1><p>你的世界坐标、主观入口和最小支持都在这里。</p></div><span class="step-pill success">已完成</span></div>
+    <div class="dashboard-grid"><article class="panel wide world-summary"><header><div><h2>我的世界坐标</h2><p>客观环境与当前目标</p></div><button class="ghost small" id="editWorldBtn" type="button">修改</button></header><div id="worldSummary"></div></article><article class="panel"><header><div><h2>支持假设</h2><p>不是诊断或标签</p></div></header><div id="supportSummary"></div></article><article class="panel"><header><div><h2>初始 Agent 圆桌</h2><p>不同专业视角</p></div></header><div class="agent-room" id="agentRoom"></div></article><article class="panel wide ambient-panel"><header><div><h2>环境辅助预览</h2><p>灰色半透明、黑色文字，最多同时两条</p></div><button class="ghost small" id="replayDanmaku" type="button">再来一轮</button></header><div class="ambient-stage"><div class="ambient-bg"></div><div class="lane" id="lane1"></div><div class="lane" id="lane2"></div></div></article><article class="panel wide"><header><div><h2>数据边界</h2><p>静态体验版</p></div></header><div class="boundary-grid"><div><b>保存</b><span>当前浏览器 localStorage 中的演示昵称、世界坐标和支持假设</span></div><div><b>不保存</b><span>屏幕内容、媒体文件、摄像头、麦克风、真实学习记录</span></div><div><b>可清除</b><span>右上角账号菜单可退出或清除全部本机演示数据</span></div></div></article></div>
+  </section>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="app.js?v=1" defer></script>
+</body>
+</html>

@@ -8,6 +8,7 @@
 - [Teaching manual V6.2](teaching/Tender-Teaching-Manual-v6.2.pdf)
 - [Central thesis](product/Tender-Central-Thesis.md)
 - [Current document index](product/VERSION_INDEX.md)
+- [Deployment options](DEPLOYMENT.md)
 - [Screen context MCP](SCREEN_CONTEXT_MCP.md)
 - [Media plugins](MEDIA_PLUGINS.md)
 

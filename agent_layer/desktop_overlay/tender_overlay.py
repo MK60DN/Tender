@@ -24,7 +24,7 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 import tkinter as tk
-from tkinter import filedialog, font as tkfont
+from tkinter import filedialog, font as tkfont, messagebox
 
 OVERLAY_DIR = Path(__file__).resolve().parent
 if str(OVERLAY_DIR) not in sys.path:
@@ -49,6 +49,11 @@ from screen_context import (
 )
 
 CFG_PATH = Path(__file__).with_name("config.json")
+
+
+def runtime_shutdown_marker() -> Path:
+    base = Path(os.environ.get("LOCALAPPDATA") or Path.home())
+    return base / "Tender" / "runtime" / "shutdown.request"
 WM_HOTKEY = 0x0312
 MOD_ALT = 0x0001
 MOD_CONTROL = 0x0002
@@ -286,6 +291,9 @@ class TenderClient:
     def reply(self, card_id: str, message: str, scenario: str = "score_improvement", agent_id: str | None = None, agent_ids: list[str] | None = None) -> dict:
         return self._json("POST", f"/ambient/reply/{self.student_id}", {"card_id": card_id, "message": message, "scenario": scenario, "agent_id": agent_id, "agent_ids": agent_ids})
 
+    def shutdown(self) -> dict:
+        return self._json("POST", "/system/shutdown", {})
+
     def list_personas(self) -> dict:
         return self._json("GET", "/ambient/personas", {})
 
@@ -328,6 +336,10 @@ class Overlay:
         self.root.attributes("-alpha", float(cfg.get("alpha", 0.82)))
         self.root.configure(bg="#c9cbcd")
         self.root.withdraw()
+        try:
+            runtime_shutdown_marker().unlink(missing_ok=True)
+        except OSError:
+            pass
 
         self.card_id: str | None = None
         self.hide_job = None
@@ -418,6 +430,7 @@ class Overlay:
         send_btn.pack(side="right", padx=(8, 12), pady=9)
         self.media_button = tk.Button(win, text="媒体", bg="#bfc2c5", fg="#111111", activebackground="#aeb2b5", activeforeground="#000000", relief="flat", bd=0, padx=10, cursor="hand2", font=("Microsoft YaHei UI", 8), command=self.choose_media_file)
         self.media_button.pack(side="right", padx=(0, 4), pady=9)
+        tk.Button(win, text="关闭", bg="#bfc2c5", fg="#7d2929", activebackground="#e2bcbc", activeforeground="#5d1717", relief="flat", bd=0, padx=10, cursor="hand2", font=("Microsoft YaHei UI", 8), command=self.shutdown_tender).pack(side="right", padx=(0, 4), pady=9)
         self.screen_context_button = tk.Button(win, text="读界面 · 关", bg="#bfc2c5", fg="#111111", activebackground="#aeb2b5", activeforeground="#000000", relief="flat", bd=0, padx=10, cursor="hand2", font=("Microsoft YaHei UI", 8), command=self.toggle_screen_context)
         self.screen_context_button.pack(side="right", padx=(0, 4), pady=9)
         self.conversation_entry = tk.Entry(win, bg="#f3f3f3", fg="#777777", insertbackground="#111111", relief="flat", font=("Microsoft YaHei UI", 10))
@@ -536,6 +549,14 @@ class Overlay:
         ctypes.windll.user32.SetWindowLongW(hwnd, GWL_EXSTYLE, style)
 
     def monitor_tick(self) -> None:
+        marker = runtime_shutdown_marker()
+        if marker.exists():
+            try:
+                marker.unlink(missing_ok=True)
+            except OSError:
+                pass
+            self.exit()
+            return
         self.last_signals.sample()
         self.last_signals.activity_tick()
         self._update_screen_context_label()
@@ -763,6 +784,15 @@ class Overlay:
         except queue.Empty:
             pass
         self.root.after(120, self.process_hotkeys)
+
+    def shutdown_tender(self) -> None:
+        if not messagebox.askyesno("关闭 Tender", "关闭桌面弹幕和后台服务？"):
+            return
+        try:
+            self.client.shutdown()
+        except Exception:
+            pass
+        self.exit()
 
     def choose_media_file(self) -> None:
         if self.media_running:

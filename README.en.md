@@ -6,6 +6,7 @@
 
 ## Start here
 
+- **One-click backend / 一键后端**：[GitHub Codespaces](https://codespaces.new/MK60DN/Tender?quickstart=1) · [Deploy to Render](https://render.com/deploy?repo=https://github.com/MK60DN/Tender) · [Deployment guide](docs/DEPLOYMENT.md)
 - [Teaching website](https://mk60dn.github.io/Tender/) · [Local course](http://127.0.0.1:8080/guide/) · [Source](site/)
 - [Whitepaper local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v2.2.pdf) · [Repo PDF](docs/whitepaper/Tender-Whitepaper-v2.2.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v2.2.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v2.2.tex)
 - [Product manual local](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v7.2.pdf) · [Word](docs/product/Tender-Product-Manual-v7.2.docx) · [User guide local](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v7.2.pdf) · [Word](docs/product/Tender-User-Guide-v7.2.docx) · [Teaching manual local](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v6.2.pdf)
@@ -59,7 +60,7 @@ cd agent_layer
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8080
 ```
 
-Open <http://127.0.0.1:8080/ui/login.html>. After onboarding: <http://127.0.0.1:8080/ui/single.html> (solo), <http://127.0.0.1:8080/ui/multi.html> (multi-person), or <http://127.0.0.1:8080/ui/ambient.html> (ambient assistance).
+Open <http://127.0.0.1:8080/ui/login.html>. Complete the three steps (login, world coordinates, mentalizing assessment). The account menu can sign out, delete the current learner data or shut down Tender. After onboarding: <http://127.0.0.1:8080/ui/single.html> (solo), <http://127.0.0.1:8080/ui/multi.html> (multi-person), or <http://127.0.0.1:8080/ui/ambient.html> (ambient assistance).
 
 ## Tests
 
@@ -67,7 +68,7 @@ Open <http://127.0.0.1:8080/ui/login.html>. After onboarding: <http://127.0.0.1:
 python agent_layer/tests/run_all.py
 ```
 
-Expected baseline: `passed 128 tests`; full `pytest` currently has 130 passing and 1 opt-in heavy-media skip.
+Expected baseline: `passed 136 tests`; full `pytest` currently has 139 passing and 1 opt-in heavy-media skip.
 
 ## Documentation
 

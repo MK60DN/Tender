@@ -9,6 +9,8 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%2370dcae'/><text x='16' y='22' font-size='17' text-anchor='middle' fill='%2309120e' font-family='monospace' font-weight='700'>A</text></svg>">
   <link rel="stylesheet" href="/ui/agent-command-center.css?v=11">
   <link rel="stylesheet" href="/ui/mode-switch.css?v=4">
+  <script src="/ui/onboarding-gate.js?v=2"></script>
+  <link rel="stylesheet" href="/ui/account-menu.css?v=2">
 </head>
 <body>
 <a class="sr-only" href="#mainContent">跳到主要内容</a>
@@ -35,7 +37,7 @@
       <h3>ACTIVE LEARNER</h3>
       <label class="sr-only" for="studentSelect">当前学习者</label>
       <select class="learner-select" id="studentSelect">
-        <option value="S01">S01 · 当前学习者</option>
+        <option value="">读取当前学习者…</option>
       </select>
       <p class="rail-note">只展示当前学习者的授权摘要、Agent 运行结果与审计轨迹。原始对话不会进入本页。</p>
     </div>
@@ -51,7 +53,7 @@
       <div class="crumb"><span>TENDER</span><b>/</b><strong>多 Agent 作战大屏</strong></div>
       <div class="top-actions">
         <button class="btn icon-btn" id="refreshBtn" type="button" title="刷新数据" aria-label="刷新数据">↻</button>
-        <a class="btn" href="/ui/" aria-label="返回 Tender 主界面">← <span>返回主界面</span></a>
+        <a class="btn" href="/ui/single.html" aria-label="返回 Tender 主界面">← <span>返回主界面</span></a>
         <a class="btn" href="/ui/knowledge.html" aria-label="打开知识森林">◫ <span>知识森林</span></a>
         <button class="btn primary" id="runDemoBtn" type="button">＋ <span>新建协作</span></button>
       </div>
@@ -180,6 +182,7 @@
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="/ui/agent-command-center.js?v=11" defer></script>
+<script src="/ui/account-menu.js?v=2" defer></script>
 </body>
 </html>
 

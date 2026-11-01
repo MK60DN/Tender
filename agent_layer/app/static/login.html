@@ -17,7 +17,7 @@
     </div>
     <ol class="steps" aria-label="首次使用步骤">
       <li class="active"><b>1</b><span><strong>登录</strong><small>选择你是谁</small></span></li>
-      <li><b>2</b><span><strong>认识你</strong><small>完成基础测评</small></span></li>
+      <li><b>2</b><span><strong>世界坐标</strong><small>年级、学科与目标</small></span></li>
       <li><b>3</b><span><strong>进入 Tender</strong><small>开始今天的一步</small></span></li>
     </ol>
   </section>
@@ -27,14 +27,14 @@
     <form id="loginForm" novalidate>
       <label class="field" for="learnerSelect"><span>学习者</span><select id="learnerSelect" disabled><option>正在加载…</option></select></label>
       <label class="field" id="newNameField" hidden for="newName"><span>怎么称呼你</span><input id="newName" maxlength="30" placeholder="例如：小林"></label>
-      <label class="field" for="stageSelect"><span>当前阶段</span><select id="stageSelect"><option value="高中">高中</option><option value="大学">大学</option><option value="职业早期">职业早期</option><option value="其他">其他</option></select></label>
       <label class="consent"><input id="loginConsent" type="checkbox"><span>我知道 Tender 提供学习支持，不做心理或医学诊断。</span></label>
       <p class="form-status" id="loginStatus" role="status" aria-live="polite"></p>
       <button class="primary" id="loginBtn" type="submit">继续</button>
     </form>
-    <p class="footnote">本地预览不需要密码。登录状态只保存在这台设备。</p>
+    <p class="footnote">本地预览不需要密码。这里只列出这台设备主动创建过的学习者，不会自动带入演示名单。</p>
+    <div class="device-actions"><button class="shutdown-link" id="clearAccountsBtn" type="button">清除本机账号记录</button><button class="shutdown-link" id="shutdownBtn" type="button">关闭 Tender 服务</button></div>
   </section>
 </main>
-<script src="/ui/login.js?v=2" defer></script>
+<script src="/ui/login.js?v=3" defer></script>
 </body>
 </html>

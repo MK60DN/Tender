@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: tender-demo
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeployTrigger: "off"
+    envVars:
+      - key: LLM_PROVIDER
+        value: mock
+      - key: TENDER_DEMO_MODE
+        value: "1"
+      - key: TENDER_ALLOW_HEADER_IDENTITY
+        value: "0"
+      - key: TENDER_SESSION_SECRET
+        generateValue: true
+      - key: PYTHONUNBUFFERED
+        value: "1"
+
