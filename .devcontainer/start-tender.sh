@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
-if pgrep -f "uvicorn app.main:app" >/dev/null 2>&1; then
+if python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=1)" >/dev/null 2>&1; then
   echo "Tender backend is already running on port 8080."
   exit 0
 fi
 SECRET_FILE=/tmp/tender-session-secret
 if [ ! -f "$SECRET_FILE" ]; then
-  openssl rand -hex 32 > "$SECRET_FILE"
+  python -c "import secrets; print(secrets.token_hex(32))" > "$SECRET_FILE"
 fi
 cd "$(dirname "$0")/../agent_layer"
 TENDER_SESSION_SECRET="$(cat "$SECRET_FILE")" \

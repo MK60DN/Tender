@@ -40,6 +40,20 @@ def test_public_role_workspace_was_removed():
     assert "完整工作台" not in single
 
 
+def test_education_site_publishes_reproducible_evidence_and_failure_boundaries():
+    root = Path(__file__).resolve().parents[2]
+    index = (root / "site" / "index.html").read_text(encoding="utf-8")
+    app = (root / "site" / "assets" / "app.js").read_text(encoding="utf-8")
+
+    for value in ("+6.3 pp", "95.3%", "0.9919", "273,364", "95% CI"):
+        assert value in index
+    for value in ("WHAT DID NOT WIN", "Tender did not beat logistic", "尚无真人随机对照实验"):
+        assert value in index
+    for value in ("No randomized human trial yet", "universal superiority", "help humanity evolve"):
+        assert value in app
+    assert "帮助人类演化" in index
+
+
 def test_github_pages_app_and_one_click_backend_links_exist():
     root = Path(__file__).resolve().parents[2]
     site = root / "site"
