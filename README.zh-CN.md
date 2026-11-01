@@ -7,8 +7,8 @@
 ## 从这里开始
 
 - [教学网站](https://mk60dn.github.io/Tender/) · [本地课程](http://127.0.0.1:8080/guide/) · [站点源码](site/)
-- [白皮书本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v1.9.pdf) · [仓库 PDF](docs/whitepaper/Tender-Whitepaper-v1.9.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v1.9.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v1.9.tex)
-- [产品手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v6.23.pdf) · [用户手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v6.11.pdf) · [零基础教学手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v5.6.pdf)
+- [白皮书本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v2.0.pdf) · [仓库 PDF](docs/whitepaper/Tender-Whitepaper-v2.0.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v2.0.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v2.0.tex)
+- [产品手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v7.0.pdf) · [用户手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v7.0.pdf) · [零基础教学手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v6.0.pdf)
 
 
 [![CI](https://github.com/MK60DN/Tender/actions/workflows/ci.yml/badge.svg)](https://github.com/MK60DN/Tender/actions/workflows/ci.yml)
@@ -29,6 +29,10 @@
 - **知识森林**：连接 13 个高中学科、1,075 个知识节点、875 个本科专业、319 门课程和 1,016 个职业。
 - **DAOQL 事件层**：保存事实、来源、因果、授权与审计。
 - **Agent 系统**：固定辅助、专业顾问、工作台编排与专家 Agent 市场 MVP。
+
+## 群聊双链路
+
+每个成员保留自己的完整私密模型；他者模型属于观察者，只使用群公开互动与对方授权摘要；共享枝需要全部参与者批准，Agent 不自动在群里发言。
 
 ## 边界
 
@@ -60,14 +64,14 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8080
 python agent_layer/tests/run_all.py
 ```
 
-当前基线：`passed 105 tests`。
+当前基线：`passed 114 tests`。
 
 ## 文档
 
-- [项目白皮书 V1.9](docs/whitepaper/Tender-Whitepaper-v1.9.pdf)
+- [项目白皮书 V2.0](docs/whitepaper/Tender-Whitepaper-v2.0.pdf)
 - [节律相位与周期证据实验 V1.0](docs/research/Tender-Rhythm-Phase-Experiment-v1.0.pdf)
-- [产品手册](docs/product/Tender-Product-Manual-v6.23.pdf)
-- [用户手册](docs/product/Tender-User-Guide-v6.11.pdf)
+- [产品手册](docs/product/Tender-Product-Manual-v7.0.pdf)
+- [用户手册](docs/product/Tender-User-Guide-v7.0.pdf)
 - [研究边界](docs/RESEARCH_CLAIMS.md)
 
 ## 许可证

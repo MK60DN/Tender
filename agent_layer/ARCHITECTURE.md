@@ -268,3 +268,25 @@ DAOQL 客观事件根系
 ```
 
 动态黄金比不是每日 KPI，而是学习与创造的负担感知调节器。真实周期必须从事件序列估计并通过随机波动基线；候选周期继续保持试探性。它不改变知识掌握模型，只影响提示时机、沟通和建议顺序。合成实验及其边界见 `docs/research/Tender-Golden-Bias-Experiment-v1.0.pdf` 与 `docs/research/Tender-Rhythm-Phase-Experiment-v1.0.pdf`。
+
+## 双链路后台
+
+```text
+单人：
+私密事件 → DAOQL → Tender Context → Triage → Agent Runtime
+→ 私有弹幕/草稿 → 真实结果 → Decision Loop → 世界树
+
+群聊：
+群公开事件 / 我的私密事件 / 他者授权摘要
+→ Scope Router
+→ Group Session Service
+→ Group Model（只读公开事件与共享枝）
+→ Triage（个人 / 双人 / 群体 / 安全）
+→ 私有建议或 Group Facilitator
+→ 用户明确发送/承诺/退出
+→ Group Outcome → Shared Branch
+```
+
+四类模型严格分离：`SelfModel(A)`、`OtherModel(A→B)`、`SharedView(B→A)`、`GroupModel(G)`。共享枝再区分双人 `bilateral` 与群组 `group`，双人枝不自动进入 Group Model。其中 `OtherModel(A→B)` 属于观察者，是关系假设而不是 B 的真实心智；`GroupModel(G)` 不读取任何成员的私密 Tender。
+
+实现位于 `agent_layer/app/group_chat.py`。群聊事件、授权视图、共享枝和群组成果均写入同一 SQLite 数据库并进入审计。当前仍是链下专家议会阶段，BFT/Shapley 只保留为后续治理工具。

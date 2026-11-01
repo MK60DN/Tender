@@ -384,4 +384,47 @@ GET  /golden-bias/{student_id}
 `/preassessment/*` 保存标准化八功能态度、大五基线与大五脉搏，不保存逐题原文。`/world-tree/{student_id}` 返回 DAOQL 客观根系、Agent Bridge 树干、五类树枝、11 个体验节点、开花、结果与共享枝边界。共享枝默认不生成，需双方明确授权。
 ## 动态黄金比偏置
 
-`GET /golden-bias/{student_id}` 返回 7 天和 28 天窗口下的学习/创造投入、较小极与较大极占比、带内状态、滞回状态、新异比、创造后 72 小时校准比、置信度和下一步探针。V1.9 还返回 `rhythm.detected_periodicity`、`rhythm.current_phase` 与 `rhythm.phase_sequence`：真实周期从 84 天事件序列估计，状态为 `insufficient_evidence`、`no_stable_period`、`candidate_period` 或 `stable_period`；7/28 天窗口不被解释为用户周期。证据不足时既不输出比例结论，也不输出稳定周期。该接口只用于节律支持，不用于人格、能力、关系匹配、绩效或临床评分。
+`GET /golden-bias/{student_id}` 返回 7 天和 28 天窗口下的学习/创造投入、较小极与较大极占比、带内状态、滞回状态、新异比、创造后 72 小时校准比、置信度和下一步探针。当前版本还返回 `rhythm.detected_periodicity`、`rhythm.current_phase` 与 `rhythm.phase_sequence`：真实周期从 84 天事件序列估计，状态为 `insufficient_evidence`、`no_stable_period`、`candidate_period` 或 `stable_period`；7/28 天窗口不被解释为用户周期。证据不足时既不输出比例结论，也不输出稳定周期。该接口只用于节律支持，不用于人格、能力、关系匹配、绩效或临床评分。
+
+# 群聊双链路 API
+
+群聊链路不读取成员的私密 Tender。每个成员保留自己的完整模型；群聊只处理群公开事件、授权视图、他者假设、共享枝和群体模型。群成员只能看到自己的授权范围，不能查看他人的授权字段。
+
+## 群会话
+
+```text
+GET    /group-sessions
+POST   /group-sessions
+POST   /group-sessions/{group_id}/join
+GET    /group-sessions/{group_id}
+POST   /group-sessions/{group_id}/events
+GET    /group-sessions/{group_id}/events
+GET    /group-sessions/{group_id}/model
+POST   /group-sessions/{group_id}/drafts
+POST   /group-sessions/{group_id}/outcomes
+GET    /group-sessions/{group_id}/outcomes
+```
+
+## 他者授权与关系假设
+
+```text
+POST   /peer-view-grants
+GET    /peer-view-grants
+DELETE /peer-view-grants/{grant_id}
+GET    /peer-models/{observer_id}/{subject_id}?group_id=...
+```
+
+- 只有授权视图的所有者可以创建或撤回授权。
+- 只有观察者本人可以读取自己发起的他者模型。
+- 他者模型只能读取群公开互动和授权摘要，不能读取对方的私密 Tender。
+- 撤回授权后，由该授权产生的派生模型会失效。
+
+## 共享枝
+
+```text
+POST /group-sessions/{group_id}/shared-branches
+GET  /group-sessions/{group_id}/shared-branches
+POST /shared-branches/{branch_id}/approve
+```
+
+共享枝只允许事实、目标、任务、承诺、边界、结果和摘要，并区分 `bilateral` 与 `group`。双人枝不会自动进入 Group Model；只有群组可见且全部参与者批准的共享枝才进入群体模型。Agent 生成的群聊内容仅为草稿，`auto_send=false`。

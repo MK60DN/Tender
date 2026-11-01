@@ -2,10 +2,10 @@
 
 ## Core documents
 
-- [Whitepaper V1.9](whitepaper/Tender-Whitepaper-v1.9.pdf)
-- [Product manual V6.23](product/Tender-Product-Manual-v6.23.pdf)
-- [User guide V6.11](product/Tender-User-Guide-v6.11.pdf)
-- [Teaching manual V5.6](teaching/Tender-Teaching-Manual-v5.6.pdf)
+- [Whitepaper V2.0](whitepaper/Tender-Whitepaper-v2.0.pdf)
+- [Product manual V7.0](product/Tender-Product-Manual-v7.0.pdf)
+- [User guide V7.0](product/Tender-User-Guide-v7.0.pdf)
+- [Teaching manual V6.0](teaching/Tender-Teaching-Manual-v6.0.pdf)
 - [Central thesis](product/Tender-Central-Thesis.md)
 - [Current document index](product/VERSION_INDEX.md)
 
@@ -26,6 +26,7 @@
 - `agent_layer/AGENT_INVENTORY.md`
 - `agent_layer/app/world_tree.py`
 - `agent_layer/app/golden_bias.py`
+- `agent_layer/app/group_chat.py`
 - `agent_layer/app/static/world-tree.html`
 
 Only the current official document versions are kept in active documentation folders. Historical files remain recoverable from Git tags and the changelog.

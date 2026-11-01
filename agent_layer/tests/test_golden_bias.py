@@ -54,7 +54,7 @@ def test_golden_bias_inside_band_collects_quality_metrics():
 def test_learning_overweight_returns_output_probe():
     now = datetime(2026, 11, 1, tzinfo=timezone.utc)
     sid = _sid('gb-learn')
-    base = now - timedelta(days=8)
+    base = now - timedelta(days=1)
     for i in range(20):
         _event(sid, 'study_session', base + timedelta(minutes=i), {'duration_minutes': 1})
     for i in range(4):
@@ -68,7 +68,7 @@ def test_learning_overweight_returns_output_probe():
 def test_creation_overweight_with_low_calibration_returns_calibration_probe():
     now = datetime(2026, 11, 1, tzinfo=timezone.utc)
     sid = _sid('gb-create')
-    base = now - timedelta(days=8)
+    base = now - timedelta(days=1)
     for i in range(20):
         _event(sid, 'response', base + timedelta(minutes=i), {'novel_branch': i % 2 == 0})
     for i in range(2):

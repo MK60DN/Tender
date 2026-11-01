@@ -390,7 +390,7 @@ def _current_rhythm_phase(
             }
     creation_count = sum(1 for event in recent_events if str(event.get("event_type") or "") in CREATION_EVENTS)
     calibration_count = sum(1 for event in recent_events if str(event.get("event_type") or "") in CALIBRATION_EVENTS)
-    if creation_count and (recent_calibration is None or recent_calibration < MINOR_FLOOR):
+    if creation_count and recent_creation >= MINOR_FLOOR and (recent_calibration is None or recent_calibration < MINOR_FLOOR):
         return {
             "code": "calibrate",
             "label": "现实校准",

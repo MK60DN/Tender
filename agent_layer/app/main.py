@@ -52,6 +52,13 @@ from .preassessment import (
 from .tender_context import build_tender_context
 from .world_tree import build_world_tree
 from .golden_bias import build_golden_bias
+from .group_chat import (
+    create_group_session, list_group_sessions, join_group_session, get_group_session,
+    ingest_group_event, list_group_events, create_peer_view_grant, list_peer_view_grants,
+    revoke_peer_view_grant, build_peer_model, create_shared_branch, approve_shared_branch,
+    list_shared_branches, build_group_model, create_group_draft, record_group_outcome,
+    list_group_outcomes,
+)
 
 STATIC = pathlib.Path(__file__).resolve().parent / "static"
 STATIC.mkdir(parents=True, exist_ok=True)
@@ -60,7 +67,7 @@ GUIDE = pathlib.Path(__file__).resolve().parents[2] / "site"
 DEV_DOCS = os.getenv("TENDER_ENABLE_DEV_DOCS", "0") == "1"
 app = FastAPI(
     title="Tender C-End Mentalization Learning App",
-    version="6.23.0",
+    version="7.0.0",
     docs_url="/docs" if DEV_DOCS else None,
     redoc_url=None,
     openapi_url="/openapi.json" if DEV_DOCS else None,
@@ -72,7 +79,7 @@ app.include_router(language_router)
 seed_demo_consents([r["student_id"] for r in ROSTER])
 
 PUBLIC_PATHS = {"/health", "/preassessment/items", "/preassessment/pulse/items", "/governance/policy", "/research/neuro-learning/catalog", "/research/neuro-learning/datasets", "/research/neuro-learning/research", "/research/neuro-learning/claim", "/roles", "/agents", "/agents/fixed", "/agents/marketplace", "/agents/catalog", "/agent-runtime/status", "/benchmark/tender-theta", "/cognition/constructs", "/ambient/personas", "/openapi.json", "/docs", "/auth/demo-session", "/tenant/demo-session"}
-SENSITIVE_PREFIXES = ("/preassessment/", "/auth/me", "/cognition/", "/metameta/", "/ambient/", "/auth/logout", "/auth/logout-all", "/auth/sessions", "/guardian/", "/safety/", "/agents/catalog", "/workforce/", "/learner/", "/decision-loops", "/daoql/", "/tender/", "/world-tree/", "/golden-bias/", "/reports/", "/audit", "/agents/generate", "/agents/entitlements/", "/workforce/", "/head_teacher", "/sales", "/institution", "/teaching", "/dorm", "/workflow", "/workbench", "/advisors", "/rag/ingest", "/tenant/")
+SENSITIVE_PREFIXES = ("/preassessment/", "/auth/me", "/cognition/", "/metameta/", "/ambient/", "/auth/logout", "/auth/logout-all", "/auth/sessions", "/guardian/", "/safety/", "/agents/catalog", "/workforce/", "/learner/", "/decision-loops", "/daoql/", "/tender/", "/world-tree/", "/golden-bias/", "/group-sessions/", "/group-sessions", "/peer-view-grants", "/peer-view-grants/", "/peer-models/", "/shared-branches/", "/reports/", "/audit", "/agents/generate", "/agents/entitlements/", "/workforce/", "/head_teacher", "/sales", "/institution", "/teaching", "/dorm", "/workflow", "/workbench", "/advisors", "/rag/ingest", "/tenant/")
 
 
 def _target_learner(path: str) -> str | None:
@@ -181,6 +188,53 @@ class DemoSessionRequest(BaseModel):
     actor_id: str
     role: str = "learner"
     learner_id: str | None = None
+
+
+class GroupSessionCreateRequest(BaseModel):
+    platform: str = "group_chat"
+    purpose: str
+    tenant_id: str | None = None
+
+
+class GroupJoinRequest(BaseModel):
+    role: str = "member"
+    consent_scopes: list[str] = Field(default_factory=lambda: ["group_public.read"])
+
+
+class GroupEventRequest(BaseModel):
+    event_type: str = "message"
+    content: str = ""
+    visibility: str = "group_public"
+    consent_ref: str | None = None
+    payload: dict[str, Any] = Field(default_factory=dict)
+
+
+class PeerViewGrantRequest(BaseModel):
+    viewer_id: str
+    group_id: str
+    purpose: str = "collaboration"
+    scopes: list[str]
+    evidence_refs: list[str] = Field(default_factory=list)
+    valid_hours: int = Field(default=24, ge=1, le=720)
+
+
+class SharedBranchCreateRequest(BaseModel):
+    category: str
+    content: dict[str, Any]
+    participant_ids: list[str]
+    evidence_refs: list[str] = Field(default_factory=list)
+    visibility: str | None = None
+
+
+class GroupDraftRequest(BaseModel):
+    intent: str = "clarify"
+
+
+class GroupOutcomeRequest(BaseModel):
+    decision: str
+    commitments: list[dict[str, Any]] = Field(default_factory=list)
+    unresolved: list[str] = Field(default_factory=list)
+    evidence_refs: list[str] = Field(default_factory=list)
 
 
 @app.post("/auth/demo-session")
@@ -920,6 +974,128 @@ def buy_expert_agent(agent_id: str, request: AgentPurchaseRequest):
 @app.get("/agents/entitlements/{buyer_id}")
 def agent_entitlements(buyer_id: str):
     return list_agent_entitlements(buyer_id)
+
+
+def _group_actor() -> str:
+    principal = get_current_principal()
+    if principal is None:
+        raise HTTPException(status_code=401, detail="identity_required")
+    return principal.actor_id
+
+
+def _group_call(fn, *args, **kwargs):
+    try:
+        return fn(*args, **kwargs)
+    except KeyError as exc:
+        raise HTTPException(status_code=404, detail=str(exc).strip("'")) from None
+    except PermissionError as exc:
+        raise HTTPException(status_code=403, detail=str(exc)) from None
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from None
+
+
+@app.get("/group-sessions")
+def group_sessions():
+    return {"sessions": list_group_sessions(_group_actor())}
+
+
+@app.post("/group-sessions")
+def create_group(payload: GroupSessionCreateRequest):
+    actor_id = _group_actor()
+    tenant_id = payload.tenant_id or (get_current_principal().tenant_id if get_current_principal() else None)
+    return _group_call(create_group_session, payload.platform, payload.purpose, actor_id, tenant_id)
+
+
+@app.post("/group-sessions/{group_id}/join")
+def join_group(group_id: str, payload: GroupJoinRequest):
+    return _group_call(join_group_session, group_id, _group_actor(), payload.role, payload.consent_scopes)
+
+
+@app.get("/group-sessions/{group_id}")
+def group_session_detail(group_id: str):
+    return _group_call(get_group_session, group_id, _group_actor())
+
+
+@app.post("/group-sessions/{group_id}/events")
+def group_event(group_id: str, payload: GroupEventRequest):
+    return _group_call(
+        ingest_group_event, group_id, _group_actor(), payload.event_type, payload.content,
+        payload.visibility, payload.consent_ref, payload.payload,
+    )
+
+
+@app.get("/group-sessions/{group_id}/events")
+def group_events(group_id: str, limit: int = Query(100, ge=1, le=500)):
+    return {"events": _group_call(list_group_events, group_id, _group_actor(), limit)}
+
+
+@app.get("/group-sessions/{group_id}/model")
+def group_model(group_id: str):
+    return _group_call(build_group_model, group_id, _group_actor())
+
+
+@app.post("/group-sessions/{group_id}/drafts")
+def group_draft(group_id: str, payload: GroupDraftRequest):
+    return _group_call(create_group_draft, group_id, _group_actor(), payload.intent)
+
+
+@app.post("/group-sessions/{group_id}/outcomes")
+def group_outcome(group_id: str, payload: GroupOutcomeRequest):
+    return _group_call(
+        record_group_outcome, group_id, _group_actor(), payload.decision,
+        payload.commitments, payload.unresolved, payload.evidence_refs,
+    )
+
+
+@app.get("/group-sessions/{group_id}/outcomes")
+def group_outcomes(group_id: str):
+    return {"outcomes": _group_call(list_group_outcomes, group_id, _group_actor())}
+
+
+@app.post("/peer-view-grants")
+def peer_view_grant(payload: PeerViewGrantRequest):
+    return _group_call(
+        create_peer_view_grant, _group_actor(), payload.viewer_id, payload.group_id,
+        payload.purpose, payload.scopes, payload.evidence_refs, payload.valid_hours,
+    )
+
+
+@app.get("/peer-view-grants")
+def peer_view_grants(group_id: str | None = None):
+    return {"grants": list_peer_view_grants(_group_actor(), group_id)}
+
+
+@app.delete("/peer-view-grants/{grant_id}")
+def peer_view_revoke(grant_id: str):
+    return _group_call(revoke_peer_view_grant, grant_id, _group_actor())
+
+
+@app.get("/peer-models/{observer_id}/{subject_id}")
+def peer_model(observer_id: str, subject_id: str, group_id: str):
+    principal = get_current_principal()
+    if principal is None:
+        raise HTTPException(status_code=401, detail="identity_required")
+    if observer_id != principal.actor_id and principal.role not in {"admin", "auditor"}:
+        raise HTTPException(status_code=403, detail="peer_model_observer_identity_mismatch")
+    return _group_call(build_peer_model, observer_id, subject_id, group_id)
+
+
+@app.post("/group-sessions/{group_id}/shared-branches")
+def shared_branch_create(group_id: str, payload: SharedBranchCreateRequest):
+    return _group_call(
+        create_shared_branch, group_id, _group_actor(), payload.category,
+        payload.content, payload.participant_ids, payload.evidence_refs, payload.visibility,
+    )
+
+
+@app.get("/group-sessions/{group_id}/shared-branches")
+def shared_branches(group_id: str, status: str | None = None):
+    return {"branches": _group_call(list_shared_branches, group_id, _group_actor(), status)}
+
+
+@app.post("/shared-branches/{branch_id}/approve")
+def shared_branch_approve(branch_id: str):
+    return _group_call(approve_shared_branch, branch_id, _group_actor())
 
 
 def _require_decision_learner_access(learner_id: str):

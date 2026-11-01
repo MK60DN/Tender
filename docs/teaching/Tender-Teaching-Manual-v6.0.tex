@@ -34,7 +34,7 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{\small Tender 零基础全流程教学手册 · V5.6}
+\rhead{\small Tender 零基础全流程教学手册 · V6.0}
 \lhead{\small\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 
@@ -7955,7 +7955,7 @@ D:\Tender\agent_layer\desktop_overlay\start_overlay.ps1
 \item 两条并发、其余排队的弹幕调度正常；
 \item 灰底黑字可读；
 \item 回复、反馈、静默和审计事件可追溯；
-\item 全量 105 项自动测试通过。
+\item 全量 114 项自动测试通过。
 \end{itemize}
 
 \subsection{边界}
@@ -7983,15 +7983,15 @@ Agent、治理与路线图 & 支持者如何协作，权力和风险如何受到
 \end{longtable}
 \end{center}
 
-教学网站支持中文和 English 切换、学习进度保存、知识检查和打印。教学网站本身不包含数学公式；需要严格定义的模型公式、符号表和实验边界，请阅读《Tender 项目白皮书 V1.9》。
+教学网站支持中文和 English 切换、学习进度保存、知识检查和打印。教学网站本身不包含数学公式；需要严格定义的模型公式、符号表和实验边界，请阅读《Tender 项目白皮书 V2.0》。
 
 \subsection{配套文档}
 
 \begin{itemize}
-\item 项目白皮书 V1.9：预测加工、心智化、系统架构、语言证据、知识森林、证据与治理；
-\item 产品手册 V6.23：产品架构、角色、Agent、数据契约、实验与验收；
-\item 用户手册 V6.11：第一次启用、桌面弹幕、纠正、隐私与安全；
-\item 本教学手册 V5.6：从零开始的环境、数据、模型、Agent 和验收流程。
+\item 项目白皮书 V2.0：预测加工、心智化、系统架构、语言证据、知识森林、证据与治理；
+\item 产品手册 V7.0：产品架构、角色、Agent、数据契约、实验与验收；
+\item 用户手册 V7.0：第一次启用、桌面弹幕、纠正、隐私与安全；
+\item 本教学手册 V6.0：从零开始的环境、数据、模型、Agent 和验收流程。
 \end{itemize}
 
 \subsection{本地入口}
@@ -7999,9 +7999,9 @@ Agent、治理与路线图 & 支持者如何协作，权力和风险如何受到
 \begin{verbatim}
 教学网站：http://127.0.0.1:8080/guide/
 主应用：http://127.0.0.1:8080/ui/
-白皮书：http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v1.9.pdf
-产品手册：http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v6.23.pdf
-用户手册：http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v6.11.pdf
+白皮书：http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v2.0.pdf
+产品手册：http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v7.0.pdf
+用户手册：http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v7.0.pdf
 \end{verbatim}
 
 \subsection{边界}
@@ -8108,12 +8108,38 @@ v1.8 不再把黄金比写成固定界限或单纯视觉隐喻，而是定义为
 
 \subsection{节律相位与周期证据}
 
-7 天和 28 天窗口只用于观察、提示与阶段控制，不是用户真实周期。V1.9 从 84 天授权事件中构造每日学习—创造平衡序列，在 5 至 28 天范围内寻找候选周期，并用置换零分布、自相关强度和反相位关系排除平滑随机波动。周期状态分为证据不足、无稳定周期、候选周期和稳定周期；候选周期不得直接生成日程。
+7 天和 28 天窗口只用于观察、提示与阶段控制，不是用户真实周期。V2.0 从 84 天授权事件中构造每日学习—创造平衡序列，在 5 至 28 天范围内寻找候选周期，并用置换零分布、自相关强度和反相位关系排除平滑随机波动。周期状态分为证据不足、无稳定周期、候选周期和稳定周期；候选周期不得直接生成日程。
 
 当前相位分为吸收与编码、整合与巩固、表达与分叉、现实校准、恢复或低活动。近期有输出但缺少反馈时进入现实校准；近期学习明显多于表达时进入吸收；低活动只能显示为恢复或低活动，不能推断休息、放弃或诊断。
 
 合成实验包含 7、10、14、21、28 天周期和非周期对照，并测试五类相位。周期检出率 95.3\%，周期估计在容忍范围内 93.3\%，平均绝对误差 0.45 天，非周期稳定周期误报率 7.0\%，五类受控相位分类准确率 100\%。这些是合成检测器结果，不是真人周期或临床证据。
 
+
+\subsection{双链路与多人聊天后台}
+
+Tender 的多人能力沿用单人链路，而不是另建一个读取所有人私密状态的中心模型。每个成员保留自己的完整 Tender；群聊只增加群公开事件、授权视图、他者假设和共享枝。
+
+\begin{center}
+\begin{longtable}{@{}p{3.1cm}p{4.5cm}p{5.4cm}@{}}
+\toprule
+\textbf{对象} & \textbf{归属} & \textbf{允许范围} \\
+\midrule
+自我模型 & 本人 & 完整私密状态；不自动进入群聊 \\
+他者假设 & 观察者 & 公开互动 + 对方授权摘要；始终是片面假设 \\
+授权视图 & 被观察者 & 可选择字段、用途、有效期；可撤回 \\
+共享枝 & 参与者共同 & 事实、目标、任务、承诺、结果；需全部参与者批准 \\
+群体模型 & 群组 & 只读群公开事件和有效共享枝，不读私人模型 \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+他者授权分为不授权、协作级、沟通级、短期状态级和共享枝级。没有授权时，观察者的 Tender 只能保留公开互动和低置信关系假设，并明确标注证据不足。任何授权视图都不能包含原始对话、完整生命树、人格、诊断和未授权情绪时间线。
+
+群聊事件经 Scope Router 分离为 \texttt{group\_public}、\texttt{my\_private}、\texttt{shared\_view} 和 \texttt{system}。Triage Agent 进一步区分个人问题、双人关系问题、群体协作问题和安全事件。Group Facilitator 只提供澄清和协调草稿，不自动向群里发言。共享枝在全部参与者批准前保持 \texttt{proposed}，并区分双人 \texttt{bilateral} 与群组 \texttt{group} 作用域；双人枝不会自动进入 Group Model。撤回授权会停止未来同步并使派生模型失效。
+
+群聊后台位于 \texttt{agent\_layer/app/group\_chat.py}，提供群会话、成员、事件、授权视图、他者假设、共享枝、群体模型、群组草稿与群组成果。主要接口包括 \texttt{/group-sessions}、\texttt{/peer-view-grants}、\texttt{/peer-models/...}、\texttt{/shared-branches/...}。九项隔离测试验证：无授权、有限授权、撤回、共享枝审批、草稿不自动发送、群体模型不读取私密数据和观察者身份校验。
+
+\warn{边界：当前仍是链下专家议会阶段。Shapley 与 BFT 只作为后续治理工具，不进入实时群聊主流程。}
 
 \subsection{接口与验收}
 
@@ -8139,9 +8165,12 @@ GET  /golden-bias/{student_id}
 \item 世界树不做脑区或量子脑诊断；
 \item 动态黄金比采用 7/28 天窗口、证据门槛和滞回，不作为每日 KPI；
 \item 动态黄金比和节律相位实验报告随仓库发布；
+\item 群聊只读取群公开事件与经批准的共享枝；
+\item 他者模型不读取对方私密状态，授权视图可撤回并会令派生模型失效；
+\item Agent 只能生成群聊草稿，不能自动发送；
 \item 未授权时不得生成共享枝；
 \item 周期与相位必须显示证据状态，候选周期不得变成固定日程；
-\item 全量自动测试 105 项通过。
+\item 全量自动测试 114 项通过。
 \end{itemize}
 
 

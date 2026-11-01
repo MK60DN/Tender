@@ -1,4 +1,4 @@
-# Tender 产品手册 V6.23
+# Tender 产品手册 V7.0
 
 ## 温柔地了解您的心智：环境型多 Agent 学习系统的产品设计全过程
 
@@ -940,7 +940,7 @@ agent_layer/app/mechanism_design.py
 - 同一签署人申报多个来源时，产生来源冲突，不能增加独立性；
 - 至少两个来源组、两种来源类型时，才进入人工政策复核；
 - 单一来源占 100% 时，返回高优先级复核，不返回责任结论；
-- 截至 2026-10-30，全量 105 项测试通过。
+- 截至 2026-10-30，全量 114 项测试通过。
 
 #### 与 Shapley 贡献报告的关系
 
@@ -1079,7 +1079,7 @@ bft_consensus_enabled = false
 external_anchor_enabled = false
 ```
 
-截至 2026-10-30，全量 105 项测试通过。
+截至 2026-10-30，全量 114 项测试通过。
 
 
 ### 13.6 神经学习证据层：承认语言模型的边界
@@ -1243,7 +1243,7 @@ Tender Academy 教学网站已经接入应用，地址为 `/guide/`。它不是�
 
 教学网站包含：
 
-- 12 个中英文双语模块；
+- 13 个中英文双语模块；
 - 可点击的白皮书架构导航；
 - 学习者进度保存；
 - 知识检查；
@@ -1255,10 +1255,10 @@ Tender Academy 教学网站已经接入应用，地址为 `/guide/`。它不是�
 
 ```text
 教学网站：GET /guide/
-白皮书：docs/whitepaper/Tender-Whitepaper-v1.9.pdf
-产品手册：docs/product/Tender-Product-Manual-v6.23.pdf
-用户手册：docs/product/Tender-User-Guide-v6.11.pdf
-教学手册：docs/teaching/Tender-Teaching-Manual-v5.6.pdf
+白皮书：docs/whitepaper/Tender-Whitepaper-v2.0.pdf
+产品手册：docs/product/Tender-Product-Manual-v7.0.pdf
+用户手册：docs/product/Tender-User-Guide-v7.0.pdf
+教学手册：docs/teaching/Tender-Teaching-Manual-v6.0.pdf
 ```
 
 GitHub Pages 的静态站点源位于 `site/`，部署工作流为 `.github/workflows/pages.yml`。
@@ -1420,7 +1420,7 @@ GET /golden-bias/{student_id}
 
 #### 13.7.9 节律相位与周期证据
 
-7 天和 28 天仅是系统的观察与控制窗口，不是用户真实周期。V1.9 新增独立的周期证据层：
+7 天和 28 天仅是系统的观察与控制窗口，不是用户真实周期。V2.0 新增独立的周期证据层：
 
 | 问题 | 产品处理 |
 |---|---|
@@ -1457,13 +1457,98 @@ rhythm_phase
 
 #### 13.7.10 实验证据与产品边界
 
-V1.9 完成 4 个实验臂、每臂 1,000 名合成学习者、84 天的机制实验。动态规则使用阶段目标和滞回。结果显示：
+V2.0 完成 4 个实验臂、每臂 1,000 名合成学习者、84 天的机制实验。动态规则使用阶段目标和滞回。结果显示：
 
 - 相对不调节：行动恢复和带内时间提高；
 - 相对固定 50:50：提示负担约减半，恢复相近；
 - 相对固定阈值：恢复和带内时间提高，但提示更多，创造后校准没有提高。
 
-V1.9 合成周期实验得到 95.3% 的周期检出率、93.3% 的容忍范围内估计、0.45 天平均绝对误差、7.0% 的非周期稳定周期误报率和 100% 的五类受控相位分类准确率。产品结论仍是“负担感知的节律权衡”，不是“动态黄金比或周期检测全面胜出”。完整实验见 `Tender-Golden-Bias-Experiment-v1.0.pdf` 和 `Tender-Rhythm-Phase-Experiment-v1.0.pdf`。下一步必须做预注册真人研究，并保留不调节、固定 50:50、固定阈值和动态规则四个对照。
+V2.0 合成周期实验得到 95.3% 的周期检出率、93.3% 的容忍范围内估计、0.45 天平均绝对误差、7.0% 的非周期稳定周期误报率和 100% 的五类受控相位分类准确率。产品结论仍是“负担感知的节律权衡”，不是“动态黄金比或周期检测全面胜出”。完整实验见 `Tender-Golden-Bias-Experiment-v1.0.pdf` 和 `Tender-Rhythm-Phase-Experiment-v1.0.pdf`。下一步必须做预注册真人研究，并保留不调节、固定 50:50、固定阈值和动态规则四个对照。
+
+#### 13.7.11 双链路与多人聊天后台
+
+Tender 正式区分两条共享同一后台底座、但数据作用域不同的链路：
+
+| 链路 | 目标 | 主要对象 | 不允许发生的事 |
+|---|---|---|---|
+| 单人链路 | 维护个人完整心智模型并支持下一步行动 | 私密事件、自我模型、Decision Loop、世界树 | 不把完整私密状态自动分享给他人或群 |
+| 群聊链路 | 支持多人协作、澄清、承诺与共享结果 | 群公开事件、授权视图、他者假设、共享枝、群组成果 | 不建立读取所有人私密状态的全知群体模型 |
+
+##### 双链路数据流
+
+```text
+单人：
+本地行为 / 语言 / 任务
+→ Scope Router（private）
+→ DAOQL
+→ Tender Context
+→ Triage
+→ Agent Runtime / MoA
+→ 私有弹幕、草稿、最小行动
+→ 真实结果
+→ Decision Loop / 世界树 / 学习护照
+
+群聊：
+群公开消息 / 用户主动共享上下文
+→ Scope Router
+→ group_public / my_private / shared_view / system
+→ Group Session Service
+→ Group Model（只读群公开事实与共享枝）
+→ Triage（个人 / 双人 / 群体 / 安全）
+→ 私有建议或 Group Facilitator
+→ 用户明确发送 / 承诺 / 沉默 / 退出
+→ Group Outcome
+→ Shared Branch
+→ Tender Context 与世界树回流
+```
+
+##### 四类模型
+
+| 模型 | 归属 | 输入 | 输出边界 |
+|---|---|---|---|
+| `SelfModel(A)` | A 本人 | A 的私密事件、预检测、状态、节律、知识 | A 的完整模型，不自动共享 |
+| `OtherModel(A→B)` | A 的 Tender | A 自己的观察、群公开互动、B 的授权摘要 | A 对 B 的关系假设，不是 B 的真实模型 |
+| `SharedView(B→A)` | B 的 Tender | B 选择的字段、摘要、证据和有效期 | 只读授权视图，可撤回、可到期失效 |
+| `GroupModel(G)` | 群组共享层 | 群公开事件和已批准共享枝 | 只显示议题、开放问题、承诺、决策和参与平衡 |
+
+他者授权分为五级：不授权、协作级、沟通级、短期状态级和共享枝级。授权视图不允许包含原始对话、完整生命树、人格结论、诊断、私人事件或未授权情绪时间线。撤回后系统停止未来同步，令授权视图和 A 侧派生模型失效，并记录审计。共享枝分 `bilateral` 和 `group`：双人枝只在参与者之间可见，只有群组可见且全员批准的枝才进入 Group Model。
+
+##### 群聊接口
+
+```text
+GET    /group-sessions
+POST   /group-sessions
+POST   /group-sessions/{group_id}/join
+GET    /group-sessions/{group_id}
+POST   /group-sessions/{group_id}/events
+GET    /group-sessions/{group_id}/events
+GET    /group-sessions/{group_id}/model
+POST   /group-sessions/{group_id}/drafts
+POST   /group-sessions/{group_id}/outcomes
+GET    /group-sessions/{group_id}/outcomes
+POST   /peer-view-grants
+GET    /peer-view-grants
+DELETE /peer-view-grants/{grant_id}
+GET    /peer-models/{observer_id}/{subject_id}?group_id=...
+POST   /group-sessions/{group_id}/shared-branches
+GET    /group-sessions/{group_id}/shared-branches
+POST   /shared-branches/{branch_id}/approve
+```
+
+##### 权限与行动规则
+
+- 只有群会话成员可以写入群事件。
+- 只有授权视图的所有者可以创建或撤回授权。
+- 只有观察者本人可以读取自己发起的关系假设。
+- 共享枝需要全部参与者批准后才会进入群体模型。
+- Agent 只能生成私有草稿，`auto_send=false`，用户必须手动确认。
+- 群体摘要不默认公开，必须经过参与者批准。
+- 沉默、退出、撤回不等于同意；共同承诺和结果作为共享事实单独处理。
+- 高风险语言进入安全队列，不因群聊上下文而降级。
+
+##### 当前实现状态
+
+`agent_layer/app/group_chat.py` 已实现群会话、群成员、群事件、授权视图、他者假设、共享枝、群体模型、群组草稿和群组成果。九项隔离测试覆盖无授权、有限授权、撤回、共享枝审批、草稿不自动发送、群体模型不读取私密数据和观察者身份校验。
 
 ### 13.8 Agent 上下文注入：让回答真正使用 Tender 建模
 
@@ -1565,7 +1650,7 @@ tender_context_used
   hypothesis_count
 ```
 
-截至 2026-10-30，全量 105 项自动测试通过，并用真实模型完成一次端到端验证。
+截至 2026-10-30，全量 114 项自动测试通过，并用真实模型完成一次端到端验证。
 
 
 ### 13.9 知识体系接入：从理解状态到定位学习内容
@@ -1684,7 +1769,7 @@ agent_layer/app/tender_context.py
 GET /tender/context/{student_id}?message=...
 ```
 
-截至 2026-10-30，全量 105 项自动测试通过，并完成真实函数题对话验证。
+截至 2026-10-30，全量 114 项自动测试通过，并完成真实函数题对话验证。
 
 
 ### 13.10 长期验证：基线、周期、群体与 metameta 进入回答
@@ -1857,6 +1942,10 @@ ActionRecovery =
 
 比较三种基线：固定 7 天假设、无稳定周期假设、开放周期搜索。主要终点为周期估计误差、非周期误报率、候选周期弃判率和相位分类准确率；次要终点为用户是否误解为固定日程、提示负担和纠错率。合成结果显示开放搜索优于固定 7 天假设，但仍有 7.0% 的非周期稳定周期误报，因此产品必须保持候选状态和可撤回表达。下一步应进行获得授权、可撤回的真实纵向数据预注册研究。
 
+#### E6：群聊双链路隔离与共享枝
+
+比较无授权、有限授权、撤回授权和共享枝批准四种状态。主要终点为私密数据越权读取数、他者模型误归因率、撤回后派生模型失效时间、共享枝审批完整率、Agent 自动发送数和用户纠错率。工程验收要求私密数据越权读取数和自动发送数均为 0；未来真人群体研究仍需独立伦理审查和预注册。
+
 ### 14.4 实验伦理
 
 - 不制造必须使用才能获得好处的压力；
@@ -1985,7 +2074,9 @@ ActionRecovery =
 
 ### 验证
 
-- [x] 105 项自动测试通过；
+- [x] 群聊双链路、授权视图、他者假设和共享枝通过隔离测试；
+- [x] `POST /group-sessions` 等群聊接口已接入；
+- [x] 114 项自动测试通过；
 - [x] BFT 节点名单、法定人数、来源冲突和集中度复核原型通过测试；
 - [x] 当前阶段锁定为链下专家议会，链上写入和 BFT 默认关闭；
 - [x] 联盟 BFT 与开放自治均设置了不可跳级的前置条件；

@@ -12,7 +12,7 @@ from .preassessment import big_five_change_state, latest_preassessment
 from .golden_bias import build_golden_bias
 from .tender import compute_state
 
-CONTEXT_VERSION = "tender-context-1.7"
+CONTEXT_VERSION = "tender-context-2.0"
 
 
 def _json_safe(value):

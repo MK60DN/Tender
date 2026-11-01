@@ -1,6 +1,6 @@
 {
   "product": "Tender",
-  "manual_version": "6.23",
+  "manual_version": "7.0",
   "date": "2026-11-01",
   "product_type": "B端完整系统 / B端嵌入式模块 / C端生活界面共享核心的心智化终身学习系统",
   "default_surfaces": [
@@ -35,22 +35,28 @@
     "Phase-aware rhythm guidance",
     "Periodicity evidence with permutation null",
     "Recovery-phase uncertainty",
-    "Candidate-period provisional boundary"
+    "Candidate-period provisional boundary",
+    "Dual-chain single-user and group-chat backend",
+    "Scope Router",
+    "SelfModel and observer-owned PeerModel",
+    "Revocable SharedView",
+    "Participant-approved SharedBranchStore",
+    "GroupModel without private-member access"
   ],
-  "status": "V6.23 implements dynamic golden-bias regulation with phase-aware rhythm guidance, evidence-gated periodicity, novelty and post-creation calibration; 105 tests pass",
-  "source": "Tender-Product-Manual-v6.23.md",
-  "pdf": "Tender-Product-Manual-v6.23.pdf",
+  "status": "V7.0 implements the dual-chain backend: private self-models, observer-owned peer hypotheses, revocable shared views, participant-approved shared branches, group models without private-member access, and 114 tests",
+  "source": "Tender-Product-Manual-v7.0.md",
+  "pdf": "Tender-Product-Manual-v7.0.pdf",
   "user_guide": {
-    "source": "Tender-User-Guide-v6.11.md",
-    "pdf": "Tender-User-Guide-v6.11.pdf",
-    "pages": 25,
-    "pdf_bytes": 412890,
-    "sha256": "7d7b10a8a64a4cb06761554974bc29070bce2dfce9db213cb55d4b73e117bf55",
-    "validation": "V6.11 adds user-facing phase and period-evidence boundaries; zero replacement characters"
+    "source": "Tender-User-Guide-v7.0.md",
+    "pdf": "Tender-User-Guide-v7.0.pdf",
+    "pages": 26,
+    "pdf_bytes": 422368,
+    "sha256": "8d120578bb8700d4d8a203abab0e5229fd0596e2eb8243c97e48c6f0dc915744",
+    "validation": "V7.0 adds group-chat permission levels, private danmaku, draft confirmation and revocation; zero replacement characters"
   },
   "pdf_render": {
-    "pages": 59,
-    "validation": "V6.23 rebuilt with phase-aware rhythm guidance, evidence-gated periodicity, 105-test baseline; zero replacement characters"
+    "pages": 61,
+    "validation": "V7.0 rebuilt with dual-chain group backend, authorization scopes, shared branches and 114-test baseline; zero replacement characters"
   },
   "implemented": true,
   "positioning": "Tender：温柔地了解您的心智。B端可提供完整教育系统或嵌入合作方系统，C端以自有界面融入用户生活。",
@@ -72,8 +78,8 @@
     "workflow_execution": "gated",
     "status_endpoint": "GET /agent-runtime/status"
   },
-  "sha256": "151080d0c54307b52628a81165723c95d0cfcb11963db64cc63e56bed1f9fe38",
-  "tests": 105,
+  "sha256": "a42e2f2b0ced646308e6ef60d06700854e26cbc2d898fd93c253e04ed62ca826",
+  "tests": 114,
   "identity": {
     "development": "signed HMAC bearer session",
     "session_revocation": "implemented",
@@ -117,9 +123,9 @@
     ]
   },
   "decision_loop": "implemented",
-  "manual_title": "Tender 产品手册 V6.23",
+  "manual_title": "Tender 产品手册 V7.0",
   "builder": "build_v67_reports.py",
-  "pdf_bytes": 672116,
+  "pdf_bytes": 682665,
   "narrative_order": [
     "opportunity",
     "user_segmentation",
@@ -176,7 +182,7 @@
     ],
     "status": "observational association and methodological validation only; no human causal claim"
   },
-  "api_version": "6.23.0",
+  "api_version": "7.0.0",
   "latex_manual": {
     "source": "../教学手册/Tender零基础全流程教学手册-完整版.tex",
     "pdf": "../教学手册/Tender零基础全流程教学手册-完整版.pdf",
@@ -319,10 +325,10 @@
     "raw_responses_stored": false,
     "diagnosis": false,
     "user_review_required": true,
-    "report": "Tender-Product-Manual-v6.23.pdf §13.7",
-    "report_source": "Tender-Product-Manual-v6.23.md",
+    "report": "Tender-Product-Manual-v7.0.pdf §13.7",
+    "report_source": "Tender-Product-Manual-v7.0.md",
     "report_pages": 58,
-    "tests": 105,
+    "tests": 114,
     "attention_profile": true,
     "cognitive_correction_plan": true,
     "correction_card_fields": [
@@ -339,7 +345,7 @@
   },
   "tender_context": {
     "module": "../agent_layer/app/tender_context.py",
-    "version": "tender-context-1.7",
+    "version": "tender-context-2.0",
     "endpoint": "GET /tender/context/{student_id}",
     "sources": [
       "preassessment profile",
@@ -355,7 +361,7 @@
     "max_hypotheses": 3,
     "context_digest_recorded": true,
     "llm_end_to_end_verified": true,
-    "tests": 105,
+    "tests": 114,
     "knowledge_context": true,
     "major_career_context": true,
     "longitudinal_state_fields": [
@@ -589,9 +595,9 @@
     "core": "生命不是被某个框架评价出来的形状，而是在有限时间里，通过选择、关系、承担和创造长出来的年轮。",
     "source": "Tender-中心主旨.md",
     "manuals": [
-      "Tender-Product-Manual-V6.23.md",
-      "Tender-User-Guide-V6.11.md",
-      "../教学手册/Tender零基础全流程教学手册-完整版-V5.6.tex"
+      "Tender-Product-Manual-V7.0.md",
+      "Tender-User-Guide-V7.0.md",
+      "../教学手册/Tender零基础全流程教学手册-完整版-V6.0.tex"
     ],
     "role": "narrative and modeling grammar; not a clinical, diagnostic or efficacy claim"
   },
@@ -627,25 +633,25 @@
       "POST /metameta/decompose/{student_id}",
       "GET /metameta/map/{student_id}"
     ],
-    "context_version": "tender-context-1.7",
-    "tests": 105,
+    "context_version": "tender-context-2.0",
+    "tests": 114,
     "boundary": "The cognitive-map regions are interpretive retrieval labels, not brain scans, clinical diagnoses or objective facts."
   },
   "project_whitepaper": {
-    "source": "../产品管理文档/Tender-项目白皮书-V1.9.tex",
-    "pdf": "../产品管理文档/Tender-项目白皮书-V1.9.pdf",
-    "word": "../产品管理文档/Tender-项目白皮书-V1.9.docx",
-    "version": "1.9",
-    "pages": 45,
-    "pdf_bytes": 438397,
-    "pdf_sha256": "edfc49509c55b63cd0d42c7dd348768764a3f206f311ddd832d853ab085ee7b5",
-    "word_bytes": 1175512,
-    "word_sha256": "04e363c546de64d4afe9acef27591398b73ea27b42135d154535f19c74d4f88c",
+    "source": "../产品管理文档/Tender-项目白皮书-V2.0.tex",
+    "pdf": "../产品管理文档/Tender-项目白皮书-V2.0.pdf",
+    "word": "../产品管理文档/Tender-项目白皮书-V2.0.docx",
+    "version": "2.0",
+    "pages": 48,
+    "pdf_bytes": 448244,
+    "pdf_sha256": "280ac5b5a5ab56b59654e0bd6f0ee0d2872ece12aa64f2e495d7d765c2c6151e",
+    "word_bytes": 1176005,
+    "word_sha256": "eae7fc37d690f5abcb6ea1de3d416afddae186c85b1999ed28257ab7c6d1ff42",
     "figures": 14,
     "tables_in_word": 22,
     "citations": 11,
-    "focus": "dynamic golden-bias law, phase-aware rhythm guidance, evidence-gated periodicity, world tree and synthetic multi-arm validation",
-    "validation": "45 pages; API 6.23.0 and tender-context-1.7 aligned; zero replacement characters; rhythm evidence verified"
+    "focus": "dual-chain backend, self-models, observer-owned peer hypotheses, revocable shared views, shared branches and group models",
+    "validation": "47 pages; API 7.0.0 and tender-context-2.0 aligned; zero replacement characters; group isolation verified"
   },
   "knowledge_forest": {
     "version": "knowledge-forest-1.0",
@@ -704,29 +710,30 @@
     "boundary": "Language evidence is weak evidence and cannot determine mastery, personality, diagnosis or factual truth by itself."
   },
   "teaching_manual": {
-    "source": "../教学手册/Tender零基础全流程教学手册-完整版-V5.6.tex",
-    "pdf": "../教学手册/Tender零基础全流程教学手册-完整版-V5.6.pdf",
-    "version": "5.6",
-    "pages": 185,
-    "pdf_bytes": 918428,
-    "sha256": "152912a8e879f2f156117b20b221d28e0f8b4050ade964eeca9ed67ef688e93b",
-    "validation": "V5.6 adds phase-aware rhythm evidence and 105-test baseline; zero replacement characters"
+    "source": "../教学手册/Tender零基础全流程教学手册-完整版-V6.0.tex",
+    "pdf": "../教学手册/Tender零基础全流程教学手册-完整版-V6.0.pdf",
+    "version": "6.0",
+    "pages": 186,
+    "pdf_bytes": 922641,
+    "sha256": "78eb1848508045ffb5152b0aa8219775580dc8baf8387b36eced76a06a997fac",
+    "validation": "V6.0 adds dual-chain group-chat backend and 114-test baseline; zero replacement characters"
   },
   "teaching_site": {
-    "version": "2.3",
+    "version": "3.0",
     "entry": "GET /guide/",
-    "modules": 12,
+    "modules": 13,
     "languages": [
       "zh",
       "en"
     ],
     "formulas": false,
-    "architecture": "world tree -> DAOQL roots -> limited observation -> Agent Bridge trunk -> five experience branches with local state axes -> flowering/outcomes/shared branches -> evidence-gated rhythm phases and periodicity",
+    "architecture": "world tree -> DAOQL roots -> limited observation -> Agent Bridge trunk -> five experience branches -> flowering/outcomes/shared branches -> dual-chain private/group separation",
     "documents": [
-      "Whitepaper V1.9",
-      "Product Manual V6.23",
-      "User Guide V6.11",
-      "Teaching Manual V5.6",
+      "Whitepaper V2.0",
+      "Product Manual V7.0",
+      "User Guide V7.0",
+      "Teaching Manual V6.0",
+      "Golden-Bias Experiment V1.0",
       "Rhythm Phase Experiment V1.0"
     ]
   },
@@ -736,7 +743,7 @@
     "branches": 5,
     "experience_nodes": 11,
     "local_state_axes": true,
-    "shared_branches": "authorization_required",
+    "shared_branches": "authorization_required_group_scope",
     "golden_ratio": "dynamic_band_phase_and_periodicity_evidence"
   },
   "golden_bias": {
@@ -783,7 +790,7 @@
     "pdf_bytes": 101812,
     "sha256": "ec3455b551a4cfea98205632e8616f2c74cca06187f77284c559b30c13ab82ee"
   },
-  "context_version": "tender-context-1.7",
+  "context_version": "tender-context-2.0",
   "rhythm_phase_experiment": {
     "version": "1.0",
     "pdf": "../research/Tender-Rhythm-Phase-Experiment-v1.0.pdf",
@@ -814,5 +821,37 @@
     },
     "pdf_bytes": 111001,
     "sha256": "a4d3a4d99045fa1d06a0b28840723f9bf078ab97aeedd566f69ff4d0e16f8622"
+  },
+  "group_chat": {
+    "version": "group-chat-1.0",
+    "module": "../agent_layer/app/group_chat.py",
+    "endpoint_root": "/group-sessions",
+    "peer_view_grants": "/peer-view-grants",
+    "peer_models": "/peer-models/{observer_id}/{subject_id}",
+    "shared_branches": "/shared-branches/{branch_id}/approve",
+    "models": [
+      "SelfModel",
+      "PeerModel",
+      "SharedView",
+      "SharedBranch",
+      "GroupModel"
+    ],
+    "private_member_state_accessed": false,
+    "auto_send": false,
+    "shared_branch_requires_all_approvals": true,
+    "derived_model_expires_on_revoke": true,
+    "tests": 9,
+    "status": "implemented_mvp",
+    "boundary": "Group models read only group-public events and approved shared branches; peer models are observer-owned hypotheses and never read the subject private Tender.",
+    "shared_branch_scopes": [
+      "bilateral",
+      "group"
+    ],
+    "bilateral_branch_enters_group_model": false,
+    "group_branch_requires_all_approvals": true,
+    "scope_test": "bilateral excluded from GroupModel; group-visible branch included after all approvals",
+    "group_branch_requires_all_active_members": true,
+    "member_consent_scopes_visible_to_others": false,
+    "owner_and_facilitator_self_join": false
   }
 }

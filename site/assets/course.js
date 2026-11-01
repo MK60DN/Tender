@@ -1,5 +1,5 @@
 window.TENDER_COURSE = {
-  version: "2.3-rhythm-evidence",
+  version: "3.0-dual-chain",
   audience: [
     { zh: "第一次使用 Tender 的学习者与家庭", en: "Learners and families using Tender for the first time" },
     { zh: "需要理解产品逻辑的教师、产品与研究团队", en: "Educators, product teams and researchers who need the product logic" },
@@ -200,6 +200,31 @@ window.TENDER_COURSE = {
         ] },
         { type: "boundary", body: { zh: "这是合成检测器验证，不是真人周期诊断。候选周期不能变成固定日程；恢复与低活动不能推断休息、放弃或临床状态。", en: "This is synthetic detector validation, not a human rhythm diagnosis. A candidate period must not become a fixed schedule; recovery and low activity cannot determine rest, disengagement or clinical state." } },
         { type: "quiz", question: { zh: "看到“候选周期”时，产品应该怎么做？", en: "What should the product do with a candidate period?" }, options: [{ zh: "立即生成固定日程", en: "Immediately create a fixed schedule" }, { zh: "保持试探性，继续收集证据并允许用户关闭", en: "Keep it provisional, collect more evidence and let the user turn it off" }, { zh: "把它写成人格类型", en: "Turn it into a personality type" }], answer: 1, why: { zh: "候选周期不是稳定结论，更不能成为新的绩效或人格标签。", en: "A candidate period is not a stable conclusion and must not become a performance or personality label." } }
+      ]
+    },
+    {
+      id: "dual-chain-group", time: "10 min", level: { zh: "双链路", en: "Dual chain" },
+      title: { zh: "群聊中的双链路与授权视图", en: "Dual-chain group chat and authorized views" },
+      summary: { zh: "单人链路维护完整自我模型；群聊链路只处理群公开事实、授权视图和共享枝。他者模型属于观察者，不是对方的真实心智。", en: "The single-user chain maintains a complete self-model. The group chain handles only public facts, authorized views and shared branches. A peer model belongs to the observer and is not the subject's true mind." },
+      objectives: [{ zh: "区分自我模型、他者假设、授权视图和群组模型", en: "Distinguish self-models, peer hypotheses, authorized views and group models" }, { zh: "理解 Agent 为什么不能自动在群里发言", en: "Understand why an Agent must not auto-send to a group" }],
+      blocks: [
+        { type: "table", title: { zh: "四类模型", en: "Four model types" }, headers: [{ zh: "对象", en: "Object" }, { zh: "归属", en: "Owner" }, { zh: "边界", en: "Boundary" }], rows: [
+          [{ zh: "自我模型", en: "Self-model" }, { zh: "本人", en: "The person" }, { zh: "完整私密状态，不自动进入群聊", en: "Complete private state, never auto-shared" }],
+          [{ zh: "他者假设", en: "Peer hypothesis" }, { zh: "观察者", en: "Observer" }, { zh: "公开互动 + 对方授权摘要，始终片面", en: "Public interactions plus authorized summaries; always partial" }],
+          [{ zh: "授权视图", en: "Authorized view" }, { zh: "被观察者", en: "Subject" }, { zh: "用途、有效期和撤回权", en: "Purpose, expiry and revocation" }],
+          [{ zh: "共享枝", en: "Shared branch" }, { zh: "参与者共同", en: "Participants jointly" }, { zh: "事实、目标、任务、承诺和结果", en: "Facts, goals, tasks, commitments and outcomes" }]
+        ] },
+        { type: "concept", title: { zh: "Scope Router", en: "Scope Router" }, body: { zh: "群公开消息、我的私密行为、他人授权摘要和系统事件先分开，再进入不同模型。群体模型只读群公开事件和已批准共享枝，不读取任何成员的私人 Tender。", en: "Public messages, my private behavior, authorized summaries and system events are separated before modeling. The group model reads only public events and approved shared branches, never a member's private Tender." } },
+        { type: "table", title: { zh: "授权层级", en: "Authorization levels" }, headers: [{ zh: "层级", en: "Level" }, { zh: "分享内容", en: "Shared content" }], rows: [
+          [{ zh: "不授权", en: "No grant" }, { zh: "只有群公开互动", en: "Public group interactions only" }],
+          [{ zh: "协作级", en: "Coordination" }, { zh: "角色、任务、可用时间、截止承诺", en: "Role, task, availability and deadlines" }],
+          [{ zh: "沟通级", en: "Communication" }, { zh: "沟通偏好、支持方式和反馈习惯", en: "Communication and support preferences" }],
+          [{ zh: "短期状态级", en: "Time-limited state" }, { zh: "有时效的状态摘要，到期失效", en: "A time-limited state summary that expires" }],
+          [{ zh: "共享枝级", en: "Shared branch" }, { zh: "共同目标、承诺和结果", en: "Shared goals, commitments and outcomes" }]
+        ] },
+        { type: "list", title: { zh: "必须固定为 0 的指标", en: "Metrics that must remain zero" }, items: [{ zh: "私密数据越权读取数", en: "Unauthorized private-data reads" }, { zh: "Agent 自动向群发送数", en: "Automatic Agent sends to the group" }, { zh: "未批准共享枝进入群体模型数", en: "Unapproved branches entering the group model" }] },
+        { type: "boundary", body: { zh: "当前群聊后台已通过 9 项隔离测试，全量 114 项测试通过。它验证工程边界，不证明真人群体协作因果效果。BFT 与 Shapley 仍只是后续治理工具。", en: "The group backend passes 9 isolation tests and the full 114-test suite. This validates engineering boundaries, not human group-causality claims. BFT and Shapley remain future governance tools." } },
+        { type: "quiz", question: { zh: "B 不授权时，A 的 Tender 可以做什么？", en: "When B grants nothing, what may A's Tender do?" }, options: [{ zh: "读取 B 的完整私密模型", en: "Read B's complete private model" }, { zh: "基于公开互动形成低置信关系假设，并标明证据不足", en: "Form a low-confidence relationship hypothesis from public interactions and label the evidence gap" }, { zh: "自动替 A 向群里发送结论", en: "Automatically send conclusions to the group" }], answer: 1, why: { zh: "他者模型不能读取对方私密 Tender；无授权时只能保留片面的关系假设。", en: "A peer model cannot read the subject's private Tender; without a grant it remains a partial relationship hypothesis." } }
       ]
     },
     {

@@ -7,9 +7,9 @@
   const STORAGE_PROGRESS = "tender-academy-progress-v1";
   const UI = {
     zh: {
-      brandSub: "心智化学习系统教学", progress: "学习进度", curriculum: "课程目录", courseTitle: "82 分钟理解 Tender",
+      brandSub: "心智化学习系统教学", progress: "学习进度", curriculum: "课程目录", courseTitle: "92 分钟理解 Tender",
       courseIntro: "从预测加工、语言证据和心智化，到知识森林与 Agent 协作。", search: "搜索课程",
-      whitepaper: "阅读白皮书 V1.9", heroTitle: "理解一个人的心智，而不是只给他一个分数。",
+      whitepaper: "阅读白皮书 V2.0", heroTitle: "理解一个人的心智，而不是只给他一个分数。",
       heroTitleEn: "Understand a mind, not just a score.", heroBody: "这门课解释 Tender 如何把语言、行为、作答和真实结果组织成可更正的状态假设，并说明系统明确不做什么。",
       start: "开始课程", resume: "继续上次学习", statLessons: "双语模块", statMinutes: "分钟", statNodes: "知识节点", statTests: "自动测试",
       forWhoEyebrow: "适合谁", forWhoTitle: "适合谁", outcomeEyebrow: "学习成果", outcomeTitle: "学完能做什么",
@@ -20,9 +20,9 @@
       lessonCompleted: "本课已完成", lessonReopened: "已恢复为未完成", noLesson: "没有找到课程"
     },
     en: {
-      brandSub: "Mentalization learning system course", progress: "Progress", curriculum: "CURRICULUM", courseTitle: "Understand Tender in 82 minutes",
+      brandSub: "Mentalization learning system course", progress: "Progress", curriculum: "CURRICULUM", courseTitle: "Understand Tender in 92 minutes",
       courseIntro: "From predictive processing, language evidence and mentalization to the knowledge forest and Agent collaboration.", search: "Search lessons",
-      whitepaper: "Read Whitepaper V1.9", heroTitle: "Understand a mind, not just a score.",
+      whitepaper: "Read Whitepaper V2.0", heroTitle: "Understand a mind, not just a score.",
       heroTitleEn: "理解一个人的心智，而不是只给他一个分数。", heroBody: "This course explains how Tender turns language, behavior, answers and real outcomes into revisable state hypotheses—and what the system explicitly does not do.",
       start: "Start course", resume: "Resume learning", statLessons: "Bilingual modules", statMinutes: "Minutes", statNodes: "Knowledge nodes", statTests: "Automated tests",
       forWhoEyebrow: "FOR WHOM", forWhoTitle: "Who this is for", outcomeEyebrow: "OUTCOMES", outcomeTitle: "What you will learn",

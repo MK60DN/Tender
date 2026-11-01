@@ -14,13 +14,14 @@ The application also mounts the site at `/guide/` when running FastAPI.
 
 ## Features
 
-- twelve bilingual modules;
+- thirteen bilingual modules;
 - local learning progress;
 - language switch;
 - knowledge checks;
 - B2B full-system, B2B embedded and C-end delivery model;
 - concept and evidence-boundary cards;
 - phase and periodicity-evidence lesson;
+- dual-chain group-chat privacy and consent lesson;
 - printable course;
 - no external CDN, tracking or runtime dependency.
 

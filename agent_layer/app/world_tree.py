@@ -126,8 +126,9 @@ def build_world_tree(student_id: str) -> dict:
             ],
         },
         "shared_branches": {
-            "status": "not_materialized",
-            "rule": "只连接双方明确授权的共同事实、目标、任务、承诺和结果；不得共享完整私人生命树。",
+            "status": "authorization_required",
+            "implementation": "group_chat.shared_branch_store",
+            "rule": "只连接全部参与者明确授权的共同事实、目标、任务、承诺和结果；不得共享完整私人生命树。",
             "allowed_categories": ["shared_fact", "shared_goal", "shared_task", "shared_commitment", "shared_outcome"],
         },
         "golden_ratio_lens": {**GOLDEN_RATIO_LENS, "dynamic_regulator": golden_bias},

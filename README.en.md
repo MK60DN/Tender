@@ -7,8 +7,8 @@
 ## Start here
 
 - [Teaching website](https://mk60dn.github.io/Tender/) · [Local course](http://127.0.0.1:8080/guide/) · [Source](site/)
-- [Whitepaper local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v1.9.pdf) · [Repo PDF](docs/whitepaper/Tender-Whitepaper-v1.9.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v1.9.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v1.9.tex)
-- [Product manual local](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v6.23.pdf) · [User guide local](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v6.11.pdf) · [Teaching manual local](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v5.6.pdf)
+- [Whitepaper local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v2.0.pdf) · [Repo PDF](docs/whitepaper/Tender-Whitepaper-v2.0.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v2.0.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v2.0.tex)
+- [Product manual local](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v7.0.pdf) · [User guide local](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v7.0.pdf) · [Teaching manual local](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v6.0.pdf)
 
 
 > Tender learns, with explicit authorization, from behavior, language and real outcomes to form revisable hypotheses about attention, cognitive load, motivation and friction. It separates objective events, language evidence, subjective experience and optional Agent support.
@@ -27,6 +27,10 @@
 - **Knowledge forest**: 13 subjects, 1,075 K12 nodes, 875 majors, 319 course seeds and 1,016 occupations.
 - **DAOQL event layer**: facts, provenance, causality, authorization and audit.
 - **Agent system**: fixed helpers, advisors, orchestration and an expert-Agent marketplace MVP.
+
+## Dual-chain group chat
+
+Each member keeps a private self-model. Peer models belong to the observer and use only public interactions plus authorized summaries. Shared branches require every participant to approve, and Agents never auto-send to a group.
 
 ## Boundaries
 
@@ -58,14 +62,14 @@ Open <http://127.0.0.1:8080/ui/>.
 python agent_layer/tests/run_all.py
 ```
 
-Expected baseline: `passed 105 tests`.
+Expected baseline: `passed 114 tests`.
 
 ## Documentation
 
-- [Whitepaper V1.9](docs/whitepaper/Tender-Whitepaper-v1.9.pdf)
+- [Whitepaper V2.0](docs/whitepaper/Tender-Whitepaper-v2.0.pdf)
 - [Rhythm phase and periodicity experiment V1.0](docs/research/Tender-Rhythm-Phase-Experiment-v1.0.pdf)
-- [Product manual](docs/product/Tender-Product-Manual-v6.23.pdf)
-- [User guide](docs/product/Tender-User-Guide-v6.11.pdf)
+- [Product manual](docs/product/Tender-Product-Manual-v7.0.pdf)
+- [User guide](docs/product/Tender-User-Guide-v7.0.pdf)
 - [Research boundaries](docs/RESEARCH_CLAIMS.md)
 
 ## License

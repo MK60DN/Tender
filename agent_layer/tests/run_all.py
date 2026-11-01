@@ -88,6 +88,17 @@ from tests.test_preassessment_api import (
     test_big_five_pulse_api,
 )
 from tests.test_world_tree import test_world_tree_projects_roots_canopy_flowers_outcomes_and_shared_boundary
+from tests.test_group_chat import (
+    test_group_session_membership_and_public_event,
+    test_group_model_excludes_private_member_data,
+    test_peer_model_without_grant_is_provisional_relationship_hypothesis,
+    test_peer_model_uses_only_authorized_shared_view_scopes,
+    test_peer_view_revocation_expires_derived_model,
+    test_shared_branch_requires_participant_approval,
+    test_group_draft_never_auto_sends,
+    test_group_outcome_requires_shared_branch_approval,
+    test_group_chat_api_and_observer_identity,
+)
 from tests.test_golden_bias import (
     test_creation_overweight_with_low_calibration_returns_calibration_probe,
     test_golden_bias_api_exists,
@@ -236,6 +247,15 @@ TESTS = [
     test_rhythm_phase_detects_recovery_without_claiming_rest,
     test_rhythm_phase_detects_absorbing,
     test_rhythm_phase_detects_calibrating,
+    test_group_session_membership_and_public_event,
+    test_group_model_excludes_private_member_data,
+    test_peer_model_without_grant_is_provisional_relationship_hypothesis,
+    test_peer_model_uses_only_authorized_shared_view_scopes,
+    test_peer_view_revocation_expires_derived_model,
+    test_shared_branch_requires_participant_approval,
+    test_group_draft_never_auto_sends,
+    test_group_outcome_requires_shared_branch_approval,
+    test_group_chat_api_and_observer_identity,
 ]
 
 if __name__ == "__main__":
