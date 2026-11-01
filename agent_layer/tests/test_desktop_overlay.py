@@ -35,6 +35,9 @@ def test_desktop_overlay_config_and_signals():
     assert 'def spawn_next_danmaku' in source
     assert 'conversation_panel' in source
     assert 'def append_conversation' in source
+    assert 'from media_plugins import' in source
+    assert 'def choose_media_file' in source
+    assert '读界面 · 关' in source
     assert '-transparentcolor' in source
 
 

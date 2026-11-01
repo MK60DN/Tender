@@ -2,12 +2,14 @@
 
 ## Core documents
 
-- [Whitepaper V2.1](whitepaper/Tender-Whitepaper-v2.1.pdf)
-- [Product manual V7.1](product/Tender-Product-Manual-v7.1.pdf)
-- [User guide V7.1](product/Tender-User-Guide-v7.1.pdf)
-- [Teaching manual V6.1](teaching/Tender-Teaching-Manual-v6.1.pdf)
+- [Whitepaper V2.2](whitepaper/Tender-Whitepaper-v2.2.pdf)
+- [Product manual V7.2](product/Tender-Product-Manual-v7.2.pdf)
+- [User guide V7.2](product/Tender-User-Guide-v7.2.pdf)
+- [Teaching manual V6.2](teaching/Tender-Teaching-Manual-v6.2.pdf)
 - [Central thesis](product/Tender-Central-Thesis.md)
 - [Current document index](product/VERSION_INDEX.md)
+- [Screen context MCP](SCREEN_CONTEXT_MCP.md)
+- [Media plugins](MEDIA_PLUGINS.md)
 
 ## Research and boundaries
 

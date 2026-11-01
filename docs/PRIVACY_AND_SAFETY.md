@@ -37,3 +37,13 @@ limitation, retention limits, access review and age-appropriate explanations.
 Synthetic tests validate software behavior, not real-world educational efficacy.
 Public benchmark results must report complete tradeoffs, including AUC,
 log-loss, calibration and confidence intervals.
+
+## Screen and media context
+
+- Screen reading requires an explicit user confirmation phrase and a short-lived scope.
+- Visible window metadata, accessible text and screenshots are separate scopes.
+- Screenshots remain in memory and are never written to DAOQL.
+- Hidden tabs, password fields, clipboard, camera, microphone, key logging and other accounts are outside coverage.
+- OCR, transcription and video analysis only process files explicitly selected by the user.
+- Raw files, window text and full transcripts remain local. Only coarse derived signals may reach the ambient planner.
+- Refusing authorization is not evidence of concealment, avoidance or a psychological condition.

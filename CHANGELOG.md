@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.2.0 - 2026-11-01
+
+- Added local Screen Context MCP with explicit consent, expiry, revocation, visible-window enumeration, accessible text and optional in-memory screenshots.
+- Added local multimedia MCP for RapidOCR, faster-whisper transcription, video-frame OCR, ffmpeg audio extraction and SAPI5 speech synthesis.
+- Added `读界面` and `媒体` controls to the desktop danmaku overlay.
+- Kept raw window text, screenshots and media content out of DAOQL; only coarse derived signals reach the ambient planner.
+- Published Whitepaper V2.2, Product Manual V7.2, User Guide V7.2 and Teaching Manual V6.2.
+- Expanded tests to 130 passing with one opt-in heavy-media test skipped.
+
 ## v1.6.1 - 2026-10-31
 
 - Removed superseded whitepaper, product manual, user guide and teaching manual files from the active repository and teaching site.

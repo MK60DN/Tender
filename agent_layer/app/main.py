@@ -19,7 +19,7 @@ from .reports import student_report, teacher_report, parent_report, org_report
 from .rag import search, ingest_text, build_index
 from .workbench import (AGENT_CATALOG, AUDIENCE_PROFILES, create_thread, list_threads,
                          get_thread as get_workbench_thread, orchestrate as orchestrate_workbench,
-                         decide_approval, stop_thread, for_viewer)
+                         decide_approval, stop_thread, for_viewer, experimental_status)
 from .roster import ROSTER, students_in_class
 from .advisor_router import EXPERTS as ADVISOR_EXPERTS, route as route_advisors, share_signal
 from .mentalization import build_mentalization
@@ -1456,6 +1456,11 @@ def agent_invoke(agent_id: str, req: AgentInvoke):
         raise HTTPException(status_code=403, detail={"error": "agent_license_required"}) from None
 
 
+@app.get("/workbench/experimental/status")
+def workbench_experimental_status():
+    return experimental_status()
+
+
 @app.get("/workbench/agents")
 def workbench_agents():
     return {"agents": AGENT_CATALOG, "mode": "collaboration_not_chatroom",
@@ -2756,7 +2761,3 @@ if GUIDE.exists():
 @app.get("/")
 def root():
     return RedirectResponse("/ui/")
-
-
-
-

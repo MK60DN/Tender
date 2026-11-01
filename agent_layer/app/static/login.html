@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tender · 登录</title>
+  <link rel="stylesheet" href="/ui/login.css?v=1">
+</head>
+<body>
+<main class="page">
+  <section class="intro">
+    <a class="brand" href="/ui/login.html"><span>T</span><b>Tender</b></a>
+    <div class="intro-copy">
+      <p class="kicker">WELCOME TO TENDER</p>
+      <h1>先认识你，<br>再开始帮助。</h1>
+      <p>一次登录，完成 7 分钟基础测评，得到更适合你的支持方式，然后进入 Tender。</p>
+    </div>
+    <ol class="steps" aria-label="首次使用步骤">
+      <li class="active"><b>1</b><span><strong>登录</strong><small>选择你是谁</small></span></li>
+      <li><b>2</b><span><strong>认识你</strong><small>完成基础测评</small></span></li>
+      <li><b>3</b><span><strong>进入 Tender</strong><small>开始今天的一步</small></span></li>
+    </ol>
+  </section>
+
+  <section class="login-card" aria-labelledby="loginTitle">
+    <div class="card-head"><span>LOCAL PREVIEW</span><h2 id="loginTitle">进入 Tender</h2></div>
+    <form id="loginForm" novalidate>
+      <label class="field" for="learnerSelect"><span>学习者</span><select id="learnerSelect" disabled><option>正在加载…</option></select></label>
+      <label class="field" id="newNameField" hidden for="newName"><span>怎么称呼你</span><input id="newName" maxlength="30" placeholder="例如：小林"></label>
+      <label class="field" for="stageSelect"><span>当前阶段</span><select id="stageSelect"><option value="高中">高中</option><option value="大学">大学</option><option value="职业早期">职业早期</option><option value="其他">其他</option></select></label>
+      <label class="consent"><input id="loginConsent" type="checkbox"><span>我知道 Tender 提供学习支持，不做心理或医学诊断。</span></label>
+      <p class="form-status" id="loginStatus" role="status" aria-live="polite"></p>
+      <button class="primary" id="loginBtn" type="submit">继续</button>
+    </form>
+    <p class="footnote">本地预览不需要密码。登录状态只保存在这台设备。</p>
+  </section>
+</main>
+<script src="/ui/login.js?v=2" defer></script>
+</body>
+</html>

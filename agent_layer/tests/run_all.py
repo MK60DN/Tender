@@ -15,6 +15,7 @@ from tests.test_cross_role_ops import test_cross_role_ops
 from tests.test_institution_ops import test_institution_ops
 from tests.test_workflow_ops import test_workflow_ops
 from tests.test_workbench import test_multi_agent_workbench
+from tests.test_workbench_experimental import test_experimental_api_is_redacted_and_status_is_secret_free
 from tests.test_advisor_router import test_advisor_router_and_scope
 from tests.test_mentalization import test_c_end_mentalization_and_reflection
 from tests.test_language_signals import (test_language_script_and_feature_spans, test_language_risk_routes_to_protection_without_diagnosis, test_language_never_updates_mastery_by_itself, test_language_api_contract)
@@ -32,6 +33,23 @@ from tests.test_tenant_isolation import (
 )
 from tests.test_knowledge_api import test_knowledge_database_api, test_knowledge_forest_snapshot
 from tests.test_desktop_overlay import test_desktop_overlay_config_and_signals
+from tests.test_screen_context import (
+    test_consent_expiry_and_student_binding,
+    test_consent_requires_explicit_phrase_and_is_not_persisted_raw,
+    test_derived_signals_never_include_raw_window_text_or_title,
+    test_read_screen_context_returns_safe_ephemeral_shape,
+    test_screenshot_scope_is_separate,
+    test_sensitive_identifiers_are_redacted_before_use,
+)
+from tests.test_screen_context_mcp import test_screen_context_mcp_lists_and_reads_under_consent
+from tests.test_media_plugins import (
+    test_local_ocr_extracts_text_and_remains_local,
+    test_local_tts_returns_wav_bytes,
+    test_media_plugin_catalog_has_sources_and_licenses,
+    test_summary_does_not_add_new_content,
+    test_video_samples_frames_for_ocr,
+)
+from tests.test_media_plugins_mcp import test_media_plugins_mcp_exposes_and_runs_local_ocr
 from tests.test_triage_agent import (
     test_triage_routes_anxiety_to_psychology_not_subject,
     test_triage_routes_high_risk_to_safety,
@@ -154,6 +172,7 @@ TESTS = [
     test_institution_ops,
     test_workflow_ops,
     test_multi_agent_workbench,
+    test_experimental_api_is_redacted_and_status_is_secret_free,
     test_advisor_router_and_scope,
     test_c_end_mentalization_and_reflection,
     test_language_script_and_feature_spans,
@@ -170,6 +189,19 @@ TESTS = [
     test_knowledge_database_api,
     test_knowledge_forest_snapshot,
     test_desktop_overlay_config_and_signals,
+    test_consent_requires_explicit_phrase_and_is_not_persisted_raw,
+    test_consent_expiry_and_student_binding,
+    test_sensitive_identifiers_are_redacted_before_use,
+    test_derived_signals_never_include_raw_window_text_or_title,
+    test_screenshot_scope_is_separate,
+    test_read_screen_context_returns_safe_ephemeral_shape,
+    test_screen_context_mcp_lists_and_reads_under_consent,
+    test_media_plugin_catalog_has_sources_and_licenses,
+    test_local_ocr_extracts_text_and_remains_local,
+    test_local_tts_returns_wav_bytes,
+    test_video_samples_frames_for_ocr,
+    test_summary_does_not_add_new_content,
+    test_media_plugins_mcp_exposes_and_runs_local_ocr,
     test_life_tree_experience_mapper_labels_multiple_regions,
     test_life_tree_experience_mapper_uses_event_priors_without_text,
     test_objective_event_is_decomposed_into_subjective_nodes_without_mutation,

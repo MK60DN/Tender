@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090d0c">
+  <meta name="description" content="Tender Agent Command Center：查看 Agent 团队状态、任务交接、证据轨迹和需要人工介入的决策。">
+  <title>Tender · Agent Command Center</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%2370dcae'/><text x='16' y='22' font-size='17' text-anchor='middle' fill='%2309120e' font-family='monospace' font-weight='700'>A</text></svg>">
+  <link rel="stylesheet" href="/ui/agent-command-center.css?v=11">
+  <link rel="stylesheet" href="/ui/mode-switch.css?v=4">
+</head>
+<body>
+<a class="sr-only" href="#mainContent">跳到主要内容</a>
+<div class="app">
+  <aside class="rail" aria-label="Agent 指挥台导航">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">T</div>
+      <div>
+        <div class="brand-name">Tender</div>
+        <div class="brand-sub">Agent Command Center</div>
+      </div>
+    </div>
+    <div class="connector-pill"><i class="pulse-dot" aria-hidden="true"></i><span id="connectorText">正在连接本地运行时</span></div>
+    <div class="rail-label">SESSION QUEUE</div>
+    <nav class="rail-nav" id="filterNav" aria-label="按会话状态筛选">
+      <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true"><span class="filter-icon">⌘</span><span>全部会话</span><span class="filter-count" id="countAll">0</span></button>
+      <button class="filter-btn" type="button" data-filter="working" aria-pressed="false"><span class="filter-icon">◌</span><span>执行中</span><span class="filter-count" id="countWorking">0</span></button>
+      <button class="filter-btn" type="button" data-filter="waiting" aria-pressed="false"><span class="filter-icon">!</span><span>需要我</span><span class="filter-count" id="countWaiting">0</span></button>
+      <button class="filter-btn" type="button" data-filter="completed" aria-pressed="false"><span class="filter-icon">✓</span><span>已交付</span><span class="filter-count" id="countCompleted">0</span></button>
+      <button class="filter-btn" type="button" data-filter="stopped" aria-pressed="false"><span class="filter-icon">×</span><span>已停止</span><span class="filter-count" id="countStopped">0</span></button>
+    </nav>
+    <div class="rail-separator" aria-hidden="true"></div>
+    <div class="rail-block">
+      <h3>ACTIVE LEARNER</h3>
+      <label class="sr-only" for="studentSelect">当前学习者</label>
+      <select class="learner-select" id="studentSelect">
+        <option value="S01">S01 · 当前学习者</option>
+      </select>
+      <p class="rail-note">只展示当前学习者的授权摘要、Agent 运行结果与审计轨迹。原始对话不会进入本页。</p>
+    </div>
+    <div class="rail-footer">
+      <strong>人工控制边界</strong>
+      自动执行默认关闭。对外发送、账户变更和高风险动作必须由真人确认。
+    </div>
+  </aside>
+
+  <main class="main" id="mainContent" tabindex="-1">
+    <header class="topbar">
+      <nav class="mode-switch compact" aria-label="使用模式"><a href="/ui/ambient.html">环境辅助</a><a href="/ui/single.html">我的数据</a><a href="/ui/multi.html">多人数据</a></nav>
+      <div class="crumb"><span>TENDER</span><b>/</b><strong>多 Agent 作战大屏</strong></div>
+      <div class="top-actions">
+        <button class="btn icon-btn" id="refreshBtn" type="button" title="刷新数据" aria-label="刷新数据">↻</button>
+        <a class="btn" href="/ui/" aria-label="返回 Tender 主界面">← <span>返回主界面</span></a>
+        <a class="btn" href="/ui/knowledge.html" aria-label="打开知识森林">◫ <span>知识森林</span></a>
+        <button class="btn primary" id="runDemoBtn" type="button">＋ <span>新建协作</span></button>
+      </div>
+    </header>
+
+    <div class="content">
+      <section class="hero-row" aria-labelledby="pageTitle">
+        <div class="hero-copy">
+          <div class="eyebrow" id="commandEyebrow">TODAY · 决策队列</div>
+          <h1 id="pageTitle">正在读取需要你处理的事项…</h1>
+          <p id="commandSubtitle">这不是报告页。首屏只显示下一步动作。</p>
+          <div class="hero-actions">
+            <button class="btn primary" id="primaryActionBtn" type="button">处理待审批</button>
+            <button class="btn" id="inspectBtn" type="button">查看当前结果</button>
+          </div>
+        </div>
+        <div class="hero-status">
+          <div class="live-chip"><i class="pulse-dot" aria-hidden="true"></i><span id="liveTimestamp">等待数据</span></div>
+          <span class="hero-status-note" id="agentDutySummary">Agent 状态读取中</span>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Agent 运行指标">
+        <button class="metric metric-button" id="metricWaitingCard" type="button">
+          <div class="metric-label"><span>需要我</span><span>ACTION</span></div>
+          <div class="metric-value" id="metricWaiting">—</div>
+          <div class="metric-sub" id="metricWaitingSub">审批与澄清集中在这里</div>
+        </button>
+        <button class="metric metric-button" id="metricWorkingCard" type="button">
+          <div class="metric-label"><span>执行中</span><span>RUNNING</span></div>
+          <div class="metric-value" id="metricWorking">—</div>
+          <div class="metric-sub">当前协作线程</div>
+        </button>
+        <button class="metric metric-button" id="metricCompletedCard" type="button">
+          <div class="metric-label"><span>已交付</span><span>DONE</span></div>
+          <div class="metric-value" id="metricCompleted">—</div>
+          <div class="metric-sub">打开可查看结果</div>
+        </button>
+        <article class="metric">
+          <div class="metric-label"><span>实验模型</span><span>EXPERIMENTAL</span></div>
+          <div class="metric-value metric-model" id="metricAgents">—</div>
+          <div class="metric-sub" id="metricAgentsSub">检查 API 状态</div>
+        </article>
+      </section>
+
+      <section class="panel battle-stage" aria-labelledby="networkTitle">
+        <header class="panel-head">
+          <div class="panel-title">
+            <h2 id="networkTitle">Agent 关系网</h2>
+            <small>HANDOFF TOPOLOGY</small>
+          </div>
+          <div class="panel-head-note" id="networkNote">当前线程：等待选择</div>
+        </header>
+        <div class="battle-layout">
+          <div class="network-wrap" id="networkWrap">
+            <div class="network-map" id="networkMap" aria-label="Agent 协作关系图">
+              <svg class="network-lines" id="networkLines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
+              <div class="hub" id="hubNode" data-agent-id="coordinator" role="button" tabindex="0" aria-label="查看协调者 Agent">
+                <div><strong>Agent Bridge</strong><span>COORDINATOR</span></div>
+              </div>
+              <div id="agentNodes"></div>
+            </div>
+            <div class="network-legend" aria-hidden="true">
+              <span class="legend-item"><i class="legend-dot working"></i>执行中</span>
+              <span class="legend-item"><i class="legend-dot waiting"></i>等你</span>
+              <span class="legend-item"><i class="legend-dot completed"></i>已完成</span>
+              <span class="legend-item"><i class="legend-dot"></i>待命</span>
+            </div>
+          </div>
+          <aside class="signal-feed" aria-labelledby="signalTitle">
+            <div class="signal-feed-head"><strong id="signalTitle">实时证据流</strong><span>DAOQL / LIVE TAIL</span></div>
+            <div class="signal-list" id="signalList">
+              <div class="empty-mini">正在读取最近事件…</div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="panel sessions-panel" aria-labelledby="sessionsTitle">
+        <header class="panel-head">
+          <div class="panel-title">
+            <h2 id="sessionsTitle">协作会话</h2>
+            <small>AGENT SESSIONS</small>
+          </div>
+          <div class="session-toolbar">
+            <span class="tiny-chip" id="experimentalRuntimeChip">实验 API：检查中</span>
+            <span class="tiny-chip" id="sessionSummary">正在读取</span>
+          </div>
+        </header>
+        <div class="session-grid">
+          <div class="session-list" id="sessionList" aria-live="polite">
+            <div class="empty-state">
+              <div class="empty-orbit" aria-hidden="true"></div>
+              <h3>正在读取协作线程</h3>
+              <p>线程列表会按“执行中 / 需要我 / 已交付”分组呈现。</p>
+            </div>
+          </div>
+          <aside class="peek" aria-labelledby="peekTitle">
+            <div class="peek-head">
+              <div class="peek-kicker">PEEK / ATTACH</div>
+              <div class="peek-title"><h3 id="peekTitle">选择一个会话</h3><span class="status-badge" id="peekStatus">待命</span></div>
+            </div>
+            <div class="peek-body" id="peekBody">
+              <p class="peek-description">在左侧选择线程，或点击关系网中的 Agent，查看它当前读取了什么、产出了什么、是否需要你介入。</p>
+              <div class="detail-section"><div class="detail-label">BOUNDARY</div><p class="detail-value">本页不提供人格诊断，也不自动对外发送。所有高风险操作保留审批与审计。</p></div>
+            </div>
+            <div class="peek-actions" id="peekActions">
+              <a class="btn small" href="/ui/#workbench">打开学习工作台</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <div class="bottom-grid">
+        <section class="panel" aria-labelledby="queueTitle">
+          <header class="panel-head"><div class="panel-title"><h2 id="queueTitle">待办</h2><small>ACTION QUEUE</small></div><span class="panel-head-note" id="queueCount">0 项</span></header>
+          <div class="queue-list" id="approvalList"><div class="empty-mini">没有需要你处理的动作。</div></div>
+        </section>
+        <details class="panel trace-fold">
+          <summary class="panel-head"><div class="panel-title"><h2 id="timelineTitle">运行轨迹</h2><small>TRACE</small></div><span class="panel-head-note">展开查看</span></summary>
+          <div class="timeline-list" id="timelineList"><div class="empty-mini">选择线程后显示 Agent 交接与产出。</div></div>
+        </details>
+      </div>
+    </div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/ui/agent-command-center.js?v=11" defer></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

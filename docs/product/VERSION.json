@@ -1,6 +1,6 @@
 {
   "product": "Tender",
-  "manual_version": "7.1",
+  "manual_version": "7.2",
   "date": "2026-11-01",
   "product_type": "B端完整系统 / B端嵌入式模块 / C端生活界面共享核心的心智化终身学习系统",
   "default_surfaces": [
@@ -41,22 +41,27 @@
     "SelfModel and observer-owned PeerModel",
     "Revocable SharedView",
     "Participant-approved SharedBranchStore",
-    "GroupModel without private-member access"
+    "GroupModel without private-member access",
+    "Screen Context MCP",
+    "Media Plugin MCP",
+    "Consent-gated visible-window reading",
+    "Local OCR and Whisper transcription",
+    "Raw media excluded from DAOQL"
   ],
-  "status": "V7.1 establishes the self, world, relationship and group value loops; dual-chain group chat isolation and 114 tests remain in force",
-  "source": "Tender-Product-Manual-v7.1.md",
-  "pdf": "Tender-Product-Manual-v7.1.pdf",
+  "status": "V7.2 adds consent-gated screen context, local multimedia MCP plugins and multimodal acceptance boundaries while preserving the self-world-relationship-group loops",
+  "source": "Tender-Product-Manual-v7.2.md",
+  "pdf": "Tender-Product-Manual-v7.2.pdf",
   "user_guide": {
-    "source": "Tender-User-Guide-v7.1.md",
-    "pdf": "Tender-User-Guide-v7.1.pdf",
-    "pages": 27,
-    "pdf_bytes": 428986,
-    "sha256": "ea68dffa12d8b27d1c8b0d0fca44ca82d5ba30ef8834bbe8a100a0d5005b6376",
-    "validation": "V7.1 adds self, world and relationship scenarios plus group authorization; zero replacement characters"
+    "source": "Tender-User-Guide-v7.2.md",
+    "pdf": "Tender-User-Guide-v7.2.pdf",
+    "pages": 23,
+    "pdf_bytes": 303858,
+    "sha256": "cbf51bf0f0b6f7ed07f5c69b48d8aa4db85db0af4b8a788506e1d1a16d9ea273",
+    "validation": "V7.2 adds 15-minute screen-context consent, media-plugin use, failure states and stop controls"
   },
   "pdf_render": {
-    "pages": 62,
-    "validation": "V7.1 rebuilt with three-loop value narrative and dual-chain backend; zero replacement characters"
+    "pages": 54,
+    "validation": "V7.2 rebuilt with screen-context MCP, local multimedia plugins, privacy boundaries and zero replacement characters"
   },
   "implemented": true,
   "positioning": "Tender：温柔地了解您的心智。B端可提供完整教育系统或嵌入合作方系统，C端以自有界面融入用户生活。",
@@ -78,8 +83,8 @@
     "workflow_execution": "gated",
     "status_endpoint": "GET /agent-runtime/status"
   },
-  "sha256": "fe9ebdbb8cbf2fbe8c6768385a27c1141d03b73fe064c8390f1427a30618d3c6",
-  "tests": 114,
+  "sha256": "7a9eec63c378b994a8b749c266dec774f5ee9fab96946e2307d0ba2f67cb0079",
+  "tests": 130,
   "identity": {
     "development": "signed HMAC bearer session",
     "session_revocation": "implemented",
@@ -123,9 +128,9 @@
     ]
   },
   "decision_loop": "implemented",
-  "manual_title": "Tender 产品手册 V7.1",
-  "builder": "build_v67_reports.py",
-  "pdf_bytes": 688190,
+  "manual_title": "Tender 产品手册 V7.2",
+  "builder": "scripts/build_manuals_v22.py",
+  "pdf_bytes": 481862,
   "narrative_order": [
     "opportunity",
     "user_segmentation",
@@ -325,10 +330,10 @@
     "raw_responses_stored": false,
     "diagnosis": false,
     "user_review_required": true,
-    "report": "Tender-Product-Manual-v7.1.pdf §13.7",
-    "report_source": "Tender-Product-Manual-v7.1.md",
-    "report_pages": 58,
-    "tests": 114,
+    "report": "Tender-Product-Manual-v7.2.pdf §21.6",
+    "report_source": "Tender-Product-Manual-v7.2.md",
+    "report_pages": 54,
+    "tests": 130,
     "attention_profile": true,
     "cognitive_correction_plan": true,
     "correction_card_fields": [
@@ -593,11 +598,11 @@
   "central_thesis": {
     "title": "连接自我、世界与他人心智",
     "core": "生命不是被某个框架评价出来的形状，而是在有限时间里，通过选择、关系、承担和创造长出来的年轮。",
-    "source": "Tender-中心主旨.md",
+    "source": "Tender-Central-Thesis.md",
     "manuals": [
-      "Tender-Product-Manual-V7.1.md",
-      "Tender-User-Guide-V7.1.md",
-      "../教学手册/Tender零基础全流程教学手册-完整版-V6.1.tex"
+      "Tender-Product-Manual-v7.2.md",
+      "Tender-User-Guide-v7.2.md",
+      "Tender-Teaching-Manual-v6.2.tex"
     ],
     "role": "narrative and modeling grammar; not a clinical, diagnostic or efficacy claim"
   },
@@ -634,19 +639,19 @@
       "GET /metameta/map/{student_id}"
     ],
     "context_version": "tender-context-2.0",
-    "tests": 114,
+    "tests": 130,
     "boundary": "The cognitive-map regions are interpretive retrieval labels, not brain scans, clinical diagnoses or objective facts."
   },
   "project_whitepaper": {
-    "source": "../产品管理文档/Tender-项目白皮书-V2.1.tex",
-    "pdf": "../产品管理文档/Tender-项目白皮书-V2.1.pdf",
-    "word": "../产品管理文档/Tender-项目白皮书-V2.1.docx",
-    "version": "2.1",
-    "pages": 49,
-    "pdf_bytes": 452358,
-    "pdf_sha256": "17be81835977f161d8269647bfd19d79f4c8ad81a9850ed21c78ee36bb3380b8",
-    "word_bytes": 1173826,
-    "word_sha256": "66f635ad5ed36e571ead33086ed78755bb3f665a6d9b26e00b8136c8dccd78ef",
+    "source": "../whitepaper/Tender-Whitepaper-v2.2.tex",
+    "pdf": "../whitepaper/Tender-Whitepaper-v2.2.pdf",
+    "word": "../whitepaper/Tender-Whitepaper-v2.2.docx",
+    "version": "2.2",
+    "pages": 52,
+    "pdf_bytes": 2058614,
+    "pdf_sha256": "180dca82066bb97681fcab00604fdcbc11ee5d4046f1e9dc485c29ee9cdf8353",
+    "word_bytes": 1175634,
+    "word_sha256": "6014aba72ba6d34e2e96b791f27648c0c4c623c5bcd8ceeeaf99ee15789abe68",
     "figures": 14,
     "tables_in_word": 22,
     "citations": 11,
@@ -710,18 +715,18 @@
     "boundary": "Language evidence is weak evidence and cannot determine mastery, personality, diagnosis or factual truth by itself."
   },
   "teaching_manual": {
-    "source": "../教学手册/Tender零基础全流程教学手册-完整版-V6.1.tex",
-    "pdf": "../教学手册/Tender零基础全流程教学手册-完整版-V6.1.pdf",
-    "version": "6.1",
-    "pages": 187,
-    "pdf_bytes": 925328,
-    "sha256": "f5473363e67fc7cc3ea941b4c3b4f431cae1be7fe575154e897257091c2e490c",
-    "validation": "V6.1 adds self-world-relationship-group value loops and dual-chain group backend; zero replacement characters"
+    "source": "../../docs/teaching/Tender-Teaching-Manual-v6.2.tex",
+    "pdf": "../../docs/teaching/Tender-Teaching-Manual-v6.2.pdf",
+    "version": "6.2",
+    "pages": 190,
+    "pdf_bytes": 6418749,
+    "sha256": "955c9f744c522bd1cb3de612f24d07f02064cbedf39e2857264872f3ff466535",
+    "validation": "V6.2 adds screen-context MCP, multimedia plugins, worker isolation and new acceptance checks"
   },
   "teaching_site": {
     "version": "3.1",
     "entry": "GET /guide/",
-    "modules": 14,
+    "modules": 15,
     "languages": [
       "zh",
       "en"
@@ -729,14 +734,14 @@
     "formulas": false,
     "architecture": "world tree -> DAOQL roots -> limited observation -> Agent Bridge trunk -> five experience branches -> flowering/outcomes/shared branches -> dual-chain private/group separation",
     "documents": [
-      "Whitepaper V2.1",
-      "Product Manual V7.1",
-      "User Guide V7.1",
-      "Teaching Manual V6.1",
+      "Whitepaper V2.2",
+      "Product Manual V7.2",
+      "User Guide V7.2",
+      "Teaching Manual V6.2",
       "Golden-Bias Experiment V1.0",
       "Rhythm Phase Experiment V1.0"
     ],
-    "minutes": 100
+    "minutes": 108
   },
   "world_tree": {
     "endpoint": "GET /world-tree/{student_id}",
@@ -882,5 +887,52 @@
       "shared_branch_approval"
     ],
     "boundary": "Self, world, relationship and group loops share infrastructure while preserving separate data scopes."
+  },
+  "screen_context": {
+    "version": "screen-context-1.0",
+    "module": "../agent_layer/desktop_overlay/screen_context.py",
+    "mcp": "../agent_layer/desktop_overlay/screen_context_mcp.py",
+    "scopes": [
+      "windows",
+      "accessible",
+      "screenshots"
+    ],
+    "default_duration_minutes": 15,
+    "raw_content_persisted": false,
+    "raw_content_sent_to_daoql": false,
+    "coverage": "visible_top_level_windows_only",
+    "hidden_tabs": false,
+    "password_fields": false,
+    "clipboard": false,
+    "camera": false,
+    "microphone": false
+  },
+  "media_plugins": {
+    "version": "media-plugins-1.0",
+    "module": "../agent_layer/desktop_overlay/media_plugins.py",
+    "mcp": "../agent_layer/desktop_overlay/media_plugins_mcp.py",
+    "worker": "../agent_layer/desktop_overlay/media_plugin_worker.py",
+    "plugins": [
+      "RapidOCR",
+      "Qwen3-VL-compatible vision adapter",
+      "faster-whisper",
+      "OpenCV video frames",
+      "ffmpeg audio extraction",
+      "pyttsx3 SAPI5 TTS"
+    ],
+    "raw_files_persisted": false,
+    "raw_content_sent_to_daoql": false,
+    "auto_upload": false,
+    "camera_or_microphone_capture": false
+  },
+  "site": {
+    "documents": [
+      "Whitepaper V2.2",
+      "Product Manual V7.2",
+      "User Guide V7.2",
+      "Teaching Manual V6.2",
+      "Golden-Bias Experiment V1.0",
+      "Rhythm Phase Experiment V1.0"
+    ]
   }
 }

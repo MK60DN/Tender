@@ -3,13 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Tender · 世界入口预检测</title>
+  <title>Tender · 生成学习支持偏好</title>
+  <link rel="stylesheet" href="/ui/mode-switch.css?v=4">
   <style>
     :root{--ink:#151719;--muted:#6d7177;--line:#d9dadd;--panel:rgba(244,244,245,.94);--accent:#1a6b57;--soft:#eceff0;--warn:#8b4f18}
     *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#f2f3f4,#e9ebec);color:var(--ink);font:15px/1.65 "Microsoft YaHei",system-ui,sans-serif}
     .shell{width:min(940px,calc(100% - 32px));margin:32px auto 80px}.hero{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:0 18px 55px rgba(20,24,28,.08)}
     h1{font-size:clamp(27px,5vw,44px);line-height:1.15;margin:8px 0 14px;letter-spacing:-.04em}.eyebrow{font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:700}.lead{color:var(--muted);max-width:720px}
     .notice{margin:20px 0;padding:15px 17px;border-left:3px solid var(--accent);background:#edf2f0;border-radius:0 12px 12px 0}.notice strong{display:block;margin-bottom:4px}
+    .onboarding-progress{display:flow-root;list-style:none;margin:0 0 14px;padding:11px 14px;background:rgba(255,255,255,.66);border:1px solid var(--line);border-radius:14px}.onboarding-progress li{float:left;width:33.333%;display:flex;align-items:center;gap:7px;color:var(--muted);font-size:11px;position:relative}.onboarding-progress li:not(:last-child):after{content:"";position:absolute;right:15px;left:36px;top:11px;height:1px;background:var(--line)}.onboarding-progress b{width:23px;height:23px;border-radius:50%;display:grid;place-items:center;background:#e5e8e6;color:var(--muted);font-size:9px;z-index:1}.onboarding-progress li.done,.onboarding-progress li.current{color:var(--accent);font-weight:700}.onboarding-progress li.done b,.onboarding-progress li.current b{background:var(--accent);color:#fff}.onboarding-progress.hidden{display:none}
     .meta{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.pill{padding:6px 10px;border-radius:999px;background:var(--soft);font-size:12px}
     button{font:inherit;border:0;cursor:pointer}.primary{background:var(--ink);color:#fff;padding:12px 19px;border-radius:12px;font-weight:700}.secondary{background:#fff;color:var(--ink);border:1px solid var(--line);padding:10px 15px;border-radius:11px}.link{background:none;color:var(--muted);padding:8px 0;text-decoration:underline}
     .consent{display:flex;gap:10px;align-items:flex-start;margin:18px 0}.consent input{margin-top:5px;width:18px;height:18px}.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
@@ -24,18 +26,20 @@
 </head>
 <body>
 <div class="shell">
+  <nav class="mode-switch page-mode-switch" aria-label="使用模式"><a href="/ui/ambient.html">环境辅助</a><a href="/ui/single.html">我的数据</a><a href="/ui/multi.html">多人数据</a></nav>
+  <ol class="onboarding-progress hidden" id="onboardingProgress" aria-label="首次使用进度"><li class="done"><b>1</b><span>登录</span></li><li class="current"><b>2</b><span>认识你</span></li><li><b>3</b><span>进入 Tender</span></li></ol>
   <section class="hero">
-    <div class="eyebrow">TENDER FIRST-RUN PROFILE</div>
-    <h1>先了解你怎样行动，<br>再决定怎样帮助。</h1>
-    <p class="lead">系统会观察你更自然地怎样进入世界、怎样处理信息和行动，并用大五脉搏理解近期心理资源变化。所有结果都是待你确认的支持假设。</p>
-    <div class="meta"><span class="pill">约 7–9 分钟</span><span class="pill">20 大五基线题</span><span class="pill">24 世界入口题</span><span class="pill">不显示人格标签</span></div>
-    <div class="notice"><strong>不是诊断，也不是能力排名</strong>系统不会用结果给你贴“缺陷”标签，也不会阻止你使用任何功能。结果只用于调整沟通、支持方式和初始 Agent 组合，并可随时重测。</div>
-    <label class="consent"><input id="consent" type="checkbox"><span>我理解这是自我反思工具。我同意保存标准化分数，用于生成本次支持画像。逐题原文默认不保存。</span></label>
-    <div class="actions"><button class="primary" id="startBtn">开始预检测</button><a class="secondary" href="/ui/">返回 Tender</a></div>
+    <div class="eyebrow">7-MINUTE SETUP</div>
+    <h1>生成你的学习支持偏好。</h1>
+    <p class="lead">完成 44 道题后，你会得到更适合自己的提问方式、任务组织和 Agent 组合。结果可重测、可撤回。</p>
+    <div class="meta"><span class="pill">7–9 分钟</span><span class="pill">44 道题</span><span class="pill">不显示人格标签</span><span class="pill">随时重测</span></div>
+    <div class="notice"><strong>不是诊断，也不是排名</strong>系统只保存标准化支持画像，不保存逐题原文。</div>
+    <label class="consent"><input id="consent" type="checkbox"><span>我同意保存标准化支持画像，用于调整沟通与支持方式；逐题原文不保存。</span></label>
+    <div class="actions"><button class="primary" id="startBtn">开始 7 分钟检测</button><a class="secondary" href="/ui/login.html">返回登录</a><span class="tiny" id="startHint">完成后可查看并撤回结果</span></div>
     <p class="footer">当前学习者：<b id="studentLabel">S01</b> · 结果属于学习者，可查看、重测和撤回</p>
   </section>
   <section id="quizCard" class="card hidden">
-    <div class="qmeta"><span id="sectionLabel">大五人格</span><span id="progressText">1 / 36</span></div>
+    <div class="qmeta"><span id="sectionLabel">大五人格</span><span id="progressText">1 / 44</span></div>
     <div class="progress"><i id="progressBar"></i></div>
     <div id="questionText" class="question"></div>
     <div id="scaleHint" class="scalehint"></div>
@@ -46,13 +50,16 @@
   <section id="resultArea" class="hidden">
     <div class="card"><div class="eyebrow">YOUR FIRST-RUN PROFILE</div><h2>你的初始支持画像</h2><p class="tiny" id="resultNotice"></p></div>
     <div class="results" id="resultGrid"></div>
-    <div class="card"><div class="actions"><button class="primary" id="retakeBtn">重新测试</button><a class="secondary" href="/ui/">返回 Tender</a></div></div>
+    <div class="card"><div class="actions"><button class="primary" id="enterTenderBtn">进入 Tender</button><button class="secondary" id="retakeBtn">重新测试</button></div><p class="tiny">测评结果会用于调整提问方式、任务组织和初始 Agent 组合。</p></div>
   </section>
   <section id="errorCard" class="card error hidden"></section>
 </div>
 <script>
 const $ = (id) => document.getElementById(id);
-const studentId = localStorage.getItem("tender.student") || "S01";
+const params = new URLSearchParams(location.search);
+const onboarding = params.get("onboarding") === "1";
+const studentId = params.get("student") || localStorage.getItem("tender.student") || "S01";
+localStorage.setItem("tender.student", studentId);
 let catalog = null;
 let questions = [];
 let index = 0;
@@ -194,6 +201,9 @@ async function submit() {
     const data = await response.json();
     if (!response.ok) throw new Error(data.detail || "提交失败");
     localStorage.removeItem("tender.preassessment.draft");
+    localStorage.setItem("tender.onboarding." + studentId, "complete");
+    const worldEntry = data.profile && data.profile.world_interface && data.profile.world_interface.world_entry;
+    if (worldEntry) localStorage.setItem("tender.worldEntry." + studentId, JSON.stringify(worldEntry));
     renderResults(data.profile);
   } catch (error) {
     $("quizCard").classList.remove("hidden");
@@ -255,12 +265,26 @@ function renderResults(profile) {
   cards.push('<div class="result-card"><h3>容易卡住的条件</h3>' + renderList(profile.friction_hypotheses) + '</div>');
   cards.push('<div class="result-card full"><h3>支持偏好</h3>' + renderList(profile.support_preferences) + '</div>');
   cards.push('<div class="result-card full"><h3>初始 Agent 组合建议</h3>' + (profile.agent_routing_hypotheses.length ? profile.agent_routing_hypotheses.map((item) => '<span class="tag">' + esc(item.agent_id) + ' · ' + esc(item.reason) + '</span>').join('') : '<p class="tiny">暂不增加额外 Agent，先观察真实使用。</p>') + '<p class="tiny">这些只是初始假设。你可以在 Agent 圆桌中删除、替换或关闭任何专家。</p></div>');
-  cards.push('<div class="result-card full"><h3>查看世界树</h3><p>把当前世界入口、体验节点、开花、结果与共享枝边界放在同一张图里。</p><p><a class="secondary" style="display:inline-block;text-decoration:none" href="/ui/world-tree.html?student=' + encodeURIComponent(studentId) + '">打开我的世界树</a></p></div>');  $("resultGrid").innerHTML = cards.join('');
+  cards.push('<div class="result-card full"><h3>下一步</h3><p>你的主观入口和客观入口已经建立。现在进入 Tender，开始今天的一步。</p><p><a class="secondary" style="display:inline-block;text-decoration:none" href="/ui/world-tree.html?student=' + encodeURIComponent(studentId) + '">查看世界树</a></p></div>');  $("resultGrid").innerHTML = cards.join('');
+  if (onboarding) {
+    $("onboardingProgress").classList.remove("hidden");
+    $("onboardingProgress").innerHTML = '<li class="done"><b>1</b><span>登录</span></li><li class="done"><b>2</b><span>认识你</span></li><li class="current"><b>3</b><span>进入 Tender</span></li>';
+  }
   $("resultArea").scrollIntoView({behavior: "smooth", block: "start"});
 }
 
 async function init() {
-  $("studentLabel").textContent = studentId;
+  $("studentLabel").textContent = (localStorage.getItem("tender.displayName") || studentId) + " · " + studentId;
+  if (onboarding) {
+    document.body.classList.add("onboarding-flow");
+    $("onboardingProgress").classList.remove("hidden");
+    const switcher = document.querySelector(".page-mode-switch");
+    if (switcher) { switcher.hidden = true; switcher.style.display = "none"; }
+  }
+  $("enterTenderBtn").addEventListener("click", () => {
+    const next = localStorage.getItem("tender.onboarding.next") || "/ui/single.html";
+    location.href = next + (next.includes("?") ? "&" : "?") + "student=" + encodeURIComponent(studentId);
+  });
   try {
     const response = await fetch("/preassessment/items");
     catalog = await response.json();
@@ -270,6 +294,21 @@ async function init() {
     $("startBtn").addEventListener("click", startQuiz);
     $("backBtn").addEventListener("click", () => { if (index > 0) { index -= 1; renderQuestion(); } });
     $("retakeBtn").addEventListener("click", () => { localStorage.removeItem("tender.preassessment.draft"); window.location.reload(); });
+    if (onboarding) {
+      try {
+        const existingToken = await ensureSession();
+        const existingResponse = await fetch("/preassessment/profile/" + encodeURIComponent(studentId), { headers: { Authorization: "Bearer " + existingToken } });
+        if (existingResponse.ok) {
+          const existing = await existingResponse.json();
+          localStorage.setItem("tender.onboarding." + studentId, "complete");
+          const worldEntry = existing && existing.world_interface && existing.world_interface.world_entry;
+          if (worldEntry) localStorage.setItem("tender.worldEntry." + studentId, JSON.stringify(worldEntry));
+          const hero = document.querySelector(".hero");
+          if (hero) hero.classList.add("hidden");
+          renderResults(existing);
+        }
+      } catch (_) {}
+    }
   } catch (error) {
     showError(error.message || "无法加载预检测。");
   }

@@ -14,7 +14,7 @@ The application also mounts the site at `/guide/` when running FastAPI.
 
 ## Features
 
-- fourteen bilingual modules;
+- fifteen bilingual modules;
 - local learning progress;
 - language switch;
 - knowledge checks;
@@ -22,7 +22,7 @@ The application also mounts the site at `/guide/` when running FastAPI.
 - concept and evidence-boundary cards;
 - phase and periodicity-evidence lesson;
 - self-world-relationship-group value-loop lesson;
-- dual-chain group-chat privacy and consent lesson;
+- dual-chain group-chat privacy and consent lesson; screen-context and media-plugin boundaries;
 - printable course;
 - no external CDN, tracking or runtime dependency.
 

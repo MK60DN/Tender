@@ -367,3 +367,30 @@ GET /tenant/projections/students?year=2026&stage=&review_status=&campus_id=&limi
 - 校区管理员只能读所属校区，班主任只能读指定班级，顾问/家长/学习者只能读指定学生；
 - 敏感联系人、财务、合同、HR、账号文件默认不对教师角色开放；
 - 2026 推算学生与原始学生分表保存，返回 `synthetic=true`，不得当作已确认事实。
+
+## Local MCP interfaces
+
+界面上下文和多媒体能力不是公开 HTTP 接口，而是通过仓库根目录 `.mcp.json` 启动的本地 stdio MCP 服务提供。
+
+### tender-screen-context
+
+```text
+grant_screen_context
+screen_context_status
+read_screen_context
+capture_screen_context
+revoke_screen_context
+```
+
+### tender-media-tools
+
+```text
+list_media_plugins
+analyze_image
+transcribe_audio
+analyze_video
+speak_text
+list_voices
+```
+
+MCP 服务要求显式用户授权。原始窗口文字、截图和媒体内容不写入 DAOQL；弹幕规划只使用粗粒度派生信号。

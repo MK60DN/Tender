@@ -241,3 +241,26 @@ DAOQL 审计
 - 高风险事件人工值班；
 - 固定评测集与漂移监控；
 - 可穿戴数据正式合作协议。
+
+## 12. 本地界面上下文与媒体插件
+
+```text
+Windows 可见窗口 / 用户选择的媒体
+              ↓
+本地 MCP 服务与权限校验
+              ↓
+UI Automation / OCR / ASR / 视频抽帧
+              ↓
+本机脱敏、派生信号与短时缓存
+              ↓
+Tender 上下文与弹幕规划
+```
+
+- `screen_context.py`：短时授权、可见窗口枚举、UI Automation、敏感字段脱敏与可选内存截图；
+- `screen_context_mcp.py`：授权、状态、读取、截图和撤销五类 MCP 工具；
+- `media_plugins.py`：RapidOCR、faster-whisper、OpenCV/ffmpeg 视频分析与 pyttsx3；
+- `media_plugins_mcp.py`：图片、音频、视频和语音 MCP 工具；
+- `media_plugin_worker.py`：隔离第三方运行时输出，保护 MCP stdio 协议；
+- `tender_overlay.py`：桌面弹幕中的“读界面”和“媒体”入口。
+
+原始界面文字、截图、媒体文件和完整转写不写入 DAOQL。规划层只接收应用类别、任务关键词、窗口数量、文本可用性和媒体处理状态。截图权限、文字读取权限和窗口元数据权限分别授权。

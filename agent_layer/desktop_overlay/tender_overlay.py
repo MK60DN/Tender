@@ -24,7 +24,29 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 import tkinter as tk
-from tkinter import font as tkfont
+from tkinter import filedialog, font as tkfont
+
+OVERLAY_DIR = Path(__file__).resolve().parent
+if str(OVERLAY_DIR) not in sys.path:
+    sys.path.insert(0, str(OVERLAY_DIR))
+
+from media_plugins import (
+    MediaPluginError,
+    analyze_image,
+    analyze_video,
+    summarize_for_danmaku,
+    transcribe_audio,
+)
+
+from screen_context import (
+    CONSENT_PHRASE,
+    ConsentExpired,
+    ConsentRequired,
+    ConsentStore,
+    ScreenContextError,
+    derive_safe_signals,
+    read_screen_context,
+)
 
 CFG_PATH = Path(__file__).with_name("config.json")
 WM_HOTKEY = 0x0312
@@ -47,6 +69,7 @@ HOTKEYS = {
     7: ("reply", "回复 Tender", 0x52),
     8: ("behavior", "按当前行为触发测试", 0x42),
     9: ("persona", "选择陪伴人设", 0x50),
+    10: ("screen_context", "授权读取当前界面", 0x49),
 }
 
 
@@ -326,6 +349,15 @@ class Overlay:
         self.current_persona = str(cfg.get("agent_id", "learning_strategist"))
         self.current_ensemble = list(cfg.get("agent_ids") or ["learning_strategist", "subject_expert", "neuro_cognition", "psychologist", "nutritionist", "career_advisor", "safety_officer", "metacognition_coach"])
         self.last_signals = WindowsSignals(bool(cfg.get("observe_window_title", True)))
+        self.screen_store = ConsentStore()
+        self.screen_token: str | None = None
+        self.screen_context_cache: dict = {}
+        self.screen_context_cached_at = 0.0
+        self.screen_context_reading = False
+        self.screen_context_button = None
+        self.screen_consent_window = None
+        self.media_button = None
+        self.media_running = False
         self.client = TenderClient(cfg)
         self.hotkey_queue: queue.Queue[int] = queue.Queue()
         self.hotkeys = HotkeyThread(self.hotkey_queue)
@@ -384,6 +416,10 @@ class Overlay:
         self.conversation_status.pack(side="left", padx=(0, 10))
         send_btn = tk.Button(win, text="发送", bg="#bfc2c5", fg="#111111", activebackground="#aeb2b5", activeforeground="#000000", relief="flat", bd=0, padx=14, cursor="hand2", font=("Microsoft YaHei UI", 9, "bold"), command=self.send_conversation)
         send_btn.pack(side="right", padx=(8, 12), pady=9)
+        self.media_button = tk.Button(win, text="媒体", bg="#bfc2c5", fg="#111111", activebackground="#aeb2b5", activeforeground="#000000", relief="flat", bd=0, padx=10, cursor="hand2", font=("Microsoft YaHei UI", 8), command=self.choose_media_file)
+        self.media_button.pack(side="right", padx=(0, 4), pady=9)
+        self.screen_context_button = tk.Button(win, text="读界面 · 关", bg="#bfc2c5", fg="#111111", activebackground="#aeb2b5", activeforeground="#000000", relief="flat", bd=0, padx=10, cursor="hand2", font=("Microsoft YaHei UI", 8), command=self.toggle_screen_context)
+        self.screen_context_button.pack(side="right", padx=(0, 4), pady=9)
         self.conversation_entry = tk.Entry(win, bg="#f3f3f3", fg="#777777", insertbackground="#111111", relief="flat", font=("Microsoft YaHei UI", 10))
         self.conversation_entry.pack(side="left", fill="both", expand=True, pady=9)
         self.conversation_entry.insert(0, self.conversation_placeholder)
@@ -502,6 +538,7 @@ class Overlay:
     def monitor_tick(self) -> None:
         self.last_signals.sample()
         self.last_signals.activity_tick()
+        self._update_screen_context_label()
         self.root.after(1000, self.monitor_tick)
 
     def _apply_click_through(self, win: tk.Misc) -> None:
@@ -662,7 +699,7 @@ class Overlay:
         self.scene.configure(text=f"TENDER · {agent_label + ' · ' if agent_label else ''}{scene}")
         self.message.configure(text=str(card.get("text", "")).strip())
         action = str(card.get("action", "")).strip()
-        hint = "Ctrl+Alt+R 回复  ·  P 换人设  ·  1 有用  ·  2 不准  ·  3 静默  ·  0 收起"
+        hint = "Ctrl+Alt+R 回复  ·  Ctrl+Alt+I 读界面  ·  P 换人设  ·  1 有用  ·  2 不准  ·  3 静默  ·  0 收起"
         if action:
             hint = action + "  ·  " + hint
         self.hint.configure(text=hint if self.cfg.get("show_hotkey_hint", True) else "")
@@ -718,12 +755,249 @@ class Overlay:
                     self.request_behavior_card()
                 elif action == "persona":
                     self.open_persona_picker()
+                elif action == "screen_context":
+                    self.toggle_screen_context()
                 elif action == "exit":
                     self.exit()
                     return
         except queue.Empty:
             pass
         self.root.after(120, self.process_hotkeys)
+
+    def choose_media_file(self) -> None:
+        if self.media_running:
+            self.show_card({
+                "card_id": "ambient_media_busy",
+                "text": "上一个媒体还在本地处理中。先等它完成，不需要重复选择。",
+                "scenario": self.cfg.get("scenario", "score_improvement"),
+            })
+            return
+        path = filedialog.askopenfilename(
+            title="选择要给 Tender 读取的图片、音频或视频",
+            filetypes=[
+                ("图片、音频与视频", "*.png *.jpg *.jpeg *.webp *.bmp *.tif *.tiff *.wav *.mp3 *.m4a *.aac *.flac *.ogg *.opus *.wma *.mp4 *.mov *.mkv *.avi *.webm *.m4v *.flv"),
+                ("图片", "*.png *.jpg *.jpeg *.webp *.bmp *.tif *.tiff"),
+                ("音频", "*.wav *.mp3 *.m4a *.aac *.flac *.ogg *.opus *.wma"),
+                ("视频", "*.mp4 *.mov *.mkv *.avi *.webm *.m4v *.flv"),
+                ("所有文件", "*.*"),
+            ],
+        )
+        if not path:
+            return
+        self.media_running = True
+        self.show_card({
+            "card_id": "ambient_media_local_processing",
+            "text": "正在本机读取你选择的媒体。图片做文字识别，音频做转写，视频取关键帧并转写。不会自动上传。",
+            "action": "处理期间可以继续手上的事",
+            "scenario": self.cfg.get("scenario", "score_improvement"),
+        })
+
+        def worker() -> None:
+            suffix = Path(path).suffix.lower()
+            try:
+                if suffix in {".png", ".jpg", ".jpeg", ".webp", ".bmp", ".tif", ".tiff"}:
+                    result = analyze_image(path)
+                elif suffix in {".wav", ".mp3", ".m4a", ".aac", ".flac", ".ogg", ".opus", ".wma"}:
+                    result = transcribe_audio(path)
+                elif suffix in {".mp4", ".mov", ".mkv", ".avi", ".webm", ".m4v", ".flv"}:
+                    result = analyze_video(path, max_frames=6, include_audio=True)
+                else:
+                    raise MediaPluginError("unsupported_media_type", "这个文件不是支持图片、音频或视频类型。")
+                self.root.after(0, lambda value=result: self._handle_media_result(path, value))
+            except Exception as exc:
+                self.root.after(0, lambda error=exc: self._handle_media_error(error))
+
+        threading.Thread(target=worker, daemon=True).start()
+
+    def _handle_media_result(self, path: str, result: dict) -> None:
+        self.media_running = False
+        summary = summarize_for_danmaku(result, limit=320) or "处理完成，但没有识别到清晰的文字。"
+        kind = result.get("type", "media")
+        self.append_conversation("本地媒体 · " + Path(path).name, summary, "agent")
+        self.show_conversation_panel()
+        self.show_card({
+            "card_id": "ambient_media_result",
+            "kind": kind,
+            "text": summary,
+            "action": "原文只在本机显示，未写入 DAOQL",
+            "scenario": self.cfg.get("scenario", "score_improvement"),
+        })
+
+    def _handle_media_error(self, error: Exception) -> None:
+        self.media_running = False
+        message = str(error) if isinstance(error, MediaPluginError) else "媒体插件没有完成处理。"
+        self.show_card({
+            "card_id": "ambient_media_error",
+            "text": message,
+            "action": "可以换一个文件，或先在设置中安装对应插件",
+            "scenario": self.cfg.get("scenario", "score_improvement"),
+        })
+
+    def _update_screen_context_label(self) -> None:
+        if self.screen_context_button is None:
+            return
+        if not self.screen_token:
+            self.screen_context_button.configure(text="读界面 · 关")
+            return
+        try:
+            status = self.screen_store.status(self.screen_token)
+            remaining = int(status.get("remaining_seconds", 0))
+            minutes, seconds = divmod(max(0, remaining), 60)
+            self.screen_context_button.configure(text=f"读界面 · {minutes}:{seconds:02d}")
+        except ConsentExpired:
+            self.screen_token = None
+            self.screen_context_cache = {}
+            self.screen_context_cached_at = 0.0
+            self.screen_context_button.configure(text="读界面 · 已到期")
+        except ConsentRequired:
+            self.screen_token = None
+            self.screen_context_cache = {}
+            self.screen_context_cached_at = 0.0
+            self.screen_context_button.configure(text="读界面 · 关")
+
+    def toggle_screen_context(self) -> None:
+        if self.screen_token:
+            self.stop_screen_context()
+        else:
+            self.open_screen_consent()
+
+    def open_screen_consent(self) -> None:
+        if self.screen_consent_window is not None:
+            try:
+                self.screen_consent_window.deiconify()
+                self.screen_consent_window.lift()
+                return
+            except tk.TclError:
+                self.screen_consent_window = None
+        win = tk.Toplevel(self.root)
+        self.screen_consent_window = win
+        win.title("Tender 界面读取授权")
+        win.attributes("-topmost", True)
+        win.configure(bg="#d0d2d4")
+        width, height = 600, 390
+        sw, sh = win.winfo_screenwidth(), win.winfo_screenheight()
+        win.geometry(f"{width}x{height}+{max(0,(sw-width)//2)}+{max(0,(sh-height)//2)}")
+        tk.Label(win, text="允许 Tender 读取当前界面 15 分钟", fg="#111111", bg="#d0d2d4", font=("Microsoft YaHei UI", 17, "bold"), anchor="w").pack(fill="x", padx=24, pady=(20, 6))
+        copy = (
+            "Tender 会读取当前桌面所有可见顶层窗口的标题和可见文字，用来判断你正在做什么、需要哪种帮助。"
+            "密码、验证码、证件号、手机号、邮箱等会先在本机隐去；原文和截图不写入 DAOQL。"
+            "隐藏标签页、剪贴板和键盘输入不会被读取。授权到期或点击停止后立即失效。"
+        )
+        tk.Label(win, text=copy, fg="#303438", bg="#d0d2d4", font=("Microsoft YaHei UI", 10), anchor="w", justify="left", wraplength=548).pack(fill="x", padx=24, pady=(0, 12))
+        choose = tk.Frame(win, bg="#d0d2d4")
+        choose.pack(fill="x", padx=24, pady=4)
+        text_var = tk.BooleanVar(value=True)
+        confirm_var = tk.BooleanVar(value=False)
+        tk.Checkbutton(choose, text="读取可见文字（推荐）", variable=text_var, bg="#d0d2d4", fg="#111111", activebackground="#d0d2d4", selectcolor="#e1e2e3", font=("Microsoft YaHei UI", 10)).pack(anchor="w", pady=4)
+        tk.Checkbutton(choose, text="我确认现在允许读取，并知道界面中可能包含私人内容", variable=confirm_var, bg="#d0d2d4", fg="#111111", activebackground="#d0d2d4", selectcolor="#e1e2e3", font=("Microsoft YaHei UI", 10, "bold")).pack(anchor="w", pady=4)
+        status = tk.Label(win, text="本次不包含屏幕截图权限。", fg="#555b60", bg="#d0d2d4", font=("Microsoft YaHei UI", 9), anchor="w")
+        status.pack(fill="x", padx=24, pady=(8, 0))
+        actions = tk.Frame(win, bg="#d0d2d4")
+        actions.pack(side="bottom", fill="x", padx=24, pady=18)
+        def close() -> None:
+            if self.screen_consent_window is not None:
+                try:
+                    self.screen_consent_window.destroy()
+                except tk.TclError:
+                    pass
+            self.screen_consent_window = None
+        def allow() -> None:
+            if not confirm_var.get():
+                status.configure(text="请先勾选确认，再开始读取。", fg="#9b342f")
+                return
+            scopes = ["windows", "accessible"] if text_var.get() else ["windows"]
+            try:
+                granted = self.screen_store.grant(
+                    str(self.cfg.get("student_id", "S01")),
+                    scopes,
+                    duration_minutes=15,
+                    acknowledge=True,
+                    confirmation_text=CONSENT_PHRASE,
+                )
+            except Exception as exc:
+                status.configure(text=f"授权没有完成：{exc}", fg="#9b342f")
+                return
+            self.screen_token = str(granted["consent_token"])
+            self.screen_context_cache = {}
+            self.screen_context_cached_at = 0.0
+            self._update_screen_context_label()
+            close()
+            self.show_card({
+                "card_id": "ambient_screen_context_started",
+                "text": "界面读取已授权 15 分钟。我会只在需要帮助时使用窗口中的线索，原文不会写进 DAOQL。",
+                "action": "点击底部“读界面”可随时停止",
+                "scenario": self.cfg.get("scenario", "score_improvement"),
+            })
+            self._refresh_screen_context()
+        tk.Button(actions, text="取消", command=close, bg="#bfc2c5", fg="#111111", relief="flat", bd=0, padx=16, pady=9, cursor="hand2").pack(side="right")
+        tk.Button(actions, text="允许 15 分钟", command=allow, bg="#d95d39", fg="#ffffff", activebackground="#bf4e2d", activeforeground="#ffffff", relief="flat", bd=0, padx=18, pady=9, cursor="hand2", font=("Microsoft YaHei UI", 10, "bold")).pack(side="right", padx=(0, 8))
+        win.protocol("WM_DELETE_WINDOW", close)
+        win.focus_force()
+
+    def stop_screen_context(self) -> None:
+        token = self.screen_token
+        self.screen_token = None
+        self.screen_context_cache = {}
+        self.screen_context_cached_at = 0.0
+        if token:
+            try:
+                self.screen_store.revoke(token)
+            except Exception:
+                pass
+        self._update_screen_context_label()
+        self.show_card({
+            "card_id": "ambient_screen_context_stopped",
+            "text": "界面读取已经停止。",
+            "scenario": self.cfg.get("scenario", "score_improvement"),
+        })
+
+    def _refresh_screen_context(self) -> None:
+        if not self.screen_token or self.screen_context_reading:
+            return
+        token = self.screen_token
+        self.screen_context_reading = True
+        def worker() -> None:
+            try:
+                context = read_screen_context(
+                    self.screen_store,
+                    token,
+                    student_id=str(self.cfg.get("student_id", "S01")),
+                    max_windows=6,
+                    max_text_chars=6000,
+                )
+                signals = derive_safe_signals(context)
+                self.root.after(0, lambda value=signals: self._store_screen_context(value))
+            except Exception:
+                self.root.after(0, self._expire_screen_context)
+        threading.Thread(target=worker, daemon=True).start()
+
+    def _store_screen_context(self, signals: dict) -> None:
+        self.screen_context_reading = False
+        self.screen_context_cache = dict(signals)
+        self.screen_context_cached_at = time.monotonic()
+
+    def _expire_screen_context(self) -> None:
+        self.screen_context_reading = False
+        self.screen_token = None
+        self.screen_context_cache = {}
+        self.screen_context_cached_at = 0.0
+        self._update_screen_context_label()
+
+    def _signals_with_screen_context(self, scenario: str, *, explicit_need: bool = False) -> dict:
+        signals = self.last_signals.signals(scenario)
+        if explicit_need:
+            signals["explicit_need"] = 1
+        if self.screen_token and self.screen_context_cache:
+            signals.update(self.screen_context_cache)
+            active_category = str(self.screen_context_cache.get("screen_active_category") or "")
+            if active_category and active_category != "unknown":
+                signals["app_category"] = active_category
+            task_hint = str(self.screen_context_cache.get("screen_task_hint") or "")
+            if task_hint:
+                signals["task_hint"] = task_hint
+            if time.monotonic() - self.screen_context_cached_at > 20:
+                self._refresh_screen_context()
+        return signals
 
     def open_persona_picker(self) -> None:
         if self.persona_window is not None:
@@ -905,7 +1179,7 @@ class Overlay:
         return "break"
 
     def request_behavior_card(self) -> None:
-        signals = self.last_signals.signals(str(self.cfg.get("scenario", "score_improvement")))
+        signals = self._signals_with_screen_context(str(self.cfg.get("scenario", "score_improvement")))
         signals["agent_id"] = self.current_persona
         signals["agent_ids"] = self.current_ensemble
         try:
@@ -919,8 +1193,7 @@ class Overlay:
             self.show_card({"card_id": "ambient_behavior_offline", "text": "行为上下文暂时没有送达 Tender。我不会继续打扰。", "scenario": signals["scenario"]})
 
     def request_manual_card(self) -> None:
-        signals = self.last_signals.signals(str(self.cfg.get("scenario", "score_improvement")))
-        signals["explicit_need"] = 1
+        signals = self._signals_with_screen_context(str(self.cfg.get("scenario", "score_improvement")), explicit_need=True)
         signals["agent_id"] = self.current_persona
         signals["agent_ids"] = self.current_ensemble
         try:
@@ -936,7 +1209,7 @@ class Overlay:
         if self.demo_once:
             self.root.after(1000, self.poll)
             return
-        signals = self.last_signals.signals(str(self.cfg.get("scenario", "gaokao_registration")))
+        signals = self._signals_with_screen_context(str(self.cfg.get("scenario", "gaokao_registration")))
         signals["agent_id"] = self.current_persona
         signals["agent_ids"] = self.current_ensemble
         try:
@@ -1010,7 +1283,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-
-
-

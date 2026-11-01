@@ -265,6 +265,28 @@ GET  /agents/entitlements/{buyer_id}
 - 购买获得使用授权，不转移模型权重或原始数据；
 - 卖家分成 80%，平台分成 20%（当前为模拟支付）。
 
+## Multi-Agent Workbench / 实验模型增强
+
+```text
+GET  /workbench/agents
+GET  /workbench/experimental/status
+GET  /workbench/threads
+POST /workbench/threads
+GET  /workbench/threads/{thread_id}
+POST /workbench/threads/{thread_id}/orchestrate
+POST /workbench/approvals/{approval_id}/decide
+```
+
+实验增强仅在 orchestration 请求包含 `context_overrides.use_experimental_api=true` 时启用。六个协作 Agent 并行调用配置好的实验模型 API，并将模型生成的补充判断写入各自的 `output.experimental_api`。
+
+边界：
+
+- 只发送脱敏任务类型、任务长度、受众角色和聚合状态摘要；
+- 不发送姓名、学校、班级、原始对话、健康信息、完整学习树或会话 ID；
+- 确定性 Workbench 输出仍是主契约，模型输出只作补充；
+- API 不可用、只返回推理内容或超时时，自动保留确定性安全结果；
+- 对外沟通仍只能是草稿，必须由真人审批。
+
 ## DAOQL
 
 ```text
@@ -428,3 +450,30 @@ POST /shared-branches/{branch_id}/approve
 ```
 
 共享枝只允许事实、目标、任务、承诺、边界、结果和摘要，并区分 `bilateral` 与 `group`。双人枝不会自动进入 Group Model；只有群组可见且全部参与者批准的共享枝才进入群体模型。Agent 生成的群聊内容仅为草稿，`auto_send=false`。
+
+## Local MCP interfaces
+
+界面上下文和多媒体能力不是公开 HTTP 接口，而是通过仓库根目录 `.mcp.json` 启动的本地 stdio MCP 服务提供。
+
+### tender-screen-context
+
+```text
+grant_screen_context
+screen_context_status
+read_screen_context
+capture_screen_context
+revoke_screen_context
+```
+
+### tender-media-tools
+
+```text
+list_media_plugins
+analyze_image
+transcribe_audio
+analyze_video
+speak_text
+list_voices
+```
+
+MCP 服务要求显式用户授权。原始窗口文字、截图和媒体内容不写入 DAOQL；弹幕规划只使用粗粒度派生信号。

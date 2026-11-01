@@ -1,16 +1,16 @@
 # Tender 正式文档索引
 
 更新时间：2026-11-01
-当前仓库版本：2.1.0
+当前仓库版本：2.2.0
 
 ## 核心文档
 
 | 版本 | 文件 | 页数 | 内容 |
 |---|---|---:|---|
-| 项目白皮书 V2.1 | [PDF](../whitepaper/Tender-Whitepaper-v2.1.pdf) · [Word](../whitepaper/Tender-Whitepaper-v2.1.docx) | 49 | 自我、世界、关系与群体三回路，心智化、世界树、节律与双链路群聊 |
-| 产品手册 V7.1 | [PDF](Tender-Product-Manual-v7.1.pdf) | 62 | 三层价值回路、世界行动、关系协商、双链路群聊与验收 |
-| 用户手册 V7.1 | [PDF](Tender-User-Guide-v7.1.pdf) | 27 | 自我理解、世界行动、关系协商、群聊授权与隐私 |
-| 零基础教学手册 V6.1 | [PDF](../teaching/Tender-Teaching-Manual-v6.1.pdf) | 187 | 三回路、DAOQL、世界树、节律、双链路群聊、Agent 与三种交付 |
+| 项目白皮书 V2.2 | [PDF](../whitepaper/Tender-Whitepaper-v2.2.pdf) · [Word](../whitepaper/Tender-Whitepaper-v2.2.docx) | 52 | 预测加工、心智化、世界树、双链路与多模态有限观测 |
+| 产品手册 V7.2 | [PDF](Tender-Product-Manual-v7.2.pdf) · [Word](Tender-Product-Manual-v7.2.docx) | 54 | 产品全过程、四层价值回路、界面上下文 MCP、媒体插件与验收 |
+| 用户手册 V7.2 | [PDF](Tender-User-Guide-v7.2.pdf) · [Word](Tender-User-Guide-v7.2.docx) | 23 | 首次启用、弹幕、界面授权、多媒体验证与隐私控制 |
+| 零基础教学手册 V6.2 | [PDF](../teaching/Tender-Teaching-Manual-v6.2.pdf) | 190 | 环境、DAOQL、世界树、双链路、MCP、多媒体插件与验收 |
 
 ## 研究与证据
 
@@ -21,6 +21,8 @@
 - [全功能验证 V1.0](../research/Tender-Full-Feature-Validation-v1.0.pdf)
 - [长期多阶段多角色测试 V4.0](../research/Tender-Longitudinal-Multi-Role-v4.0.pdf)
 - [博弈论与机制设计 V1.2](../strategy/Tender-Game-Theory-Mechanism-Design-v1.2.pdf)
+- [界面上下文 MCP](../SCREEN_CONTEXT_MCP.md)
+- [多媒体插件](../MEDIA_PLUGINS.md)
 - [隐私与安全](../PRIVACY_AND_SAFETY.md)
 - [数据许可证](../DATA_LICENSES.md)
 
@@ -43,8 +45,11 @@
 - Agent 只能生成群聊草稿，不自动发送；
 - `GET /world-tree/{student_id}` 和 `GET /golden-bias/{student_id}` 已接入；
 - 四臂合成实验完成：每臂 1,000 人、84 天、配对 bootstrap；
-- 教学网站为 14 个中英双语模块，不包含公式；
-- 全量自动测试 114 项通过。
+- 教学网站为 15 个中英双语模块，不包含公式；
+- 全量自动测试 130 项通过，1 个可选重媒体测试跳过；最小运行器 128 项通过。
+- 本地界面上下文 MCP 支持授权、过期、撤销、scope 分离与可见窗口读取；
+- 本地媒体 MCP 支持 OCR、Whisper 转写、视频关键帧分析、视觉适配器与语音生成；
+- 原文、截图和媒体内容不写入 DAOQL，规划层只接收派生信号。
 
 ## 实验结论边界
 

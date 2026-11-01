@@ -7,8 +7,8 @@
 ## 从这里开始
 
 - [教学网站](https://mk60dn.github.io/Tender/) · [本地课程](http://127.0.0.1:8080/guide/) · [站点源码](site/)
-- [白皮书本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v2.1.pdf) · [仓库 PDF](docs/whitepaper/Tender-Whitepaper-v2.1.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v2.1.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v2.1.tex)
-- [产品手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v7.1.pdf) · [用户手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v7.1.pdf) · [零基础教学手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v6.1.pdf)
+- [白皮书本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v2.2.pdf) · [仓库 PDF](docs/whitepaper/Tender-Whitepaper-v2.2.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v2.2.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v2.2.tex)
+- [产品手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v7.2.pdf) · [Word](docs/product/Tender-Product-Manual-v7.2.docx) · [用户手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v7.2.pdf) · [Word](docs/product/Tender-User-Guide-v7.2.docx) · [零基础教学手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v6.2.pdf)
 
 
 [![CI](https://github.com/MK60DN/Tender/actions/workflows/ci.yml/badge.svg)](https://github.com/MK60DN/Tender/actions/workflows/ci.yml)
@@ -29,12 +29,16 @@
 - **世界树**：DAOQL 根系、Agent Bridge 树干、五类体验树枝、局部状态轴、开花与结果；共享枝必须获得明确授权。
 - **知识森林**：连接 13 个高中学科、1,075 个知识节点、875 个本科专业、319 门课程和 1,016 个职业。
 - **DAOQL 事件层**：保存事实、来源、因果、授权与审计。
-- **Agent 系统**：固定辅助、专业顾问、工作台编排与专家 Agent 市场 MVP。
+- **三种界面模式**：单人专注、多人协作群聊与环境辅助，通过常驻三段切换器直接切换。
+- **Agent 系统**：固定辅助、专业顾问、工作台编排、多 Agent 作战大屏、脱敏实验模型 API 链路与专家 Agent 市场 MVP。
 
 ## 群聊双链路
 
 每个成员保留自己的完整私密模型；他者模型属于观察者，只使用群公开互动与对方授权摘要；共享枝需要全部参与者批准，Agent 不自动在群里发言。
 
+## 多媒体与界面上下文
+
+Tender 可以处理用户选择的图片、音频与视频：本地 OCR、Whisper 转写、视频关键帧分析、本地语音生成，均提供独立插件。桌面弹幕还支持逐次授权读取当前可见窗口。来源、许可证与隐私边界见 [多媒体插件](docs/MEDIA_PLUGINS.md) 与 [界面上下文 MCP](docs/SCREEN_CONTEXT_MCP.md)。
 ## 边界
 
 Tender 不是心理或医学诊断工具，也不是“读心”系统。语言证据不能单独决定知识掌握度、人格或临床状态。合成实验与公开基准结果不等于真实教育效果。
@@ -57,7 +61,7 @@ cd agent_layer
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8080
 ```
 
-打开：<http://127.0.0.1:8080/ui/>
+打开登录：<http://127.0.0.1:8080/ui/login.html>。完成引导后：单人 <http://127.0.0.1:8080/ui/single.html>、多人 <http://127.0.0.1:8080/ui/multi.html>、环境辅助 <http://127.0.0.1:8080/ui/ambient.html>。
 
 ## 测试
 
@@ -65,19 +69,17 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8080
 python agent_layer/tests/run_all.py
 ```
 
-当前基线：`passed 114 tests`。
+当前基线：`passed 128 tests`；完整 `pytest` 当前为 130 通过、1 个可选重媒体测试跳过。
 
 ## 文档
 
-- [项目白皮书 V2.1](docs/whitepaper/Tender-Whitepaper-v2.1.pdf)
+- [项目白皮书 V2.2](docs/whitepaper/Tender-Whitepaper-v2.2.pdf)
 - [节律相位与周期证据实验 V1.0](docs/research/Tender-Rhythm-Phase-Experiment-v1.0.pdf)
-- [产品手册](docs/product/Tender-Product-Manual-v7.1.pdf)
-- [用户手册](docs/product/Tender-User-Guide-v7.1.pdf)
+- [产品手册](docs/product/Tender-Product-Manual-v7.2.pdf)
+- [用户手册](docs/product/Tender-User-Guide-v7.2.pdf)
 - [研究边界](docs/RESEARCH_CLAIMS.md)
 
 ## 许可证
 
 PolyForm Noncommercial License 1.0.0。允许个人、教育、研究和其他非商业用途；未经另行书面许可，禁止商业化使用。本许可证不是 OSI 批准的开源许可证。
-
-
 

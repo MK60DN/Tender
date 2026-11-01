@@ -241,7 +241,7 @@ window.TENDER_COURSE = {
           [{ zh: "共享枝级", en: "Shared branch" }, { zh: "共同目标、承诺和结果", en: "Shared goals, commitments and outcomes" }]
         ] },
         { type: "list", title: { zh: "必须固定为 0 的指标", en: "Metrics that must remain zero" }, items: [{ zh: "私密数据越权读取数", en: "Unauthorized private-data reads" }, { zh: "Agent 自动向群发送数", en: "Automatic Agent sends to the group" }, { zh: "未批准共享枝进入群体模型数", en: "Unapproved branches entering the group model" }] },
-        { type: "boundary", body: { zh: "当前群聊后台已通过 9 项隔离测试，全量 114 项测试通过。它验证工程边界，不证明真人群体协作因果效果。BFT 与 Shapley 仍只是后续治理工具。", en: "The group backend passes 9 isolation tests and the full 114-test suite. This validates engineering boundaries, not human group-causality claims. BFT and Shapley remain future governance tools." } },
+        { type: "boundary", body: { zh: "当前群聊后台已通过 9 项隔离测试，全量 130 项测试通过。它验证工程边界，不证明真人群体协作因果效果。BFT 与 Shapley 仍只是后续治理工具。", en: "The group backend passes 9 isolation tests and the full 130-test suite. This validates engineering boundaries, not human group-causality claims. BFT and Shapley remain future governance tools." } },
         { type: "quiz", question: { zh: "B 不授权时，A 的 Tender 可以做什么？", en: "When B grants nothing, what may A's Tender do?" }, options: [{ zh: "读取 B 的完整私密模型", en: "Read B's complete private model" }, { zh: "基于公开互动形成低置信关系假设，并标明证据不足", en: "Form a low-confidence relationship hypothesis from public interactions and label the evidence gap" }, { zh: "自动替 A 向群里发送结论", en: "Automatically send conclusions to the group" }], answer: 1, why: { zh: "他者模型不能读取对方私密 Tender；无授权时只能保留片面的关系假设。", en: "A peer model cannot read the subject's private Tender; without a grant it remains a partial relationship hypothesis." } }
       ]
     },
@@ -259,6 +259,28 @@ window.TENDER_COURSE = {
         { type: "concept", title: { zh: "共享核心", en: "Shared core" }, body: { zh: "DAOQL、语言证据、Tender 状态、生命树、知识森林、Agent 运行时、授权与审计是同一套核心。B 端和 C 端改变的是界面、客户、权限和数据范围，而不是底层模型。", en: "DAOQL, language evidence, Tender state, the life tree, knowledge forest, Agent runtime, authorization and audit are one shared core. B2B and C-end change the interface, customer, permissions and data scope, not the underlying model." } },
         { type: "list", title: { zh: "数据边界", en: "Data boundaries" }, items: [{ zh: "机构租户数据与个人数据分账", en: "Institutional tenant data and personal data remain separately accounted" }, { zh: "只有经用户授权，机构学习记录才进入个人学习护照", en: "Institutional learning records enter the personal passport only with user authorization" }, { zh: "嵌入式模块不得复制合作方全部数据库", en: "Embedded modules must not copy the partner's entire database" }, { zh: "C 端界面归属于用户，可导出、暂停和删除", en: "The C-end interface belongs to the user and supports export, pause and deletion" }] },
         { type: "boundary", body: { zh: "B 端购买系统不等于拥有学生全部心智数据。C 端免费或付费也不意味着机构可以读取个人记录。购买关系、监护关系和授权关系必须分别计算。", en: "A B2B purchase does not grant ownership of all learner mental data. A C-end subscription does not give institutions access to personal records. Commercial, guardian and consent relationships must be evaluated separately." } }
+      ]
+    },
+    {
+      id: "multimodal-context", time: "8 min", level: { zh: "实现", en: "Implementation" },
+      title: { zh: "界面上下文与媒体插件", en: "Screen context and media plugins" },
+      summary: { zh: "Tender 可以在用户逐次授权后读取当前可见窗口，也可以处理用户主动选择的图片、音频和视频。新增的是有限观测面，不是无限监控。", en: "With explicit, time-limited consent, Tender can read currently visible windows and process user-selected images, audio and video. This expands limited observation, not surveillance." },
+      objectives: [{ zh: "说清界面读取与媒体插件的授权边界", en: "Explain consent boundaries for screen and media context" }, { zh: "区分原文、派生信号与主观解释", en: "Separate raw content, derived signals and subjective interpretation" }],
+      blocks: [
+        { type: "concept", title: { zh: "为什么需要新的观测层", en: "Why a new observation layer" }, body: { zh: "只看到应用类别，无法知道用户卡在报名页的哪一步、讲义里的哪句话或视频里的哪段字幕。界面上下文和媒体插件补上了这个缺口，但只能作为证据，不能直接变成诊断。", en: "An app category cannot tell which registration step is blocked, which sentence in a handout matters, or which video subtitle is relevant. Screen and media context fill that gap as evidence, never as diagnosis." } },
+        { type: "table", title: { zh: "三个分离的权限", en: "Three separate scopes" }, headers: [{ zh: "权限", en: "Scope" }, { zh: "内容", en: "Content" }, { zh: "默认", en: "Default" }], rows: [
+          [{ zh: "windows", en: "windows" }, { zh: "可见顶层窗口标题、位置与应用类别", en: "Visible top-level titles, bounds and app categories" }, { zh: "关闭", en: "Off" }],
+          [{ zh: "accessible", en: "accessible" }, { zh: "UI Automation 暴露的可见文字", en: "Visible text exposed by UI Automation" }, { zh: "关闭", en: "Off" }],
+          [{ zh: "screenshots", en: "screenshots" }, { zh: "所有显示器的内存截图", en: "In-memory screenshots of all displays" }, { zh: "关闭，需单独授权", en: "Off; requires separate consent" }]
+        ] },
+        { type: "list", title: { zh: "本地媒体插件", en: "Local media plugins" }, items: [{ zh: "RapidOCR：图片、截图、讲义和试卷文字", en: "RapidOCR: images, screenshots, handouts and exam text" }, { zh: "faster-whisper：音频转写与时间段字幕", en: "faster-whisper: audio transcription and timed segments" }, { zh: "OpenCV + ffmpeg：视频关键帧 OCR 与音轨转写", en: "OpenCV + ffmpeg: video-frame OCR and audio transcription" }, { zh: "pyttsx3：本地语音生成，不自动播放", en: "pyttsx3: local speech generation without autoplay" }] },
+        { type: "table", title: { zh: "数据分账", en: "Data separation" }, headers: [{ zh: "层", en: "Layer" }, { zh: "允许", en: "Allowed" }, { zh: "禁止", en: "Forbidden" }], rows: [
+          [{ zh: "本机原文", en: "Local raw content" }, { zh: "授权期间在内存中处理", en: "Processed in memory during consent" }, { zh: "写入 DAOQL、长期缓存、二次训练", en: "DAOQL writes, long-term cache or secondary training" }],
+          [{ zh: "派生观测", en: "Derived observation" }, { zh: "应用类别、任务关键词、窗口数量、文本可用性", en: "App category, task keywords, window count and text availability" }, { zh: "整段窗口正文、截图、完整转写", en: "Full window text, screenshots or complete transcripts" }],
+          [{ zh: "主观解释", en: "Subjective interpretation" }, { zh: "可更正的状态假设", en: "Correctable state hypotheses" }, { zh: "把 OCR 或视觉模型输出当诊断", en: "Treating OCR or vision output as diagnosis" }]
+        ] },
+        { type: "boundary", body: { zh: "隐藏标签页、密码字段、剪贴板、摄像头、麦克风、键盘记录和受保护内容不在读取范围。拒绝授权不是隐瞒，也不能被解释成心理问题。", en: "Hidden tabs, password fields, clipboard, camera, microphone, key logging and protected content are outside coverage. Refusing consent is not concealment and must not be interpreted as a psychological condition." } },
+        { type: "quiz", question: { zh: "用户只授权了 windows，没有授权 accessible 和 screenshots。Tender 可以做什么？", en: "The user grants windows but not accessible or screenshots. What may Tender do?" }, options: [{ zh: "读取全部窗口正文并截图", en: "Read all window text and capture screenshots" }, { zh: "读取可见窗口元数据，但不能读取文字或截图", en: "Read visible-window metadata, but not text or screenshots" }, { zh: "自动扩大为全天监控", en: "Automatically expand to all-day monitoring" }], answer: 1, why: { zh: "scope 必须分离；窗口元数据权限不会自动带来文字或截图权限。", en: "Scopes are separate; window metadata does not automatically grant text or screenshot access." } }
       ]
     }
   ]

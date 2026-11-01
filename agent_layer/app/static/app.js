@@ -489,7 +489,7 @@ function renderMentalization(m) {
     '<div class="kv"><span>情绪上下文</span><b>' + esc(emotion.label || "未观测") + '</b></div>' +
     '<div class="kv"><span>证据事件</span><b>' + (snapshot.event_count === undefined ? 0 : snapshot.event_count) + '</b></div>' +
     '<h4>可检验假设</h4><ul class="actions">' + (hypothesisHtml || '<li class="muted">暂时没有足够证据形成假设。</li>') + '</ul>' +
-    '<p class="muted">' + esc(m.boundary || "状态假设不是临床诊断。") + '</p>';
+    '<p class="muted">可更正的支持假设，不是诊断。</p>';
   updateDiscoveryLoop();
 }
 function submitLearnerReflection() {
@@ -589,19 +589,20 @@ function loadLearnerHome() {
     state.learner = r;
     var p = r.profile || {}, passport = r.passport || {}, skills = passport.skills || {};
     var meta = passport.metacognition || {}, portability = r.portability || {}, plan = r.plan || {};
-    $("learnerIntro").innerHTML = (p.name ? p.name + "，" : "") + "Tender 只维护当前决定所需的局部认知—情绪假设；你选择目标、采取行动、承担结果，再用真实反馈更新它。<br><span class=\"intro-en\">Tender keeps only the local cognitive–emotional hypotheses needed for the current decision. You choose the goal, act, own the outcome, and update the model with real feedback.</span>";
+    var nextAction = (plan.next_actions || [])[0] || "先选择一个今天能完成的小目标。";
+    $("learnerIntro").innerHTML = '<strong>下一步：' + esc(nextAction) + '</strong><br><span class="muted">完成后记录真实结果，系统再调整支持。</span>';
     $("learnerTenderId").textContent = r.tender_id || ("TENDER-" + sid);
     $("learnerStage").textContent = r.current_stage || p.class || "学段未标注";
     $("learnerOwnership").textContent = r.data_ownership || "数据归学习者";
-    $("learnerPortability").textContent = portability.score === undefined ? "-" : (Number(portability.score) * 100).toFixed(0) + "%";
-    $("learnerPortabilityNote").textContent = (portability.label || "数据可携带度") + "：" + (portability.note || "只表示记录覆盖程度，不评价学习者。");
-    $("learnerMastery").textContent = fmt(skills.mastery);
+    $("learnerPortability").textContent = (plan.estimated_minutes || 10) + " 分钟";
+    $("learnerPortabilityNote").textContent = "完成后记录结果。";
+    $("learnerMastery").textContent = skills.mastery == null ? "-" : Math.round(Number(skills.mastery) * 100) + "%";
     $("learnerEvents").textContent = passport.learning_events === undefined ? "-" : passport.learning_events;
-    $("learnerBias").textContent = fmt(meta.jol_bias);
-    $("learnerHesitation").textContent = fmt(meta.hesitation);
+    $("learnerBias").textContent = meta.jol_bias == null ? "-" : Math.round(Number(meta.jol_bias) * 100) + "%";
+    $("learnerHesitation").textContent = meta.hesitation == null ? "-" : Math.round(Number(meta.hesitation) * 100) + "%";
     renderMentalization(r.mentalization || {});
     $("learnerActions").innerHTML = (plan.next_actions || []).map(function (a) { return "<li>" + esc(a) + "</li>"; }).join("") || '<li class="muted">保持当前节奏，做迁移题</li>';
-    $("learnerPlanNote").textContent = "预计 " + (plan.estimated_minutes || 10) + " 分钟 · " + (plan.mode || "连续记录、最低必要提示与可撤回授权");
+    $("learnerPlanNote").textContent = "预计 " + (plan.estimated_minutes || 10) + " 分钟 · 先完成一项。";
     var coach = r.ai_coach || {};
     $("learnerCoach").innerHTML = '<div class="kv"><span>支持状态</span><b>Tender 心智化支持</b></div>' +
       '<div class="kv"><span>连续记录</span><b>已关联</b></div>' +
@@ -1583,6 +1584,12 @@ document.addEventListener("DOMContentLoaded", function () {
   on("pathBtn", "click", runPath);
   on("ragBtn", "click", runRag);
   on("learnerExportBtn", "click", function () { if (state.currentStudent) window.location.href = "/learner/export/" + encodeURIComponent(state.currentStudent); });
+  on("learnerStartBtn", "click", function () {
+    if ($("agencyGoal")) {
+      $("agencyGoal").scrollIntoView({behavior: "smooth", block: "center"});
+      $("agencyGoal").focus();
+    }
+  });
   on("learnerReflectionBtn", "click", submitLearnerReflection);
   initAgencyForm();
   on("recordSnapshotBtn", "click", recordMentalizationSnapshot);
@@ -1608,7 +1615,7 @@ document.addEventListener("DOMContentLoaded", function () {
   bindQuickPrompts();
   Promise.all([loadStudents(), loadRoles()]).then(function () {
     setStatus(true, "已连接");
-    try { if (!sessionStorage.getItem("tender.ambient.disabled")) enterAmbientMode(); } catch (e) { enterAmbientMode(); }
+    if (new URLSearchParams(location.search).get("mode") === "ambient") enterAmbientMode();
   }).catch(function (e) { setStatus(false, "连接失败：" + e.message); });
 });
 

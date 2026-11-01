@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Tender 知识森林</title>
+  <title>Tender · 学习路径地图</title>
+  <link rel="stylesheet" href="/ui/mode-switch.css?v=4">
   <style>
     :root{--bg:#f4f3ef;--paper:#fffdf8;--ink:#191b1f;--muted:#70747c;--line:#ddd9cf;--accent:#d95d39;--green:#176b50;--green2:#269574;--sky:#2f7892;--gold:#c7902d;--violet:#7560a6;--shadow:0 12px 35px rgba(36,31,24,.08)}
     *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top left,#fff8ea 0,var(--bg) 46%,#ecece7 100%);color:var(--ink);font-family:"Noto Sans SC","Microsoft YaHei",system-ui,sans-serif}
@@ -17,17 +18,17 @@
   </style>
 </head>
 <body>
-<header><div class="brand"><div class="mark">T</div><div><div style="font-weight:800">Tender</div><div class="sub">知识生态森林 · 全量知识体系</div></div></div><a href="/ui/">← 返回应用</a></header>
+<header><div class="brand"><div class="mark">T</div><div><b>Tender</b><div class="sub">学习路径地图</div></div></div><nav class="mode-switch page-mode-switch" aria-label="使用模式"><a href="/ui/ambient.html">环境辅助</a><a href="/ui/single.html">我的数据</a><a href="/ui/multi.html">多人数据</a></nav><a href="/ui/single.html">← 单人界面</a></header>
 <main>
   <section class="hero">
-    <div class="kicker">KNOWLEDGE ECOLOGY · LIVE DATABASE</div>
-    <h1>知识不是清单，<br>是一片可以进入的森林</h1>
-    <p>一棵树代表一个学科，一片林代表一个专业门类，灌层是课程，天际层是职业。所有结构、关系与缺口都来自现有数据库；点击树种进入完整知识树，点击专业林进入对应专业检索。</p>
+    <div class="kicker">KNOWLEDGE MAP · LIVE DATA</div>
+    <h1>查学科、专业、<br>课程与职业。</h1>
+    <p>先搜查专业，或点一条学科树。每一步只显示当前需要的节点、课程与职业路径。</p>
     <div class="metrics" id="forestMetrics"><div class="metric"><strong>—</strong><span>正在读取数据库</span></div></div>
   </section>
 
   <section class="forest-panel">
-    <div class="forest-top"><div><h2>知识生态森林 V1.0</h2><p>叶片代表 1,075 个高中知识节点，专业点代表 875 个本科专业，灌层代表 319 门课程种子，天际光点代表 1,016 个职业方向。连线不是因果，是现有高中—专业桥接证据。</p></div><div class="pill">LIVE · /knowledge/forest</div></div>
+    <div class="forest-top"><div><h2>学习路径地图</h2><p>点任意节点查看关联；连线是现有高中—专业桥接证据，不代表因果。</p></div><div class="pill">LIVE · /knowledge/forest</div></div>
     <div class="toolbar" id="forestToolbar">
       <button class="layer-btn" data-layer="all" aria-pressed="true">全层</button>
       <button class="layer-btn" data-layer="subjects" aria-pressed="false">知识树</button>
@@ -39,8 +40,8 @@
     <div class="forest-layout">
       <div id="forestStage" class="forest-stage"><div class="empty" style="color:#9ebdb2">正在生长知识森林……</div></div>
       <aside class="forest-side">
-        <div class="kicker">FOREST READING</div>
-        <h3 id="forestDetailTitle">森林概览</h3>
+        <div class="kicker">CURRENT SELECTION</div>
+        <h3 id="forestDetailTitle">当前选择</h3>
         <p id="forestDetailText">先看全貌，再点击一棵树。森林展示覆盖和连接，不把知识数量误写成能力。</p>
         <div class="detail-kv" id="forestDetailKV"></div>
         <div class="legend"><span><i style="background:#78d9ae"></i>知识树</span><span><i style="background:#d7a95a"></i>专业林</span><span><i style="background:#8fb6cf"></i>课程</span><span><i style="background:#b9a3e8"></i>职业</span></div>
@@ -135,7 +136,7 @@ function renderForest(data){
 function showOverview(data){
   const t=data.totals;
   $('#forestDetailTitle').textContent='森林概览';
-  $('#forestDetailText').textContent='五层结构均已接入现有数据库。点击知识树、专业林或课程层，可进入对应的完整检索。';
+  $('#forestDetailText').textContent='先选一个学科或专业。这里只显示当前对象、关联路径和数据缺口。';
   $('#forestDetailKV').innerHTML=[[t.k12_subjects.toLocaleString('zh-CN'),'高中学科'],[t.k12_nodes.toLocaleString('zh-CN'),'知识节点'],[t.majors.toLocaleString('zh-CN'),'本科专业'],[t.courses.toLocaleString('zh-CN'),'课程种子'],[t.occupations.toLocaleString('zh-CN'),'职业'],[t.course_seed_majors.toLocaleString('zh-CN'),'已有课程种子的专业']].map(([v,l])=>`<div><strong>${v}</strong><span>${l}</span></div>`).join('');
 }
 function selectSubject(item){

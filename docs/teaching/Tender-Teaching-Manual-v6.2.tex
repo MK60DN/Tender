@@ -34,13 +34,13 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{\small Tender 零基础全流程教学手册 · V6.1}
+\rhead{\small Tender 零基础全流程教学手册 · V6.2}
 \lhead{\small\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 
 \title{\textbf{Tender 心智化教育系统\\[6pt]零基础全流程教学手册·完整版}\\[10pt]
 \large 第一至四期：做、验、防、接\\[4pt]
-\large 增补：开花、结果、森林\\[4pt]
+\large 增补：开花、结果、森林、界面上下文与多媒体插件\\[4pt]
 \large 版本 5.3}
 \author{}
 \date{2026 年 11 月 1 日}
@@ -7523,7 +7523,7 @@ outputs/related\_experiments/E6\_trait\_prior/ & 天性模板、功效、恢复 
 
 
 
-\part{增补：开花、结果、森林与认知构念实验}
+\part{增补：开花、结果、森林、界面上下文与多媒体插件与认知构念实验}
 
 \section{为什么需要这一部分}
 
@@ -7984,15 +7984,15 @@ Agent、治理与路线图 & 支持者如何协作，权力和风险如何受到
 \end{longtable}
 \end{center}
 
-教学网站支持中文和 English 切换、学习进度保存、知识检查和打印。教学网站本身不包含数学公式；需要严格定义的模型公式、符号表和实验边界，请阅读《Tender 项目白皮书 V2.1》。
+教学网站支持中文和 English 切换、学习进度保存、知识检查和打印。教学网站本身不包含数学公式；需要严格定义的模型公式、符号表和实验边界，请阅读《Tender 项目白皮书 V2.2》。
 
 \subsection{配套文档}
 
 \begin{itemize}
-\item 项目白皮书 V2.1：预测加工、心智化、系统架构、语言证据、知识森林、证据与治理；
-\item 产品手册 V7.1：产品架构、角色、Agent、数据契约、实验与验收；
-\item 用户手册 V7.1：第一次启用、桌面弹幕、纠正、隐私与安全；
-\item 本教学手册 V6.1：从零开始的环境、数据、模型、Agent 和验收流程。
+\item 项目白皮书 V2.2：预测加工、心智化、系统架构、语言证据、知识森林、证据与治理；
+\item 产品手册 V7.2：产品架构、角色、Agent、数据契约、实验与验收；
+\item 用户手册 V7.2：第一次启用、桌面弹幕、纠正、隐私与安全；
+\item 本教学手册 V6.2：从零开始的环境、数据、模型、Agent 和验收流程。
 \end{itemize}
 
 \subsection{本地入口}
@@ -8000,9 +8000,9 @@ Agent、治理与路线图 & 支持者如何协作，权力和风险如何受到
 \begin{verbatim}
 教学网站：http://127.0.0.1:8080/guide/
 主应用：http://127.0.0.1:8080/ui/
-白皮书：http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v2.1.pdf
-产品手册：http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v7.1.pdf
-用户手册：http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v7.1.pdf
+白皮书：http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v2.2.pdf
+产品手册：http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v7.2.pdf
+用户手册：http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v7.2.pdf
 \end{verbatim}
 
 \subsection{边界}
@@ -8170,6 +8170,124 @@ Tender 的多人能力沿用单人链路，而不是另建一个读取所有人�
 
 \warn{边界：当前仍是链下专家议会阶段。Shapley 与 BFT 只作为后续治理工具，不进入实时群聊主流程。}
 
+\section{界面上下文、多媒体插件与本地 MCP（V6.2）}
+
+本节把“弹幕能看到当前软件和用户选择的媒体”落到工程实现。它不是新增一个页面，而是给已有的桌面弹幕增加两个本地输入入口：\texttt{读界面} 与 \texttt{媒体}。
+
+\subsection{组件图}
+
+\begin{verbatim}
+Windows 桌面
+  ├─ tender_overlay.py
+  │    ├─ 读界面按钮 -> screen_context.py -> screen_context_mcp.py
+  │    └─ 媒体按钮   -> media_plugins.py  -> media_plugins_mcp.py
+  ├─ %LOCALAPPDATA%\Tender\screen-context\consent.json
+  │    └─ 仅保存 token 哈希、scope、过期时间
+  └─ 本机内存
+       ├─ 可见窗口元数据与脱敏文字
+       ├─ 截图 bytes
+       └─ OCR / ASR / 视频关键帧结果
+\end{verbatim}
+
+\subsection{界面读取链路}
+
+界面读取由 \texttt{screen\_context.py} 提供核心能力：
+
+\begin{enumerate}
+\item \texttt{ConsentStore.grant()} 要求两个条件：\texttt{acknowledge=True} 与用户确认短语“我同意读取当前界面”；
+\item token 使用随机值，磁盘只保存 SHA-256 哈希；
+\item \texttt{enumerate\_visible\_windows()} 枚举当前桌面可见顶层窗口；
+\item \texttt{extract\_accessible\_text()} 通过 Windows UI Automation 读取可见文字；
+\item \texttt{redact\_sensitive\_text()} 在本机隐去密码、验证码、证件号、手机号、邮箱、卡号和 URL 参数；
+\item \texttt{derive\_safe\_signals()} 只输出应用类别、窗口数量、任务关键词等派生信号；
+\item \texttt{capture\_authorized\_screen()} 只有在单独授予 \texttt{screenshots} 时才截图，截图以内存 bytes 返回。
+\end{enumerate}
+
+\subsection{媒体插件链路}
+
+媒体插件分为四层：
+
+\begin{longtable}{@{}p{3.1cm}p{4.6cm}p{5.5cm}@{}}
+\toprule
+\textbf{层} & \textbf{文件} & \textbf{职责} \\
+\midrule
+核心 & \texttt{media\_plugins.py} & OCR、ASR、视频抽帧、TTS、文件校验与插件目录 \\
+子进程 & \texttt{media\_plugin\_worker.py} & 把第三方运行时输出隔离在独立进程 \\
+MCP & \texttt{media\_plugins\_mcp.py} & 对外提供图片、音频、视频、语音工具 \\
+桌面 UI & \texttt{tender\_overlay.py} & 媒体按钮、文件选择、结果弹幕与本机对话面板 \\
+\bottomrule
+\end{longtable}
+
+为什么放在子进程？RapidOCR、ONNX Runtime 和 faster-whisper 都可能输出库级日志。直接把它们的 stdout 混进 MCP 的 stdio 帧会破坏协议。工作进程只向父进程返回 JSON 或 base64 音频，父进程负责构造 MCP 响应。
+
+\subsection{安装}
+
+\begin{verbatim}
+pip install -r requirements-desktop.txt
+\end{verbatim}
+
+关键依赖：
+
+\begin{itemize}
+\item \texttt{rapidocr} + \texttt{onnxruntime}：本地 OCR；
+\item \texttt{faster-whisper} + \texttt{av<16}：本地语音转写；
+\item \texttt{opencv-python-headless} + \texttt{imageio-ffmpeg}：视频关键帧与音轨；
+\item \texttt{pyttsx3}：Windows SAPI5 语音生成；
+\item \texttt{mcp} + \texttt{pywin32} + \texttt{uiautomation}：MCP 与 Windows UI Automation。
+\end{itemize}
+
+\subsection{MCP 配置}
+
+仓库根目录的 \texttt{.mcp.json} 同时启动两个本地 stdio 服务：
+
+\begin{verbatim}
+{
+  "mcpServers": {
+    "tender-screen-context": {
+      "command": "powershell",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass",
+               "-File", ".\\agent_layer\\desktop_overlay\\start_screen_mcp.ps1"]
+    },
+    "tender-media-tools": {
+      "command": "powershell",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass",
+               "-File", ".\\agent_layer\\desktop_overlay\\start_media_mcp.ps1"]
+    }
+  }
+}
+\end{verbatim}
+
+\subsection{安全不变量}
+
+\begin{enumerate}
+\item 没有用户确认短语，\texttt{grant\_screen\_context} 必须失败；
+\item 过期 token 和撤销 token 必须失败；
+\item \texttt{windows} 权限不能自动获得 \texttt{accessible} 或 \texttt{screenshots}；
+\item 密码字段必须跳过，敏感字段必须脱敏；
+\item 截图不得写入磁盘或 DAOQL；
+\item 媒体工具必须要求 \texttt{acknowledge\_local\_processing=true}；
+\item 不支持的文件类型、空文件、超大文件必须拒绝；
+\item OCR 或转写结果不直接更新掌握度；
+\item 授权拒绝不得被解释成隐瞒、懒惰或心理问题。
+\end{enumerate}
+
+\subsection{验收与已知限制}
+
+工程验收包括：界面授权、过期、撤销、scope 分离、可见窗口枚举、媒体文件校验、MCP stdio 集成、图片 OCR、语音生成、视频关键帧 OCR、项目全量回归。
+
+已知限制：
+
+\begin{itemize}
+\item 浏览器和 Electron 应用暴露的无障碍文字数量不一致；
+\item DRM 窗口截图可能为空；
+\item \texttt{tiny} Whisper 模型中文准确率有限，生产环境应评估 \texttt{small} 或更大模型；
+\item 视觉理解依赖用户配置的模型提供方，当前仓库不自动下载大型视觉模型；
+\item 本机 OCR/ASR 的速度取决于 CPU、内存和模型大小。
+\end{itemize}
+
+\hl{正确的产品表述是：Tender 在授权范围内读取有限界面与用户选择的媒体，不读取隐藏内容，不把原文写进长期事件库，也不把识别结果当成人的全部。}
+\warn{禁止表述：Tender 可以随时读取任何屏幕、知道用户真实想法、保证 OCR 或语音识别完全正确。}
+
 \subsection{接口与验收}
 
 \begin{verbatim}
@@ -8206,4 +8324,3 @@ GET  /golden-bias/{student_id}
 
 
 \end{document}
-

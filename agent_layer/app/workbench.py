@@ -12,6 +12,8 @@ import uuid
 from datetime import datetime, timezone
 
 from .daoql import insert_event, write_audit
+from .workbench_experimental import agent_notes, status as experimental_status
+
 
 DB = pathlib.Path(__file__).resolve().parent.parent / "tender_agent.db"
 
@@ -403,11 +405,15 @@ def orchestrate(thread_id: str, context: dict | None = None, focus_students: lis
         if audience_role == "custom":
             profile["artifact_title"] = f"{profile['label']}沟通草稿"
 
+    use_experimental = bool(context.get("use_experimental_api"))
+    experimental_notes = agent_notes(thread, context) if use_experimental else {}
+
     coordinator_output = {
         "goal": objective,
         "scope": {"student": student_name, "class_id": class_id, "focus_students": focus_students,
                   "external_audience": profile["label"]},
         "policy": ["不展示排名", "所有对外沟通必须真人审批", "学生只接收最小提示", "所有动作写入 DAOQL"],
+        "experimental_api": experimental_notes.get("coordinator"),
     }
     r1 = _add_run(thread, 1, "coordinator", "协调者", "拆解教学任务并建立协作边界",
                   ["读取课程与学习证据", "分派内容/评估/学生/对外沟通/安全 Agent", "等待负责人审批后完成"],
@@ -418,6 +424,7 @@ def orchestrate(thread_id: str, context: dict | None = None, focus_students: lis
         "focus_words": ["context", "structure", "collaborate"],
         "focus_sentence": "先判断句子成分，再判断所填词的词性与形式。",
         "teaching_steps": ["3 分钟方法回顾", "12 分钟独立完成", "8 分钟错题讲解", "次日 5 分钟重测"],
+        "experimental_api": experimental_notes.get("content_curator"),
     }
     r2 = _add_run(thread, 2, "content_curator", "内容 Agent", "抽取本次练习、重点词汇和重点句型",
                   ["读取语法填空讲义", "抽取 56—65", "整理重点词汇与句型"], lesson_content)
@@ -430,6 +437,7 @@ def orchestrate(thread_id: str, context: dict | None = None, focus_students: lis
         "hesitation": hesitation,
         "priority": "先复盘方法，再做最小提示",
         "watchouts": ["避免直接给答案", "不要用本次表现贴能力标签"],
+        "experimental_api": experimental_notes.get("assessment"),
     }
     r3 = _add_run(thread, 3, "assessment", "评估 Agent", "汇总当前学习状态并生成低风险干预建议",
                   ["读取 Tender 状态", "检查证据覆盖度", "生成干预优先级"], assessment_content)
@@ -443,6 +451,7 @@ def orchestrate(thread_id: str, context: dict | None = None, focus_students: lis
             {"title": "明天复习", "text": "重做今天标记为“不确定 / 猜的”的题目。"},
         ],
         "forbidden": ["直接展示答案", "排名", "人格标签"],
+        "experimental_api": experimental_notes.get("student_tutor"),
     }
     r4 = _add_run(thread, 4, "student_tutor", "学生教练", "生成学生自己的最小行动卡",
                   ["读取练习任务", "生成一级提示", "安排次日复习"], student_content)
@@ -474,6 +483,7 @@ def orchestrate(thread_id: str, context: dict | None = None, focus_students: lis
         "sections": sections,
         "privacy_note": "；".join(profile["privacy"]),
         "audience_config": audience_config,
+        "experimental_api": experimental_notes.get("external_communication"),
     }
     r5 = _add_run(thread, 5, "external_communication", "对外沟通 Agent",
                   f"生成面向{profile['label']}的沟通草稿，等待真人批准",
@@ -490,6 +500,7 @@ def orchestrate(thread_id: str, context: dict | None = None, focus_students: lis
             {"name": "对外接收人与发送审批", "status": "pending_human_approval"},
         ],
         "decision": "allow_draft_only",
+        "experimental_api": experimental_notes.get("safety_guardrail"),
     }
     r6 = _add_run(thread, 6, "safety_guardrail", "安全护栏", "检查隐私、排名和高风险语言",
                   ["扫描 Artifact", "检查角色权限", "标记待审批动作"], safety_content)
@@ -505,7 +516,9 @@ def orchestrate(thread_id: str, context: dict | None = None, focus_students: lis
         c.execute("UPDATE agent_threads SET status='waiting_approval', updated_at=? WHERE thread_id=?",
                   (_now(), thread_id))
     write_audit("coordinator", "workbench.thread.orchestrate", thread_id,
-                {"runs": 6, "artifacts": 5, "pending_approvals": 1})
+                {"runs": 6, "artifacts": 5, "pending_approvals": 1,
+                 "experimental_api_used": bool(experimental_notes),
+                 "experimental_api_ready": sum(1 for note in experimental_notes.values() if note.get("status") == "ready")})
     return get_thread(thread_id)
 
 

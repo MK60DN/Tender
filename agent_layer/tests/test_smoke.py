@@ -10,6 +10,8 @@ def test_pipeline():
     events = list_events("TEST")
     state = compute_state("TEST", events)
     assert 0.0 <= state["knowledge"]["mastery"] <= 1.0
-    assert len(list_agents()) == 10
+    agents = list_agents()
+    assert len(agents) >= 10
+    assert len({agent["id"] for agent in agents}) == len(agents)
     out = invoke("metacognition_coach", "TEST", "我不确定", state)
     assert out["from_agent"] == "metacognition_coach"
