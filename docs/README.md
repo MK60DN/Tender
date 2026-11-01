@@ -2,10 +2,10 @@
 
 ## Core documents
 
-- [Whitepaper V2.0](whitepaper/Tender-Whitepaper-v2.0.pdf)
-- [Product manual V7.0](product/Tender-Product-Manual-v7.0.pdf)
-- [User guide V7.0](product/Tender-User-Guide-v7.0.pdf)
-- [Teaching manual V6.0](teaching/Tender-Teaching-Manual-v6.0.pdf)
+- [Whitepaper V2.1](whitepaper/Tender-Whitepaper-v2.1.pdf)
+- [Product manual V7.1](product/Tender-Product-Manual-v7.1.pdf)
+- [User guide V7.1](product/Tender-User-Guide-v7.1.pdf)
+- [Teaching manual V6.1](teaching/Tender-Teaching-Manual-v6.1.pdf)
 - [Central thesis](product/Tender-Central-Thesis.md)
 - [Current document index](product/VERSION_INDEX.md)
 

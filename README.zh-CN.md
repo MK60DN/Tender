@@ -1,19 +1,19 @@
 # Tender
 
-**研究型终身学习与心智化支持系统**
+**连接自我、世界、他人心智与共同结果的终身学习系统**
 
 [双语首页](README.md) · [English](README.en.md)
 
 ## 从这里开始
 
 - [教学网站](https://mk60dn.github.io/Tender/) · [本地课程](http://127.0.0.1:8080/guide/) · [站点源码](site/)
-- [白皮书本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v2.0.pdf) · [仓库 PDF](docs/whitepaper/Tender-Whitepaper-v2.0.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v2.0.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v2.0.tex)
-- [产品手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v7.0.pdf) · [用户手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v7.0.pdf) · [零基础教学手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v6.0.pdf)
+- [白皮书本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v2.1.pdf) · [仓库 PDF](docs/whitepaper/Tender-Whitepaper-v2.1.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v2.1.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v2.1.tex)
+- [产品手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v7.1.pdf) · [用户手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v7.1.pdf) · [零基础教学手册本地 PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v6.1.pdf)
 
 
 [![CI](https://github.com/MK60DN/Tender/actions/workflows/ci.yml/badge.svg)](https://github.com/MK60DN/Tender/actions/workflows/ci.yml)
 
-> 温柔地了解您的心智。Tender 在明确授权下，从行为、语言和真实结果中形成关于注意、认知负荷、动机与行动阻力的可更正假设。
+> 温柔地了解您的心智，也帮助您更好地进入世界、理解他人、参与协作。Tender 把自我理解转化为真实行动，把关系中的理解转化为可授权、可协商、可撤回的共享。
 
 ## 为什么需要 Tender
 
@@ -23,6 +23,7 @@
 
 ## 核心模块
 
+- **三层价值回路**：自我理解、世界行动、关系协商与群体结果。
 - **心智化层**：形成竞争性、可撤回的状态假设。
 - **语言证据层**：保留来源片段，识别情绪、不确定性、回避、求助和心智化信号。
 - **世界树**：DAOQL 根系、Agent Bridge 树干、五类体验树枝、局部状态轴、开花与结果；共享枝必须获得明确授权。
@@ -68,10 +69,10 @@ python agent_layer/tests/run_all.py
 
 ## 文档
 
-- [项目白皮书 V2.0](docs/whitepaper/Tender-Whitepaper-v2.0.pdf)
+- [项目白皮书 V2.1](docs/whitepaper/Tender-Whitepaper-v2.1.pdf)
 - [节律相位与周期证据实验 V1.0](docs/research/Tender-Rhythm-Phase-Experiment-v1.0.pdf)
-- [产品手册](docs/product/Tender-Product-Manual-v7.0.pdf)
-- [用户手册](docs/product/Tender-User-Guide-v7.0.pdf)
+- [产品手册](docs/product/Tender-Product-Manual-v7.1.pdf)
+- [用户手册](docs/product/Tender-User-Guide-v7.1.pdf)
 - [研究边界](docs/RESEARCH_CLAIMS.md)
 
 ## 许可证

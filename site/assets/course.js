@@ -1,5 +1,5 @@
 window.TENDER_COURSE = {
-  version: "3.0-dual-chain",
+  version: "3.1-three-loops",
   audience: [
     { zh: "第一次使用 Tender 的学习者与家庭", en: "Learners and families using Tender for the first time" },
     { zh: "需要理解产品逻辑的教师、产品与研究团队", en: "Educators, product teams and researchers who need the product logic" },
@@ -40,6 +40,24 @@ window.TENDER_COURSE = {
         { type: "concept", title: { zh: "人—人回路", en: "Person–person loop" }, body: { zh: "人还会推断对方的信念、情绪、意图和视角，并通过表达、回应和修复校准关系。", en: "A person also infers another's beliefs, emotions, intentions and perspective, then calibrates the relationship through expression, response and repair." } },
         { type: "list", title: { zh: "行动可以是什么", en: "What action can be" }, items: [{ zh: "打开材料或写一句话", en: "Open a resource or write one sentence" }, { zh: "复述概念或请求提示", en: "Explain a concept or request a hint" }, { zh: "停下来恢复或向教师求助", en: "Pause to recover or ask a teacher for help" }, { zh: "明确退出或暂不行动", en: "Explicitly exit or choose not to act yet" }] },
         { type: "boundary", body: { zh: "关系问题不能交给学科专家处理；Agent 必须先判断问题属于人—世界、人—人还是两者嵌套。", en: "Relational problems must not be routed to a subject expert; Agents must first distinguish person–world, person–person or nested problems." } }
+      ]
+    },
+    {
+      id: "three-loops", time: "8 min", level: { zh: "价值回路", en: "Value loops" },
+      title: { zh: "自我、世界、关系与群体", en: "Self, world, relationships and groups" },
+      summary: { zh: "Tender 从理解自己开始，把理解转化为世界中的行动，再把人与人的理解转化为可授权、可协商、可撤回的协作。", en: "Tender starts with self-understanding, turns it into action in the world, and turns understanding between people into authorized, negotiable and revocable collaboration." },
+      objectives: [{ zh: "用四条回路解释 Tender 的价值", en: "Explain Tender's value through four loops" }, { zh: "把观察、推断和需要分开", en: "Separate observation, inference and need" }],
+      blocks: [
+        { type: "table", title: { zh: "四条价值回路", en: "Four value loops" }, headers: [{ zh: "回路", en: "Loop" }, { zh: "核心问题", en: "Core question" }], rows: [
+          [{ zh: "自我", en: "Self" }, { zh: "我现在的注意、负荷、动机、情绪和行动阻力是什么？", en: "What is happening in my attention, load, motivation, emotion and action friction?" }],
+          [{ zh: "世界", en: "World" }, { zh: "下一步做什么？真实结果是否支持原来的判断？", en: "What is the next action, and does the real outcome support my judgment?" }],
+          [{ zh: "关系", en: "Relationship" }, { zh: "我观察到了什么？我推断了什么？我真正的需要是什么？", en: "What did I observe, what did I infer, and what do I need?" }],
+          [{ zh: "群体", en: "Group" }, { zh: "开放问题、承诺和决定是否清楚？", en: "Are open questions, commitments and decisions clear?" }]
+        ] },
+        { type: "concept", title: { zh: "关系中的一句改写", en: "One relational rewrite" }, body: { zh: "把“他就是不在乎我”改写成：“我观察到他没有回复；我的解释是他不在乎；我的需要是确认；我准备问一个具体问题。”", en: "Change “He does not care about me” into “I observed no reply; my interpretation is that he does not care; my need is clarification; I will ask a specific question.”" } },
+        { type: "list", title: { zh: "每层各自要看的结果", en: "Outcomes by layer" }, items: [{ zh: "自我：能否更正、是否减轻负担", en: "Self: correction and support burden" }, { zh: "世界：行动恢复、预测误差、迁移", en: "World: action recovery, prediction error and transfer" }, { zh: "关系：误归因、澄清和修复", en: "Relationship: misattribution, clarification and repair" }, { zh: "群体：承诺闭合、决策完成、开放问题", en: "Group: commitments, decisions and open questions" }] },
+        { type: "boundary", body: { zh: "Tender 不声称知道他人的真实心智。他者模型是观察者的假设；共享枝需要参与者确认；Agent 支持选择，方向和后果仍由人承担。", en: "Tender does not claim access to another person's true mind. A peer model is the observer's hypothesis; shared branches require participant confirmation; Agents support choices while people retain direction and consequence." } },
+        { type: "quiz", question: { zh: "“他没有回复，所以不在乎我”缺少哪一步？", en: "What step is missing from “He did not reply, so he does not care”?" }, options: [{ zh: "把推断当成事实", en: "Treating an inference as fact" }, { zh: "区分观察、推断和需要，并请求确认", en: "Separating observation, inference and need, then asking for clarification" }, { zh: "直接让群模型判断对方人格", en: "Asking the group model to judge his personality" }], answer: 1, why: { zh: "没有回复是观察，不在乎是推断，确认信息才是关系回路中的下一步。", en: "No reply is an observation, not caring is an inference, and clarification is the next relational step." } }
       ]
     },
     {

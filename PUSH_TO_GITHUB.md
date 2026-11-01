@@ -11,7 +11,7 @@ From this directory:
 git fetch origin
 git rebase origin/main
 git push origin main
-git push origin v2.0.0
+git push origin v2.1.0
 ```
 
 The release should be a fast-forward on the existing remote history. Do not
@@ -20,7 +20,7 @@ replace or truncate remote history.
 ## Restore from bundle
 
 ```bash
-git clone Tender-v2.0.0.bundle Tender
+git clone Tender-v2.1.0.bundle Tender
 cd Tender
 git remote set-url origin https://github.com/MK60DN/Tender.git
 ```

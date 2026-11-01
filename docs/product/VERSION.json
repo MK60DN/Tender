@@ -1,6 +1,6 @@
 {
   "product": "Tender",
-  "manual_version": "7.0",
+  "manual_version": "7.1",
   "date": "2026-11-01",
   "product_type": "B端完整系统 / B端嵌入式模块 / C端生活界面共享核心的心智化终身学习系统",
   "default_surfaces": [
@@ -43,20 +43,20 @@
     "Participant-approved SharedBranchStore",
     "GroupModel without private-member access"
   ],
-  "status": "V7.0 implements the dual-chain backend: private self-models, observer-owned peer hypotheses, revocable shared views, participant-approved shared branches, group models without private-member access, and 114 tests",
-  "source": "Tender-Product-Manual-v7.0.md",
-  "pdf": "Tender-Product-Manual-v7.0.pdf",
+  "status": "V7.1 establishes the self, world, relationship and group value loops; dual-chain group chat isolation and 114 tests remain in force",
+  "source": "Tender-Product-Manual-v7.1.md",
+  "pdf": "Tender-Product-Manual-v7.1.pdf",
   "user_guide": {
-    "source": "Tender-User-Guide-v7.0.md",
-    "pdf": "Tender-User-Guide-v7.0.pdf",
-    "pages": 26,
-    "pdf_bytes": 422368,
-    "sha256": "8d120578bb8700d4d8a203abab0e5229fd0596e2eb8243c97e48c6f0dc915744",
-    "validation": "V7.0 adds group-chat permission levels, private danmaku, draft confirmation and revocation; zero replacement characters"
+    "source": "Tender-User-Guide-v7.1.md",
+    "pdf": "Tender-User-Guide-v7.1.pdf",
+    "pages": 27,
+    "pdf_bytes": 428986,
+    "sha256": "ea68dffa12d8b27d1c8b0d0fca44ca82d5ba30ef8834bbe8a100a0d5005b6376",
+    "validation": "V7.1 adds self, world and relationship scenarios plus group authorization; zero replacement characters"
   },
   "pdf_render": {
-    "pages": 61,
-    "validation": "V7.0 rebuilt with dual-chain group backend, authorization scopes, shared branches and 114-test baseline; zero replacement characters"
+    "pages": 62,
+    "validation": "V7.1 rebuilt with three-loop value narrative and dual-chain backend; zero replacement characters"
   },
   "implemented": true,
   "positioning": "Tender：温柔地了解您的心智。B端可提供完整教育系统或嵌入合作方系统，C端以自有界面融入用户生活。",
@@ -78,7 +78,7 @@
     "workflow_execution": "gated",
     "status_endpoint": "GET /agent-runtime/status"
   },
-  "sha256": "a42e2f2b0ced646308e6ef60d06700854e26cbc2d898fd93c253e04ed62ca826",
+  "sha256": "fe9ebdbb8cbf2fbe8c6768385a27c1141d03b73fe064c8390f1427a30618d3c6",
   "tests": 114,
   "identity": {
     "development": "signed HMAC bearer session",
@@ -123,9 +123,9 @@
     ]
   },
   "decision_loop": "implemented",
-  "manual_title": "Tender 产品手册 V7.0",
+  "manual_title": "Tender 产品手册 V7.1",
   "builder": "build_v67_reports.py",
-  "pdf_bytes": 682665,
+  "pdf_bytes": 688190,
   "narrative_order": [
     "opportunity",
     "user_segmentation",
@@ -325,8 +325,8 @@
     "raw_responses_stored": false,
     "diagnosis": false,
     "user_review_required": true,
-    "report": "Tender-Product-Manual-v7.0.pdf §13.7",
-    "report_source": "Tender-Product-Manual-v7.0.md",
+    "report": "Tender-Product-Manual-v7.1.pdf §13.7",
+    "report_source": "Tender-Product-Manual-v7.1.md",
     "report_pages": 58,
     "tests": 114,
     "attention_profile": true,
@@ -591,13 +591,13 @@
     "boundary": "Synthetic event graph and role probes; not a real-user efficacy study or statistical causal proof."
   },
   "central_thesis": {
-    "title": "让 AI 成为森林的气候，让人成为生命树的作者",
+    "title": "连接自我、世界与他人心智",
     "core": "生命不是被某个框架评价出来的形状，而是在有限时间里，通过选择、关系、承担和创造长出来的年轮。",
     "source": "Tender-中心主旨.md",
     "manuals": [
-      "Tender-Product-Manual-V7.0.md",
-      "Tender-User-Guide-V7.0.md",
-      "../教学手册/Tender零基础全流程教学手册-完整版-V6.0.tex"
+      "Tender-Product-Manual-V7.1.md",
+      "Tender-User-Guide-V7.1.md",
+      "../教学手册/Tender零基础全流程教学手册-完整版-V6.1.tex"
     ],
     "role": "narrative and modeling grammar; not a clinical, diagnostic or efficacy claim"
   },
@@ -638,20 +638,20 @@
     "boundary": "The cognitive-map regions are interpretive retrieval labels, not brain scans, clinical diagnoses or objective facts."
   },
   "project_whitepaper": {
-    "source": "../产品管理文档/Tender-项目白皮书-V2.0.tex",
-    "pdf": "../产品管理文档/Tender-项目白皮书-V2.0.pdf",
-    "word": "../产品管理文档/Tender-项目白皮书-V2.0.docx",
-    "version": "2.0",
-    "pages": 48,
-    "pdf_bytes": 448244,
-    "pdf_sha256": "280ac5b5a5ab56b59654e0bd6f0ee0d2872ece12aa64f2e495d7d765c2c6151e",
-    "word_bytes": 1176005,
-    "word_sha256": "eae7fc37d690f5abcb6ea1de3d416afddae186c85b1999ed28257ab7c6d1ff42",
+    "source": "../产品管理文档/Tender-项目白皮书-V2.1.tex",
+    "pdf": "../产品管理文档/Tender-项目白皮书-V2.1.pdf",
+    "word": "../产品管理文档/Tender-项目白皮书-V2.1.docx",
+    "version": "2.1",
+    "pages": 49,
+    "pdf_bytes": 452358,
+    "pdf_sha256": "17be81835977f161d8269647bfd19d79f4c8ad81a9850ed21c78ee36bb3380b8",
+    "word_bytes": 1173826,
+    "word_sha256": "66f635ad5ed36e571ead33086ed78755bb3f665a6d9b26e00b8136c8dccd78ef",
     "figures": 14,
     "tables_in_word": 22,
     "citations": 11,
-    "focus": "dual-chain backend, self-models, observer-owned peer hypotheses, revocable shared views, shared branches and group models",
-    "validation": "47 pages; API 7.0.0 and tender-context-2.0 aligned; zero replacement characters; group isolation verified"
+    "focus": "self, world, relationship and group value loops; mentalization, action feedback, authorized shared views and dual-chain collaboration",
+    "validation": "49 pages; three-loop thesis and dual-chain boundaries; zero replacement characters"
   },
   "knowledge_forest": {
     "version": "knowledge-forest-1.0",
@@ -710,18 +710,18 @@
     "boundary": "Language evidence is weak evidence and cannot determine mastery, personality, diagnosis or factual truth by itself."
   },
   "teaching_manual": {
-    "source": "../教学手册/Tender零基础全流程教学手册-完整版-V6.0.tex",
-    "pdf": "../教学手册/Tender零基础全流程教学手册-完整版-V6.0.pdf",
-    "version": "6.0",
-    "pages": 186,
-    "pdf_bytes": 922641,
-    "sha256": "78eb1848508045ffb5152b0aa8219775580dc8baf8387b36eced76a06a997fac",
-    "validation": "V6.0 adds dual-chain group-chat backend and 114-test baseline; zero replacement characters"
+    "source": "../教学手册/Tender零基础全流程教学手册-完整版-V6.1.tex",
+    "pdf": "../教学手册/Tender零基础全流程教学手册-完整版-V6.1.pdf",
+    "version": "6.1",
+    "pages": 187,
+    "pdf_bytes": 925328,
+    "sha256": "f5473363e67fc7cc3ea941b4c3b4f431cae1be7fe575154e897257091c2e490c",
+    "validation": "V6.1 adds self-world-relationship-group value loops and dual-chain group backend; zero replacement characters"
   },
   "teaching_site": {
-    "version": "3.0",
+    "version": "3.1",
     "entry": "GET /guide/",
-    "modules": 13,
+    "modules": 14,
     "languages": [
       "zh",
       "en"
@@ -729,13 +729,14 @@
     "formulas": false,
     "architecture": "world tree -> DAOQL roots -> limited observation -> Agent Bridge trunk -> five experience branches -> flowering/outcomes/shared branches -> dual-chain private/group separation",
     "documents": [
-      "Whitepaper V2.0",
-      "Product Manual V7.0",
-      "User Guide V7.0",
-      "Teaching Manual V6.0",
+      "Whitepaper V2.1",
+      "Product Manual V7.1",
+      "User Guide V7.1",
+      "Teaching Manual V6.1",
       "Golden-Bias Experiment V1.0",
       "Rhythm Phase Experiment V1.0"
-    ]
+    ],
+    "minutes": 100
   },
   "world_tree": {
     "endpoint": "GET /world-tree/{student_id}",
@@ -853,5 +854,33 @@
     "group_branch_requires_all_active_members": true,
     "member_consent_scopes_visible_to_others": false,
     "owner_and_facilitator_self_join": false
+  },
+  "value_loops": {
+    "version": "value-loops-1.0",
+    "loops": [
+      "self",
+      "world",
+      "relationship",
+      "group"
+    ],
+    "world_outcomes": [
+      "action_recovery",
+      "prediction_error",
+      "transfer",
+      "real_outcome"
+    ],
+    "relationship_outcomes": [
+      "misattribution_rate",
+      "clarification_quality",
+      "repair",
+      "consent_compliance"
+    ],
+    "group_outcomes": [
+      "commitment_closure",
+      "decision_closure",
+      "open_questions",
+      "shared_branch_approval"
+    ],
+    "boundary": "Self, world, relationship and group loops share infrastructure while preserving separate data scopes."
   }
 }

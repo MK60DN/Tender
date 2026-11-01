@@ -10,10 +10,10 @@ required = [
     ROOT / "README.md",
     ROOT / "LICENSE",
     ROOT / "VERSION",
-    ROOT / "docs/whitepaper/Tender-Whitepaper-v2.0.pdf",
-    ROOT / "docs/product/Tender-Product-Manual-v7.0.pdf",
-    ROOT / "docs/product/Tender-User-Guide-v7.0.pdf",
-    ROOT / "docs/teaching/Tender-Teaching-Manual-v6.0.pdf",
+    ROOT / "docs/whitepaper/Tender-Whitepaper-v2.1.pdf",
+    ROOT / "docs/product/Tender-Product-Manual-v7.1.pdf",
+    ROOT / "docs/product/Tender-User-Guide-v7.1.pdf",
+    ROOT / "docs/teaching/Tender-Teaching-Manual-v6.1.pdf",
     ROOT / "docs/research/Tender-Golden-Bias-Experiment-v1.0.pdf",
     ROOT / "agent_layer/app/main.py",
     ROOT / "agent_layer/app/preassessment.py",
@@ -30,10 +30,10 @@ required = [
     ROOT / "site/index.html",
     ROOT / "site/assets/app.js",
     ROOT / "site/assets/course.js",
-    ROOT / "site/assets/docs/Tender-Whitepaper-v2.0.pdf",
-    ROOT / "site/assets/docs/Tender-Product-Manual-v7.0.pdf",
-    ROOT / "site/assets/docs/Tender-User-Guide-v7.0.pdf",
-    ROOT / "site/assets/docs/Tender-Teaching-Manual-v6.0.pdf",
+    ROOT / "site/assets/docs/Tender-Whitepaper-v2.1.pdf",
+    ROOT / "site/assets/docs/Tender-Product-Manual-v7.1.pdf",
+    ROOT / "site/assets/docs/Tender-User-Guide-v7.1.pdf",
+    ROOT / "site/assets/docs/Tender-Teaching-Manual-v6.1.pdf",
     K / "db_k12.sqlite",
     K / "db_university.sqlite",
     K / "db_university_courses.sqlite",
@@ -44,10 +44,10 @@ if missing:
     raise SystemExit("missing required files:\n" + "\n".join(missing))
 
 forbidden = [
-    ROOT / "docs/whitepaper/Tender-Whitepaper-v1.9.pdf",
-    ROOT / "docs/product/Tender-Product-Manual-v6.23.pdf",
-    ROOT / "docs/product/Tender-User-Guide-v6.11.pdf",
-    ROOT / "docs/teaching/Tender-Teaching-Manual-v5.6.pdf",
+    ROOT / "docs/whitepaper/Tender-Whitepaper-v2.0.pdf",
+    ROOT / "docs/product/Tender-Product-Manual-v7.0.pdf",
+    ROOT / "docs/product/Tender-User-Guide-v7.0.pdf",
+    ROOT / "docs/teaching/Tender-Teaching-Manual-v6.0.pdf",
     ROOT / "knowledge_data/preassessment_mbti_items.json",
     ROOT / "knowledge_data/preassessment_jungian_items.json",
 ]
@@ -69,8 +69,8 @@ for name, (path, sql, expected) in checks.items():
     print(f"ok {name}={actual}")
 
 version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
-if version != "2.0.0":
-    raise SystemExit(f"VERSION: expected 2.0.0, got {version}")
+if version != "2.1.0":
+    raise SystemExit(f"VERSION: expected 2.1.0, got {version}")
 print(f"ok version={version}")
 
 license_text = (ROOT / "LICENSE").read_text(encoding="utf-8")

@@ -1,26 +1,26 @@
 # Tender
 
-**A research-grade lifelong learning and mentalization system**  
-**研究型终身学习与心智化支持系统**
+**A research-grade system connecting self, world, other minds and collaborative outcomes**
+**连接自我、世界、他人心智与共同结果的终身学习系统**
 
 [English detail](README.en.md) · [中文完整版](README.zh-CN.md)
 
 ## Start here / 从这里开始
 
 - **Teaching website / 教学网站**： [GitHub Pages](https://mk60dn.github.io/Tender/) · [Local course / 本地课程](http://127.0.0.1:8080/guide/) · [Source / 源码](site/)
-- **Whitepaper V2.0 / 白皮书 V2.0**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v2.0.pdf) · [Repo PDF](docs/whitepaper/Tender-Whitepaper-v2.0.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v2.0.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v2.0.tex)
-- **Product manual / 产品手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v7.0.pdf) · [Repo PDF](docs/product/Tender-Product-Manual-v7.0.pdf)
-- **User guide / 用户手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v7.0.pdf) · [Repo PDF](docs/product/Tender-User-Guide-v7.0.pdf)
+- **Whitepaper V2.1 / 白皮书 V2.1**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v2.1.pdf) · [Repo PDF](docs/whitepaper/Tender-Whitepaper-v2.1.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v2.1.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v2.1.tex)
+- **Product manual / 产品手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Product-Manual-v7.1.pdf) · [Repo PDF](docs/product/Tender-Product-Manual-v7.1.pdf)
+- **User guide / 用户手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-User-Guide-v7.1.pdf) · [Repo PDF](docs/product/Tender-User-Guide-v7.1.pdf)
 - **Golden-bias experiment / 动态黄金比实验**： [Repo PDF](docs/research/Tender-Golden-Bias-Experiment-v1.0.pdf) · [Results](experiments/golden_bias_regulation/results.json)
 - **Rhythm evidence experiment / 节律相位实验**： [Repo PDF](docs/research/Tender-Rhythm-Phase-Experiment-v1.0.pdf) · [Results](experiments/rhythm_phase_detection/results.json)
-- **Teaching manual / 零基础教学手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v6.0.pdf) · [Repo PDF](docs/teaching/Tender-Teaching-Manual-v6.0.pdf)
+- **Teaching manual / 零基础教学手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v6.1.pdf) · [Repo PDF](docs/teaching/Tender-Teaching-Manual-v6.1.pdf)
 
 
 [![CI](https://github.com/MK60DN/Tender/actions/workflows/ci.yml/badge.svg)](https://github.com/MK60DN/Tender/actions/workflows/ci.yml)
 
-> **EN** — Tender learns, with explicit authorization, from behavior, language and real outcomes to form revisable hypotheses about attention, cognitive load, motivation and friction. It separates objective events, language evidence, subjective experience and optional Agent support.
+> **EN** — Tender starts by gently understanding your mind, then turns that understanding into action in the world, mentalizing in relationships, and confirmed commitments in groups. It separates objective events, language evidence, subjective experience and optional Agent support.
 >
-> **中文** — Tender 在明确授权下，从行为、语言和真实结果中形成关于注意、认知负荷、动机与行动阻力的可更正假设。系统严格区分客观事件、语言证据、主观体验和可选 Agent 支持。
+> **中文** — Tender 从温柔了解你的心智开始，把理解转化为世界中的行动、人与人之间的心智化，以及群体中可确认的承诺和结果。系统严格区分客观事件、语言证据、主观体验和可选 Agent 支持。
 
 ## Why Tender / 为什么需要 Tender
 
@@ -32,6 +32,7 @@
 
 ## What it is / 它是什么
 
+- **Three value loops / 三层价值回路**：self-understanding → action in the world → relational mentalizing and group outcomes. / 自我理解 → 世界行动 → 关系心智化与群体结果。
 - **Mentalization layer / 心智化层**：turn authorized evidence into competing, reversible state hypotheses. / 把授权证据转化为竞争性、可撤回的状态假设。
 - **Language evidence layer / 语言证据层**：extract emotion, uncertainty, avoidance, help-seeking and mentalizing signals with source spans. / 从话语中提取情绪、不确定性、回避、求助与心智化信号，并保留来源片段。
 - **World tree / 世界树**：DAOQL roots → Agent Bridge trunk → five experience branches → local state axes → flowering and outcomes; shared branches require explicit consent. / DAOQL 根系 → Agent Bridge 树干 → 五类体验树枝 → 局部状态轴 → 开花与结果；共享枝必须获得明确授权。
@@ -90,7 +91,7 @@ Minimal action → real outcome → model update
 
 ## Teaching site / 教学网站
 
-双语教学网站位于 `site/`，包含 13 个模块、92 分钟、学习进度、语言切换与知识检查。FastAPI 在 `/guide/` 提供页面，GitHub Pages 由 `.github/workflows/pages.yml` 部署。
+双语教学网站位于 `site/`，包含 14 个模块、100 分钟、学习进度、语言切换与知识检查。FastAPI 在 `/guide/` 提供页面，GitHub Pages 由 `.github/workflows/pages.yml` 部署。
 
 ## Quick start / 快速开始
 
@@ -147,7 +148,7 @@ agent_layer/       runnable app, Agents, UI and tests / 可运行应用、Agent�
 agent_layer/app/group_chat.py  dual-chain group backend / 双链路群聊后台
 knowledge_data/    subject, major, course and career databases / 学科、专业、课程、职业数据库
 experiments/       selected reproducible research code / 精简可复现研究代码
-docs/whitepaper/   Whitepaper V2.0: TeX, PDF, Word / 白皮书 V2.0
+docs/whitepaper/   Whitepaper V2.1: TeX, PDF, Word / 白皮书 V2.1
 docs/product/      product and user manuals / 产品与用户手册
 docs/research/     evidence and validation reports / 证据与验证报告
 site/               bilingual teaching website / 双语教学网站
@@ -162,9 +163,9 @@ site/               bilingual teaching website / 双语教学网站
 
 ## Documentation / 文档
 
-- [Whitepaper V2.0 / 白皮书 V2.0](docs/whitepaper/Tender-Whitepaper-v2.0.pdf)
-- [Product manual / 产品手册](docs/product/Tender-Product-Manual-v7.0.pdf)
-- [User guide / 用户手册](docs/product/Tender-User-Guide-v7.0.pdf)
+- [Whitepaper V2.1 / 白皮书 V2.1](docs/whitepaper/Tender-Whitepaper-v2.1.pdf)
+- [Product manual / 产品手册](docs/product/Tender-Product-Manual-v7.1.pdf)
+- [User guide / 用户手册](docs/product/Tender-User-Guide-v7.1.pdf)
 - [Central thesis / 中心主旨](docs/product/Tender-Central-Thesis.md)
 
 ## License / 许可证

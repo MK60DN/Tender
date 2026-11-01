@@ -290,3 +290,15 @@ DAOQL 客观事件根系
 四类模型严格分离：`SelfModel(A)`、`OtherModel(A→B)`、`SharedView(B→A)`、`GroupModel(G)`。共享枝再区分双人 `bilateral` 与群组 `group`，双人枝不自动进入 Group Model。其中 `OtherModel(A→B)` 属于观察者，是关系假设而不是 B 的真实心智；`GroupModel(G)` 不读取任何成员的私密 Tender。
 
 实现位于 `agent_layer/app/group_chat.py`。群聊事件、授权视图、共享枝和群组成果均写入同一 SQLite 数据库并进入审计。当前仍是链下专家议会阶段，BFT/Shapley 只保留为后续治理工具。
+
+
+## 三层价值回路
+
+```text
+自我回路：私密事件 → Tender Context → 可更正状态假设
+世界回路：状态假设 → 最小行动 → 真实结果 → 模型修正
+关系回路：观察 / 推断 / 需要 → 他者授权视图 → 表达与修复
+群体回路：群公开事实 → 共享枝 → 承诺 / 决策 / 结果
+```
+
+个人状态模型是起点，世界行动和关系协作是产品价值的外化。四条回路共用 DAOQL、Agent Runtime、知识森林、安全和审计，同时保持私人模型、共享视图与群体模型的边界。
