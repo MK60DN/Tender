@@ -19,6 +19,44 @@
 - **Teaching manual / 零基础教学手册**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Teaching-Manual-v6.2.pdf) · [Repo PDF](docs/teaching/Tender-Teaching-Manual-v6.2.pdf)
 
 
+## 如何修改白皮书 / How to edit the living whitepaper
+
+白皮书采用 **Markdown 源文档 + GitHub Pages 发布页**：
+
+1. 在线阅读：[whitepaper.html](https://mk60dn.github.io/Tender/whitepaper.html)
+2. 查看源文档：[Tender-DAOQL-Data-Water-Whitepaper-v1.0.md](docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.md)
+3. 直接编辑：[Edit on GitHub](https://github.com/MK60DN/Tender/edit/main/docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.md)
+
+### 有仓库写权限的编辑
+
+1. 登录 GitHub，打开上面的“Edit on GitHub”。
+2. 修改 Markdown，提交到新分支并创建 Pull Request。
+3. 至少一位维护者审核后合并。
+4. 如修改影响对外博客，维护者同步更新 site/whitepaper.html 并触发 Pages 部署。
+
+### 没有仓库写权限
+
+- 点击 GitHub 页面的 **Fork**，在自己的副本中编辑，然后提交 Pull Request。
+- 或使用 [白皮书修改 Issue 模板](https://github.com/MK60DN/Tender/issues/new?template=whitepaper_feedback.yml) 提出事实纠错、补充来源、结构调整或合规意见。
+
+### 给陈天桥和合伙人开放编辑权限
+
+仓库所有者进入：
+
+**GitHub → Settings → Collaborators and teams → Add people → 选择 Write**
+
+建议只授予 **Write**，不要默认授予 **Admin**。如仓库属于组织，可建立 **whitepaper-editors** Team 并授予 **Write** 权限。
+
+### 编辑底线
+
+- 区分“已实现”“已有基础”“目标架构”“研究假设”；
+- 新数字必须注明样本、测试条件、来源和局限；
+- 不把贡献积分写成投资品，不承诺升值或固定收益；
+- 不写入学生、患者、受益人或合作机构的可识别隐私；
+- 实质修改需更新版本号、日期和 Pull Request 说明。
+
+完整流程见 [docs/COLLABORATION.md](docs/COLLABORATION.md)。
+
 [![CI](https://github.com/MK60DN/Tender/actions/workflows/ci.yml/badge.svg)](https://github.com/MK60DN/Tender/actions/workflows/ci.yml)
 
 > **EN** — Tender starts by gently understanding your mind, then turns that understanding into action in the world, mentalizing in relationships, and confirmed commitments in groups. It separates objective events, language evidence, subjective experience and optional Agent support.

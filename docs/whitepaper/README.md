@@ -20,3 +20,31 @@ V2.2 adds the multimodal limited-observation chapter: consent-gated visible-wind
 - [Edit on GitHub](https://github.com/MK60DN/Tender/edit/main/docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.md)
 - [PDF](Tender-DAOQL-Data-Water-Whitepaper-v1.0.pdf)
 - [Collaboration guide](../COLLABORATION.md)
+
+## 如何修改 / How to edit
+
+### 直接编辑
+
+- [在 GitHub 编辑 Markdown](https://github.com/MK60DN/Tender/edit/main/docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.md)
+- 修改后提交到新分支，创建 Pull Request。
+- 至少一位维护者审核后合并。
+
+### 没有写权限
+
+- 打开 [Markdown 源文档](Tender-DAOQL-Data-Water-Whitepaper-v1.0.md)，点击 **Fork**。
+- 在自己的 Fork 中编辑，并向 **MK60DN/Tender** 提交 Pull Request。
+- 只想提意见时，使用 [白皮书修改 Issue 模板](https://github.com/MK60DN/Tender/issues/new?template=whitepaper_feedback.yml)。
+
+### 邀请合伙人和陈天桥编辑
+
+仓库所有者进入 **Settings → Collaborators and teams → Add people**，建议授予 **Write** 权限。组织仓库可建立 **whitepaper-editors** Team。
+
+### 审核重点
+
+- 不把目标架构写成已交付能力；
+- 新数据必须附样本、条件、来源和局限；
+- 不承诺代币升值、固定收益或投资回报；
+- 不包含学生、患者、受益人或合作机构隐私；
+- 实质修改更新 version/date，并同步 site/whitepaper.html。
+
+完整协作流程见 [COLLABORATION.md](../COLLABORATION.md)。
