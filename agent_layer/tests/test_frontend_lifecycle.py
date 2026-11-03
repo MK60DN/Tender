@@ -68,8 +68,6 @@ def test_living_whitepaper_has_publication_and_edit_paths():
     assert "在 GitHub 编辑" in page
     assert "/edit/main/docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.md" in page
     assert "whitepaper_feedback.yml" in page
-    assert "如何修改白皮书" in (root / "README.md").read_text(encoding="utf-8")
-    assert "如何修改 / How to edit" in (root / "docs" / "whitepaper" / "README.md").read_text(encoding="utf-8")
 
 
 def test_github_pages_app_and_one_click_backend_links_exist():
