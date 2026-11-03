@@ -7,6 +7,8 @@
 
 ## Start here / 从这里开始
 
+
+- **DAOQL living whitepaper / 数据活水白皮书**：[Read online](https://mk60dn.github.io/Tender/whitepaper.html) · [Markdown source](docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.md) · [Edit on GitHub](https://github.com/MK60DN/Tender/edit/main/docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.md) · [PDF](docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.pdf) · [Collaboration guide](docs/COLLABORATION.md)
 - **One-click backend / 一键后端**：[GitHub Codespaces](https://codespaces.new/MK60DN/Tender?quickstart=1) · [Deploy to Render](https://render.com/deploy?repo=https://github.com/MK60DN/Tender) · [Deployment guide](docs/DEPLOYMENT.md)
 - **Teaching website / 教学网站**： [GitHub Pages](https://mk60dn.github.io/Tender/) · [Local course / 本地课程](http://127.0.0.1:8080/guide/) · [Source / 源码](site/)
 - **Whitepaper V2.2 / 白皮书 V2.2**： [Local PDF](http://127.0.0.1:8080/guide/assets/docs/Tender-Whitepaper-v2.2.pdf) · [Repo PDF](docs/whitepaper/Tender-Whitepaper-v2.2.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v2.2.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v2.2.tex)

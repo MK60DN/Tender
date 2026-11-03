@@ -24,6 +24,7 @@ The application also mounts the site at `/guide/` when running FastAPI.
 - self-world-relationship-group value-loop lesson;
 - dual-chain group-chat privacy and consent lesson; screen-context and media-plugin boundaries;
 - long-term purpose: help humanity evolve;
+- living Tender × DAOQL whitepaper with GitHub edit/feedback links;
 - reproducible evidence panel with synthetic benchmarks, public-data baselines, disclosure of failed comparisons and explicit boundaries;
 - printable course;
 - no external CDN, tracking or runtime dependency.

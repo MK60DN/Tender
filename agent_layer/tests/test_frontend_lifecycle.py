@@ -54,6 +54,22 @@ def test_education_site_publishes_reproducible_evidence_and_failure_boundaries()
     assert "帮助人类演化" in index
 
 
+def test_living_whitepaper_has_publication_and_edit_paths():
+    root = Path(__file__).resolve().parents[2]
+    page = (root / "site" / "whitepaper.html").read_text(encoding="utf-8")
+    markdown = root / "docs" / "whitepaper" / "Tender-DAOQL-Data-Water-Whitepaper-v1.0.md"
+    collab = root / "docs" / "COLLABORATION.md"
+    issue = root / ".github" / "ISSUE_TEMPLATE" / "whitepaper_feedback.yml"
+
+    assert markdown.exists()
+    assert collab.exists()
+    assert issue.exists()
+    assert (root / "site" / "assets" / "docs" / "Tender-DAOQL-Data-Water-Whitepaper-v1.0.pdf").exists()
+    assert "在 GitHub 编辑" in page
+    assert "/edit/main/docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.md" in page
+    assert "whitepaper_feedback.yml" in page
+
+
 def test_github_pages_app_and_one_click_backend_links_exist():
     root = Path(__file__).resolve().parents[2]
     site = root / "site"

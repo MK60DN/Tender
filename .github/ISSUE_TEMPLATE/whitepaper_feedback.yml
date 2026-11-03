@@ -1,0 +1,62 @@
+name: Whitepaper change request
+description: Suggest a correction, source, argument or editorial change for the Tender × DAOQL living whitepaper.
+title: "[Whitepaper] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is for public, non-confidential feedback on the Tender × DAOQL living whitepaper. Do not include personal, beneficiary, patient, student or confidential partner data.
+  - type: input
+    id: section
+    attributes:
+      label: Section
+      description: Which chapter or heading should change?
+      placeholder: e.g. 07 · Data Economics
+    validations:
+      required: true
+  - type: dropdown
+    id: change_type
+    attributes:
+      label: Type of change
+      options:
+        - Factual correction
+        - Argument or framing
+        - Evidence or citation
+        - Product capability boundary
+        - Legal / compliance / risk
+        - Structure or language
+        - Typo
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current text or issue
+      description: Quote the relevant passage or describe the current problem.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed change
+      description: What should it say instead?
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale and evidence
+      description: Explain why. Add a public source URL if applicable.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Publication checks
+      options:
+        - label: This contribution contains no personal, beneficiary, patient, student or confidential partner data.
+          required: true
+        - label: This contribution does not claim that a research hypothesis or target architecture is an already delivered product.
+          required: true
+        - label: This contribution does not promise token appreciation, fixed financial returns or investment outcomes.
+          required: true
