@@ -2,7 +2,7 @@
 
 ## 在线阅读
 
-- 博客页：<https://mk60dn.github.io/Tender/whitepaper.html>
+- 在线源文档：<https://github.com/MK60DN/Tender/blob/main/docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.md>
 - Markdown 源文档：[Tender-DAOQL-Data-Water-Whitepaper-v1.0.md](whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.md)
 - PDF：[Tender-DAOQL-Data-Water-Whitepaper-v1.0.pdf](whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.pdf)
 
