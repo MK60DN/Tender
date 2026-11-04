@@ -21,9 +21,6 @@ required = [
     ROOT / "experiments/knowledge_tracing_bench/outputs/analysis_summary.json",
     ROOT / "modeling/app/__init__.py",
     ROOT / "modeling/app/tender.py",
-    ROOT / "site/index.html",
-    ROOT / "site/whitepaper.html",
-    ROOT / "site/assets/docs/Tender-DAOQL-Data-Water-Whitepaper-v1.0.pdf",
     ROOT / "modeling/app/tender_models.py",
     ROOT / "modeling/app/mentalization.py",
     ROOT / "modeling/app/world_tree.py",
@@ -37,6 +34,7 @@ if missing:
 
 forbidden = [
     ROOT / "agent_layer",
+    ROOT / "site",
     ROOT / "docs/product",
     ROOT / "docs/teaching",
     ROOT / "Dockerfile",
