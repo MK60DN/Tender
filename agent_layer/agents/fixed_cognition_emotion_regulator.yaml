@@ -1,9 +1,0 @@
-id: fixed_cognition_emotion_regulator
-role: 根据认知负荷与情绪上下文调整任务粒度、节奏和恢复方式
-tools: [tender_state, emotion_context, support_plan]
-policy:
-  always_on: true
-  no_diagnosis: true
-  minimal_intervention: true
-input: [student_id, emotion_context, cognitive_load]
-output: [regulation_action, task_adjustment, recovery_prompt]

@@ -1,35 +1,37 @@
 # Contributing
 
+## Scope
+
+This repository accepts contributions to whitepapers, research reports, experiments, knowledge databases and reference modeling code. Product UI, application runtime and deployment changes belong in https://github.com/MK60DN/Tender-Product.
+
 ## Setup
 
-```bash
-python -m venv .venv
-.venv\Scripts\Activate.ps1   # Windows
-pip install -r requirements-dev.txt
-python agent_layer/tests/run_all.py
-```
+    python -m venv .venv
+    .venv\Scripts\Activate.ps1
+    pip install -r requirements-research.txt
+    python scripts/verify_research.py
 
 ## Rules
 
-1. Do not commit `.env`, session secrets, tenant databases or real learner data.
-2. Every behavioral claim must have a source, uncertainty and a failure boundary.
-3. Language evidence must not update mastery by itself.
-4. High-risk signals must retain a deterministic human-escalation path.
-5. New endpoints need tests and documentation.
-6. Research fixtures must be clearly labeled synthetic.
-7. Run the full test suite before opening a pull request.
+1. Do not commit real learner, family, health, beneficiary or institution-identifiable data.
+2. Label synthetic fixtures explicitly.
+3. Every behavioral or educational claim needs a source, uncertainty and failure boundary.
+4. New model code should include a deterministic test or a reproducible experiment.
+5. Distinguish implemented models, target architecture and research hypotheses.
+6. Update the relevant whitepaper or research report when claim boundaries change.
+7. Use a pull request description that states the question, change, evidence and limitations.
 
 ## Pull requests
 
 Describe:
-- user problem;
-- change;
-- evidence or test;
-- privacy/security impact;
-- unsupported claims or known gaps.
 
-Use the PR template in `.github/pull_request_template.md`.
+- research question;
+- change;
+- data source and sample;
+- test or reproduction command;
+- privacy impact;
+- unsupported claims or known gaps.
 
 ## License of contributions
 
-By contributing, you agree that your contribution may be distributed under the project's PolyForm Noncommercial License 1.0.0. Commercial licensing requires separate permission from the copyright holder.
+By contributing, you agree that your contribution is distributed under the PolyForm Noncommercial License 1.0.0. Commercial use requires separate written permission.

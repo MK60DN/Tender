@@ -1,19 +1,16 @@
 # Security Policy
 
-## Supported version
+## Scope
 
-Security fixes target the current `main` branch and the latest release.
+This repository contains research documents, experiments, knowledge databases and reference model code. The runnable product and deployment surface are maintained in https://github.com/MK60DN/Tender-Product.
 
 ## Reporting a vulnerability
 
-Use GitHub Private Vulnerability Reporting / Security Advisories for this
-repository. Do not open a public issue containing secrets, personal data,
-database dumps, exploit details or production URLs.
+Use GitHub Private Vulnerability Reporting or Security Advisories for this repository. Do not open a public issue containing secrets, personal data, database dumps, exploit details or live service URLs.
 
 ## Repository hygiene
 
-- `.env`, session secrets, runtime databases and tenant data are ignored.
-- Demo authentication is not production authentication.
-- Production deployments require OIDC, RBAC, secret rotation, encryption,
-  retention controls and jurisdiction-specific compliance review.
-- Raw learner, family, health and identity data must never be written on-chain.
+- Do not commit real learner, family, health, beneficiary or institutional data.
+- Treat exported model files and experiment outputs as potentially re-identifiable.
+- Review new datasets for provenance, license and privacy before merging.
+- Do not place secret keys or API tokens in notebooks, configurations or experiment scripts.

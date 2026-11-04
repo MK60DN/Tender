@@ -1,14 +1,16 @@
 cff-version: 1.2.0
-message: "If you use this repository, cite the project and the relevant release."
-title: "Tender: Mentalization, Predictive Processing and Lifelong Learning"
+message: "If you use this research repository, cite the project and the relevant release."
+title: "Tender Research & Modeling"
 type: software
 version: 2.2.1
-date-released: 2026-11-02
+date-released: 2026-11-04
 authors:
   - name: "Tender Contributors"
 repository-code: "https://github.com/MK60DN/Tender"
 license: PolyForm-Noncommercial-1.0.0
 abstract: >-
-  A research-oriented lifelong-learning system with one shared mentalization core.
-  Its world tree separates objective roots, an Agent Bridge trunk and subjective
-  experience branches. A dynamic golden-bias regulator separates observation windows from evidence-gated rhythm periodicity. The v2.0 dual-chain backend adds isolated self-models, observer-owned peer hypotheses, revocable shared views, participant-approved shared branches and group models that never read private member state. The v2.1 product thesis connects the self loop to action in the world, relational mentalizing, and group outcomes. The v2.2.1 release adds account lifecycle controls, irreversible data deletion, a required objective-world setup, a GitHub Pages static app, and one-click full-backend deployment through Codespaces or Render.
+  Research repository for predictive processing, mentalization, the world tree,
+  dynamic golden-bias regulation, rhythm evidence, knowledge forests,
+  preassessment, language evidence, reference model code and reproducible
+  experiments. The runnable product implementation is maintained in a separate
+  Tender-Product repository.

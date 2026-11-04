@@ -1,0 +1,25 @@
+name: Research CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install research dependencies
+        run: python -m pip install -r requirements-research.txt
+      - name: Verify research repository
+        run: python scripts/verify_research.py
+      - name: Check modeling imports
+        run: python scripts/check_modeling_imports.py
