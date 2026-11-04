@@ -9,7 +9,7 @@
 
 ## Start here / 从这里开始
 
-- **DAOQL living whitepaper / 数据活水白皮书**：[Read on GitHub](https://github.com/MK60DN/Tender/blob/main/docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.md) · [Markdown](docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.md) · [PDF](docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.pdf)
+- **DAOQL living whitepaper / 数据活水白皮书**：[Read online](https://mk60dn.github.io/Tender-Whitepaper/whitepaper.html) · [GitHub source](https://github.com/MK60DN/Tender/blob/main/docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.md) · [Markdown](docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.md) · [PDF](docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.pdf)
 - **Tender Whitepaper V2.2 / Tender 白皮书 V2.2**：[PDF](docs/whitepaper/Tender-Whitepaper-v2.2.pdf) · [Word](docs/whitepaper/Tender-Whitepaper-v2.2.docx) · [TeX](docs/whitepaper/Tender-Whitepaper-v2.2.tex)
 - **Research reports / 研究报告**：[Golden-bias](docs/research/Tender-Golden-Bias-Experiment-v1.0.pdf) · [Rhythm and phase](docs/research/Tender-Rhythm-Phase-Experiment-v1.0.pdf) · [Neuro-learning evidence](docs/research/Tender-Neuro-Learning-Evidence-v1.0.pdf) · [Preassessment](docs/research/Tender-Preassessment-v1.1.pdf)
 - **Reference models / 参考模型**：[modeling/](modeling/) · [modeling/app/](modeling/app/)
