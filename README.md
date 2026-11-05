@@ -2,8 +2,8 @@
 
 > **最新更新 / Latest update · 2026-11-06**
 >
-> 新增 [Tender 建模零基础课（12 篇）](https://mk60dn.github.io/Tender-Product/modeling-teaching/)，从预测加工、心智化、生命树、DAOQL，讲到 Agent、动态黄金比、人格预评估、知识森林、多人建模与数字主权。
-> GitHub 原稿：[docs/teaching/modeling-zero-basics](docs/teaching/modeling-zero-basics/README.md)。
+> 新增 [Tender 建模零基础课（12 篇）](https://github.com/MK60DN/Tender/blob/main/docs/teaching/modeling-zero-basics/README.md)，从预测加工、心智化、生命树、DAOQL，讲到 Agent、动态黄金比、人格预评估、知识森林、多人建模与数字主权。
+> 公众号排版站点源码：[Tender-Product site/modeling-teaching](https://github.com/MK60DN/Tender-Product/tree/main/site/modeling-teaching)。
 
 **Whitepapers, research experiments, knowledge databases and reference models.**
 **白皮书、研究实验、知识数据库与参考模型。**
