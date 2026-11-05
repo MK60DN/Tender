@@ -15,9 +15,10 @@ V2.2 adds the multimodal limited-observation chapter: consent-gated visible-wind
 ## Living Whitepaper / 可协作白皮书
 
 - **From Data Monopoly to Data as Flowing Water / 从数据垄断到数据活水**
+- Version: v1.1 · 2026-11-06 · adds digital sovereignty, lifelong cognitive transcripts, ownership-vs-usage rights and value-return boundaries.
 - [Read online](https://mk60dn.github.io/Tender-Whitepaper/whitepaper.html)
-- [GitHub source](https://github.com/MK60DN/Tender/blob/main/docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.md)
-- [Markdown source](Tender-DAOQL-Data-Water-Whitepaper-v1.0.md)
-- [Edit on GitHub](https://github.com/MK60DN/Tender/edit/main/docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.0.md)
-- [PDF](Tender-DAOQL-Data-Water-Whitepaper-v1.0.pdf)
+- [GitHub source](https://github.com/MK60DN/Tender/blob/main/docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.1.md)
+- [Markdown source](Tender-DAOQL-Data-Water-Whitepaper-v1.1.md)
+- [Edit on GitHub](https://github.com/MK60DN/Tender/edit/main/docs/whitepaper/Tender-DAOQL-Data-Water-Whitepaper-v1.1.md)
+- [PDF](Tender-DAOQL-Data-Water-Whitepaper-v1.1.pdf)
 - [Collaboration guide](../COLLABORATION.md)
