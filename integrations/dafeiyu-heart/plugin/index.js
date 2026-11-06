@@ -13,7 +13,7 @@ import path from 'node:path'
 import { pathToFileURL } from 'node:url'
 
 const MAX_SUMMARY = 60
-const LOG_FILE = 'D:/Tender/dafeiyu-heart/plugin.log'
+const LOG_FILE = 'D:/Tender/Tender-GitHub-Release/integrations/dafeiyu-heart/plugin.log'
 
 function log(stage, detail = {}) {
   try {
