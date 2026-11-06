@@ -4,7 +4,7 @@
 
 **最新更新 / Latest update · 2026-11-06**
 
-新增技术架构零基础教学 [docs/zero-basics.md](docs/zero-basics.md)：四个进程怎么分工、一条请求的十四个步骤、数据落在哪、坏了怎么降级；每轮对话结束自动打一次 Tender 心跳，把心智状态映射成大肥鱼自己的情绪并写回；
+新增 Tender 工具包 `tools/`：把学习状态、心智化状态卡、时间线、固定 Agent、知识库检索做成 Agent 工具（实测 Agent 已调用）；新增技术架构零基础教学 [docs/zero-basics.md](docs/zero-basics.md)：四个进程怎么分工、一条请求的十四个步骤、数据落在哪、坏了怎么降级；每轮对话结束自动打一次 Tender 心跳，把心智状态映射成大肥鱼自己的情绪并写回；
 附带一个手动 bridge 和一个 Rust 记忆边车说明。本地已实测跑通。
 
 ## 这是什么
@@ -74,3 +74,22 @@ Get-Content "$env:DSH_HOME\bili-duty\life-memory\emotional-state.json"
 - Tender 或边车不可用时只降级，不阻断对话，也不伪造状态。
 
 License: MIT.
+## Tender 工具（tools/）
+
+装到 **acp profile**，大肥鱼的 Agent 就有了产品能力：
+
+| 工具 | 能力 |
+|---|---|
+| `tender_learning_state` | 查学习状态（知识结构、元认知偏差、掌握度） |
+| `tender_mentalization` | 读心智化状态卡（结论、置信度、假设、怎么帮） |
+| `tender_timeline` | 看心智化时间线（认知与情绪变化、支持—反思—结果） |
+| `tender_fixed_agents` | 列出固定辅助 Agent |
+| `tender_agent` | 调用某个专家 Agent |
+| `tender_knowledge_search` | 知识库检索 |
+
+```powershell
+dsh plugin --profile acp add <本仓库>\integrations\dafeiyu-heart\tools
+```
+
+配置在 `tools/cordis.patch.yml`：`baseUrl`（默认 8080）、`learnerId`、`actorId`。
+实测：在 acp 会话里让它查状态，Agent 调用了 `tender_mentalization` 并复述了 summary、confidence 与 support_hint。

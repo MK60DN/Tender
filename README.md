@@ -2,7 +2,8 @@
 
 > **最新更新 / Latest update · 2026-11-06**
 >
-> `feat/dafeiyu-heart` 分支新增技术架构零基础教学 [integrations/dafeiyu-heart/docs/zero-basics.md](integrations/dafeiyu-heart/docs/zero-basics.md)：四个进程怎么分工、一条请求的十四个步骤、数据落在哪、坏了怎么降级。
+> `feat/dafeiyu-heart` 分支新增 [Tender 工具包](integrations/dafeiyu-heart/tools/)：学习状态、心智化状态卡、时间线、固定 Agent、知识库检索都做成了 Agent 工具，实测大肥鱼的 Agent 已能调用并按状态卡回答。
+> 同分支还包含[大肥鱼心脏](integrations/dafeiyu-heart/README.md)与[技术架构零基础教学](integrations/dafeiyu-heart/docs/zero-basics.md)。
 > 同一分支的大肥鱼心脏已可用：每轮对话打一次心跳，Tender 算出的心智状态写回她的情绪层与人设；桌面心情小窗为纯文字，插件源码与日志已收进本仓库，旧的独立仓库已归档。
 
 **Whitepapers, research experiments, knowledge databases and reference models.**
