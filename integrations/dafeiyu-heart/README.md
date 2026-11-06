@@ -93,3 +93,14 @@ dsh plugin --profile acp add <本仓库>\integrations\dafeiyu-heart\tools
 
 配置在 `tools/cordis.patch.yml`：`baseUrl`（默认 8080）、`learnerId`、`actorId`。
 实测：在 acp 会话里让它查状态，Agent 调用了 `tender_mentalization` 并复述了 summary、confidence 与 support_hint。
+## 启用 ACP（让她用 Agent 说话 + 用 Tender 工具）
+
+1. 在桌面右键鱼鱼 → 设置 → 「连接 Agent」 → 选 **DeepSeek Harness** → 连接
+2. 同一页的「模型与权限」里，模型选 **DeepSeek Account** 组下的 `DeepSeek-V4.1-Flash`
+   （不要选 `DeepSeek` 组，那条走 official 路由，本机没有 API key，会报 `no API key`）
+3. 需要她在「说话」时用 Agent，把「吐字交给 Agent」打开；需要点击触发，把「点击时回应」打开
+
+**注意**：这个模型选择**不会持久化**。清会话绑定、重启桌宠之后会退回 official，
+下次连接时要重新选一遍。完整症状与排查见 [docs/known-issues.md](docs/known-issues.md) 第 1 条。
+
+装好 `tools/` 之后，她的会话还会多出六个工具；工具随会话装配，装完要重连一次才生效。

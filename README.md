@@ -2,8 +2,8 @@
 
 > **最新更新 / Latest update · 2026-11-06**
 >
-> `feat/dafeiyu-heart` 分支的 [Tender 工具包](integrations/dafeiyu-heart/tools/)已修好跨学习者权限（`cross_learner_denied`），实测能查任意 learner 的心智化状态卡；[已知问题与坑](integrations/dafeiyu-heart/docs/known-issues.md) 补到 11 条。
-> 同分支还包含[大肥鱼心脏](integrations/dafeiyu-heart/README.md)与[技术架构零基础教学](integrations/dafeiyu-heart/docs/zero-basics.md)。
+> `feat/dafeiyu-heart` 分支完成整体更新：[大肥鱼心脏](integrations/dafeiyu-heart/README.md)补齐启用 ACP 的完整步骤（含模型选择与「每次重连要重选」的坑），[已知问题与坑](integrations/dafeiyu-heart/docs/known-issues.md)扩写到 11 条并给出可操作步骤。
+> 同分支的 [Tender 工具包](integrations/dafeiyu-heart/tools/)已修好跨学习者权限，实测可查任意 learner 的状态卡；另有[技术架构零基础教学](integrations/dafeiyu-heart/docs/zero-basics.md)。
 > 同一分支的大肥鱼心脏已可用：每轮对话打一次心跳，Tender 算出的心智状态写回她的情绪层与人设；桌面心情小窗为纯文字，插件源码与日志已收进本仓库，旧的独立仓库已归档。
 
 **Whitepapers, research experiments, knowledge databases and reference models.**

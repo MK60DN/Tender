@@ -4,7 +4,35 @@
 
 ## ACP 连接
 
-### 1. 模型选择不持久化，重连会退回 `deepseek-official`
+### 1. 模型选择不持久化，重连会退回 `deepseek-official`（最常见）
+
+**症状**：连接页红字 `turn failed: llm-deepseek: no API key for provider route "deepseek-official"`，
+她连上了却一句话都不说。
+
+**操作步骤**（每次重连后都要做一遍）：
+
+1. 右键鱼鱼 → 设置
+2. 打开「连接 Agent」页（显示 `DeepSeek Harness · 已检测到` 那一页）
+3. 往下找「模型与权限」，模型下拉有两组：
+
+   ```
+   DeepSeek              ← 不要选这组（走 official 路由，需要 API key）
+     deepseek-v4-flash
+   DeepSeek Account      ← 选这组
+     DeepSeek-V4.1-Flash   ✅ 选它
+     DeepSeek-V4-Pro
+   ```
+
+4. 选完看红字是否消失；消失即生效
+
+**为什么每次都要重选**：模型选择没有被持久化，清会话绑定、重启鱼、改设置之后，新会话会退回 profile 的默认路由。
+profile 里能改的只有「默认值」，改不动她客户端自己发的那份选择。
+
+**试过但不可行的办法**：
+
+- 把 profile 的 `llm-deepseek` 配上 `baseURL: http://127.0.0.1:15721/v1`（本地 CC Switch 代理）+ `apiKeyEnv`
+  → provider 直接不可用，报 `turn failed: 未配置供应商`，已回滚
+- 把 `agent-default-model` 改成 `deepseek-account` → 她客户端自己的选择会覆盖，无效
 
 **现象**：清掉 `data/agent/sessions/*/dsh.json` 或重启鱼之后，新会话用 profile 默认路由；而 acp profile 默认的
 `deepseek-official` 需要 `DEEPSEEK_API_KEY`，机器上没有 → 每一轮都 `turn failed: no API key`。
