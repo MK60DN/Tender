@@ -4,7 +4,7 @@
 
 **最新更新 / Latest update · 2026-11-06**
 
-桌面心情小窗改为纯文字（去掉图标），插件源码与日志统一收进本仓库；每轮对话结束自动打一次 Tender 心跳，把心智状态映射成大肥鱼自己的情绪并写回；
+新增技术架构零基础教学 [docs/zero-basics.md](docs/zero-basics.md)：四个进程怎么分工、一条请求的十四个步骤、数据落在哪、坏了怎么降级；每轮对话结束自动打一次 Tender 心跳，把心智状态映射成大肥鱼自己的情绪并写回；
 附带一个手动 bridge 和一个 Rust 记忆边车说明。本地已实测跑通。
 
 ## 这是什么
@@ -22,6 +22,7 @@ plugin/                 DSH 插件（@local/dafeiyu-heart），每轮自动打�
 bridge.mjs              手动打点：node bridge.mjs --learner ... --summary ...
 scripts/start-services.ps1  一键起 Tender(8080) + 记忆边车(8090)
 docs/ARCHITECTURE.md    链路、数据契约、降级规则
+docs/zero-basics.md     零基础教学（先读这个）
 ```
 
 配套但不在本仓库：`daoql-edu-serve`（Rust 记忆边车）与 `Tender-Product`（`/heart/beat` 端点）。
