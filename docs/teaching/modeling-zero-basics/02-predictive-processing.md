@@ -2,11 +2,8 @@
 series: "Tender 建模零基础课"
 order: 2
 title: "学习怎样在预测和修正中发生"
-wechat_title: "学习怎样在预测和修正中发生"
 summary: "从走进教室、做题卡住和主动求助，理解预测、误差与行动怎样推动学习。"
-cover_idea: "一束预测光线穿过雾气，落到世界反馈上"
 tags: [Tender, 预测加工, 学习, 建模]
-status: draft
 ---
 
 # 学习怎样在预测和修正中发生

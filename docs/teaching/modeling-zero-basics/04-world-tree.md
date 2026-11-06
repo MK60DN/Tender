@@ -2,11 +2,8 @@
 series: "Tender 建模零基础课"
 order: 4
 title: "生命树：把成长看成一套结构"
-wechat_title: "生命树：把成长看成一套结构"
 summary: "用根、干、冠、花、果理解 Tender 怎样连接证据、模型、学习、创造与结果。"
-cover_idea: "一棵由事件根系、数据枝干和发光花冠组成的生命树"
 tags: [Tender, 生命树, 学习, 创造]
-status: draft
 ---
 
 # 生命树：把成长看成一套结构

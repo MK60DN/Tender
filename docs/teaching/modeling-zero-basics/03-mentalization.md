@@ -2,11 +2,8 @@
 series: "Tender 建模零基础课"
 order: 3
 title: "心智化：我们怎样理解另一个人"
-wechat_title: "心智化：我们怎样理解另一个人"
 summary: "从一次沉默和一句回话，理解怎样保留多种解释，再用沟通校正对他人的理解。"
-cover_idea: "两个半透明的人形之间有许多可连接、可校正的细线"
 tags: [Tender, 心智化, 沟通, 建模]
-status: draft
 ---
 
 # 心智化：我们怎样理解另一个人

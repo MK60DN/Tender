@@ -2,11 +2,8 @@
 series: "Tender 建模零基础课"
 order: 11
 title: "群聊里的 Tender 怎样理解关系并尊重授权"
-wechat_title: "群聊里的 Tender 怎样理解关系并尊重授权"
 summary: "从一次群聊误会，理解多人建模中的观察者模型、授权、共享分支和人工确认。"
-cover_idea: "多棵生命树在透明边界中交换发光枝条"
 tags: [Tender, 多人协作, 群聊, 授权, 心智化]
-status: draft
 ---
 
 # 群聊里的 Tender 怎样理解关系并尊重授权

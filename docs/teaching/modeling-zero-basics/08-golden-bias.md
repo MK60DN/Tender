@@ -2,11 +2,8 @@
 series: "Tender 建模零基础课"
 order: 8
 title: "学习和创造怎样形成长期节律"
-wechat_title: "学习和创造怎样形成长期节律"
 summary: "从吸收、输出、反馈与恢复的循环，理解动态黄金比怎样帮助人保持长期生长。"
-cover_idea: "两股螺旋相互生长，中间是一条弹性带"
 tags: [Tender, 黄金比, 节律, 学习, 创造]
-status: draft
 ---
 
 # 学习和创造怎样形成长期节律

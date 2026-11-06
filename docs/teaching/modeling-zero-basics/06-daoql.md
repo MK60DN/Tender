@@ -2,11 +2,8 @@
 series: "Tender 建模零基础课"
 order: 6
 title: "DAOQL：让每个结论都能回到证据"
-wechat_title: "DAOQL：让每个结论都能回到证据"
 summary: "从一次“状态不好”的判断，理解事件、关系、版本、权限和审计怎样构成信任。"
-cover_idea: "发光的事件节点通过细线连接成根系网络"
 tags: [Tender, DAOQL, 数据底座, 审计]
-status: draft
 ---
 
 # DAOQL：让每个结论都能回到证据

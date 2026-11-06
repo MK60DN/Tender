@@ -2,11 +2,8 @@
 series: "Tender 建模零基础课"
 order: 5
 title: "布洛赫球：怎样表示一个尚未确定的状态"
-wechat_title: "布洛赫球：怎样表示一个尚未确定的状态"
 summary: "用一个球面，理解 Tender 怎样表达局部状态、混合程度和不同问法带来的变化。"
-cover_idea: "透明球体中的一点在多个测量方向之间偏移"
 tags: [Tender, 布洛赫球, 状态建模, 零基础]
-status: draft
 ---
 
 # 布洛赫球：怎样表示一个尚未确定的状态

@@ -2,11 +2,8 @@
 series: "Tender 建模零基础课"
 order: 9
 title: "MBTI、荣格八维与大五：Tender 怎样使用它们"
-wechat_title: "MBTI、荣格八维与大五：Tender 怎样使用它们"
 summary: "理解 Tender 为什么只把人格测评当作早期线索，以及它们分别适合回答什么问题。"
-cover_idea: "三条不同形态的坐标轴汇聚到一棵成长树"
 tags: [Tender, MBTI, 荣格八维, 大五人格]
-status: draft
 ---
 
 # MBTI、荣格八维与大五：Tender 怎样使用它们

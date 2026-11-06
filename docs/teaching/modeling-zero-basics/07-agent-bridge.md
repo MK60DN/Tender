@@ -2,11 +2,8 @@
 series: "Tender 建模零基础课"
 order: 7
 title: "为什么 Tender 要用一组 Agent 协作"
-wechat_title: "为什么 Tender 要用一组 Agent 协作"
 summary: "从一次“我不想学了”开始，理解岗位式 Agent、Agent Bridge、权限和人工确认。"
-cover_idea: "多个小光点围绕树干与树冠协作，每个光点有不同符号"
 tags: [Tender, Agent, 多智能体, 建模]
-status: draft
 ---
 
 # 为什么 Tender 要用一组 Agent 协作

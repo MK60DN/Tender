@@ -2,11 +2,8 @@
 series: "Tender 建模零基础课"
 order: 1
 title: "为什么一个分数解释不了一个人"
-wechat_title: "为什么一个分数解释不了一个人"
 summary: "从一次作业卡住说起，理解 Tender 怎样把结果变成可讨论、可验证、可更正的临时解释。"
-cover_idea: "一个人站在分数、事件、关系和时间线组成的星图前"
 tags: [Tender, 建模, 零基础, 教育]
-status: draft
 ---
 
 # 为什么一个分数解释不了一个人

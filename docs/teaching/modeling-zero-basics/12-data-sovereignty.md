@@ -2,11 +2,8 @@
 series: "Tender 建模零基础课"
 order: 12
 title: "为什么学习记录应该由用户带走"
-wechat_title: "为什么学习记录应该由用户带走"
 summary: "从数据主权、贡献回流和退出权，理解一份学习记录怎样真正属于用户。"
-cover_idea: "数据像活水穿过透明管道，最终回到贡献者身边"
 tags: [Tender, 数字主权, 数据经济, 学习记录]
-status: draft
 ---
 
 # 为什么学习记录应该由用户带走
