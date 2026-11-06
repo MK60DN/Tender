@@ -1,0 +1,10 @@
+- insert:
+    - id: dafeiyu-heart
+      name: '@local/dafeiyu-heart'
+      config:
+        enabled: true
+        tenderUrl: http://127.0.0.1:8080
+        learnerId: dafeiyu
+        dataDir: C:/Users/Dell/.dsh/bili-duty
+        emotionalStateModule: C:/Users/Dell/.dsh/profiles/desktop/node_modules/dsh-dafeiyu-life/lib/emotional-state.mjs
+        personaFile: C:/Users/Dell/Documents/蓝色大肥鱼工作区/.agents/skills/big-blue-fish/persona.md

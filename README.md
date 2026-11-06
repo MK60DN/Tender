@@ -2,8 +2,8 @@
 
 > **最新更新 / Latest update · 2026-11-06**
 >
-> [Tender 建模零基础课（12 篇）](https://github.com/MK60DN/Tender/blob/main/docs/teaching/modeling-zero-basics/README.md) 已按自然讲解口吻重写，并只保留正文与站点，发布流程已移除。
-> 教学站点源码：[Tender-Product site/modeling-teaching](https://github.com/MK60DN/Tender-Product/tree/main/site/modeling-teaching)。
+> 新增集成分支 `feat/dafeiyu-heart`：[大肥鱼 × Tender 心脏](integrations/dafeiyu-heart/README.md) —— 每轮对话打一次心跳，Tender 算出的心智状态写回大肥鱼的情绪层与人设，由 DSH 插件自动维持。
+> 零基础教学系列已去掉发布流程相关内容；教学站点源码：[Tender-Product site/modeling-teaching](https://github.com/MK60DN/Tender-Product/tree/main/site/modeling-teaching)。
 
 **Whitepapers, research experiments, knowledge databases and reference models.**
 **白皮书、研究实验、知识数据库与参考模型。**
