@@ -4,7 +4,7 @@
 
 **最新更新 / Latest update · 2026-11-06**
 
-新增[已知问题与坑](docs/known-issues.md)（ACP 模型路由不持久、say 桥必须 UI 握手、工具随会话装配等 9 条）；新增 Tender 工具包 `tools/`：把学习状态、心智化状态卡、时间线、固定 Agent、知识库检索做成 Agent 工具（实测 Agent 已调用）；新增技术架构零基础教学 [docs/zero-basics.md](docs/zero-basics.md)：四个进程怎么分工、一条请求的十四个步骤、数据落在哪、坏了怎么降级；每轮对话结束自动打一次 Tender 心跳，把心智状态映射成大肥鱼自己的情绪并写回；
+新增[已知问题与坑](docs/known-issues.md)（跨学习者 403、代理路由失败、ACP 模型路由不持久、say 桥必须 UI 握手、工具随会话装配等 9 条）；新增 Tender 工具包 `tools/`：把学习状态、心智化状态卡、时间线、固定 Agent、知识库检索做成 Agent 工具（实测 Agent 已调用）；新增技术架构零基础教学 [docs/zero-basics.md](docs/zero-basics.md)：四个进程怎么分工、一条请求的十四个步骤、数据落在哪、坏了怎么降级；每轮对话结束自动打一次 Tender 心跳，把心智状态映射成大肥鱼自己的情绪并写回；
 附带一个手动 bridge 和一个 Rust 记忆边车说明。本地已实测跑通。
 
 ## 这是什么

@@ -29,30 +29,33 @@ export function apply(ctx, config = {}) {
   const learnerId = config.learnerId || 'yuyu'
   const actorId = config.actorId || learnerId
 
-  let tokenPromise = null
+  // 每个学习者一个会话 token：Tender 会校验「令牌所属学习者」与「被查对象」一致，
+  // 用 A 的身份查 B 会被 403 cross_learner_denied。
+  const tokens = new Map()
 
-  function token() {
-    if (!tokenPromise) {
-      tokenPromise = (async () => {
+  function token(learner) {
+    if (!tokens.has(learner)) {
+      const promise = (async () => {
         const response = await fetch(`${baseUrl}/auth/demo-session`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ actor_id: actorId, role: 'learner', learner_id: learnerId }),
+          body: JSON.stringify({ actor_id: learner, role: 'learner', learner_id: learner }),
         })
         if (!response.ok) throw new Error(`Tender 登录失败：${response.status}`)
         const data = await response.json()
         return data.token
       })().catch((error) => {
-        tokenPromise = null
+        tokens.delete(learner)
         throw error
       })
+      tokens.set(learner, promise)
     }
-    return tokenPromise
+    return tokens.get(learner)
   }
 
-  async function call(path, { method = 'GET', body, auth = true } = {}) {
+  async function call(path, { method = 'GET', body, auth = true, learner = learnerId } = {}) {
     const headers = { 'Content-Type': 'application/json' }
-    if (auth) headers.Authorization = `Bearer ${await token()}`
+    if (auth) headers.Authorization = `Bearer ${await token(learner)}`
     const response = await fetch(`${baseUrl}${path}`, {
       method,
       headers,
@@ -84,7 +87,7 @@ export function apply(ctx, config = {}) {
     parameters: learnerArg,
     output: jsonOutput('Tender 学习者状态'),
     async execute(args) {
-      return call(`/tender/state/${encodeURIComponent(learnerOf(args))}`)
+      return call(`/tender/state/${encodeURIComponent(learnerOf(args))}`, { learner: learnerOf(args) })
     },
   })
 
@@ -94,7 +97,7 @@ export function apply(ctx, config = {}) {
     parameters: learnerArg,
     output: jsonOutput('心智化状态卡'),
     async execute(args) {
-      return call(`/learner/mentalization/${encodeURIComponent(learnerOf(args))}`)
+      return call(`/learner/mentalization/${encodeURIComponent(learnerOf(args))}`, { learner: learnerOf(args) })
     },
   })
 
@@ -104,7 +107,7 @@ export function apply(ctx, config = {}) {
     parameters: learnerArg,
     output: jsonOutput('心智化时间线'),
     async execute(args) {
-      return call(`/learner/mentalization/timeline/${encodeURIComponent(learnerOf(args))}`)
+      return call(`/learner/mentalization/timeline/${encodeURIComponent(learnerOf(args))}`, { learner: learnerOf(args) })
     },
   })
 
@@ -129,7 +132,8 @@ export function apply(ctx, config = {}) {
     async execute(args) {
       return call(`/agents/${encodeURIComponent(args.agent_id)}/invoke`, {
         method: 'POST',
-        body: { message: args.message, learner_id: learnerId },
+        body: { message: args.message, learner_id: learnerOf(args) },
+        learner: learnerOf(args),
       })
     },
   })

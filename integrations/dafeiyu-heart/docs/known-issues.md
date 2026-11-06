@@ -65,3 +65,12 @@ $node -e "const z=require('node:zlib');const fs=require('node:fs');fs.writeFileS
 
 `github.com` 与 PyPI 直连经常不通（000 / 超时），但 `api.github.com` 和国内镜像正常。
 推送用重试循环，装依赖用 `-i https://pypi.tuna.tsinghua.edu.cn/simple`。
+### 10. 工具报 403 `cross_learner_denied`
+
+Tender 会校验「令牌所属学习者」与「被查对象」是否一致。工具早期用固定的 `actor_id` 换 token，
+再用它去查别的 learner，就被 403 拒了。修法：**按被查 learner 单独换 token，并且 `actor_id` 用同一个 id**。
+
+### 11. 把 official 路由改指本地代理会报「未配置供应商」
+
+试过把 acp profile 的 `llm-deepseek` 配上 `baseURL: http://127.0.0.1:15721/v1` + `apiKeyEnv`，
+结果 provider 直接不可用（`turn failed: 未配置供应商`）。**已回滚**，别重复这条弯路。
