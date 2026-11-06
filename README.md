@@ -2,8 +2,8 @@
 
 > **最新更新 / Latest update · 2026-11-06**
 >
-> `feat/dafeiyu-heart` 分支：[大肥鱼 × Tender 心脏](integrations/dafeiyu-heart/README.md) 已可用 —— 每轮对话打一次心跳，Tender 算出的心智状态写回大肥鱼的情绪层与人设；桌面心情小窗改为纯文字（去掉图标），插件源码与日志统一收进本仓库，旧的独立仓库已归档。
-> 零基础教学系列已去掉发布流程相关内容；教学站点源码：[Tender-Product site/modeling-teaching](https://github.com/MK60DN/Tender-Product/tree/main/site/modeling-teaching)。
+> `feat/dafeiyu-heart` 分支新增技术架构零基础教学 [integrations/dafeiyu-heart/docs/zero-basics.md](integrations/dafeiyu-heart/docs/zero-basics.md)：四个进程怎么分工、一条请求的十四个步骤、数据落在哪、坏了怎么降级。
+> 同一分支的大肥鱼心脏已可用：每轮对话打一次心跳，Tender 算出的心智状态写回她的情绪层与人设；桌面心情小窗为纯文字，插件源码与日志已收进本仓库，旧的独立仓库已归档。
 
 **Whitepapers, research experiments, knowledge databases and reference models.**
 **白皮书、研究实验、知识数据库与参考模型。**
